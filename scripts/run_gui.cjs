@@ -17,7 +17,7 @@ async function main() {
     ? await chromium.launch({ channel: 'chrome', headless: true })
     : await ({ firefox, webkit }[engine]).launch({ headless: true });
   const browserName = engine === 'chrome' ? 'Google Chrome' : engine === 'firefox' ? 'Firefox (Playwright build)' : 'Playwright WebKit (NOT Safari)';
-  const env = `${browserName} ${browser.version()} / macOS ${os.release()}`;
+  const env = `${browserName} ${browser.version()} / macOS ${execFileSync('sw_vers',['-productVersion'],{encoding:'utf8'}).trim()} (Darwin ${os.release()})`;
   const products = await (await fetch(productsUrl)).json();
   assert(products.length > 0 && products.some(x => x.id === 1));
   const dir = `evidence/gui/${engine}`;
@@ -32,7 +32,11 @@ async function main() {
     page.on('console', m => { if (m.type() === 'error') observations.push(m.text()); });
     const home = async () => { await page.goto(base); await page.locator('main h2').first().waitFor(); };
     const detail = async (pid = 1) => { await page.goto(`${base}/product/${pid}`); await page.locator('main input[type=number]').waitFor(); };
-    const cart = async () => { await page.getByRole('link', { name: 'Giỏ hàng', exact: true }).click(); };
+    const cart = async () => {
+      await page.getByRole('link', { name: 'Giỏ hàng', exact: true }).click();
+      await page.waitForURL('**/cart');
+      await page.getByRole('heading', { name: /^Giỏ Hàng$|^Giỏ hàng của bạn đang trống$/ }).waitFor();
+    };
     const search = async q => {
       const done = page.waitForResponse(r => r.url().startsWith(productsUrl) && r.request().method() === 'GET');
       await page.getByPlaceholder('Tìm kiếm...').fill(q);
@@ -61,7 +65,7 @@ async function main() {
         case 'G13': await home();check(await label(page.getByPlaceholder('Tìm kiếm...')),'label/aria association='+await label(page.getByPlaceholder('Tìm kiếm...')));break;
         case 'G14': await home();await search('iPhone'); {const names=await page.locator('main h2').allTextContents();check(names.length>0&&names.every(n=>n.includes('iPhone')),JSON.stringify(names));} break;
         case 'G15': await home();await search('iPhone');await search(''); {const n=await page.locator('main h2').count();check(n===products.length,`products=${n}`);} break;
-        case 'G16': await home();await search('iPhone&search=Samsung'); {const names=await page.locator('main h2').allTextContents();check(names.length===0,JSON.stringify(names));} break;
+        case 'G16': await home();await search('iPhone&limit=1'); {const names=await page.locator('main h2').allTextContents();check(names.length===0,JSON.stringify(names));} break;
         case 'G17': await detail(); {const v=await page.locator('input[type=number]').inputValue();check(v==='1',v);} break;
         case 'G18': case 'G19': case 'G20': case 'G21': case 'G22': {
           await detail();const value={G18:'2',G19:'0',G20:'-1',G21:'1.5',G22:''}[id];
@@ -74,13 +78,13 @@ async function main() {
         } break;
         case 'G23': await detail();check(await label(page.locator('main input[type=number]')),'label/aria association='+await label(page.locator('main input[type=number]')));break;
         case 'G24': await home();await page.getByPlaceholder('Tìm kiếm...').fill('<b data-hw03-probe="1">HW03 probe</b>'); {const n=await page.locator('main b[data-hw03-probe]').count();check(n===0,`Rendered HTML elements=${n}; benign markup only, no script executed`);} break;
-        case 'G25': await home();await page.getByRole('link',{name:'Xem chi tiết',exact:true}).first().click();await page.locator('main h1').waitFor();check(page.url().endsWith('/product/1')&&await page.locator('main h1').innerText()===products[0].name,page.url());break;
+        case 'G25': await home();await page.getByRole('link',{name:'Xem chi tiết',exact:true}).first().click();await page.waitForURL('**/product/1');await page.locator('main input[type=number]').waitFor();check(page.url().endsWith('/product/1')&&await page.locator('main h1').innerText()===products[0].name,page.url());break;
         case 'G26': await detail();await page.getByRole('link',{name:'EShop',exact:true}).click();await page.locator('main h2').first().waitFor();check(page.url()===base+'/',page.url());break;
         case 'G27': await home();await cart();check(page.url().endsWith('/cart'),await text());break;
         case 'G28': await page.goto(base+'/cart');await page.getByRole('link',{name:'Tiếp tục mua sắm',exact:true}).click();await page.locator('main h2').first().waitFor();check(page.url()===base+'/',page.url());break;
         case 'G29': await home();await search('iPhone');await page.getByRole('link',{name:'Xem chi tiết',exact:true}).click();await page.locator('main input[type=number]').waitFor();await page.goBack();await page.locator('main h2').first().waitFor();{const q=await page.getByPlaceholder('Tìm kiếm...').inputValue();const n=await page.locator('main h2').count();check(q==='iPhone'&&n===1,`query=${JSON.stringify(q)}; products=${n}`);}break;
         case 'G30': case 'G31': if(id==='G30')await detail();else{await addHome();await cart();}{const n=await page.locator('main nav,main [aria-label*=breadcrumb i],main [aria-label*="đường dẫn" i]').count();check(n>0,`breadcrumb regions=${n}`);}break;
-        case 'G32': await page.goto(base+'/cart'); {const l=page.getByRole('link',{name:'Giỏ hàng',exact:true});const a=await l.getAttribute('aria-current');const cls=await l.getAttribute('class');check(a==='page'||/active|font-bold|underline(?!.*hover)/.test(cls||''),`aria-current=${a}; class=${cls}`);}break;
+        case 'G32': await page.goto(base+'/cart'); {const l=page.getByRole('link',{name:'Giỏ hàng',exact:true});const a=await l.getAttribute('aria-current');const cls=await l.getAttribute('class');check(a==='page'||(cls||'').split(/\s/).some(c=>['active','font-bold','underline'].includes(c)),`aria-current=${a}; class=${cls}`);}break;
         case 'G33': await home();{const trace=[];for(let n=0;n<5;n++){await page.keyboard.press('Tab');trace.push(await page.evaluate(()=>document.activeElement.placeholder||document.activeElement.textContent));}check(trace[4]==='Tìm kiếm...',JSON.stringify(trace));}break;
         case 'G34': await home();await page.getByPlaceholder('Tìm kiếm...').focus();await page.keyboard.type('iPhone');await page.keyboard.press('Enter');await page.waitForTimeout(500);await page.keyboard.press('Tab');await page.keyboard.press('Tab');await page.keyboard.press('Enter');await page.waitForTimeout(500);check(page.url().endsWith('/product/1'),page.url());break;
         case 'G35': await addHome();await cart();await page.getByRole('link',{name:/Mua tiếp/}).click();await page.locator('main h2').first().waitFor();check(page.url()===base+'/',page.url());break;

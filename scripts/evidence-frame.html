@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="vi"><meta charset="utf-8"><title>HW03 - Evidence frame</title>
+<style>html,body{margin:0;height:100%;font:13px/1.5 Arial}form{box-sizing:border-box;background:#111827;color:#fff;padding:10px 14px;height:115px;border-bottom:3px solid #f59e0b}input{background:transparent;color:#fff;border:0;font:inherit}iframe{width:100%;height:calc(100% - 119px);border:0}label{margin-right:16px}</style>
+<form aria-label="Chú thích bằng chứng kiểm thử, không phải SUT">
+<div>CHÚ THÍCH BẰNG CHỨNG KIỂM THỬ - KHÔNG THAY ĐỔI CHỨC NĂNG SUT</div>
+<label>Email <input readonly value="23120207@student.hcmus.edu.vn" size="35"></label>
+<label>MSSV <input readonly value="23120207" size="10"></label>
+<label>Họ tên <input readonly value="Nguyễn Bảo An" size="20"></label>
+<div id="environment"></div><div id="target"></div></form>
+<iframe title="EShop SUT" src="/"></iframe>
+<script>
+const target=new URLSearchParams(location.search).get('target')||'/';
+if(!/^\/(?!\/)[a-zA-Z0-9/_-]*$/.test(target))throw Error('Invalid SUT path');
+document.querySelector('iframe').src=target;
+document.querySelector('#environment').textContent=navigator.userAgent+' | '+new Date().toISOString();
+document.querySelector('#target').textContent='SUT: http://localhost:5173'+target+' | Real browser smoke check; no result inferred for unexecuted checks';
+</script></html>
