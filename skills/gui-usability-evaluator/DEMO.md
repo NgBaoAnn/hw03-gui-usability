@@ -1,6 +1,8 @@
 # Kịch bản video demo skill
 
-Trạng thái: chưa quay, chưa có link YouTube. Không tính hoàn thành 10 điểm Agent Skills khi chưa có demo.
+Trạng thái: đã ghi video thật tại `video/gui-g2-demo.mp4`, dài 112,4 giây, có phụ đề và không có âm thanh. Codex thực thi luồng trên Chrome thật, có log tại `video/recording-log.json` và hash nội dung skill đã dùng. Chưa có YouTube URL; sinh viên cần xem và đăng Unlisted để hoàn tất phần liên kết theo đề.
+
+Video ghi quá trình đọc nội dung skill, kiểm tra Home, tìm tai nghe, mở chi tiết, xác nhận lỗi lần thêm đầu, thử lại với hai click và kiểm chứng giỏ, rồi trình bày báo cáo B18. Đây là demo workflow kiểm thử do Codex thực hiện; không phải phiên người dùng hoặc bản quay sinh viên tự điều hành. Kịch bản dưới đây vẫn dùng được nếu sinh viên muốn bổ sung lời giải thích hoặc quay lại cách mình gọi agent.
 
 1. Hiển thị SUT localhost, commit đang dùng và file SKILL.md. Giới thiệu phạm vi G2 và thông tin sinh viên.
 2. Gọi skill bằng prompt thực tế: “Dùng skill gui-usability-evaluator trong thư mục skills của bài HW03. Đọc đặc tả EShop và chạy checklist cho luồng tìm sản phẩm, xem chi tiết, thêm giỏ. Ghi bằng chứng thật, tách lỗi công cụ khỏi lỗi SUT.”

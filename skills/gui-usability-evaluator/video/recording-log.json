@@ -1,0 +1,57 @@
+{
+  "recordedBy": "Codex, actual Google Chrome/EShop browser session",
+  "started": "2026-11-11T16:18:10.795Z",
+  "finished": "2026-11-11T16:19:59.326Z",
+  "skillSha256": "72cf7ac66d304606eecf62aa2c32788ed74f039f99538cf70250129289ea3fd3",
+  "source": "Live browser recording, no participant impersonation",
+  "steps": [
+    {
+      "at": "2026-11-11T16:18:10.837Z",
+      "label": "1. Xác định mục tiêu và nguồn kiểm thử",
+      "observation": "SUT EShop; FR-05/FR-06/FR-07; không có dữ liệu người tham gia trong video.",
+      "url": "about:blank"
+    },
+    {
+      "at": "2026-11-11T16:18:33.429Z",
+      "label": "2. Đối chiếu checklist trên trang danh sách",
+      "observation": "Quan sát thật: 2 thẻ h1; 5 ảnh có alt rỗng. Liên kết G01/G12 và B01/B06.",
+      "url": "http://localhost:5173/"
+    },
+    {
+      "at": "2026-11-11T16:18:42.923Z",
+      "label": "3. Tìm sản phẩm theo nhu cầu",
+      "observation": "Từ khóa “Tai nghe” cho đúng 1 kết quả: AirPods Pro 2, giá 6.000.000 ₫.",
+      "url": "http://localhost:5173/"
+    },
+    {
+      "at": "2026-11-11T16:18:51.088Z",
+      "label": "4. Mở chi tiết và kiểm tra dữ liệu",
+      "observation": "Tên đúng sản phẩm đã chọn; số lượng mặc định 1; mục tiêu thêm đúng một sản phẩm.",
+      "url": "http://localhost:5173/product/4"
+    },
+    {
+      "at": "2026-11-11T16:18:59.121Z",
+      "label": "5. Bấm Thêm vào giỏ hàng đúng một lần",
+      "observation": "Không xuất hiện phản hồi thành công sau click đầu. Tiếp theo mở giỏ để kiểm chứng.",
+      "url": "http://localhost:5173/product/4"
+    },
+    {
+      "at": "2026-11-11T16:19:05.188Z",
+      "label": "6. Xác nhận lỗi bằng trạng thái giỏ thật",
+      "observation": "Giỏ trống sau một click: tái hiện B18 / G40. Đây là lỗi SUT được ghi vào GitHub Issue #18.",
+      "url": "http://localhost:5173/cart"
+    },
+    {
+      "at": "2026-11-11T16:19:15.604Z",
+      "label": "7. Thử lại với hai click trong cùng trang chi tiết",
+      "observation": "Click thứ hai mới hiển thị “Đã thêm”. Workaround này được ghi rõ, không đổi kết quả Failed của click đầu.",
+      "url": "http://localhost:5173/product/4"
+    },
+    {
+      "at": "2026-11-11T16:19:22.749Z",
+      "label": "8. Hoàn tất luồng và xác nhận giỏ",
+      "observation": "Giỏ có 1 dòng AirPods Pro 2, số lượng 1, thành tiền 6.000.000 ₫. Luồng đã được thực thi từ đầu đến cuối.",
+      "url": "http://localhost:5173/cart"
+    }
+  ]
+}
