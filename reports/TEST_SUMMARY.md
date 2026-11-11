@@ -1,6 +1,6 @@
 # Test summary G2
 
-Cập nhật: 2026-11-11T23:22:23+07:00.
+Cập nhật: 2026-11-11T23:52:10+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|
@@ -19,6 +19,6 @@ Cập nhật: 2026-11-11T23:22:23+07:00.
 | Pilot / phiên chính thức có bằng chứng | 0 / 0 |
 | Người tham gia thật | 0/7 |
 | SUS | Chưa có dữ liệu để tính |
-| Video demo skill | Đã có MP4 thật 112,4 giây, có phụ đề; chờ sinh viên xem và URL YouTube |
+| Video demo skill | MP4 do Codex ghi được giữ tham khảo; chờ video sinh viên tự quay và URL YouTube |
 
 Kết quả là thực thi tự động bởi Codex, chưa phải xác nhận của sinh viên. Không dùng số bug hay số lượt tự động để suy ra mức hài lòng, tần suất lỗi ở người dùng, hoặc SUS.

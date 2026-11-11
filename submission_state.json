@@ -11,5 +11,7 @@
   "demo_youtube_url": "",
   "earlier_ai_audit_complete": true,
   "self_assessment": null,
-  "github_grader_access_confirmed": false
+  "github_grader_access_confirmed": true,
+  "github_visibility": "public",
+  "demo_author": "student_recording_pending"
 }

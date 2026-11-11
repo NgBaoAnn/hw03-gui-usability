@@ -60,7 +60,7 @@ def missing_requirements():
         if third_run.get('engine')!='safari' or not third_run.get('fullChecklist') or len(third_run.get('results',[]))!=48:
             missing.append('Lượt Safari chưa thực thi đủ 48 mục với kết quả hợp lệ.')
     if not re.match(r'https://(?:www\.)?(youtube\.com/|youtu\.be/)',state['demo_youtube_url']):
-        missing.append('Chưa có YouTube demo skill end-to-end.')
+        missing.append('Chưa có video sinh viên tự quay dùng skill end-to-end kèm URL YouTube.')
     if not state['earlier_ai_audit_complete']:
         missing.append('Audit các tương tác AI tạo kế hoạch cũ chưa đầy đủ.')
     score=state['self_assessment']
@@ -70,7 +70,7 @@ def missing_requirements():
     if not issues.exists() or len(json.loads(issues.read_text()))!=23:
         missing.append('Chưa có đủ GitHub Issue URLs cho 23 nhóm bug.')
     if not state.get('github_grader_access_confirmed'):
-        missing.append('Repo GitHub đang private; chưa xác nhận người chấm có quyền xem Issues.')
+        missing.append('Chưa xác nhận người chấm có quyền xem GitHub Issues.')
     return missing
 
 

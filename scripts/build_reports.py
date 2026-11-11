@@ -145,7 +145,7 @@ Cập nhật: {now}.
 | Pilot / phiên chính thức có bằng chứng | 0 / 0 |
 | Người tham gia thật | 0/7 |
 | SUS | Chưa có dữ liệu để tính |
-| Video demo skill | Đã có MP4 thật 112,4 giây, có phụ đề; chờ sinh viên xem và URL YouTube |
+| Video demo skill | MP4 do Codex ghi được giữ tham khảo; chờ video sinh viên tự quay và URL YouTube |
 
 Kết quả là thực thi tự động bởi Codex, chưa phải xác nhận của sinh viên. Không dùng số bug hay số lượt tự động để suy ra mức hài lòng, tần suất lỗi ở người dùng, hoặc SUS.
 '''
@@ -192,7 +192,7 @@ Khác biệt giữa các môi trường: {'; '.join(differences)}. G09 Firefox t
 
 ## 5. Agent skill, AI và Git
 
-Skill trong `skills/gui-usability-evaluator/SKILL.md` hỗ trợ chọn phạm vi, thiết kế, thực thi có chứng cứ, chuẩn bị nghiên cứu và tính SUS thật. Đã kiểm tra frontmatter và self-check của script. Video `skills/gui-usability-evaluator/video/gui-g2-demo.mp4` dài 112,4 giây được Codex ghi từ browser Chrome thật, có phụ đề và không có âm thanh. Video cho thấy nội dung skill đã đọc, quan sát Home, tìm tai nghe, mở chi tiết, tái hiện lỗi click đầu, thử workaround, kiểm chứng giỏ và liên kết báo cáo B18. Log ghi hình có timestamp và hash skill. Chưa có YouTube URL, nên chưa tuyên bố hoàn tất tiêu chí công bố demo.
+Skill trong `skills/gui-usability-evaluator/SKILL.md` hỗ trợ chọn phạm vi, thiết kế, thực thi có chứng cứ, chuẩn bị nghiên cứu và tính SUS thật. Đã kiểm tra frontmatter và self-check của script. Video `skills/gui-usability-evaluator/video/gui-g2-demo.mp4` dài 112,4 giây là tài liệu tham khảo do Codex ghi từ Chrome thật, có phụ đề, không có âm thanh và có log timestamp/hash skill. Sinh viên đã chọn tự quay video dùng cho bài nộp; hiện chưa có video hoặc YouTube URL của sinh viên. Không gán video Codex thành bản quay của sinh viên hoặc tính hoàn tất tiêu chí demo.
 
 `reports/AI_AUDIT_REPORT.md` và bản transcript ghi lại AI dùng trong chat hiện tại. Đã khôi phục 14 lời nhắn lập kế hoạch ngày 03/11 từ session OpenCode đúng thư mục HW03 vào `reports/AI_AUDIT_RECOVERED.md`, kèm ba đầu ra nguyên gốc ở `reports/legacy/`. Timestamp/model được lấy đúng metadata cũ; không tự tạo prompt. Sinh viên cần bổ sung nếu còn tương tác khác ngoài các nguồn này. `AI_CRITIQUE.md` vẫn là bản AI soạn, chờ sinh viên sửa theo trải nghiệm thật và xác nhận.
 
@@ -202,13 +202,12 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Không tạo c
 
 - Sinh viên rà soát kết quả và tự bổ sung checklist; duyệt critique/audit, bổ sung nếu còn chat khác ngoài bản đã khôi phục.
 - Một pilot và bảy phiên thật ngoài lớp, danh sách liên hệ đã che, ghi chú/SUS/bằng chứng; tính và tổng hợp kết quả.
-- Xem video demo MP4 đã ghi và cung cấp YouTube URL để hoàn tất tiêu chí demo.
-- Xác nhận người chấm truy cập được GitHub Issues của repo đang private.
+- Sinh viên tự quay demo dùng skill từ đầu đến cuối và cung cấp YouTube URL.
 - Sinh viên tự chấm theo rubric 30/40/20/10, xác nhận bài cuối, rồi đóng gói đúng tên và xác nhận Moodle “Em làm một mình”.
 
 ## 7. Tham chiếu
 
-Đề và chính sách đi kèm trong thư mục `requirements/` của archive. Nguồn SUS: https://hell.meiert.org/core/pdf/sus.pdf. Tài liệu phân biệt browser/engine: https://playwright.dev/docs/browsers. GitHub homework: https://github.com/NgBaoAnn/hw03-gui-usability (hiện private; người chấm cần quyền truy cập nếu dùng link).
+Đề và chính sách đi kèm trong thư mục `requirements/` của archive. Nguồn SUS: https://hell.meiert.org/core/pdf/sus.pdf. Tài liệu phân biệt browser/engine: https://playwright.dev/docs/browsers. GitHub homework: https://github.com/NgBaoAnn/hw03-gui-usability (đã public theo xác nhận của sinh viên, người chấm truy cập được các Issues và ảnh).
 
 '''+summary.replace('# Test summary G2','## 8. Test summary')
     write('reports/MAIN_REPORT.md',report)
@@ -216,7 +215,7 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Không tạo c
 
 Nguyễn Bảo An - 23120207 - bài cá nhân.
 
-**BẢN NHÁP, CHƯA PHẢI BÀI NỘP HOÀN CHỈNH.** Đã chạy đủ 3 trình duyệt, khôi phục audit cũ và ghi video demo MP4 thật. Còn thiếu pilot/7 phiên thật, human review/tự bổ sung, URL YouTube, quyền xem GitHub của người chấm và điểm tự chấm.
+**BẢN NHÁP, CHƯA PHẢI BÀI NỘP HOÀN CHỈNH.** Đã chạy đủ 3 trình duyệt, khôi phục audit cũ và public repo theo yêu cầu. Còn thiếu pilot/7 phiên thật, human review/tự bổ sung, video sinh viên tự quay kèm URL YouTube và điểm tự chấm.
 
 Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc cần bạn làm, biểu mẫu tương ứng và dữ liệu gửi lại để Codex chốt hồ sơ.
 
@@ -228,7 +227,7 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 - `evidence/runs/`: kết quả máy đọc được; `evidence/gui/`: ảnh gốc.
 - `usability/`: protocol, SUS, CSV và mẫu phiên trống để thu dữ liệu thật.
 - `reports/AI_AUDIT_REPORT.md`, `AI_CRITIQUE.md` và PDF.
-- `skills/gui-usability-evaluator/`: skill, video demo MP4 và log ghi hình thật; chờ YouTube URL.
+- `skills/gui-usability-evaluator/`: skill, kịch bản và MP4 tham khảo do Codex ghi; chờ video sinh viên tự quay và URL YouTube.
 - `reports/AI_AUDIT_RECOVERED.md`: prompt/output cũ đã khôi phục, kèm các kế hoạch nguyên gốc.
 - `git_commit_log.txt`: commit thật theo bước đã hoàn tất.
 
@@ -249,7 +248,7 @@ Sinh viên chưa tự chấm. Không điền 000 thay cho điểm còn thiếu.
 
 Chạy `python3 scripts/validate_submission.py` để kiểm tra phần còn thiếu. Trình đóng gói chỉ tạo bản `23120207_HW03_AI_GUIUsability_DRAFT.zip` khi hồ sơ chưa đủ. Bản cuối cần tên `<MSSV>_HW03_AI_GUIUsability_<000-100>.zip`, có điểm do sinh viên xác nhận. Hạn Moodle: 13:00 ngày 16/11/2026 (Việt Nam), cutoff cùng giờ, tối đa 20 MB mỗi tệp.
 
-Không đưa `usability/private/`, dữ liệu liên hệ gốc, token, node_modules, .git hoặc bản clone SUT vào zip. GitHub hiện private; các ảnh gốc và báo cáo cũng nằm trong zip để không phụ thuộc link.
+Không đưa `usability/private/`, dữ liệu liên hệ gốc, token, node_modules, .git hoặc bản clone SUT vào zip. GitHub hiện public theo xác nhận của sinh viên; ảnh gốc và báo cáo cũng nằm trong zip để không phụ thuộc link. Giữ dữ liệu người tham gia trong thư mục private cho tới khi có bản đã chuẩn bị phù hợp để đưa vào bài nộp.
 ''')
 
 

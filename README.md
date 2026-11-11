@@ -2,7 +2,7 @@
 
 Nguyễn Bảo An - 23120207 - bài cá nhân.
 
-**BẢN NHÁP, CHƯA PHẢI BÀI NỘP HOÀN CHỈNH.** Đã chạy đủ 3 trình duyệt, khôi phục audit cũ và ghi video demo MP4 thật. Còn thiếu pilot/7 phiên thật, human review/tự bổ sung, URL YouTube, quyền xem GitHub của người chấm và điểm tự chấm.
+**BẢN NHÁP, CHƯA PHẢI BÀI NỘP HOÀN CHỈNH.** Đã chạy đủ 3 trình duyệt, khôi phục audit cũ và public repo theo yêu cầu. Còn thiếu pilot/7 phiên thật, human review/tự bổ sung, video sinh viên tự quay kèm URL YouTube và điểm tự chấm.
 
 Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc cần bạn làm, biểu mẫu tương ứng và dữ liệu gửi lại để Codex chốt hồ sơ.
 
@@ -14,7 +14,7 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 - `evidence/runs/`: kết quả máy đọc được; `evidence/gui/`: ảnh gốc.
 - `usability/`: protocol, SUS, CSV và mẫu phiên trống để thu dữ liệu thật.
 - `reports/AI_AUDIT_REPORT.md`, `AI_CRITIQUE.md` và PDF.
-- `skills/gui-usability-evaluator/`: skill, video demo MP4 và log ghi hình thật; chờ YouTube URL.
+- `skills/gui-usability-evaluator/`: skill, kịch bản và MP4 tham khảo do Codex ghi; chờ video sinh viên tự quay và URL YouTube.
 - `reports/AI_AUDIT_RECOVERED.md`: prompt/output cũ đã khôi phục, kèm các kế hoạch nguyên gốc.
 - `git_commit_log.txt`: commit thật theo bước đã hoàn tất.
 
@@ -32,7 +32,7 @@ Sinh viên chưa tự chấm. Không điền 000 thay cho điểm còn thiếu.
 
 # Test summary G2
 
-Cập nhật: 2026-11-11T23:22:23+07:00.
+Cập nhật: 2026-11-11T23:52:10+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|
@@ -51,7 +51,7 @@ Cập nhật: 2026-11-11T23:22:23+07:00.
 | Pilot / phiên chính thức có bằng chứng | 0 / 0 |
 | Người tham gia thật | 0/7 |
 | SUS | Chưa có dữ liệu để tính |
-| Video demo skill | Đã có MP4 thật 112,4 giây, có phụ đề; chờ sinh viên xem và URL YouTube |
+| Video demo skill | MP4 do Codex ghi được giữ tham khảo; chờ video sinh viên tự quay và URL YouTube |
 
 Kết quả là thực thi tự động bởi Codex, chưa phải xác nhận của sinh viên. Không dùng số bug hay số lượt tự động để suy ra mức hài lòng, tần suất lỗi ở người dùng, hoặc SUS.
 
@@ -59,4 +59,4 @@ Kết quả là thực thi tự động bởi Codex, chưa phải xác nhận c�
 
 Chạy `python3 scripts/validate_submission.py` để kiểm tra phần còn thiếu. Trình đóng gói chỉ tạo bản `23120207_HW03_AI_GUIUsability_DRAFT.zip` khi hồ sơ chưa đủ. Bản cuối cần tên `<MSSV>_HW03_AI_GUIUsability_<000-100>.zip`, có điểm do sinh viên xác nhận. Hạn Moodle: 13:00 ngày 16/11/2026 (Việt Nam), cutoff cùng giờ, tối đa 20 MB mỗi tệp.
 
-Không đưa `usability/private/`, dữ liệu liên hệ gốc, token, node_modules, .git hoặc bản clone SUT vào zip. GitHub hiện private; các ảnh gốc và báo cáo cũng nằm trong zip để không phụ thuộc link.
+Không đưa `usability/private/`, dữ liệu liên hệ gốc, token, node_modules, .git hoặc bản clone SUT vào zip. GitHub hiện public theo xác nhận của sinh viên; ảnh gốc và báo cáo cũng nằm trong zip để không phụ thuộc link. Giữ dữ liệu người tham gia trong thư mục private cho tới khi có bản đã chuẩn bị phù hợp để đưa vào bài nộp.

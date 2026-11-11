@@ -198,3 +198,53 @@ Mình tìm được lịch sử OpenCode ngày 03/11 gắn đúng thư mục HW0
 
 Video demo đã ghi xong, dài **1 phút 52 giây**, có phụ đề và log thao tác thật. Mình đã khôi phục audit cũ và viết hướng dẫn theo từng bước. Hai câu hỏi đang chờ chỉ để chốt quyền chia sẻ: video và repo có thông tin sinh viên, nên mình cần bạn xác nhận trước khi đăng lên YouTube hoặc công khai repo theo quy tắc của công cụ trình duyệt.
 
+
+## 32. assistant - 2026-11-11T23:26:11+07:00
+
+Bạn có thể xem video demo đã ghi tại đây:
+
+![Video demo skill G2](/Users/nguyenbaoan/codeLab/kcpm/hw3/skills/gui-usability-evaluator/video/gui-g2-demo.mp4)
+
+Phần bạn cần làm trước là rà soát checklist, chạy pilot, rồi điều hành 7 phiên riêng. Mình đã ghi rõ từng bước và biểu mẫu trong [hướng dẫn hoàn tất](/Users/nguyenbaoan/codeLab/kcpm/hw3/HUONG_DAN_HOAN_TAT.md).
+
+
+## 33. assistant - 2026-11-11T23:27:39+07:00
+
+Mình đã bổ sung **video demo thật dài 1 phút 52 giây**, khôi phục audit OpenCode ngày 03/11 và cập nhật bộ hồ sơ.
+
+- [ZIP mới — 11,6 MB](/Users/nguyenbaoan/codeLab/kcpm/hw3/output/23120207_HW03_AI_GUIUsability_DRAFT.zip)
+- [Hướng dẫn hoàn tất từng bước](/Users/nguyenbaoan/codeLab/kcpm/hw3/HUONG_DAN_HOAN_TAT.md)
+- [Video demo đã chuẩn bị](/Users/nguyenbaoan/codeLab/kcpm/hw3/skills/gui-usability-evaluator/video/gui-g2-demo.mp4)
+
+Bạn thực hiện theo thứ tự sau:
+
+1. **Rà soát checklist và phản biện AI.** Đọc 48 mục, đối chiếu ảnh/lỗi rồi ghi nhận xét vào [HUMAN_REVIEW.md](/Users/nguyenbaoan/codeLab/kcpm/hw3/checklists/HUMAN_REVIEW.md). Tự bổ sung những mục bạn thấy AI bỏ sót, kèm lý do và quan sát thật. Đọc, sửa đoạn AI Critique theo trải nghiệm của bạn, giữ 200–300 từ.
+
+2. **Chạy một pilot trước.** Dùng [protocol đã soạn](/Users/nguyenbaoan/codeLab/kcpm/hw3/usability/PROTOCOL.md), thử kịch bản tìm tai nghe trong ngân sách 7 triệu rồi thêm một chiếc vào giỏ. Ghi vấn đề và điều chỉnh vào [PILOT.md](/Users/nguyenbaoan/codeLab/kcpm/hw3/usability/sessions/PILOT.md).
+
+3. **Điều hành 7 phiên riêng với người thật ngoài lớp**, dự kiến 15–20 phút/người. Xin đồng ý ghi hình/ghi âm, đọc mục tiêu, yêu cầu nói ra suy nghĩ và quan sát trung lập. Không báo trước lỗi hoặc hướng dẫn cách bấm. Điền các mẫu P1–P7; ghi họ tên và liên hệ đã che 4 số giữa vào bảng người tham gia.
+
+4. **Thu phản hồi sau mỗi phiên.** Mỗi người trả lời đủ 10 câu SUS, điểm nguyên 1–5, rồi trả lời câu hỏi về độ rõ ràng, khôi phục sau lỗi, tốc độ và độ tin cậy. Nhập điểm vào CSV hoặc sheet SUS của Excel; mình sẽ tính và phân tích.
+
+5. **Chốt quyền chia sẻ và tự chấm.** Xem video demo; chọn cho mình đăng giúp hoặc tự tải lên YouTube ở chế độ Unlisted theo [hướng dẫn YouTube](https://support.google.com/youtube/answer/157177). Chốt quyền truy cập GitHub cho TA và gửi bốn điểm tự đánh giá theo thang **30/40/20/10**.
+
+Sau đó gửi lại dữ liệu theo mẫu ở **bước 7 trong hướng dẫn**. Mình sẽ tổng hợp usability, bổ sung kiểm thử các mục bạn thêm, cập nhật báo cáo/Excel và đóng ZIP cuối đúng điểm tự chấm.
+
+**Chưa nộp Moodle.** Cần hoàn tất dữ liệu người thật và xác nhận của bạn trước hạn **13:00 ngày 16/11/2026**.
+
+## 34. user - 2026-11-11T23:48:26+07:00
+
+<send_user_message_question_reply>
+[{"questionItemId":"[\"request_user_input_async\",\"call_2ccbe96237804f8b843b690aef7ddb07\",0]","question":"Video demo thật đã ghi xong (1 phút 52 giây), có email sinh viên, họ tên và MSSV trên phụ đề. Bạn có cho phép mình đăng video này lên YouTube ở chế độ Unlisted bằng tài khoản bạn chọn không? Người có link sẽ xem được video; có thể cần bạn đăng nhập/xác thực trên giao diện.","answer":"video tôi tự quay"},{"questionItemId":"[\"request_user_input_async\",\"call_2ccbe96237804f8b843b690aef7ddb07\",1]","question":"Repo bài làm hiện private nên TA chưa chắc mở được GitHub Issues. Bạn muốn giữ private và cấp quyền cho TA, hay công khai repo sau khi rà dữ liệu? Repo có báo cáo, ảnh mang thông tin sinh viên và log AI.","answer":"Cho phép công khai repo bài làm"}]
+</send_user_message_question_reply>
+
+
+## 35. assistant - 2026-11-11T23:48:31+07:00
+
+Mình sẽ giữ video hiện có làm tài liệu tham khảo; video bạn tự quay sẽ dùng cho bài nộp. Mình sẽ rà dữ liệu trong repo trước khi chuyển sang public, rồi cập nhật báo cáo và ZIP.
+
+
+## 36. assistant - 2026-11-11T23:52:00+07:00
+
+Repo đã chuyển sang **public**. Mình đã kiểm tra không cần đăng nhập vẫn truy cập được repo và ảnh bằng chứng. Hướng dẫn cũng đã cập nhật theo lựa chọn của bạn: bạn tự quay video nộp bài, còn MP4 do mình ghi chỉ giữ để tham khảo.
+

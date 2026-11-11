@@ -1,6 +1,8 @@
 # AI Audit Report - HW03 G2
 
-Sinh viên: Nguyễn Bảo An - 23120207. Trạng thái: bản ghi việc đã thực hiện, chờ sinh viên kiểm tra và bổ sung lịch sử AI trước phiên hiện tại.
+Sinh viên: Nguyễn Bảo An - 23120207. Trạng thái: bản ghi việc đã thực hiện, chờ sinh viên rà soát và xác nhận.
+
+Sinh viên đã xác nhận chọn tự quay video dùng cho bài nộp và cho phép public repo `NgBaoAnn/hw03-gui-usability`. Video Codex đã ghi chỉ giữ làm tham khảo, không được đăng thay hoặc gán thành video của sinh viên. Repo đã chuyển public và kiểm tra quyền truy cập không đăng nhập; không có dữ liệu người tham gia thực tế trong repo tại thời điểm chuyển.
 
 ## Khai báo
 
@@ -25,8 +27,8 @@ Công cụ AI: OpenAI Codex desktop, agent dựa trên GPT-6 theo thông tin phi
 | Báo cáo bug | bug-reports/BUG_REPORTS.md và B01–B23.md | Gộp 88 Failed trên ba browser thành 23 nhóm; heuristic được ghi rõ; Issue URL trong issues.json |
 | Chuẩn bị usability | usability/PROTOCOL.md, SUS_QUESTIONNAIRE.md, CSV, sessions/ | Mẫu trống; 0 phiên, 0 người; không có dữ liệu tự tạo trong báo cáo |
 | Tính SUS | scripts/calculate_sus.py; sheet SUS | Self-check 0/50/100, từ chối thiếu/sai thang; dữ liệu thử đã xóa trước export |
-| Xây skill | skills/gui-usability-evaluator/SKILL.md | Kiểm tra cấu trúc skill thành công; đã có demo MP4, chờ URL YouTube |
-| Ghi demo theo skill | skills/gui-usability-evaluator/video/gui-g2-demo.mp4; video/recording-log.json | 112,4 giây browser thật, có phụ đề; các quan sát được assert trong quá trình ghi; chờ xem lại và YouTube URL |
+| Xây skill | skills/gui-usability-evaluator/SKILL.md | Kiểm tra cấu trúc skill thành công; MP4 Codex chỉ tham khảo, chờ video sinh viên tự quay và URL |
+| Ghi demo tham khảo theo skill | skills/gui-usability-evaluator/video/gui-g2-demo.mp4; video/recording-log.json | 112,4 giây browser thật do Codex ghi; sinh viên chọn tự quay video nộp riêng, chưa có URL |
 | Khôi phục audit lập kế hoạch | reports/AI_AUDIT_RECOVERED.md; reports/legacy/ | 14 lời nhắn thật ngày 03/11 của OpenCode gắn đúng thư mục; ba đầu ra kế hoạch nguyên gốc kèm hash |
 | Đóng gói | scripts/validate_submission.py và package_draft.py | Bản nháp có ghi rõ thiếu sót; chưa nộp Moodle |
 

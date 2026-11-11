@@ -64,19 +64,27 @@ Hỏi và ghi câu trả lời thực tế cho cả bốn chủ đề:
 
 Codex sẽ tính SUS từng người/trung bình, tổng hợp thời gian và tỉ lệ hoàn thành từ ghi chú, nhóm pain point, xếp severity và liên kết bug. Bạn không cần tự tính điểm hay viết lại toàn bộ báo cáo. Không phải người tham gia nào cũng cần cho điểm thấp hoặc phát hiện lỗi mới.
 
-## 5. Xem video demo đã chuẩn bị và đưa lên YouTube
+## 5. Tự quay video demo và đưa lên YouTube
 
-File `skills/gui-usability-evaluator/video/gui-g2-demo.mp4` là video browser thật do Codex ghi để trình diễn quy trình theo skill; có phụ đề, không có âm thanh. Nó thể hiện đọc skill, kiểm tra Home, tìm tai nghe, xem chi tiết, phát hiện lỗi click đầu, thử lại, kiểm chứng giỏ và liên kết báo cáo B18. Xem lại trước khi dùng làm minh chứng về cách bạn sử dụng skill. Bạn có thể bổ sung lời giải thích của mình hoặc tự quay lại nếu muốn.
+Bạn đã chọn tự quay video dùng cho bài nộp. File `skills/gui-usability-evaluator/video/gui-g2-demo.mp4` chỉ là tài liệu tham khảo do Codex ghi; không được gán thành video bạn tự quay. Dùng kịch bản ở `skills/gui-usability-evaluator/DEMO.md` để chuẩn bị.
 
-Để có URL theo yêu cầu đề: mở [YouTube Studio](https://studio.youtube.com/), dùng tài khoản của bạn, chọn Create → Upload videos, chọn MP4, điền tiêu đề/mô tả đúng nội dung video, hoàn tất các câu hỏi của YouTube, chọn **Unlisted** và lưu. Mở link bằng cửa sổ ẩn danh để kiểm tra người có link xem được. Gửi URL cho Codex để gắn vào README/báo cáo. Video này không thay cho bằng chứng các phiên usability. [Hướng dẫn tải video](https://support.google.com/youtube/answer/57407?co=GENIE.Platform%3DDesktop&hl=en), [quyền xem Unlisted](https://support.google.com/youtube/answer/157177).
+Có thể quay khoảng 3–5 phút theo nhịp sau (đây là thời lượng gợi ý, đề yêu cầu demo trọn màn hình/luồng):
 
-Việc tải lên cần quyền truy cập tài khoản YouTube của bạn. Nếu muốn Codex thao tác đăng giúp, cung cấp quyền qua giao diện đăng nhập; không gửi mật khẩu trong chat. Khi chưa có URL thật, báo cáo vẫn ghi thiếu link demo.
+1. 0:00–0:30: giới thiệu họ tên/MSSV, phạm vi G2 và mở file skill.
+2. 0:30–1:00: cho agent đọc skill và đặc tả. Prompt gợi ý: “Dùng skill tại skills/gui-usability-evaluator/SKILL.md để kiểm thử luồng tìm tai nghe, xem chi tiết và thêm giỏ trên EShop localhost. Đối chiếu tiêu chí, ghi quan sát và bằng chứng thật.” Đây là mẫu để bạn dùng khi quay, không phải prompt đã diễn ra trong lịch sử cũ.
+3. 1:00–3:00: ghi agent thực thi luồng thật từ đầu đến cuối; cho thấy tìm kiếm, mở chi tiết, thêm một lần và kiểm tra giỏ, sau đó thao tác thử lại theo bug đã ghi. Giải thích đúng quan sát bạn thấy trên video.
+4. 3:00–4:00: mở kết quả checklist, ảnh G40, báo cáo B18 và Issue #18 để cho thấy cách truy vết bằng chứng.
+5. Phần cuối: nêu ngắn cách tái sử dụng skill cho màn hình khác và một điểm bạn đã phản biện/sửa. Dừng ghi, mở lại video để kiểm tra chữ và âm thanh nếu có.
+
+Để có URL theo yêu cầu đề: mở [YouTube Studio](https://studio.youtube.com/), dùng tài khoản của bạn, chọn Create → Upload videos, chọn bản video bạn tự quay, điền tiêu đề/mô tả đúng nội dung, hoàn tất các câu hỏi của YouTube, chọn **Unlisted** và lưu. Mở link bằng cửa sổ ẩn danh để kiểm tra người có link xem được. Gửi URL cho Codex để gắn vào README/báo cáo. Video này không thay cho bằng chứng các phiên usability. [Hướng dẫn tải video](https://support.google.com/youtube/answer/57407?co=GENIE.Platform%3DDesktop&hl=en), [quyền xem Unlisted](https://support.google.com/youtube/answer/157177).
+
+Theo lựa chọn hiện tại, Codex không đăng video tham khảo lên YouTube. Khi chưa có video/URL thật của bạn, báo cáo vẫn ghi thiếu phần này.
 
 ## 6. Xác nhận audit, quyền xem GitHub và tự chấm
 
 Đã khôi phục 14 lời nhắn ngày 03/11 và ba đầu ra kế hoạch nguyên gốc từ OpenCode đúng dự án, lưu ở `reports/AI_AUDIT_RECOVERED.md` và `reports/legacy/`. Bạn chỉ cần kiểm tra và bổ sung nếu còn dùng AI/công cụ/chat khác cho HW03 ngoài những bản đã khôi phục và chat Codex hiện tại.
 
-Repo [NgBaoAnn/hw03-gui-usability](https://github.com/NgBaoAnn/hw03-gui-usability) hiện private. Nếu người chấm cần truy cập GitHub Issues, chọn giữ private và mời đúng tài khoản GitHub của TA, hoặc cho phép công khai sau khi rà dữ liệu. Chỉ gửi Codex quyết định/quyền cần thiết; không tự công khai danh sách hay liên hệ người tham gia. Các bug và ảnh gốc đã có trong ZIP.
+Repo [NgBaoAnn/hw03-gui-usability](https://github.com/NgBaoAnn/hw03-gui-usability) đã public theo yêu cầu của bạn; người chấm có thể mở Issues và ảnh. Không đưa danh sách liên hệ gốc của người tham gia vào repo public. Các bug và ảnh gốc cũng có trong ZIP.
 
 Tự chấm khi đã đọc và hiểu bài theo bốn khoản: Task 1 tối đa 30, Task 2 tối đa 40, Task 3 tối đa 20, skill/demo tối đa 10. Gửi bốn điểm và lý do ngắn; tổng là điểm ba chữ số dùng đặt tên ZIP. Codex sẽ kiểm tra tổng và đồng bộ bảng tự chấm, không ký xác nhận thay bạn.
 
@@ -95,7 +103,7 @@ Video/ghi chú gốc ở: [đường dẫn trên máy].
 YouTube demo: [URL thật].
 AI Critique đã sửa tại: reports/AI_CRITIQUE.md.
 Tôi đã kiểm tra audit cũ; [không có thêm / còn chat ở ...].
-Quyền GitHub cho người chấm: [phương án/tài khoản TA].
+Quyền GitHub cho người chấm: repo đã public.
 Tự chấm: Task1=.../30; Task2=.../40; Task3=.../20; Skill=.../10.
 ```
 

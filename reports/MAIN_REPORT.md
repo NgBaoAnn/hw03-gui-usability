@@ -40,7 +40,7 @@ Khác biệt giữa các môi trường: G09: chrome Passed, firefox Failed, saf
 
 ## 5. Agent skill, AI và Git
 
-Skill trong `skills/gui-usability-evaluator/SKILL.md` hỗ trợ chọn phạm vi, thiết kế, thực thi có chứng cứ, chuẩn bị nghiên cứu và tính SUS thật. Đã kiểm tra frontmatter và self-check của script. Video `skills/gui-usability-evaluator/video/gui-g2-demo.mp4` dài 112,4 giây được Codex ghi từ browser Chrome thật, có phụ đề và không có âm thanh. Video cho thấy nội dung skill đã đọc, quan sát Home, tìm tai nghe, mở chi tiết, tái hiện lỗi click đầu, thử workaround, kiểm chứng giỏ và liên kết báo cáo B18. Log ghi hình có timestamp và hash skill. Chưa có YouTube URL, nên chưa tuyên bố hoàn tất tiêu chí công bố demo.
+Skill trong `skills/gui-usability-evaluator/SKILL.md` hỗ trợ chọn phạm vi, thiết kế, thực thi có chứng cứ, chuẩn bị nghiên cứu và tính SUS thật. Đã kiểm tra frontmatter và self-check của script. Video `skills/gui-usability-evaluator/video/gui-g2-demo.mp4` dài 112,4 giây là tài liệu tham khảo do Codex ghi từ Chrome thật, có phụ đề, không có âm thanh và có log timestamp/hash skill. Sinh viên đã chọn tự quay video dùng cho bài nộp; hiện chưa có video hoặc YouTube URL của sinh viên. Không gán video Codex thành bản quay của sinh viên hoặc tính hoàn tất tiêu chí demo.
 
 `reports/AI_AUDIT_REPORT.md` và bản transcript ghi lại AI dùng trong chat hiện tại. Đã khôi phục 14 lời nhắn lập kế hoạch ngày 03/11 từ session OpenCode đúng thư mục HW03 vào `reports/AI_AUDIT_RECOVERED.md`, kèm ba đầu ra nguyên gốc ở `reports/legacy/`. Timestamp/model được lấy đúng metadata cũ; không tự tạo prompt. Sinh viên cần bổ sung nếu còn tương tác khác ngoài các nguồn này. `AI_CRITIQUE.md` vẫn là bản AI soạn, chờ sinh viên sửa theo trải nghiệm thật và xác nhận.
 
@@ -50,17 +50,16 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Không tạo c
 
 - Sinh viên rà soát kết quả và tự bổ sung checklist; duyệt critique/audit, bổ sung nếu còn chat khác ngoài bản đã khôi phục.
 - Một pilot và bảy phiên thật ngoài lớp, danh sách liên hệ đã che, ghi chú/SUS/bằng chứng; tính và tổng hợp kết quả.
-- Xem video demo MP4 đã ghi và cung cấp YouTube URL để hoàn tất tiêu chí demo.
-- Xác nhận người chấm truy cập được GitHub Issues của repo đang private.
+- Sinh viên tự quay demo dùng skill từ đầu đến cuối và cung cấp YouTube URL.
 - Sinh viên tự chấm theo rubric 30/40/20/10, xác nhận bài cuối, rồi đóng gói đúng tên và xác nhận Moodle “Em làm một mình”.
 
 ## 7. Tham chiếu
 
-Đề và chính sách đi kèm trong thư mục `requirements/` của archive. Nguồn SUS: https://hell.meiert.org/core/pdf/sus.pdf. Tài liệu phân biệt browser/engine: https://playwright.dev/docs/browsers. GitHub homework: https://github.com/NgBaoAnn/hw03-gui-usability (hiện private; người chấm cần quyền truy cập nếu dùng link).
+Đề và chính sách đi kèm trong thư mục `requirements/` của archive. Nguồn SUS: https://hell.meiert.org/core/pdf/sus.pdf. Tài liệu phân biệt browser/engine: https://playwright.dev/docs/browsers. GitHub homework: https://github.com/NgBaoAnn/hw03-gui-usability (đã public theo xác nhận của sinh viên, người chấm truy cập được các Issues và ảnh).
 
 ## 8. Test summary
 
-Cập nhật: 2026-11-11T23:22:23+07:00.
+Cập nhật: 2026-11-11T23:52:10+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|
@@ -79,6 +78,6 @@ Cập nhật: 2026-11-11T23:22:23+07:00.
 | Pilot / phiên chính thức có bằng chứng | 0 / 0 |
 | Người tham gia thật | 0/7 |
 | SUS | Chưa có dữ liệu để tính |
-| Video demo skill | Đã có MP4 thật 112,4 giây, có phụ đề; chờ sinh viên xem và URL YouTube |
+| Video demo skill | MP4 do Codex ghi được giữ tham khảo; chờ video sinh viên tự quay và URL YouTube |
 
 Kết quả là thực thi tự động bởi Codex, chưa phải xác nhận của sinh viên. Không dùng số bug hay số lượt tự động để suy ra mức hài lòng, tần suất lỗi ở người dùng, hoặc SUS.
