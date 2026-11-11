@@ -36,6 +36,8 @@ Sau khi có dữ liệu thật, phân tích từng người, nhóm pain point, t
 
 Khác biệt giữa các môi trường: G09: chrome Passed, firefox Failed, safari Passed. G09 Firefox tràn ngang 8 px ở viewport 390 px. Safari dùng Option-Tab để điều hướng tất cả phần tử theo thiết lập mặc định. Mọi ảnh Failed có email sinh viên, MSSV, họ tên, môi trường và localhost URL ở phần chú thích, thêm sau phép đo; ảnh đặc tính DOM phải đọc cùng JSON.
 
+Đã bổ sung ba ảnh tại `evidence/identity/` cho Chrome, Firefox và Safari thật, hiển thị họ tên, MSSV và email ngay trong form đăng ký SUT chưa gửi. Đây là minh chứng định danh cho §11, không tạo tài khoản hoặc cộng thêm màn hình vào số liệu thực thi G2. Xem `cross-platform/IDENTITY.md`.
+
 ## 5. Agent skill, AI và Git
 
 Skill trong `skills/gui-usability-evaluator/SKILL.md` hỗ trợ chọn phạm vi, thiết kế, thực thi có chứng cứ, chuẩn bị nghiên cứu và tính SUS thật. Đã kiểm tra frontmatter và các self-check của script. `DEMO.md` là kịch bản video, chưa phải video hoặc YouTube link. Chưa tuyên bố hoàn thành tiêu chí demo.
@@ -57,7 +59,7 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Không tạo c
 
 ## 8. Test summary
 
-Cập nhật: 2026-11-11T23:00:24+07:00.
+Cập nhật: 2026-11-11T23:05:27+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|

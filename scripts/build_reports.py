@@ -120,6 +120,7 @@ GitHub Issue: {issue_url}
         matrix+=['','## Đối chiếu với kiểm tra Safari thủ công trước đó','',f'{native["environment"]}. Trước lượt WebDriver, đã quan sát {len(native["observations"])} mục qua native UI/CUA trong iframe cùng origin. Giữ nguyên bằng chứng lịch sử này để đối chiếu, không cộng lặp vào 144 lượt của ba browser.','', '| ID | Trạng thái | Quan sát | Ảnh gốc |','|---|---|---|---|']
         for r in native['observations']:
             matrix.append('| '+' | '.join(map(cell,[r['id'],r['status'],r['notes'],f'[ảnh](../evidence/gui/safari/{r["evidence"]})']))+' |')
+    matrix+=['','## Định danh trong form SUT','', 'Ngoài overlay trên ảnh Failed, có ba ảnh form đăng ký EShop thật với họ tên, MSSV và email trong trường nhập: xem `IDENTITY.md` và `evidence/identity/`. Form chưa gửi, không tạo tài khoản. Đây là bằng chứng định danh bổ sung, không cộng vào số lượt GUI hoặc usability.']
     write('cross-platform/MATRIX.md','\n'.join(matrix))
     summary=f'''# Test summary G2
 
@@ -184,6 +185,8 @@ Sau khi có dữ liệu thật, phân tích từng người, nhóm pain point, t
 Đã chạy trọn 48 mục trên Chrome và Firefox Playwright build, cùng Safari 26.2 thật qua Apple WebDriver ở macOS 26.2. Ba trình duyệt có JSON và ảnh gốc riêng. Safari dùng iframe cùng origin có viewport CSS chính xác, không đổi logic SUT. Viewport hẹp chỉ là kiểm tra responsive. Các ca trễ/lỗi API được mô phỏng có kiểm soát và ghi rõ phương pháp. Xem `cross-platform/MATRIX.md`.
 
 Khác biệt giữa các môi trường: {'; '.join(differences)}. G09 Firefox tràn ngang 8 px ở viewport 390 px. Safari dùng Option-Tab để điều hướng tất cả phần tử theo thiết lập mặc định. Mọi ảnh Failed có email sinh viên, MSSV, họ tên, môi trường và localhost URL ở phần chú thích, thêm sau phép đo; ảnh đặc tính DOM phải đọc cùng JSON.
+
+Đã bổ sung ba ảnh tại `evidence/identity/` cho Chrome, Firefox và Safari thật, hiển thị họ tên, MSSV và email ngay trong form đăng ký SUT chưa gửi. Đây là minh chứng định danh cho §11, không tạo tài khoản hoặc cộng thêm màn hình vào số liệu thực thi G2. Xem `cross-platform/IDENTITY.md`.
 
 ## 5. Agent skill, AI và Git
 

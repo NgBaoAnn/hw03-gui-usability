@@ -35,3 +35,7 @@ Safari 26.2, macOS 26.2. Trước lượt WebDriver, đã quan sát 9 mục qua 
 | G17 | Passed | Number field defaults to 1 | [ảnh](../evidence/gui/safari/detail-before.png) |
 | G40 | Failed | Clicked add-to-cart exactly once then opened cart; cart remains empty | [ảnh](../evidence/gui/safari/cart-after-one-click.png) |
 | G44 | Failed | Empty cart has message and continue link but no illustration | [ảnh](../evidence/gui/safari/cart-after-one-click.png) |
+
+## Định danh trong form SUT
+
+Ngoài overlay trên ảnh Failed, có ba ảnh form đăng ký EShop thật với họ tên, MSSV và email trong trường nhập: xem `IDENTITY.md` và `evidence/identity/`. Form chưa gửi, không tạo tài khoản. Đây là bằng chứng định danh bổ sung, không cộng vào số lượt GUI hoặc usability.

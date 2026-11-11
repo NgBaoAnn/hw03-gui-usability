@@ -17,6 +17,7 @@ pdfmetrics.registerFontFamily('ReportArial',normal='ReportArial',bold='ReportAri
 body=ParagraphStyle('Body',fontName='ReportArial',fontSize=10.2,leading=15,spaceAfter=8,textColor=colors.HexColor('#172033'),splitLongWords=True)
 title=ParagraphStyle('Title',parent=body,fontName='ReportArialBold',fontSize=18,leading=24,spaceAfter=16)
 heading=ParagraphStyle('Heading',parent=body,fontName='ReportArialBold',fontSize=13,leading=18,spaceBefore=12,spaceAfter=8,keepWithNext=True)
+entry_heading=ParagraphStyle('EntryHeading',parent=body,fontName='ReportArialBold',fontSize=10.5,leading=15,spaceBefore=7,spaceAfter=4,keepWithNext=True)
 cellstyle=ParagraphStyle('Cell',parent=body,fontSize=9.1,leading=13,spaceAfter=0,wordWrap='CJK')
 headstyle=ParagraphStyle('HeadCell',parent=cellstyle,fontName='ReportArialBold',textColor=colors.white)
 
@@ -46,7 +47,9 @@ def blocks(markdown):
             table.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),colors.HexColor('#24354B')),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),7),('RIGHTPADDING',(0,0),(-1,-1),7),('TOPPADDING',(0,0),(-1,-1),7),('BOTTOMPADDING',(0,0),(-1,-1),7),('LINEBELOW',(0,0),(-1,0),0.7,colors.HexColor('#94A3B8')),('ROWBACKGROUNDS',(0,1),(-1,-1),[colors.white,colors.HexColor('#F3F6FA')])]))
             flow.extend([table,Spacer(1,10)]);continue
         if line.startswith('# '):flow.append(Paragraph(inline(line[2:]),title));i+=1;continue
-        if line.startswith('## '):flow.append(Paragraph(inline(line[3:]),heading));i+=1;continue
+        if line.startswith('## '):
+            style=entry_heading if re.match(r'## \d+\. (user|assistant) - ',line) else heading
+            flow.append(Paragraph(inline(line[3:]),style));i+=1;continue
         if line.startswith('- '):flow.append(Paragraph('• '+inline(line[2:]),body));i+=1;continue
         para=[line];i+=1
         while i<len(lines) and lines[i].strip() and not lines[i].lstrip().startswith(('#','|','- ')):

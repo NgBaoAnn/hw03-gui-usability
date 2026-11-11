@@ -152,3 +152,8 @@ Safari đã kiểm tra được gần hết checklist. Mình đang xử lý riê
 
 Safari đã hoàn tất **48/48 mục: 19 Passed, 29 Failed, không còn Blocked**. Mình kiểm tra Browser Back trực tiếp trên trang SUT và xác nhận từ khóa bị mất khi quay lại. Kết quả hiện đủ ba trình duyệt thật; mình đang cập nhật Excel, báo cáo, GitHub Issues và ZIP.
 
+
+## 25. assistant - 2026-11-11T23:03:12+07:00
+
+Đã cập nhật đủ ba trình duyệt và bổ sung ảnh Safari vào các GitHub Issues. Mình cũng đã tắt lại quyền điều khiển từ xa về trạng thái ban đầu. Trước khi đóng gói, mình sẽ bổ sung ảnh định danh ngay trong form SUT để làm rõ yêu cầu hiển thị họ tên, MSSV và email trên ảnh.
+

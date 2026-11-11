@@ -15,6 +15,7 @@ def check_files():
     assert {r[1] for r in items}=={'IA-01','IA-02','IA-03','IA-04'}
     expected={r[0] for r in items};failed=set()
     for engine in ['chrome','firefox','safari']:
+        assert (ROOT/f'evidence/identity/{engine}.png').is_file(),f'Missing SUT form identity evidence for {engine}'
         run=json.loads((ROOT/f'evidence/runs/{engine}.json').read_text())
         assert {r['id'] for r in run['results']}==expected
         assert len(run['results'])==len(expected)

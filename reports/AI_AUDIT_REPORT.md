@@ -20,6 +20,7 @@ Công cụ AI: OpenAI Codex desktop, agent dựa trên GPT-6 theo thông tin phi
 | Thiết kế checklist | checklists/items.json; gui_checklist_g2.md/.csv/.xlsx | 48 ID duy nhất, 12 mục/IA; chưa có mục sinh viên tự bổ sung |
 | Kiểm thử GUI | scripts/run_gui.cjs; scripts/run_safari.py; evidence/runs/*.json | 48 mục trên mỗi browser: Chrome/Firefox bằng Playwright, Safari thật bằng Apple WebDriver; raw results, version, timestamp và SUT commit |
 | Chụp ảnh | evidence/gui/ | Browser screenshot thật, có chú thích định danh sau phép đo; không dùng ImageGen |
+| Định danh trong form thật | evidence/identity/; cross-platform/IDENTITY.md | Điền tên/MSSV/email vào form đăng ký SUT trên ba browser, để trống mật khẩu, không gửi form và không tạo tài khoản |
 | Kiểm tra Safari | evidence/runs/safari.json; evidence/gui/safari/ | Safari 26.2 thật: 19 Passed, 29 Failed, 0 Blocked; giữ thêm 9 quan sát CUA cũ để đối chiếu, không cộng lặp |
 | Báo cáo bug | bug-reports/BUG_REPORTS.md và B01–B23.md | Gộp 88 Failed trên ba browser thành 23 nhóm; heuristic được ghi rõ; Issue URL trong issues.json |
 | Chuẩn bị usability | usability/PROTOCOL.md, SUS_QUESTIONNAIRE.md, CSV, sessions/ | Mẫu trống; 0 phiên, 0 người; không có dữ liệu tự tạo trong báo cáo |
@@ -34,6 +35,8 @@ Kế hoạch cũ giả định bộ lọc, sắp xếp, đánh giá sản phẩm
 Bộ chạy thử ban đầu chưa chờ React chuyển trang xong, dẫn đến một số kết quả sai. Codex thêm điều kiện chờ route và heading giỏ, chạy lại cả Chrome/Firefox. Thống kê cuối lấy từ JSON cuối, không cộng dồn lượt thử. Không sửa logic SUT để che lỗi.
 
 Sau khi sinh viên cho phép Safari WebDriver, sinh viên tự xác thực Touch ID/mật khẩu máy để bật quyền. Không cung cấp mật khẩu cho AI. Safari được chạy với Apple safaridriver. Iframe cùng origin đặt viewport CSS chính xác; riêng Browser Back dùng SUT ở top-level và lệnh Back chuẩn vì lịch sử của iframe không tương đương cửa sổ chính. Mạng chậm/HTTP 503 dùng XHR redirect tới fixture localhost có ghi rõ, không sửa logic SUT.
+
+Sau khi hoàn tất, đã tắt lại Allow remote automation và Show features for web developers về trạng thái ban đầu. Không thay đổi thiết lập bàn phím hoặc các quyền JavaScript/cross-origin khác.
 
 SafariDriver đôi khi blur input sau khi nhập mà chưa phát click. Codex ghi số DOM click, chỉ lặp lệnh WebDriver nếu chưa có click được giao, rồi chạy lại các mục bị ảnh hưởng. Lỗi nút bỏ qua click đầu vẫn được giữ vì click thực đã tới ứng dụng. Những mục từng Blocked không được coi là bug; JSON cuối có đủ 48 kết quả Passed/Failed. Kết quả tổng: 144 lượt, 56 Passed, 88 Failed, 23 nhóm bug. Sinh viên vẫn chưa rà soát hoặc thu dữ liệu usability thật.
 
