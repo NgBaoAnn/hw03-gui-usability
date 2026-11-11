@@ -1,0 +1,6 @@
+.DS_Store
+.work/
+tmp/
+node_modules/
+output/
+usability/private/
