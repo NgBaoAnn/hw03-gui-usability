@@ -1,0 +1,321 @@
+[
+  {
+    "id": "B01",
+    "title": "Home có hai h1 thay vì một",
+    "severity": "Minor",
+    "checks": [
+      "G01"
+    ],
+    "file": "bug-reports/B01.md",
+    "screenshots": [
+      "evidence/gui/chrome/G01.png",
+      "evidence/gui/firefox/G01.png"
+    ]
+  },
+  {
+    "id": "B02",
+    "title": "Giỏ hàng không có h1",
+    "severity": "Minor",
+    "checks": [
+      "G03"
+    ],
+    "file": "bug-reports/B02.md",
+    "screenshots": [
+      "evidence/gui/chrome/G03.png",
+      "evidence/gui/firefox/G03.png"
+    ]
+  },
+  {
+    "id": "B03",
+    "title": "Thẻ sản phẩm dùng VND thay cho ký hiệu ₫",
+    "severity": "Minor",
+    "checks": [
+      "G04"
+    ],
+    "file": "bug-reports/B03.md",
+    "screenshots": [
+      "evidence/gui/chrome/G04.png",
+      "evidence/gui/firefox/G04.png"
+    ]
+  },
+  {
+    "id": "B04",
+    "title": "Ảnh vuông bị cắt trong khung ảnh danh sách",
+    "severity": "Minor",
+    "checks": [
+      "G07"
+    ],
+    "file": "bug-reports/B04.md",
+    "screenshots": [
+      "evidence/gui/chrome/G07.png",
+      "evidence/gui/firefox/G07.png"
+    ]
+  },
+  {
+    "id": "B05",
+    "title": "Nút thêm giỏ ở chi tiết dùng xanh lá thay vì xanh dương",
+    "severity": "Minor",
+    "checks": [
+      "G11"
+    ],
+    "file": "bug-reports/B05.md",
+    "screenshots": [
+      "evidence/gui/chrome/G11.png",
+      "evidence/gui/firefox/G11.png"
+    ]
+  },
+  {
+    "id": "B06",
+    "title": "Tất cả ảnh sản phẩm danh sách có alt rỗng",
+    "severity": "Major",
+    "checks": [
+      "G12"
+    ],
+    "file": "bug-reports/B06.md",
+    "screenshots": [
+      "evidence/gui/chrome/G12.png",
+      "evidence/gui/firefox/G12.png"
+    ]
+  },
+  {
+    "id": "B07",
+    "title": "Ô tìm kiếm và số lượng thiếu nhãn truy cập được liên kết",
+    "severity": "Major",
+    "checks": [
+      "G13",
+      "G23"
+    ],
+    "file": "bug-reports/B07.md",
+    "screenshots": [
+      "evidence/gui/chrome/G13.png",
+      "evidence/gui/chrome/G23.png",
+      "evidence/gui/firefox/G13.png",
+      "evidence/gui/firefox/G23.png"
+    ]
+  },
+  {
+    "id": "B08",
+    "title": "Ký tự & bị coi là dấu tách tham số trong từ khóa",
+    "severity": "Major",
+    "checks": [
+      "G16"
+    ],
+    "file": "bug-reports/B08.md",
+    "screenshots": [
+      "evidence/gui/chrome/G16.png",
+      "evidence/gui/firefox/G16.png"
+    ]
+  },
+  {
+    "id": "B09",
+    "title": "Số lượng không hợp lệ đi vào giỏ và sinh tổng âm hoặc NaN",
+    "severity": "Major",
+    "checks": [
+      "G19",
+      "G20",
+      "G21",
+      "G22"
+    ],
+    "file": "bug-reports/B09.md",
+    "screenshots": [
+      "evidence/gui/chrome/G19.png",
+      "evidence/gui/chrome/G20.png",
+      "evidence/gui/chrome/G21.png",
+      "evidence/gui/chrome/G22.png",
+      "evidence/gui/firefox/G19.png",
+      "evidence/gui/firefox/G20.png",
+      "evidence/gui/firefox/G21.png",
+      "evidence/gui/firefox/G22.png"
+    ]
+  },
+  {
+    "id": "B10",
+    "title": "Từ khóa tìm kiếm bị render thành HTML",
+    "severity": "Major",
+    "checks": [
+      "G24"
+    ],
+    "file": "bug-reports/B10.md",
+    "screenshots": [
+      "evidence/gui/chrome/G24.png",
+      "evidence/gui/firefox/G24.png"
+    ]
+  },
+  {
+    "id": "B11",
+    "title": "Browser Back làm mất từ khóa và tập kết quả",
+    "severity": "Minor",
+    "checks": [
+      "G29"
+    ],
+    "file": "bug-reports/B11.md",
+    "screenshots": [
+      "evidence/gui/chrome/G29.png",
+      "evidence/gui/firefox/G29.png"
+    ]
+  },
+  {
+    "id": "B12",
+    "title": "Trang chi tiết và giỏ thiếu breadcrumb",
+    "severity": "Minor",
+    "checks": [
+      "G30",
+      "G31"
+    ],
+    "file": "bug-reports/B12.md",
+    "screenshots": [
+      "evidence/gui/chrome/G30.png",
+      "evidence/gui/chrome/G31.png",
+      "evidence/gui/firefox/G30.png",
+      "evidence/gui/firefox/G31.png"
+    ]
+  },
+  {
+    "id": "B13",
+    "title": "Navbar không highlight Giỏ hàng đang mở",
+    "severity": "Minor",
+    "checks": [
+      "G32"
+    ],
+    "file": "bug-reports/B13.md",
+    "screenshots": [
+      "evidence/gui/chrome/G32.png",
+      "evidence/gui/firefox/G32.png"
+    ]
+  },
+  {
+    "id": "B14",
+    "title": "Thêm cùng sản phẩm hai lần tạo hai dòng giỏ",
+    "severity": "Major",
+    "checks": [
+      "G36"
+    ],
+    "file": "bug-reports/B14.md",
+    "screenshots": [
+      "evidence/gui/chrome/G36.png",
+      "evidence/gui/firefox/G36.png"
+    ]
+  },
+  {
+    "id": "B15",
+    "title": "Danh sách thiếu loading khi đang chờ API",
+    "severity": "Minor",
+    "checks": [
+      "G37"
+    ],
+    "file": "bug-reports/B15.md",
+    "screenshots": [
+      "evidence/gui/chrome/G37.png",
+      "evidence/gui/firefox/G37.png"
+    ]
+  },
+  {
+    "id": "B16",
+    "title": "Không có kết quả tìm kiếm nhưng thiếu empty-state message",
+    "severity": "Minor",
+    "checks": [
+      "G38"
+    ],
+    "file": "bug-reports/B16.md",
+    "screenshots": [
+      "evidence/gui/chrome/G38.png",
+      "evidence/gui/firefox/G38.png"
+    ]
+  },
+  {
+    "id": "B17",
+    "title": "Thêm từ thẻ không có phản hồi và giỏ không có badge",
+    "severity": "Major",
+    "checks": [
+      "G39",
+      "G42"
+    ],
+    "file": "bug-reports/B17.md",
+    "screenshots": [
+      "evidence/gui/chrome/G39.png",
+      "evidence/gui/chrome/G42.png",
+      "evidence/gui/firefox/G39.png",
+      "evidence/gui/firefox/G42.png"
+    ]
+  },
+  {
+    "id": "B18",
+    "title": "Lần bấm Thêm vào giỏ đầu tiên ở chi tiết không làm gì",
+    "severity": "Major",
+    "checks": [
+      "G40"
+    ],
+    "file": "bug-reports/B18.md",
+    "screenshots": [
+      "evidence/gui/chrome/G40.png",
+      "evidence/gui/firefox/G40.png"
+    ]
+  },
+  {
+    "id": "B19",
+    "title": "Xóa sản phẩm khỏi giỏ ngay lập tức không có xác nhận",
+    "severity": "Major",
+    "checks": [
+      "G43"
+    ],
+    "file": "bug-reports/B19.md",
+    "screenshots": [
+      "evidence/gui/chrome/G43.png",
+      "evidence/gui/firefox/G43.png"
+    ]
+  },
+  {
+    "id": "B20",
+    "title": "Giỏ trống thiếu hình minh họa hoặc icon",
+    "severity": "Minor",
+    "checks": [
+      "G44"
+    ],
+    "file": "bug-reports/B20.md",
+    "screenshots": [
+      "evidence/gui/chrome/G44.png",
+      "evidence/gui/firefox/G44.png"
+    ]
+  },
+  {
+    "id": "B21",
+    "title": "Giỏ dùng nhãn Tổng tạm tính thay cho Tổng cộng",
+    "severity": "Minor",
+    "checks": [
+      "G45"
+    ],
+    "file": "bug-reports/B21.md",
+    "screenshots": [
+      "evidence/gui/chrome/G45.png",
+      "evidence/gui/firefox/G45.png"
+    ]
+  },
+  {
+    "id": "B22",
+    "title": "Lỗi API danh sách/chi tiết không có thông báo khôi phục",
+    "severity": "Major",
+    "checks": [
+      "G47",
+      "G48"
+    ],
+    "file": "bug-reports/B22.md",
+    "screenshots": [
+      "evidence/gui/chrome/G47.png",
+      "evidence/gui/chrome/G48.png",
+      "evidence/gui/firefox/G47.png",
+      "evidence/gui/firefox/G48.png"
+    ]
+  },
+  {
+    "id": "B23",
+    "title": "Firefox tràn ngang 8px ở viewport 390px",
+    "severity": "Minor",
+    "checks": [
+      "G09"
+    ],
+    "file": "bug-reports/B23.md",
+    "screenshots": [
+      "evidence/gui/firefox/G09.png"
+    ]
+  }
+]
