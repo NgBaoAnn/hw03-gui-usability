@@ -18,6 +18,8 @@ def cell(value):
 
 
 def main():
+    demo=ROOT/'skills/gui-usability-evaluator/video/gui-g2-demo.mp4'
+    assert demo.is_file(),'Record and verify the actual demo before building these reports'
     runs = {e: json.loads((ROOT / f'evidence/runs/{e}.json').read_text()) for e in ['chrome', 'firefox', 'safari']}
     assert runs['safari']['fullChecklist'], 'Safari must finish all criteria before publishing a full-platform report'
     chrome = runs['chrome']['results']
@@ -143,7 +145,7 @@ Cập nhật: {now}.
 | Pilot / phiên chính thức có bằng chứng | 0 / 0 |
 | Người tham gia thật | 0/7 |
 | SUS | Chưa có dữ liệu để tính |
-| Video demo skill | Chưa quay, chưa có YouTube URL |
+| Video demo skill | Đã có MP4 thật 112,4 giây, có phụ đề; chờ sinh viên xem và URL YouTube |
 
 Kết quả là thực thi tự động bởi Codex, chưa phải xác nhận của sinh viên. Không dùng số bug hay số lượt tự động để suy ra mức hài lòng, tần suất lỗi ở người dùng, hoặc SUS.
 '''
@@ -190,17 +192,18 @@ Khác biệt giữa các môi trường: {'; '.join(differences)}. G09 Firefox t
 
 ## 5. Agent skill, AI và Git
 
-Skill trong `skills/gui-usability-evaluator/SKILL.md` hỗ trợ chọn phạm vi, thiết kế, thực thi có chứng cứ, chuẩn bị nghiên cứu và tính SUS thật. Đã kiểm tra frontmatter và các self-check của script. `DEMO.md` là kịch bản video, chưa phải video hoặc YouTube link. Chưa tuyên bố hoàn thành tiêu chí demo.
+Skill trong `skills/gui-usability-evaluator/SKILL.md` hỗ trợ chọn phạm vi, thiết kế, thực thi có chứng cứ, chuẩn bị nghiên cứu và tính SUS thật. Đã kiểm tra frontmatter và self-check của script. Video `skills/gui-usability-evaluator/video/gui-g2-demo.mp4` dài 112,4 giây được Codex ghi từ browser Chrome thật, có phụ đề và không có âm thanh. Video cho thấy nội dung skill đã đọc, quan sát Home, tìm tai nghe, mở chi tiết, tái hiện lỗi click đầu, thử workaround, kiểm chứng giỏ và liên kết báo cáo B18. Log ghi hình có timestamp và hash skill. Chưa có YouTube URL, nên chưa tuyên bố hoàn tất tiêu chí công bố demo.
 
-`reports/AI_AUDIT_REPORT.md` và bản transcript ghi lại AI dùng trong chat hiện tại; đầu ra chính là các artifact được liên kết. Tương tác trước phiên hiện tại chưa có bản xuất đầy đủ, không gán ngày giờ/prompt giả cho các kế hoạch cũ. `AI_CRITIQUE.md` là bản AI soạn để sinh viên sửa theo trải nghiệm thật, chưa phải lời phản biện được sinh viên xác nhận.
+`reports/AI_AUDIT_REPORT.md` và bản transcript ghi lại AI dùng trong chat hiện tại. Đã khôi phục 14 lời nhắn lập kế hoạch ngày 03/11 từ session OpenCode đúng thư mục HW03 vào `reports/AI_AUDIT_RECOVERED.md`, kèm ba đầu ra nguyên gốc ở `reports/legacy/`. Timestamp/model được lấy đúng metadata cũ; không tự tạo prompt. Sinh viên cần bổ sung nếu còn tương tác khác ngoài các nguồn này. `AI_CRITIQUE.md` vẫn là bản AI soạn, chờ sinh viên sửa theo trải nghiệm thật và xác nhận.
 
 Commit được tạo theo giai đoạn thực sự hoàn thành. Không tạo commit giả cho phiên usability chưa diễn ra. Nhật ký được xuất bằng `git log --graph --all --stat` vào `git_commit_log.txt`.
 
 ## 6. Việc còn thiếu trước khi nộp
 
-- Sinh viên rà soát kết quả và tự bổ sung checklist; duyệt critique, hoàn thiện audit các tương tác cũ.
+- Sinh viên rà soát kết quả và tự bổ sung checklist; duyệt critique/audit, bổ sung nếu còn chat khác ngoài bản đã khôi phục.
 - Một pilot và bảy phiên thật ngoài lớp, danh sách liên hệ đã che, ghi chú/SUS/bằng chứng; tính và tổng hợp kết quả.
-- Quay demo skill end-to-end và cung cấp YouTube link nếu muốn hoàn tất tiêu chí skill.
+- Xem video demo MP4 đã ghi và cung cấp YouTube URL để hoàn tất tiêu chí demo.
+- Xác nhận người chấm truy cập được GitHub Issues của repo đang private.
 - Sinh viên tự chấm theo rubric 30/40/20/10, xác nhận bài cuối, rồi đóng gói đúng tên và xác nhận Moodle “Em làm một mình”.
 
 ## 7. Tham chiếu
@@ -213,7 +216,9 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Không tạo c
 
 Nguyễn Bảo An - 23120207 - bài cá nhân.
 
-**BẢN NHÁP, CHƯA PHẢI BÀI NỘP HOÀN CHỈNH.** Đã chạy đủ 3 trình duyệt. Còn thiếu pilot/7 phiên thật, human review/tự bổ sung, demo YouTube và điểm tự chấm. Không nộp bản này như bài đã hoàn tất.
+**BẢN NHÁP, CHƯA PHẢI BÀI NỘP HOÀN CHỈNH.** Đã chạy đủ 3 trình duyệt, khôi phục audit cũ và ghi video demo MP4 thật. Còn thiếu pilot/7 phiên thật, human review/tự bổ sung, URL YouTube, quyền xem GitHub của người chấm và điểm tự chấm.
+
+Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc cần bạn làm, biểu mẫu tương ứng và dữ liệu gửi lại để Codex chốt hồ sơ.
 
 ## Tài liệu
 
@@ -223,7 +228,8 @@ Nguyễn Bảo An - 23120207 - bài cá nhân.
 - `evidence/runs/`: kết quả máy đọc được; `evidence/gui/`: ảnh gốc.
 - `usability/`: protocol, SUS, CSV và mẫu phiên trống để thu dữ liệu thật.
 - `reports/AI_AUDIT_REPORT.md`, `AI_CRITIQUE.md` và PDF.
-- `skills/gui-usability-evaluator/`: skill và kịch bản demo chưa quay.
+- `skills/gui-usability-evaluator/`: skill, video demo MP4 và log ghi hình thật; chờ YouTube URL.
+- `reports/AI_AUDIT_RECOVERED.md`: prompt/output cũ đã khôi phục, kèm các kế hoạch nguyên gốc.
 - `git_commit_log.txt`: commit thật theo bước đã hoàn tất.
 
 ## Điểm tự đánh giá

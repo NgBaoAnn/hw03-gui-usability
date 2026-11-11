@@ -20,7 +20,7 @@ def main():
             rel=p.relative_to(ROOT)
             if p.is_file() and not any(x in ['private','__pycache__','node_modules'] for x in rel.parts) and not p.name.endswith('.inspect.ndjson'):
                 entries.append((p,str(rel)))
-    for name in ['README.md','git_commit_log.txt','submission_state.json']:
+    for name in ['README.md','HUONG_DAN_HOAN_TAT.md','git_commit_log.txt','submission_state.json']:
         entries.append((ROOT/name,name))
     for name in ['2026.HW03.GUI Usability_En.pdf','2026.HW03.GUI Usability_Vi.md','___2026.Homework.Policies.pdf']:
         entries.append((ROOT/name,'requirements/'+name))

@@ -2,7 +2,9 @@
 
 Nguyễn Bảo An - 23120207 - bài cá nhân.
 
-**BẢN NHÁP, CHƯA PHẢI BÀI NỘP HOÀN CHỈNH.** Đã chạy đủ 3 trình duyệt. Còn thiếu pilot/7 phiên thật, human review/tự bổ sung, demo YouTube và điểm tự chấm. Không nộp bản này như bài đã hoàn tất.
+**BẢN NHÁP, CHƯA PHẢI BÀI NỘP HOÀN CHỈNH.** Đã chạy đủ 3 trình duyệt, khôi phục audit cũ và ghi video demo MP4 thật. Còn thiếu pilot/7 phiên thật, human review/tự bổ sung, URL YouTube, quyền xem GitHub của người chấm và điểm tự chấm.
+
+Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc cần bạn làm, biểu mẫu tương ứng và dữ liệu gửi lại để Codex chốt hồ sơ.
 
 ## Tài liệu
 
@@ -12,7 +14,8 @@ Nguyễn Bảo An - 23120207 - bài cá nhân.
 - `evidence/runs/`: kết quả máy đọc được; `evidence/gui/`: ảnh gốc.
 - `usability/`: protocol, SUS, CSV và mẫu phiên trống để thu dữ liệu thật.
 - `reports/AI_AUDIT_REPORT.md`, `AI_CRITIQUE.md` và PDF.
-- `skills/gui-usability-evaluator/`: skill và kịch bản demo chưa quay.
+- `skills/gui-usability-evaluator/`: skill, video demo MP4 và log ghi hình thật; chờ YouTube URL.
+- `reports/AI_AUDIT_RECOVERED.md`: prompt/output cũ đã khôi phục, kèm các kế hoạch nguyên gốc.
 - `git_commit_log.txt`: commit thật theo bước đã hoàn tất.
 
 ## Điểm tự đánh giá
@@ -29,7 +32,7 @@ Sinh viên chưa tự chấm. Không điền 000 thay cho điểm còn thiếu.
 
 # Test summary G2
 
-Cập nhật: 2026-11-11T23:05:27+07:00.
+Cập nhật: 2026-11-11T23:22:23+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|
@@ -48,7 +51,7 @@ Cập nhật: 2026-11-11T23:05:27+07:00.
 | Pilot / phiên chính thức có bằng chứng | 0 / 0 |
 | Người tham gia thật | 0/7 |
 | SUS | Chưa có dữ liệu để tính |
-| Video demo skill | Chưa quay, chưa có YouTube URL |
+| Video demo skill | Đã có MP4 thật 112,4 giây, có phụ đề; chờ sinh viên xem và URL YouTube |
 
 Kết quả là thực thi tự động bởi Codex, chưa phải xác nhận của sinh viên. Không dùng số bug hay số lượt tự động để suy ra mức hài lòng, tần suất lỗi ở người dùng, hoặc SUS.
 

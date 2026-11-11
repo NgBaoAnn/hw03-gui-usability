@@ -29,7 +29,7 @@ def check_files():
     for bug in bugs:
         assert (ROOT/bug['file']).is_file()
         assert all((ROOT/p).is_file() for p in bug['screenshots'])
-    for p in ['reports/MAIN_REPORT.pdf','reports/AI_AUDIT_REPORT.pdf','reports/AI_CRITIQUE.pdf','checklists/gui_checklist_g2.xlsx','git_commit_log.txt']:
+    for p in ['reports/MAIN_REPORT.pdf','reports/AI_AUDIT_REPORT.pdf','reports/AI_CRITIQUE.pdf','reports/AI_AUDIT_RECOVERED.md','checklists/gui_checklist_g2.xlsx','git_commit_log.txt','HUONG_DAN_HOAN_TAT.md','skills/gui-usability-evaluator/video/gui-g2-demo.mp4','skills/gui-usability-evaluator/video/recording-log.json']:
         assert (ROOT/p).is_file(),f'Missing deliverable {p}'
     self_check()
     words=len((ROOT/'reports/AI_CRITIQUE.md').read_text().split('\n\n',2)[2].split())
@@ -69,6 +69,8 @@ def missing_requirements():
     issues=ROOT/'bug-reports/issues.json'
     if not issues.exists() or len(json.loads(issues.read_text()))!=23:
         missing.append('Chưa có đủ GitHub Issue URLs cho 23 nhóm bug.')
+    if not state.get('github_grader_access_confirmed'):
+        missing.append('Repo GitHub đang private; chưa xác nhận người chấm có quyền xem Issues.')
     return missing
 
 

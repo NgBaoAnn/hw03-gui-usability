@@ -157,3 +157,44 @@ Safari đã hoàn tất **48/48 mục: 19 Passed, 29 Failed, không còn Blocked
 
 Đã cập nhật đủ ba trình duyệt và bổ sung ảnh Safari vào các GitHub Issues. Mình cũng đã tắt lại quyền điều khiển từ xa về trạng thái ban đầu. Trước khi đóng gói, mình sẽ bổ sung ảnh định danh ngay trong form SUT để làm rõ yêu cầu hiển thị họ tên, MSSV và email trên ảnh.
 
+
+## 26. assistant - 2026-11-11T23:06:42+07:00
+
+Đã đối chiếu Excel với JSON gốc: cả **144 kết quả** trên ba trình duyệt đều khớp, và mỗi mục Failed đều có ảnh. Ảnh định danh trong form SUT cũng đã đủ cho Chrome, Firefox và Safari. Mình đang đóng gói lại ZIP; hồ sơ vẫn là bản nháp vì chưa có pilot và 7 phiên usability thật cùng các phần cần bạn xác nhận.
+
+
+## 27. assistant - 2026-11-11T23:07:25+07:00
+
+Đã chạy đủ **48 mục trên Safari: 19 Passed, 29 Failed**. Hiện cả Chrome, Firefox và Safari đều có kết quả đầy đủ, không còn Blocked.
+
+Đã cập nhật báo cáo, Excel, ảnh bằng chứng và [23 GitHub Issues](https://github.com/NgBaoAnn/hw03-gui-usability/issues). Quyền điều khiển Safari đã được tắt lại.
+
+[Tải ZIP mới — 11,1 MB](/Users/nguyenbaoan/codeLab/kcpm/hw3/output/23120207_HW03_AI_GUIUsability_DRAFT.zip)
+
+:codex-file-citation{path="/Users/nguyenbaoan/codeLab/kcpm/hw3/checklists/gui_checklist_g2.xlsx" purpose="output"}
+
+:codex-file-citation{path="/Users/nguyenbaoan/codeLab/kcpm/hw3/reports/MAIN_REPORT.pdf" purpose="output"}
+
+:codex-file-citation{path="/Users/nguyenbaoan/codeLab/kcpm/hw3/reports/AI_AUDIT_REPORT.pdf" purpose="output"}
+
+**Chưa nộp Moodle.** Hồ sơ vẫn là bản nháp vì thiếu pilot và 7 phiên thật, phần bạn tự phản biện, video demo, audit cũ và điểm tự chấm.
+
+## 28. user - 2026-11-11T23:12:35+07:00
+
+Phần nào bạn có thể tự làm thì hoàn thành hết đi, còn những phần bắt buộc tôi làm thì hướng dẫn cụ thể để tôi hoàn tất bài nộp.
+
+
+## 29. assistant - 2026-11-11T23:12:46+07:00
+
+Mình sẽ rà lại hồ sơ, hoàn tất các phần còn có thể tự làm và kiểm tra ZIP. Sau đó mình sẽ viết hướng dẫn cụ thể cho từng phần bạn phải thực hiện, kèm biểu mẫu và cách gửi kết quả lại để chốt bài nộp.
+
+
+## 30. assistant - 2026-11-11T23:15:56+07:00
+
+Mình tìm được lịch sử OpenCode ngày 03/11 gắn đúng thư mục HW03, gồm các prompt và phản hồi tạo ba bản kế hoạch cũ. Mình sẽ khôi phục phần audit này để bạn không phải tìm lại thủ công. Mình cũng sẽ tự ghi video demo thao tác thật trên SUT; phần phiên usability vẫn cần bạn tổ chức với người thật.
+
+
+## 31. assistant - 2026-11-11T23:23:42+07:00
+
+Video demo đã ghi xong, dài **1 phút 52 giây**, có phụ đề và log thao tác thật. Mình đã khôi phục audit cũ và viết hướng dẫn theo từng bước. Hai câu hỏi đang chờ chỉ để chốt quyền chia sẻ: video và repo có thông tin sinh viên, nên mình cần bạn xác nhận trước khi đăng lên YouTube hoặc công khai repo theo quy tắc của công cụ trình duyệt.
+

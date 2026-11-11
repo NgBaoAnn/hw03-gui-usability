@@ -67,7 +67,9 @@ def page_footer(canvas,doc):
 def main():
     for name in ['MAIN_REPORT','AI_AUDIT_REPORT','AI_CRITIQUE']:
         source=(ROOT/f'reports/{name}.md').read_text()
-        if name=='AI_AUDIT_REPORT':source+='\n\n'+(ROOT/'reports/AI_TRANSCRIPT.md').read_text()
+        if name=='AI_AUDIT_REPORT':
+            source+='\n\n'+(ROOT/'reports/AI_TRANSCRIPT.md').read_text()
+            source+='\n\n'+(ROOT/'reports/AI_AUDIT_RECOVERED.md').read_text()
         output=ROOT/f'reports/{name}.pdf'
         doc=SimpleDocTemplate(str(output),pagesize=A4,leftMargin=48,rightMargin=48,topMargin=43,bottomMargin=48,title=f'HW03 G2 - {name}',author='Nguyễn Bảo An',allowSplitting=1)
         doc.build(blocks(source),onFirstPage=page_footer,onLaterPages=page_footer)

@@ -25,7 +25,9 @@ Công cụ AI: OpenAI Codex desktop, agent dựa trên GPT-6 theo thông tin phi
 | Báo cáo bug | bug-reports/BUG_REPORTS.md và B01–B23.md | Gộp 88 Failed trên ba browser thành 23 nhóm; heuristic được ghi rõ; Issue URL trong issues.json |
 | Chuẩn bị usability | usability/PROTOCOL.md, SUS_QUESTIONNAIRE.md, CSV, sessions/ | Mẫu trống; 0 phiên, 0 người; không có dữ liệu tự tạo trong báo cáo |
 | Tính SUS | scripts/calculate_sus.py; sheet SUS | Self-check 0/50/100, từ chối thiếu/sai thang; dữ liệu thử đã xóa trước export |
-| Xây skill | skills/gui-usability-evaluator/SKILL.md | Kiểm tra cấu trúc skill thành công; demo chưa quay |
+| Xây skill | skills/gui-usability-evaluator/SKILL.md | Kiểm tra cấu trúc skill thành công; đã có demo MP4, chờ URL YouTube |
+| Ghi demo theo skill | skills/gui-usability-evaluator/video/gui-g2-demo.mp4; video/recording-log.json | 112,4 giây browser thật, có phụ đề; các quan sát được assert trong quá trình ghi; chờ xem lại và YouTube URL |
+| Khôi phục audit lập kế hoạch | reports/AI_AUDIT_RECOVERED.md; reports/legacy/ | 14 lời nhắn thật ngày 03/11 của OpenCode gắn đúng thư mục; ba đầu ra kế hoạch nguyên gốc kèm hash |
 | Đóng gói | scripts/validate_submission.py và package_draft.py | Bản nháp có ghi rõ thiếu sót; chưa nộp Moodle |
 
 ## Rà soát và các sửa đổi đã xảy ra
@@ -42,9 +44,11 @@ SafariDriver đôi khi blur input sau khi nhập mà chưa phát click. Codex gh
 
 Không dùng danh sách lớp Moodle làm người tham gia. Không tạo điểm SUS, phát ngôn, thời gian, tên/liên hệ hay kết quả phiên để lấp dữ liệu thiếu. Danh sách P1–P7 chỉ là mã trên biểu mẫu trống.
 
-## Phần lịch sử chưa đầy đủ
+## Lịch sử lập kế hoạch đã khôi phục
 
-Các file kế hoạch ngày 03/11 đã có từ trước phiên này. Git có commit thực của chúng nhưng chưa có prompt/output nguyên gốc tương ứng trong dữ liệu được xuất hiện tại. Sinh viên cần bổ sung bản xuất chat cũ; không tuyên bố audit bao phủ hoàn toàn mọi lần dùng AI trước đây. Các phản hồi sau thời điểm xuất transcript cần xuất lại trước khi nộp cuối.
+Đã khôi phục session OpenCode “Homework requirements overview” gắn chính xác thư mục HW03, từ 15:28 đến 16:08 ngày 03/11/2026. File `AI_AUDIT_RECOVERED.md` chứa 14 lời nhắn user/assistant hiển thị, timestamp thật và cấu hình model từ metadata. Ba bản kế hoạch gốc được giữ trong `reports/legacy/` cùng SHA-256, bao gồm các giả định AI đã đề xuất sai. Không truy xuất các phiên đăng nhập hoặc mạng không liên quan.
+
+Đầu ra tool viết file trong session cũ được đối chiếu với ba file và Git commits thực. Chỉ xuất phần văn bản hiển thị; không đưa suy luận nội bộ hoặc thông tin xác thực vào bài. Bản PDF audit có phụ lục hội thoại cũ và mới. Sinh viên cần kiểm tra và bổ sung nếu đã dùng AI ở những nơi khác không nằm trong hai nguồn đã khôi phục. Các tin nhắn sau thời điểm xuất transcript sẽ được xuất lại trước lần nộp cuối.
 
 ## Sinh viên xác nhận
 

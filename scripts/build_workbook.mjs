@@ -24,7 +24,7 @@ for(const [row,col]of [[5,'F'],[6,'G'],[7,'H']]){
   summary.getRange(`B${row}:D${row}`).formulas=[[`=COUNTIFS(Checklist!${col}8:${col}55,"Passed")`,`=COUNTIFS(Checklist!${col}8:${col}55,"Failed")`,`=48-B${row}-C${row}`]];
 }
 summary.getRange('A10:B15').values=[['Phạm vi','Home/Search, Detail, Cart'],['Checklist thiết kế',48],['Số IA',4],['Nhóm bug',23],['Người tham gia thật',0],['SUS trung bình','Chưa có dữ liệu thật']];
-summary.getRange('A18').values=[['CHƯA ĐỦ ĐIỀU KIỆN NỘP: thiếu pilot/7 phiên thật, human review và demo. Đã đủ 3 browser.']];
+summary.getRange('A18').values=[['CHƯA ĐỦ ĐIỀU KIỆN NỘP: thiếu pilot/7 phiên thật, human review và link YouTube. Đã đủ 3 browser và MP4 demo.']];
 summary.getRange('A18').format.font={color:'#9A3412',size:11};
 summary.getRange('A20').values=[['Nguồn: đề HW03 §6, §14; kết quả gốc evidence/runs/chrome.json, firefox.json và safari.json.']];
 summary.getRange('A:A').format.columnWidth=43;
