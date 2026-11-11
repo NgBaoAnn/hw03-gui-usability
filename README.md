@@ -29,7 +29,7 @@ Sinh viên chưa tự chấm. Không điền 000 thay cho điểm còn thiếu.
 
 # Test summary G2
 
-Cập nhật: 2026-11-11T22:16:45+07:00.
+Cập nhật: 2026-11-11T22:28:32+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|

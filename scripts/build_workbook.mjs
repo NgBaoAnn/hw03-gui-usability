@@ -13,7 +13,7 @@ for(const s of [summary,checks,sus]){
   s.getRange('A1:L65').format.font={name:'Arial',size:11,color:'#172033'};
   s.getRange('A1:L65').format.verticalAlignment='center';
 }
-function header(s,range){s.getRange(range).format={fill:'#24354B',font:{name:'Arial',size:11,bold:true,color:'#FFFFFF'},rowHeight:30,wrapText:true};}
+function header(s,range){s.getRange(range).format={fill:'#24354B',font:{name:'Arial',size:11,bold:true,color:'#FFFFFF'},rowHeight:30,wrapText:true,horizontalAlignment:'center'};}
 summary.getRange('A2').values=[['HW03 G2 - Kết quả kiểm thử']];
 summary.getRange('A2').format.font={size:16,bold:true};
 summary.getRange('A4:D4').values=[['Môi trường','Passed','Failed','Chưa thực thi']];header(summary,'A4:D4');
@@ -37,10 +37,10 @@ checks.getRange('A5').values=[['Notes rút gọn; xem JSON gốc để đọc đ
 checks.getRange('A7:K7').values=[['ID','IA','Screen','Expected','Reference','Chrome','Firefox','Chrome Notes','Firefox Notes','Chrome screenshot','Firefox screenshot']];header(checks,'A7:K7');
 checks.getRange('A8:K55').values=matrix;
 checks.getRange('A8:K55').format.wrapText=true;
-checks.getRange('A8:K55').format.rowHeight=110;
+checks.getRange('A8:K55').format.rowHeight=70;
 for(const [col,width]of [['A',9],['B',10],['C',12],['D',58],['E',28],['F',13],['G',13],['H',65],['I',65],['J',42],['K',42]])checks.getRange(`${col}:${col}`).format.columnWidth=width;
 checks.freezePanes.freezeRows(7);checks.freezePanes.freezeColumns(1);
-checks.tables.add('A7:K55',true,'GuiChecklist');
+checks.tables.add('A7:K55',true,'GuiChecklist').style='TableStyleLight9';
 checks.getRange('F8:G55').conditionalFormats.add('containsText',{text:'Failed',format:{fill:'#FEE2E2',font:{color:'#991B1B'}}});
 sus.getRange('A2').values=[['SUS - nhập dữ liệu thật sau mỗi phiên']];sus.getRange('A2').format.font={size:16,bold:true};
 sus.getRange('A3').values=[['Điểm 1–5, câu lẻ thuận/câu chẵn nghịch; nguồn Brooke: https://hell.meiert.org/core/pdf/sus.pdf']];

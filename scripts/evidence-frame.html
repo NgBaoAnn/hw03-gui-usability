@@ -12,6 +12,8 @@
 const target=new URLSearchParams(location.search).get('target')||'/';
 if(!/^\/(?!\/)[a-zA-Z0-9/_-]*$/.test(target))throw Error('Invalid SUT path');
 document.querySelector('iframe').src=target;
-document.querySelector('#environment').textContent=navigator.userAgent+' | '+new Date().toISOString();
-document.querySelector('#target').textContent='SUT: http://localhost:5173'+target+' | Real browser smoke check; no result inferred for unexecuted checks';
+setInterval(()=>{
+document.querySelector('#environment').textContent='macOS 26.2 | '+navigator.userAgent+' | '+new Date().toISOString();
+document.querySelector('#target').textContent='SUT: '+document.querySelector('iframe').contentWindow.location.href+' | Real browser smoke check; no result inferred for unexecuted checks';
+},250);
 </script></html>

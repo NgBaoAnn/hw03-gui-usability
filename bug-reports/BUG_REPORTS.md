@@ -26,7 +26,7 @@ Kỳ vọng: Chỉ có một h1 mô tả trang.
 
 Thực tế: Số h1 thực tế là 2.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/1
 
 Ảnh bằng chứng:
 
@@ -52,7 +52,7 @@ Kỳ vọng: Giỏ có một h1.
 
 Thực tế: Giỏ có 0 h1.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/2
 
 Ảnh bằng chứng:
 
@@ -78,7 +78,7 @@ Kỳ vọng: Giá dùng ₫ nhất quán.
 
 Thực tế: Danh sách dùng VND, chi tiết dùng ₫.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/3
 
 Ảnh bằng chứng:
 
@@ -104,7 +104,7 @@ Kỳ vọng: Giữ nội dung ảnh theo tiêu chí kiểm thử về tỷ lệ.
 
 Thực tế: object-cover trong khung 281×192 cắt ảnh vuông. Đây là phát hiện heuristic cần sinh viên duyệt mức ảnh hưởng.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/4
 
 Ảnh bằng chứng:
 
@@ -130,7 +130,7 @@ Kỳ vọng: Hành động tích cực dùng xanh dương theo GUI §8.
 
 Thực tế: Nút có nền rgb(22,163,74).
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/5
 
 Ảnh bằng chứng:
 
@@ -156,7 +156,7 @@ Kỳ vọng: alt mô tả sản phẩm.
 
 Thực tế: Cả 5 alt đều rỗng, ảnh bị coi là trang trí với công nghệ hỗ trợ.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/6
 
 Ảnh bằng chứng:
 
@@ -182,7 +182,7 @@ Kỳ vọng: Mỗi trường có tên truy cập bền vững.
 
 Thực tế: Tìm kiếm chỉ có placeholder; label Số lượng không liên kết input. Đây là kiểm tra DOM, chưa thay thế thử screen reader thật.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/7
 
 Ảnh bằng chứng:
 
@@ -210,7 +210,7 @@ Kỳ vọng: Tìm nguyên văn chuỗi; không sản phẩm nào khớp.
 
 Thực tế: Vẫn trả iPhone vì query bị cắt tại &.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/8
 
 Ảnh bằng chứng:
 
@@ -236,7 +236,7 @@ Kỳ vọng: Từ chối số lượng không phải số nguyên dương, hiể
 
 Thực tế: Giỏ nhận 0, -1, làm tròn 1.5 thành 1, và ô trống thành NaN. Tổng âm hoặc NaN tương ứng.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/9
 
 Ảnh bằng chứng:
 
@@ -268,7 +268,7 @@ Kỳ vọng: Hiển thị nguyên văn HTML như văn bản an toàn.
 
 Thực tế: DOM tạo phần tử b và hiển thị chữ đậm. Đã xác nhận HTML injection; chưa thực thi script hoặc khẳng định khai thác XSS sâu hơn.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/10
 
 Ảnh bằng chứng:
 
@@ -294,7 +294,7 @@ Kỳ vọng: Giữ từ khóa và một kết quả theo heuristic duy trì ng�
 
 Thực tế: Từ khóa rỗng và hiện lại 5 sản phẩm.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/11
 
 Ảnh bằng chứng:
 
@@ -320,7 +320,7 @@ Kỳ vọng: Có breadcrumb theo GUI §8.
 
 Thực tế: Không có vùng breadcrumb trên hai trang.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/12
 
 Ảnh bằng chứng:
 
@@ -348,7 +348,7 @@ Kỳ vọng: Có trạng thái được chọn và chỉ báo truy cập phù h�
 
 Thực tế: Chỉ có hover:underline, không có highlight trang hiện tại.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/13
 
 Ảnh bằng chứng:
 
@@ -374,7 +374,7 @@ Kỳ vọng: Một dòng có số lượng 2.
 
 Thực tế: Hai dòng cùng sản phẩm, mỗi dòng số lượng 1.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/14
 
 Ảnh bằng chứng:
 
@@ -400,7 +400,7 @@ Kỳ vọng: Có thông báo/loading indicator khi chờ.
 
 Thực tế: Chỉ có tiêu đề và form tìm kiếm trong thời gian chờ. Điều kiện mạng được mô phỏng có kiểm soát.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/15
 
 Ảnh bằng chứng:
 
@@ -426,7 +426,7 @@ Kỳ vọng: Thông báo thân thiện rằng không có kết quả.
 
 Thực tế: Chỉ hiện dòng từ khóa, không có thông báo trạng thái rỗng.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/16
 
 Ảnh bằng chứng:
 
@@ -452,7 +452,7 @@ Kỳ vọng: Toast/badge thông báo thêm thành công; link giỏ có số lư
 
 Thực tế: Không có toast, vùng thông báo hoặc badge. Mở giỏ mới thấy sản phẩm đã được thêm.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/17
 
 Ảnh bằng chứng:
 
@@ -480,7 +480,7 @@ Kỳ vọng: Giỏ có một sản phẩm ngay sau một lần bấm.
 
 Thực tế: Giỏ trống. Bấm lần hai mới thêm và hiện Đã thêm.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/18
 
 Ảnh bằng chứng:
 
@@ -506,7 +506,7 @@ Kỳ vọng: Hiện dialog xác nhận trước khi xóa.
 
 Thực tế: Không có native dialog hay role=dialog; sản phẩm mất ngay.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/19
 
 Ảnh bằng chứng:
 
@@ -532,7 +532,7 @@ Kỳ vọng: Có thông báo kèm hình/icon theo FR-07.
 
 Thực tế: Có câu thông báo nhưng không có hình/icon.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/20
 
 Ảnh bằng chứng:
 
@@ -558,7 +558,7 @@ Kỳ vọng: Nhãn Tổng cộng theo FR-07.
 
 Thực tế: Hiển thị Tổng tạm tính.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/21
 
 Ảnh bằng chứng:
 
@@ -584,7 +584,7 @@ Kỳ vọng: Thông báo lỗi phù hợp, không chờ vô hạn và có cách 
 
 Thực tế: Home trống dưới form; chi tiết kẹt Đang tải. Điều kiện lỗi mạng được mô phỏng có kiểm soát.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/22
 
 Ảnh bằng chứng:
 
@@ -612,7 +612,7 @@ Kỳ vọng: documentElement.scrollWidth <= innerWidth.
 
 Thực tế: Firefox scrollWidth=398 khi innerWidth=390. Chrome cùng kích thước là 390. Đây là viewport mobile giả lập trên desktop, không phải điện thoại thật.
 
-GitHub Issue: Chưa đăng
+GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/23
 
 Ảnh bằng chứng:
 

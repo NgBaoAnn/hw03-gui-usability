@@ -105,6 +105,12 @@ GitHub Issue: {issue_url}
     for e,run in runs.items():
         matrix.append(f'| {run["environment"]} | {len(run["results"])} | {counts[e]["Passed"]} | {counts[e]["Failed"]} | {counts[e]["Blocked"]} |')
     matrix+=['| Safari hoặc Android Chrome thật | Chưa chạy trọn bộ | Chưa có | Chưa có | Chưa có |','','Khác biệt: G09 Passed trên Chrome, Failed trên Firefox (398px/390px). Những Failed còn lại trùng nhau ở hai môi trường.','', 'Ảnh chụp dùng chú thích có email, MSSV, họ tên, browser/version, OS, URL và timestamp. Chú thích được thêm sau phép đo, không dùng nó làm bằng chứng về nội dung SUT. Ảnh DOM/alt và số liệu viewport cần đọc kèm JSON; screenshot không tự chứng minh thuộc tính ẩn.','', 'Để đóng Task 3: thực thi cả 48 mục trên Safari/Android Chrome thật, chụp riêng Failed với định danh. Không đổi nhãn WebKit thành Safari.']
+    safari=ROOT/'evidence/gui/safari/observations.json'
+    if safari.exists():
+        native=json.loads(safari.read_text())
+        matrix+=['','## Safari thật: kiểm tra nhanh, chưa đủ checklist','',f'{native["environment"]}. Đã quan sát {len(native["observations"])} mục qua native UI/CUA trong iframe cùng origin. Chú thích bên ngoài iframe không thay đổi logic SUT. Không cộng các mục này vào thống kê hai lượt chạy đầy đủ.','', '| ID | Trạng thái | Quan sát | Ảnh gốc |','|---|---|---|---|']
+        for r in native['observations']:
+            matrix.append('| '+' | '.join(map(cell,[r['id'],r['status'],r['notes'],f'[ảnh](../evidence/gui/safari/{r["evidence"]})']))+' |')
     write('cross-platform/MATRIX.md','\n'.join(matrix))
     summary=f'''# Test summary G2
 

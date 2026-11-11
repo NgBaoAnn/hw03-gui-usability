@@ -1,0 +1,62 @@
+{
+  "environment": "Safari 26.2, macOS 26.2",
+  "timestamp": "2026-11-11T15:20:46.241Z",
+  "method": "Native Safari controlled via CUA; same-origin evidence iframe, no SUT logic changes",
+  "fullChecklist": false,
+  "observations": [
+    {
+      "id": "G01",
+      "status": "Failed",
+      "notes": "Home AX contains two headings with level 1",
+      "evidence": "home.png"
+    },
+    {
+      "id": "G04",
+      "status": "Failed",
+      "notes": "Home price is 30,000,000 VND",
+      "evidence": "home.png"
+    },
+    {
+      "id": "G14",
+      "status": "Passed",
+      "notes": "Search iPhone using Enter leaves one matching product",
+      "evidence": "search.png"
+    },
+    {
+      "id": "G25",
+      "status": "Passed",
+      "notes": "Xem chi tiết opens product/1 with matching title",
+      "evidence": "detail-before.png"
+    },
+    {
+      "id": "G02",
+      "status": "Passed",
+      "notes": "Detail AX shows one level-1 heading, iPhone 15 Pro Max",
+      "evidence": "detail-before.png"
+    },
+    {
+      "id": "G05",
+      "status": "Passed",
+      "notes": "Detail shows 30,000,000 ₫",
+      "evidence": "detail-before.png"
+    },
+    {
+      "id": "G17",
+      "status": "Passed",
+      "notes": "Number field defaults to 1",
+      "evidence": "detail-before.png"
+    },
+    {
+      "id": "G40",
+      "status": "Failed",
+      "notes": "Clicked add-to-cart exactly once then opened cart; cart remains empty",
+      "evidence": "cart-after-one-click.png"
+    },
+    {
+      "id": "G44",
+      "status": "Failed",
+      "notes": "Empty cart has message and continue link but no illustration",
+      "evidence": "cart-after-one-click.png"
+    }
+  ]
+}

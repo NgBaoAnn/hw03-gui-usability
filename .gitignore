@@ -1,6 +1,8 @@
 .DS_Store
 .work/
 tmp/
-node_modules/
+node_modules
+__pycache__/
+*.inspect.ndjson
 output/
 usability/private/
