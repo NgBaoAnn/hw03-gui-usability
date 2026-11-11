@@ -2,7 +2,7 @@
 
 
 
-SUT commit: `85af3ba875c88283615e22cb108f13e2fccaf0e9`. 23 nhóm lỗi từ 59 mục Failed của hai lượt chạy; không phải 59 bug độc lập. Chưa có phát hiện từ người tham gia usability. Severity do AI đề xuất, chờ sinh viên rà soát.
+SUT commit: `85af3ba875c88283615e22cb108f13e2fccaf0e9`. 23 nhóm lỗi từ 88 mục Failed của ba lượt chạy; không phải 88 bug độc lập. Chưa có phát hiện từ người tham gia usability. Severity do AI đề xuất, chờ sinh viên rà soát.
 
 
 
@@ -16,7 +16,7 @@ Severity: **Minor** (đề xuất, chưa có human review). Checklist: G01.
 
 Nguồn kỳ vọng: FR-05; GUI §8.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -32,6 +32,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/1
 
 - chrome G01, 2026-11-11T15:09:27.074Z: [ảnh gốc](../evidence/gui/chrome/G01.png).
 - firefox G01, 2026-11-11T15:09:28.206Z: [ảnh gốc](../evidence/gui/firefox/G01.png).
+- safari G01, 2026-11-11T15:51:18.417734+00:00: [ảnh gốc](../evidence/gui/safari/G01.png).
 
 ![B01 bằng chứng](../evidence/gui/chrome/G01.png)
 
@@ -42,7 +43,7 @@ Severity: **Minor** (đề xuất, chưa có human review). Checklist: G03.
 
 Nguồn kỳ vọng: GUI §8.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -58,6 +59,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/2
 
 - chrome G03, 2026-11-11T15:09:28.046Z: [ảnh gốc](../evidence/gui/chrome/G03.png).
 - firefox G03, 2026-11-11T15:09:29.974Z: [ảnh gốc](../evidence/gui/firefox/G03.png).
+- safari G03, 2026-11-11T15:51:22.075553+00:00: [ảnh gốc](../evidence/gui/safari/G03.png).
 
 ![B02 bằng chứng](../evidence/gui/chrome/G03.png)
 
@@ -68,7 +70,7 @@ Severity: **Minor** (đề xuất, chưa có human review). Checklist: G04.
 
 Nguồn kỳ vọng: FR-05; GUI §8.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -84,6 +86,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/3
 
 - chrome G04, 2026-11-11T15:09:28.707Z: [ảnh gốc](../evidence/gui/chrome/G04.png).
 - firefox G04, 2026-11-11T15:09:30.505Z: [ảnh gốc](../evidence/gui/firefox/G04.png).
+- safari G04, 2026-11-11T15:51:22.771583+00:00: [ảnh gốc](../evidence/gui/safari/G04.png).
 
 ![B03 bằng chứng](../evidence/gui/chrome/G04.png)
 
@@ -94,7 +97,7 @@ Severity: **Minor** (đề xuất, chưa có human review). Checklist: G07.
 
 Nguồn kỳ vọng: FR-05; GUI §8.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -110,6 +113,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/4
 
 - chrome G07, 2026-11-11T15:09:29.909Z: [ảnh gốc](../evidence/gui/chrome/G07.png).
 - firefox G07, 2026-11-11T15:09:32.712Z: [ảnh gốc](../evidence/gui/firefox/G07.png).
+- safari G07, 2026-11-11T15:51:23.958154+00:00: [ảnh gốc](../evidence/gui/safari/G07.png).
 
 ![B04 bằng chứng](../evidence/gui/chrome/G07.png)
 
@@ -120,7 +124,7 @@ Severity: **Minor** (đề xuất, chưa có human review). Checklist: G11.
 
 Nguồn kỳ vọng: GUI §8.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -136,6 +140,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/5
 
 - chrome G11, 2026-11-11T15:09:31.473Z: [ảnh gốc](../evidence/gui/chrome/G11.png).
 - firefox G11, 2026-11-11T15:09:35.885Z: [ảnh gốc](../evidence/gui/firefox/G11.png).
+- safari G11, 2026-11-11T15:51:24.955264+00:00: [ảnh gốc](../evidence/gui/safari/G11.png).
 
 ![B05 bằng chứng](../evidence/gui/chrome/G11.png)
 
@@ -146,7 +151,7 @@ Severity: **Major** (đề xuất, chưa có human review). Checklist: G12.
 
 Nguồn kỳ vọng: FR-05; GUI §8.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -162,6 +167,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/6
 
 - chrome G12, 2026-11-11T15:09:31.938Z: [ảnh gốc](../evidence/gui/chrome/G12.png).
 - firefox G12, 2026-11-11T15:09:36.414Z: [ảnh gốc](../evidence/gui/firefox/G12.png).
+- safari G12, 2026-11-11T15:51:25.246119+00:00: [ảnh gốc](../evidence/gui/safari/G12.png).
 
 ![B06 bằng chứng](../evidence/gui/chrome/G12.png)
 
@@ -172,7 +178,7 @@ Severity: **Major** (đề xuất, chưa có human review). Checklist: G13, G23.
 
 Nguồn kỳ vọng: Heuristic: accessibility.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -190,6 +196,8 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/7
 - chrome G23, 2026-11-11T15:09:37.328Z: [ảnh gốc](../evidence/gui/chrome/G23.png).
 - firefox G13, 2026-11-11T15:09:36.898Z: [ảnh gốc](../evidence/gui/firefox/G13.png).
 - firefox G23, 2026-11-11T15:09:47.928Z: [ảnh gốc](../evidence/gui/firefox/G23.png).
+- safari G13, 2026-11-11T15:51:25.593399+00:00: [ảnh gốc](../evidence/gui/safari/G13.png).
+- safari G23, 2026-11-11T15:51:31.095264+00:00: [ảnh gốc](../evidence/gui/safari/G23.png).
 
 ![B07 bằng chứng](../evidence/gui/chrome/G13.png)
 
@@ -200,7 +208,7 @@ Severity: **Major** (đề xuất, chưa có human review). Checklist: G16.
 
 Nguồn kỳ vọng: FR-05.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -216,6 +224,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/8
 
 - chrome G16, 2026-11-11T15:09:33.978Z: [ảnh gốc](../evidence/gui/chrome/G16.png).
 - firefox G16, 2026-11-11T15:09:39.883Z: [ảnh gốc](../evidence/gui/firefox/G16.png).
+- safari G16, 2026-11-11T15:51:27.468559+00:00: [ảnh gốc](../evidence/gui/safari/G16.png).
 
 ![B08 bằng chứng](../evidence/gui/chrome/G16.png)
 
@@ -226,7 +235,7 @@ Severity: **Major** (đề xuất, chưa có human review). Checklist: G19, G20,
 
 Nguồn kỳ vọng: FR-06.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -248,6 +257,10 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/9
 - firefox G20, 2026-11-11T15:09:42.634Z: [ảnh gốc](../evidence/gui/firefox/G20.png).
 - firefox G21, 2026-11-11T15:09:45.842Z: [ảnh gốc](../evidence/gui/firefox/G21.png).
 - firefox G22, 2026-11-11T15:09:46.530Z: [ảnh gốc](../evidence/gui/firefox/G22.png).
+- safari G19, 2026-11-11T15:53:15.709264+00:00: [ảnh gốc](../evidence/gui/safari/G19.png).
+- safari G20, 2026-11-11T15:53:16.503924+00:00: [ảnh gốc](../evidence/gui/safari/G20.png).
+- safari G21, 2026-11-11T15:53:17.101448+00:00: [ảnh gốc](../evidence/gui/safari/G21.png).
+- safari G22, 2026-11-11T15:53:17.791319+00:00: [ảnh gốc](../evidence/gui/safari/G22.png).
 
 ![B09 bằng chứng](../evidence/gui/chrome/G19.png)
 
@@ -258,7 +271,7 @@ Severity: **Major** (đề xuất, chưa có human review). Checklist: G24.
 
 Nguồn kỳ vọng: FR-05; SEC-04.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -274,6 +287,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/10
 
 - chrome G24, 2026-11-11T15:09:37.714Z: [ảnh gốc](../evidence/gui/chrome/G24.png).
 - firefox G24, 2026-11-11T15:09:48.673Z: [ảnh gốc](../evidence/gui/firefox/G24.png).
+- safari G24, 2026-11-11T15:51:31.396671+00:00: [ảnh gốc](../evidence/gui/safari/G24.png).
 
 ![B10 bằng chứng](../evidence/gui/chrome/G24.png)
 
@@ -284,7 +298,7 @@ Severity: **Minor** (đề xuất, chưa có human review). Checklist: G29.
 
 Nguồn kỳ vọng: Heuristic: continuity.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -300,6 +314,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/11
 
 - chrome G29, 2026-11-11T15:09:40.361Z: [ảnh gốc](../evidence/gui/chrome/G29.png).
 - firefox G29, 2026-11-11T15:09:51.856Z: [ảnh gốc](../evidence/gui/firefox/G29.png).
+- safari G29, 2026-11-11T15:59:28.651280+00:00: [ảnh gốc](../evidence/gui/safari/G29.png).
 
 ![B11 bằng chứng](../evidence/gui/chrome/G29.png)
 
@@ -310,7 +325,7 @@ Severity: **Minor** (đề xuất, chưa có human review). Checklist: G30, G31.
 
 Nguồn kỳ vọng: GUI §8.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -328,6 +343,8 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/12
 - chrome G31, 2026-11-11T15:09:41.440Z: [ảnh gốc](../evidence/gui/chrome/G31.png).
 - firefox G30, 2026-11-11T15:09:52.301Z: [ảnh gốc](../evidence/gui/firefox/G30.png).
 - firefox G31, 2026-11-11T15:09:55.831Z: [ảnh gốc](../evidence/gui/firefox/G31.png).
+- safari G30, 2026-11-11T15:51:44.600264+00:00: [ảnh gốc](../evidence/gui/safari/G30.png).
+- safari G31, 2026-11-11T15:51:45.517264+00:00: [ảnh gốc](../evidence/gui/safari/G31.png).
 
 ![B12 bằng chứng](../evidence/gui/chrome/G30.png)
 
@@ -338,7 +355,7 @@ Severity: **Minor** (đề xuất, chưa có human review). Checklist: G32.
 
 Nguồn kỳ vọng: GUI §8.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -354,6 +371,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/13
 
 - chrome G32, 2026-11-11T15:09:41.791Z: [ảnh gốc](../evidence/gui/chrome/G32.png).
 - firefox G32, 2026-11-11T15:09:56.097Z: [ảnh gốc](../evidence/gui/firefox/G32.png).
+- safari G32, 2026-11-11T15:51:46.027308+00:00: [ảnh gốc](../evidence/gui/safari/G32.png).
 
 ![B13 bằng chứng](../evidence/gui/chrome/G32.png)
 
@@ -364,7 +382,7 @@ Severity: **Major** (đề xuất, chưa có human review). Checklist: G36.
 
 Nguồn kỳ vọng: FR-07.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -380,6 +398,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/14
 
 - chrome G36, 2026-11-11T15:09:44.997Z: [ảnh gốc](../evidence/gui/chrome/G36.png).
 - firefox G36, 2026-11-11T15:09:58.557Z: [ảnh gốc](../evidence/gui/firefox/G36.png).
+- safari G36, 2026-11-11T15:51:48.068372+00:00: [ảnh gốc](../evidence/gui/safari/G36.png).
 
 ![B14 bằng chứng](../evidence/gui/chrome/G36.png)
 
@@ -390,11 +409,11 @@ Severity: **Minor** (đề xuất, chưa có human review). Checklist: G37.
 
 Nguồn kỳ vọng: FR-05.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
-Bước tái hiện: Giả lập trễ GET /api/products? 1600ms bằng Playwright, mở Home.
+Bước tái hiện: Giả lập trễ GET /api/products? 1600ms: Chrome/Firefox dùng Playwright route, Safari dùng XHR redirect tới fixture localhost; mở Home.
 
 Kỳ vọng: Có thông báo/loading indicator khi chờ.
 
@@ -406,6 +425,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/15
 
 - chrome G37, 2026-11-11T15:09:45.301Z: [ảnh gốc](../evidence/gui/chrome/G37.png).
 - firefox G37, 2026-11-11T15:09:58.816Z: [ảnh gốc](../evidence/gui/firefox/G37.png).
+- safari G37, 2026-11-11T15:51:48.472524+00:00: [ảnh gốc](../evidence/gui/safari/G37.png).
 
 ![B15 bằng chứng](../evidence/gui/chrome/G37.png)
 
@@ -416,7 +436,7 @@ Severity: **Minor** (đề xuất, chưa có human review). Checklist: G38.
 
 Nguồn kỳ vọng: FR-05; GUI §8.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -432,6 +452,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/16
 
 - chrome G38, 2026-11-11T15:09:45.810Z: [ảnh gốc](../evidence/gui/chrome/G38.png).
 - firefox G38, 2026-11-11T15:09:59.244Z: [ảnh gốc](../evidence/gui/firefox/G38.png).
+- safari G38, 2026-11-11T15:51:48.736955+00:00: [ảnh gốc](../evidence/gui/safari/G38.png).
 
 ![B16 bằng chứng](../evidence/gui/chrome/G38.png)
 
@@ -442,7 +463,7 @@ Severity: **Major** (đề xuất, chưa có human review). Checklist: G39, G42.
 
 Nguồn kỳ vọng: FR-06; GUI §8; GUI §8.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -460,6 +481,8 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/17
 - chrome G42, 2026-11-11T15:09:48.731Z: [ảnh gốc](../evidence/gui/chrome/G42.png).
 - firefox G39, 2026-11-11T15:09:59.924Z: [ảnh gốc](../evidence/gui/firefox/G39.png).
 - firefox G42, 2026-11-11T15:10:03.684Z: [ảnh gốc](../evidence/gui/firefox/G42.png).
+- safari G39, 2026-11-11T15:51:50.066825+00:00: [ảnh gốc](../evidence/gui/safari/G39.png).
+- safari G42, 2026-11-11T15:51:51.178332+00:00: [ảnh gốc](../evidence/gui/safari/G42.png).
 
 ![B17 bằng chứng](../evidence/gui/chrome/G39.png)
 
@@ -470,7 +493,7 @@ Severity: **Major** (đề xuất, chưa có human review). Checklist: G40.
 
 Nguồn kỳ vọng: FR-06.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -486,6 +509,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/18
 
 - chrome G40, 2026-11-11T15:09:46.649Z: [ảnh gốc](../evidence/gui/chrome/G40.png).
 - firefox G40, 2026-11-11T15:10:00.442Z: [ảnh gốc](../evidence/gui/firefox/G40.png).
+- safari G40, 2026-11-11T15:51:50.532846+00:00: [ảnh gốc](../evidence/gui/safari/G40.png).
 
 ![B18 bằng chứng](../evidence/gui/chrome/G40.png)
 
@@ -496,7 +520,7 @@ Severity: **Major** (đề xuất, chưa có human review). Checklist: G43.
 
 Nguồn kỳ vọng: FR-07; GUI §8.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -512,6 +536,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/19
 
 - chrome G43, 2026-11-11T15:09:49.468Z: [ảnh gốc](../evidence/gui/chrome/G43.png).
 - firefox G43, 2026-11-11T15:10:04.116Z: [ảnh gốc](../evidence/gui/firefox/G43.png).
+- safari G43, 2026-11-11T15:51:51.620481+00:00: [ảnh gốc](../evidence/gui/safari/G43.png).
 
 ![B19 bằng chứng](../evidence/gui/chrome/G43.png)
 
@@ -522,7 +547,7 @@ Severity: **Minor** (đề xuất, chưa có human review). Checklist: G44.
 
 Nguồn kỳ vọng: FR-07; GUI §8.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -538,6 +563,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/20
 
 - chrome G44, 2026-11-11T15:09:49.799Z: [ảnh gốc](../evidence/gui/chrome/G44.png).
 - firefox G44, 2026-11-11T15:10:04.345Z: [ảnh gốc](../evidence/gui/firefox/G44.png).
+- safari G44, 2026-11-11T15:51:52.151463+00:00: [ảnh gốc](../evidence/gui/safari/G44.png).
 
 ![B20 bằng chứng](../evidence/gui/chrome/G44.png)
 
@@ -548,7 +574,7 @@ Severity: **Minor** (đề xuất, chưa có human review). Checklist: G45.
 
 Nguồn kỳ vọng: FR-07.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -564,6 +590,7 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/21
 
 - chrome G45, 2026-11-11T15:09:50.374Z: [ảnh gốc](../evidence/gui/chrome/G45.png).
 - firefox G45, 2026-11-11T15:10:04.706Z: [ảnh gốc](../evidence/gui/firefox/G45.png).
+- safari G45, 2026-11-11T15:51:52.553146+00:00: [ảnh gốc](../evidence/gui/safari/G45.png).
 
 ![B21 bằng chứng](../evidence/gui/chrome/G45.png)
 
@@ -574,7 +601,7 @@ Severity: **Major** (đề xuất, chưa có human review). Checklist: G47, G48.
 
 Nguồn kỳ vọng: Heuristic: error recovery.
 
-Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0). SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
+Môi trường: Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0); Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0); Safari 26.2 (Apple safaridriver) / macOS 26.2. SUT: `85af3ba875c88283615e22cb108f13e2fccaf0e9`.
 
 Điều kiện: bản clone riêng, seed gốc, context mới, giỏ trống. Với case dữ liệu mạng, điều kiện giả lập được ghi trong bước.
 
@@ -592,6 +619,8 @@ GitHub Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/22
 - chrome G48, 2026-11-11T15:09:54.291Z: [ảnh gốc](../evidence/gui/chrome/G48.png).
 - firefox G47, 2026-11-11T15:10:06.901Z: [ảnh gốc](../evidence/gui/firefox/G47.png).
 - firefox G48, 2026-11-11T15:10:07.866Z: [ảnh gốc](../evidence/gui/firefox/G48.png).
+- safari G47, 2026-11-11T15:51:55.055625+00:00: [ảnh gốc](../evidence/gui/safari/G47.png).
+- safari G48, 2026-11-11T15:51:56.239739+00:00: [ảnh gốc](../evidence/gui/safari/G48.png).
 
 ![B22 bằng chứng](../evidence/gui/chrome/G47.png)
 

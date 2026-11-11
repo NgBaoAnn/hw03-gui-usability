@@ -9,7 +9,8 @@
     "file": "bug-reports/B01.md",
     "screenshots": [
       "evidence/gui/chrome/G01.png",
-      "evidence/gui/firefox/G01.png"
+      "evidence/gui/firefox/G01.png",
+      "evidence/gui/safari/G01.png"
     ]
   },
   {
@@ -22,7 +23,8 @@
     "file": "bug-reports/B02.md",
     "screenshots": [
       "evidence/gui/chrome/G03.png",
-      "evidence/gui/firefox/G03.png"
+      "evidence/gui/firefox/G03.png",
+      "evidence/gui/safari/G03.png"
     ]
   },
   {
@@ -35,7 +37,8 @@
     "file": "bug-reports/B03.md",
     "screenshots": [
       "evidence/gui/chrome/G04.png",
-      "evidence/gui/firefox/G04.png"
+      "evidence/gui/firefox/G04.png",
+      "evidence/gui/safari/G04.png"
     ]
   },
   {
@@ -48,7 +51,8 @@
     "file": "bug-reports/B04.md",
     "screenshots": [
       "evidence/gui/chrome/G07.png",
-      "evidence/gui/firefox/G07.png"
+      "evidence/gui/firefox/G07.png",
+      "evidence/gui/safari/G07.png"
     ]
   },
   {
@@ -61,7 +65,8 @@
     "file": "bug-reports/B05.md",
     "screenshots": [
       "evidence/gui/chrome/G11.png",
-      "evidence/gui/firefox/G11.png"
+      "evidence/gui/firefox/G11.png",
+      "evidence/gui/safari/G11.png"
     ]
   },
   {
@@ -74,7 +79,8 @@
     "file": "bug-reports/B06.md",
     "screenshots": [
       "evidence/gui/chrome/G12.png",
-      "evidence/gui/firefox/G12.png"
+      "evidence/gui/firefox/G12.png",
+      "evidence/gui/safari/G12.png"
     ]
   },
   {
@@ -90,7 +96,9 @@
       "evidence/gui/chrome/G13.png",
       "evidence/gui/chrome/G23.png",
       "evidence/gui/firefox/G13.png",
-      "evidence/gui/firefox/G23.png"
+      "evidence/gui/firefox/G23.png",
+      "evidence/gui/safari/G13.png",
+      "evidence/gui/safari/G23.png"
     ]
   },
   {
@@ -103,7 +111,8 @@
     "file": "bug-reports/B08.md",
     "screenshots": [
       "evidence/gui/chrome/G16.png",
-      "evidence/gui/firefox/G16.png"
+      "evidence/gui/firefox/G16.png",
+      "evidence/gui/safari/G16.png"
     ]
   },
   {
@@ -125,7 +134,11 @@
       "evidence/gui/firefox/G19.png",
       "evidence/gui/firefox/G20.png",
       "evidence/gui/firefox/G21.png",
-      "evidence/gui/firefox/G22.png"
+      "evidence/gui/firefox/G22.png",
+      "evidence/gui/safari/G19.png",
+      "evidence/gui/safari/G20.png",
+      "evidence/gui/safari/G21.png",
+      "evidence/gui/safari/G22.png"
     ]
   },
   {
@@ -138,7 +151,8 @@
     "file": "bug-reports/B10.md",
     "screenshots": [
       "evidence/gui/chrome/G24.png",
-      "evidence/gui/firefox/G24.png"
+      "evidence/gui/firefox/G24.png",
+      "evidence/gui/safari/G24.png"
     ]
   },
   {
@@ -151,7 +165,8 @@
     "file": "bug-reports/B11.md",
     "screenshots": [
       "evidence/gui/chrome/G29.png",
-      "evidence/gui/firefox/G29.png"
+      "evidence/gui/firefox/G29.png",
+      "evidence/gui/safari/G29.png"
     ]
   },
   {
@@ -167,7 +182,9 @@
       "evidence/gui/chrome/G30.png",
       "evidence/gui/chrome/G31.png",
       "evidence/gui/firefox/G30.png",
-      "evidence/gui/firefox/G31.png"
+      "evidence/gui/firefox/G31.png",
+      "evidence/gui/safari/G30.png",
+      "evidence/gui/safari/G31.png"
     ]
   },
   {
@@ -180,7 +197,8 @@
     "file": "bug-reports/B13.md",
     "screenshots": [
       "evidence/gui/chrome/G32.png",
-      "evidence/gui/firefox/G32.png"
+      "evidence/gui/firefox/G32.png",
+      "evidence/gui/safari/G32.png"
     ]
   },
   {
@@ -193,7 +211,8 @@
     "file": "bug-reports/B14.md",
     "screenshots": [
       "evidence/gui/chrome/G36.png",
-      "evidence/gui/firefox/G36.png"
+      "evidence/gui/firefox/G36.png",
+      "evidence/gui/safari/G36.png"
     ]
   },
   {
@@ -206,7 +225,8 @@
     "file": "bug-reports/B15.md",
     "screenshots": [
       "evidence/gui/chrome/G37.png",
-      "evidence/gui/firefox/G37.png"
+      "evidence/gui/firefox/G37.png",
+      "evidence/gui/safari/G37.png"
     ]
   },
   {
@@ -219,7 +239,8 @@
     "file": "bug-reports/B16.md",
     "screenshots": [
       "evidence/gui/chrome/G38.png",
-      "evidence/gui/firefox/G38.png"
+      "evidence/gui/firefox/G38.png",
+      "evidence/gui/safari/G38.png"
     ]
   },
   {
@@ -235,7 +256,9 @@
       "evidence/gui/chrome/G39.png",
       "evidence/gui/chrome/G42.png",
       "evidence/gui/firefox/G39.png",
-      "evidence/gui/firefox/G42.png"
+      "evidence/gui/firefox/G42.png",
+      "evidence/gui/safari/G39.png",
+      "evidence/gui/safari/G42.png"
     ]
   },
   {
@@ -248,7 +271,8 @@
     "file": "bug-reports/B18.md",
     "screenshots": [
       "evidence/gui/chrome/G40.png",
-      "evidence/gui/firefox/G40.png"
+      "evidence/gui/firefox/G40.png",
+      "evidence/gui/safari/G40.png"
     ]
   },
   {
@@ -261,7 +285,8 @@
     "file": "bug-reports/B19.md",
     "screenshots": [
       "evidence/gui/chrome/G43.png",
-      "evidence/gui/firefox/G43.png"
+      "evidence/gui/firefox/G43.png",
+      "evidence/gui/safari/G43.png"
     ]
   },
   {
@@ -274,7 +299,8 @@
     "file": "bug-reports/B20.md",
     "screenshots": [
       "evidence/gui/chrome/G44.png",
-      "evidence/gui/firefox/G44.png"
+      "evidence/gui/firefox/G44.png",
+      "evidence/gui/safari/G44.png"
     ]
   },
   {
@@ -287,7 +313,8 @@
     "file": "bug-reports/B21.md",
     "screenshots": [
       "evidence/gui/chrome/G45.png",
-      "evidence/gui/firefox/G45.png"
+      "evidence/gui/firefox/G45.png",
+      "evidence/gui/safari/G45.png"
     ]
   },
   {
@@ -303,7 +330,9 @@
       "evidence/gui/chrome/G47.png",
       "evidence/gui/chrome/G48.png",
       "evidence/gui/firefox/G47.png",
-      "evidence/gui/firefox/G48.png"
+      "evidence/gui/firefox/G48.png",
+      "evidence/gui/safari/G47.png",
+      "evidence/gui/safari/G48.png"
     ]
   },
   {

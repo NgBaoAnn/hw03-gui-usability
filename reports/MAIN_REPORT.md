@@ -18,7 +18,7 @@ Màn hình chính Home/Search; bổ trợ Product Detail và Cart. Luồng: tìm
 
 Tiêu chí hỗ trợ tiếp cận, responsive và khôi phục ngoài FR được ghi là heuristic. RTL/dark mode chưa được xác định là tính năng bắt buộc, nên không báo thiếu chúng là bug. `checklists/HUMAN_REVIEW.md` còn trống: sinh viên cần phản biện và tự bổ sung những mục AI bỏ sót, có giải thích lý do.
 
-Chrome: 19 Passed, 29 Failed. Firefox: 18 Passed, 30 Failed. Không còn Blocked do công cụ trong bản JSON cuối. Đã sửa lỗi đồng bộ của harness sau lượt thử đầu rồi chạy lại cả hai môi trường; chỉ JSON cuối là nguồn thống kê. Ảnh Failed là ảnh browser thật có chú thích riêng, không phải ảnh AI sinh.
+Chrome: 19 Passed, 29 Failed. Firefox: 18 Passed, 30 Failed. Safari: 19 Passed, 29 Failed. Không còn Blocked trong bản JSON cuối. Đã sửa lỗi đồng bộ harness và xác minh click được giao khi SafariDriver chỉ blur input. Những mục bị ảnh hưởng được chạy lại; chỉ kết quả cuối mỗi ID được thống kê. Ảnh Failed là ảnh browser thật, không phải ảnh AI sinh.
 
 23 nhóm bug được liệt kê trong `bug-reports/BUG_REPORTS.md`. Quan trọng nhất: click thêm giỏ lần đầu không thêm; số lượng 0/âm/thập phân/rỗng được nhận; giỏ trùng dòng; từ khóa render HTML; không xác nhận xóa. HTML injection chỉ được chứng minh bằng thẻ b vô hại, không tuyên bố đã khai thác script. Heuristic crop ảnh và mất ngữ cảnh khi Back đang chờ sinh viên xác nhận mức ảnh hưởng.
 
@@ -32,9 +32,9 @@ Sau khi có dữ liệu thật, phân tích từng người, nhóm pain point, t
 
 ## 4. Task 3: cross-browser
 
-Đã chạy trọn 48 mục trên Chrome và Firefox Playwright build ở macOS 26.2. Đã thử viewport desktop và 390×844; đây không phải hai nền tảng khác nhau. Chưa chạy trọn trên Safari/Android Chrome thật nên Task 3 chưa hoàn tất. Xem `cross-platform/MATRIX.md`.
+Đã chạy trọn 48 mục trên Chrome và Firefox Playwright build, cùng Safari 26.2 thật qua Apple WebDriver ở macOS 26.2. Ba trình duyệt có JSON và ảnh gốc riêng. Safari dùng iframe cùng origin có viewport CSS chính xác, không đổi logic SUT. Viewport hẹp chỉ là kiểm tra responsive. Các ca trễ/lỗi API được mô phỏng có kiểm soát và ghi rõ phương pháp. Xem `cross-platform/MATRIX.md`.
 
-G09 khác nhau: Firefox tràn ngang 8 px ở 390 px; Chrome không tràn. Các phát hiện khác trùng nhau trong hai lượt ghi nhận. Mọi ảnh Failed có email sinh viên, MSSV, họ tên, môi trường và localhost URL ở phần chú thích, thêm sau khi đo; ảnh đặc tính DOM phải đọc cùng JSON.
+Khác biệt giữa các môi trường: G09: chrome Passed, firefox Failed, safari Passed. G09 Firefox tràn ngang 8 px ở viewport 390 px. Safari dùng Option-Tab để điều hướng tất cả phần tử theo thiết lập mặc định. Mọi ảnh Failed có email sinh viên, MSSV, họ tên, môi trường và localhost URL ở phần chú thích, thêm sau phép đo; ảnh đặc tính DOM phải đọc cùng JSON.
 
 ## 5. Agent skill, AI và Git
 
@@ -48,7 +48,6 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Không tạo c
 
 - Sinh viên rà soát kết quả và tự bổ sung checklist; duyệt critique, hoàn thiện audit các tương tác cũ.
 - Một pilot và bảy phiên thật ngoài lớp, danh sách liên hệ đã che, ghi chú/SUS/bằng chứng; tính và tổng hợp kết quả.
-- Chạy trọn checklist trên nền tảng thứ ba hợp lệ.
 - Quay demo skill end-to-end và cung cấp YouTube link nếu muốn hoàn tất tiêu chí skill.
 - Sinh viên tự chấm theo rubric 30/40/20/10, xác nhận bài cuối, rồi đóng gói đúng tên và xác nhận Moodle “Em làm một mình”.
 
@@ -58,7 +57,7 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Không tạo c
 
 ## 8. Test summary
 
-Cập nhật: 2026-11-11T22:28:32+07:00.
+Cập nhật: 2026-11-11T23:00:24+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|
@@ -69,10 +68,11 @@ Cập nhật: 2026-11-11T22:28:32+07:00.
 | Mục checklist thiết kế | 48; mỗi IA 12 mục |
 | Chrome | 48 executed; 19 Passed; 29 Failed; 0 Blocked |
 | Firefox | 48 executed; 18 Passed; 30 Failed; 0 Blocked |
-| Tổng lượt kiểm tra | 96; 37 Passed; 59 Failed |
+| Safari | 48 executed; 19 Passed; 29 Failed; 0 Blocked |
+| Tổng lượt kiểm tra | 144; 56 Passed; 88 Failed |
 | Mục fail ít nhất một môi trường | 30 |
 | Nhóm bug | 23; 10 Major; 13 Minor; 0 Blocker theo đánh giá sơ bộ |
-| Nền tảng chạy trọn checklist | 2/3 |
+| Nền tảng chạy trọn checklist | 3/3: Chrome, Firefox, Safari thật |
 | Pilot / phiên chính thức có bằng chứng | 0 / 0 |
 | Người tham gia thật | 0/7 |
 | SUS | Chưa có dữ liệu để tính |

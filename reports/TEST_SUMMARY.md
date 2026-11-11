@@ -1,6 +1,6 @@
 # Test summary G2
 
-Cập nhật: 2026-11-11T22:28:32+07:00.
+Cập nhật: 2026-11-11T23:00:24+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|
@@ -11,10 +11,11 @@ Cập nhật: 2026-11-11T22:28:32+07:00.
 | Mục checklist thiết kế | 48; mỗi IA 12 mục |
 | Chrome | 48 executed; 19 Passed; 29 Failed; 0 Blocked |
 | Firefox | 48 executed; 18 Passed; 30 Failed; 0 Blocked |
-| Tổng lượt kiểm tra | 96; 37 Passed; 59 Failed |
+| Safari | 48 executed; 19 Passed; 29 Failed; 0 Blocked |
+| Tổng lượt kiểm tra | 144; 56 Passed; 88 Failed |
 | Mục fail ít nhất một môi trường | 30 |
 | Nhóm bug | 23; 10 Major; 13 Minor; 0 Blocker theo đánh giá sơ bộ |
-| Nền tảng chạy trọn checklist | 2/3 |
+| Nền tảng chạy trọn checklist | 3/3: Chrome, Firefox, Safari thật |
 | Pilot / phiên chính thức có bằng chứng | 0 / 0 |
 | Người tham gia thật | 0/7 |
 | SUS | Chưa có dữ liệu để tính |

@@ -7,7 +7,7 @@
   "human_added_check_ids": [],
   "pilot_evidence": "",
   "session_evidence": [],
-  "third_platform_full_run": "",
+  "third_platform_full_run": "evidence/runs/safari.json",
   "demo_youtube_url": "",
   "earlier_ai_audit_complete": false,
   "self_assessment": null

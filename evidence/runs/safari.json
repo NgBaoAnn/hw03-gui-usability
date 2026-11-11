@@ -1,0 +1,726 @@
+{
+  "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+  "engine": "safari",
+  "sutCommit": "85af3ba875c88283615e22cb108f13e2fccaf0e9",
+  "startedAt": "2026-11-11T15:51:18.417734+00:00",
+  "method": "Apple Safari WebDriver; same-origin iframe with exact CSS viewport except G29, which uses the top-level SUT and native WebDriver Back to avoid iframe history semantics. Full navigation resets React state per case. G37/G47/G48 use explicitly redirected XHR to a localhost delay/503 fixture; default Safari all-item keyboard navigation is Option-Tab.",
+  "fullChecklist": true,
+  "results": [
+    {
+      "id": "G01",
+      "aspect": "IA-01",
+      "screen": "Home",
+      "criterion": "Đúng một h1 mô tả trang danh sách",
+      "reference": "FR-05; GUI §8",
+      "status": "Failed",
+      "notes": "h1=2",
+      "evidence": "evidence/gui/safari/G01.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:18.417734+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G02",
+      "aspect": "IA-01",
+      "screen": "Detail",
+      "criterion": "Đúng một h1 là tên sản phẩm",
+      "reference": "FR-06; GUI §8",
+      "status": "Passed",
+      "notes": "h1=1; iPhone 15 Pro Max",
+      "evidence": "evidence/gui/safari/G02.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:20.934515+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G03",
+      "aspect": "IA-01",
+      "screen": "Cart",
+      "criterion": "Giỏ có hàng có đúng một h1",
+      "reference": "GUI §8",
+      "status": "Failed",
+      "notes": "h1=0",
+      "evidence": "evidence/gui/safari/G03.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:22.075553+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G04",
+      "aspect": "IA-01",
+      "screen": "Home",
+      "criterion": "Giá trên thẻ dùng ký hiệu ₫, có phân cách hàng nghìn",
+      "reference": "FR-05; GUI §8",
+      "status": "Failed",
+      "notes": "30,000,000 VND",
+      "evidence": "evidence/gui/safari/G04.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:22.771583+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G05",
+      "aspect": "IA-01",
+      "screen": "Detail",
+      "criterion": "Giá chi tiết đúng dữ liệu và có ký hiệu ₫",
+      "reference": "FR-06",
+      "status": "Passed",
+      "notes": "30,000,000 ₫",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:23.168293+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G06",
+      "aspect": "IA-01",
+      "screen": "Detail",
+      "criterion": "Tên và mô tả chi tiết khớp sản phẩm đã chọn",
+      "reference": "FR-06",
+      "status": "Passed",
+      "notes": "iPhone 15 Pro Max30,000,000 ₫Điện thoại cao cấp của AppleSố lượng:Thêm vào giỏ hàng",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:23.545166+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G07",
+      "aspect": "IA-01",
+      "screen": "Home",
+      "criterion": "Ảnh sản phẩm giữ đủ nội dung, không bị object-cover cắt ảnh vuông",
+      "reference": "FR-05; GUI §8",
+      "status": "Failed",
+      "notes": "{\"fit\": \"cover\", \"w\": 281, \"nw\": 300, \"h\": 192, \"nh\": 300}",
+      "evidence": "evidence/gui/safari/G07.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:23.958154+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G08",
+      "aspect": "IA-01",
+      "screen": "Home",
+      "criterion": "Ở 1280×900 trang không tràn ngang",
+      "reference": "Heuristic: responsive",
+      "status": "Passed",
+      "notes": "{\"width\": 1280, \"scroll\": 1266}",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:24.386780+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G09",
+      "aspect": "IA-01",
+      "screen": "Home",
+      "criterion": "Ở 390×844 trang không tràn ngang",
+      "reference": "Heuristic: responsive",
+      "status": "Passed",
+      "notes": "{\"width\": 390, \"scroll\": 378}",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:24.537970+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G10",
+      "aspect": "IA-01",
+      "screen": "Detail",
+      "criterion": "Ở 390×844 nút thêm giỏ nằm trọn trong viewport",
+      "reference": "Heuristic: responsive",
+      "status": "Passed",
+      "notes": "{\"x\": 41, \"width\": 185.9375, \"viewport\": 390}",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:24.757525+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G11",
+      "aspect": "IA-01",
+      "screen": "Detail",
+      "criterion": "Nút thêm giỏ dùng màu xanh dương theo quy chuẩn SUT",
+      "reference": "GUI §8",
+      "status": "Failed",
+      "notes": "rgb(22, 163, 74)",
+      "evidence": "evidence/gui/safari/G11.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:24.955264+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G12",
+      "aspect": "IA-01",
+      "screen": "Home",
+      "criterion": "Ảnh thẻ có alt mô tả sản phẩm",
+      "reference": "FR-05; GUI §8",
+      "status": "Failed",
+      "notes": "[\"\", \"\", \"\", \"\", \"\"]",
+      "evidence": "evidence/gui/safari/G12.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:25.246119+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G13",
+      "aspect": "IA-02",
+      "screen": "Home",
+      "criterion": "Ô tìm kiếm có nhãn truy cập bền vững ngoài placeholder",
+      "reference": "Heuristic: accessibility",
+      "status": "Failed",
+      "notes": "label/aria association=False",
+      "evidence": "evidence/gui/safari/G13.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:25.593399+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G14",
+      "aspect": "IA-02",
+      "screen": "Home",
+      "criterion": "Nhấn Enter tìm iPhone và chỉ hiển thị tên phù hợp",
+      "reference": "FR-05",
+      "status": "Passed",
+      "notes": "[\"iPhone 15 Pro Max\"]",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:25.860546+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G15",
+      "aspect": "IA-02",
+      "screen": "Home",
+      "criterion": "Xóa từ khóa rồi submit khôi phục đủ sản phẩm",
+      "reference": "FR-05",
+      "status": "Passed",
+      "notes": "products=5",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:26.663554+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G16",
+      "aspect": "IA-02",
+      "screen": "Home",
+      "criterion": "Ký tự & trong từ khóa được xử lý như văn bản, không tách query parameter",
+      "reference": "FR-05",
+      "status": "Failed",
+      "notes": "[\"iPhone 15 Pro Max\"]",
+      "evidence": "evidence/gui/safari/G16.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:27.468559+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G17",
+      "aspect": "IA-02",
+      "screen": "Detail",
+      "criterion": "Số lượng mặc định là số nguyên 1",
+      "reference": "FR-06",
+      "status": "Passed",
+      "notes": "1",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:28.649088+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G18",
+      "aspect": "IA-02",
+      "screen": "Detail",
+      "criterion": "Nhập số lượng 2 tạo dòng giỏ đúng số lượng 2",
+      "reference": "FR-06; FR-07",
+      "status": "Passed",
+      "notes": "input='2'; cart rows=1; quantity=2; Giỏ HàngSản phẩmGiáSố lượngThành tiềnThao táciPhone 15 Pro Max30,000,000 ₫260,000,000 ₫XóaTổng tạm tính: 60,000,000 ₫← Mua tiếpTiến hành thanh toán",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:53:14.250655+00:00",
+      "consoleErrors": [],
+      "click_delivery": [
+        {
+          "target": "Thêm vào giỏ hàng",
+          "webdriver_attempts": 2,
+          "delivered_click_events": 1
+        },
+        {
+          "target": "Thêm vào giỏ hàng",
+          "webdriver_attempts": 1,
+          "delivered_click_events": 1
+        },
+        {
+          "target": "Giỏ hàng",
+          "webdriver_attempts": 1,
+          "delivered_click_events": 1
+        }
+      ]
+    },
+    {
+      "id": "G19",
+      "aspect": "IA-02",
+      "screen": "Detail",
+      "criterion": "Số lượng 0 bị từ chối trước khi vào giỏ",
+      "reference": "FR-06",
+      "status": "Failed",
+      "notes": "input='0'; cart rows=1; quantity=0; Giỏ HàngSản phẩmGiáSố lượngThành tiềnThao táciPhone 15 Pro Max30,000,000 ₫00 ₫XóaTổng tạm tính: 0 ₫← Mua tiếpTiến hành thanh toán",
+      "evidence": "evidence/gui/safari/G19.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:53:15.709264+00:00",
+      "consoleErrors": [],
+      "click_delivery": [
+        {
+          "target": "Thêm vào giỏ hàng",
+          "webdriver_attempts": 2,
+          "delivered_click_events": 1
+        },
+        {
+          "target": "Thêm vào giỏ hàng",
+          "webdriver_attempts": 1,
+          "delivered_click_events": 1
+        },
+        {
+          "target": "Giỏ hàng",
+          "webdriver_attempts": 1,
+          "delivered_click_events": 1
+        }
+      ]
+    },
+    {
+      "id": "G20",
+      "aspect": "IA-02",
+      "screen": "Detail",
+      "criterion": "Số lượng âm bị từ chối trước khi vào giỏ",
+      "reference": "FR-06",
+      "status": "Failed",
+      "notes": "input='-1'; cart rows=1; quantity=-1; Giỏ HàngSản phẩmGiáSố lượngThành tiềnThao táciPhone 15 Pro Max30,000,000 ₫-1-30,000,000 ₫XóaTổng tạm tính: -30,000,000 ₫← Mua tiếpTiến hành thanh toán",
+      "evidence": "evidence/gui/safari/G20.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:53:16.503924+00:00",
+      "consoleErrors": [],
+      "click_delivery": [
+        {
+          "target": "Thêm vào giỏ hàng",
+          "webdriver_attempts": 1,
+          "delivered_click_events": 1
+        },
+        {
+          "target": "Thêm vào giỏ hàng",
+          "webdriver_attempts": 1,
+          "delivered_click_events": 1
+        },
+        {
+          "target": "Giỏ hàng",
+          "webdriver_attempts": 1,
+          "delivered_click_events": 1
+        }
+      ]
+    },
+    {
+      "id": "G21",
+      "aspect": "IA-02",
+      "screen": "Detail",
+      "criterion": "Số lượng thập phân bị từ chối thay vì làm tròn âm thầm",
+      "reference": "FR-06",
+      "status": "Failed",
+      "notes": "input='1.5'; cart rows=1; quantity=1; Giỏ HàngSản phẩmGiáSố lượngThành tiềnThao táciPhone 15 Pro Max30,000,000 ₫130,000,000 ₫XóaTổng tạm tính: 30,000,000 ₫← Mua tiếpTiến hành thanh toán",
+      "evidence": "evidence/gui/safari/G21.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:53:17.101448+00:00",
+      "consoleErrors": [],
+      "click_delivery": [
+        {
+          "target": "Thêm vào giỏ hàng",
+          "webdriver_attempts": 2,
+          "delivered_click_events": 1
+        },
+        {
+          "target": "Thêm vào giỏ hàng",
+          "webdriver_attempts": 1,
+          "delivered_click_events": 1
+        },
+        {
+          "target": "Giỏ hàng",
+          "webdriver_attempts": 1,
+          "delivered_click_events": 1
+        }
+      ]
+    },
+    {
+      "id": "G22",
+      "aspect": "IA-02",
+      "screen": "Detail",
+      "criterion": "Số lượng bỏ trống bị từ chối, không sinh NaN trong giỏ",
+      "reference": "FR-06",
+      "status": "Failed",
+      "notes": "input=''; cart rows=1; quantity=NaN; Giỏ HàngSản phẩmGiáSố lượngThành tiềnThao táciPhone 15 Pro Max30,000,000 ₫NaNNaN ₫XóaTổng tạm tính: NaN ₫← Mua tiếpTiến hành thanh toán",
+      "evidence": "evidence/gui/safari/G22.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:53:17.791319+00:00",
+      "consoleErrors": [],
+      "click_delivery": [
+        {
+          "target": "Thêm vào giỏ hàng",
+          "webdriver_attempts": 2,
+          "delivered_click_events": 1
+        },
+        {
+          "target": "Thêm vào giỏ hàng",
+          "webdriver_attempts": 1,
+          "delivered_click_events": 1
+        },
+        {
+          "target": "Giỏ hàng",
+          "webdriver_attempts": 1,
+          "delivered_click_events": 1
+        }
+      ]
+    },
+    {
+      "id": "G23",
+      "aspect": "IA-02",
+      "screen": "Detail",
+      "criterion": "Nhãn Số lượng được liên kết với input",
+      "reference": "Heuristic: accessibility",
+      "status": "Failed",
+      "notes": "label/aria association=False",
+      "evidence": "evidence/gui/safari/G23.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:31.095264+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G24",
+      "aspect": "IA-02",
+      "screen": "Home",
+      "criterion": "Từ khóa chứa HTML được hiển thị nguyên văn, không tạo phần tử HTML",
+      "reference": "FR-05; SEC-04",
+      "status": "Failed",
+      "notes": "Rendered HTML elements=1; benign markup only, no script executed",
+      "evidence": "evidence/gui/safari/G24.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:31.396671+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G25",
+      "aspect": "IA-03",
+      "screen": "Home",
+      "criterion": "Xem chi tiết mở đúng sản phẩm",
+      "reference": "FR-06",
+      "status": "Passed",
+      "notes": "http://localhost:5173/product/1",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:32.412134+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G26",
+      "aspect": "IA-03",
+      "screen": "Detail",
+      "criterion": "Link EShop đưa về danh sách",
+      "reference": "GUI §8",
+      "status": "Passed",
+      "notes": "http://localhost:5173/",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:32.798496+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G27",
+      "aspect": "IA-03",
+      "screen": "Home",
+      "criterion": "Link Giỏ hàng mở trang giỏ",
+      "reference": "FR-07",
+      "status": "Passed",
+      "notes": "Giỏ hàng của bạn đang trốngTiếp tục mua sắm",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:33.177460+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G28",
+      "aspect": "IA-03",
+      "screen": "Cart",
+      "criterion": "Tiếp tục mua sắm từ giỏ trống về danh sách",
+      "reference": "FR-07",
+      "status": "Passed",
+      "notes": "http://localhost:5173/",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:33.470618+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G29",
+      "aspect": "IA-03",
+      "screen": "Home",
+      "criterion": "Browser Back từ chi tiết giữ từ khóa và kết quả đã tìm",
+      "reference": "Heuristic: continuity",
+      "status": "Failed",
+      "notes": "query=''; products=5",
+      "evidence": "evidence/gui/safari/G29.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:59:28.651280+00:00",
+      "consoleErrors": [],
+      "click_delivery": [
+        {
+          "target": "Xem chi tiết",
+          "webdriver_attempts": 1,
+          "delivered_click_events": 1
+        }
+      ]
+    },
+    {
+      "id": "G30",
+      "aspect": "IA-03",
+      "screen": "Detail",
+      "criterion": "Trang chi tiết có breadcrumb",
+      "reference": "GUI §8",
+      "status": "Failed",
+      "notes": "breadcrumb regions=0",
+      "evidence": "evidence/gui/safari/G30.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:44.600264+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G31",
+      "aspect": "IA-03",
+      "screen": "Cart",
+      "criterion": "Trang giỏ có breadcrumb",
+      "reference": "GUI §8",
+      "status": "Failed",
+      "notes": "breadcrumb regions=0",
+      "evidence": "evidence/gui/safari/G31.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:45.517264+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G32",
+      "aspect": "IA-03",
+      "screen": "Cart",
+      "criterion": "Navbar highlight Giỏ hàng khi ở /cart",
+      "reference": "GUI §8",
+      "status": "Failed",
+      "notes": "aria-current=None; class=hover:underline",
+      "evidence": "evidence/gui/safari/G32.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:46.027308+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G33",
+      "aspect": "IA-03",
+      "screen": "Home",
+      "criterion": "Có thể Tab đến ô tìm kiếm theo thứ tự logo, giỏ, đăng nhập, đăng ký, tìm kiếm",
+      "reference": "GUI §8",
+      "status": "Passed",
+      "notes": "Safari native Option-Tab (all items; default Tab skips links): [\"EShop\", \"Giỏ hàng\", \"Đăng nhập\", \"Đăng ký\", \"Tìm kiếm...\"]",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:46.339224+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G34",
+      "aspect": "IA-03",
+      "screen": "Home",
+      "criterion": "Có thể tìm và mở chi tiết chỉ bằng bàn phím",
+      "reference": "Heuristic: keyboard",
+      "status": "Passed",
+      "notes": "Safari native Option-Tab: http://localhost:5173/product/1",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:46.791707+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G35",
+      "aspect": "IA-03",
+      "screen": "Cart",
+      "criterion": "Giỏ có hàng có đường quay về danh sách",
+      "reference": "FR-07",
+      "status": "Passed",
+      "notes": "http://localhost:5173/",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:47.677753+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G36",
+      "aspect": "IA-03",
+      "screen": "Cart",
+      "criterion": "Thêm lại cùng sản phẩm gộp một dòng, tăng số lượng",
+      "reference": "FR-07",
+      "status": "Failed",
+      "notes": "rows=2; first quantity=1",
+      "evidence": "evidence/gui/safari/G36.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:48.068372+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G37",
+      "aspect": "IA-04",
+      "screen": "Home",
+      "criterion": "Chờ API danh sách có trạng thái loading nhìn thấy",
+      "reference": "FR-05",
+      "status": "Failed",
+      "notes": "Controlled 1600ms delayed XHR fixture, before response: Danh sách sản phẩmTìm",
+      "evidence": "evidence/gui/safari/G37.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:48.472524+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G38",
+      "aspect": "IA-04",
+      "screen": "Home",
+      "criterion": "Không có kết quả có thông báo empty state thân thiện",
+      "reference": "FR-05; GUI §8",
+      "status": "Failed",
+      "notes": "Danh sách sản phẩmTìmKết quả tìm kiếm cho: HW03-no-such-product-731",
+      "evidence": "evidence/gui/safari/G38.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:48.736955+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G39",
+      "aspect": "IA-04",
+      "screen": "Home",
+      "criterion": "Thêm từ thẻ có toast hoặc badge xác nhận",
+      "reference": "FR-06; GUI §8",
+      "status": "Failed",
+      "notes": "live regions=0; nav=Giỏ hàngĐăng nhậpĐăng ký",
+      "evidence": "evidence/gui/safari/G39.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:50.066825+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G40",
+      "aspect": "IA-04",
+      "screen": "Detail",
+      "criterion": "Lần bấm Thêm đầu tiên thực sự thêm đúng một sản phẩm",
+      "reference": "FR-06",
+      "status": "Failed",
+      "notes": "After one click: cart rows=0; Giỏ hàng của bạn đang trốngTiếp tục mua sắm",
+      "evidence": "evidence/gui/safari/G40.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:50.532846+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G41",
+      "aspect": "IA-04",
+      "screen": "Detail",
+      "criterion": "Thêm thành công có phản hồi trực quan",
+      "reference": "FR-06; GUI §8",
+      "status": "Passed",
+      "notes": "Đã thêm",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:50.935361+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G42",
+      "aspect": "IA-04",
+      "screen": "Cart",
+      "criterion": "Link Giỏ hàng có badge số lượng sau khi thêm",
+      "reference": "GUI §8",
+      "status": "Failed",
+      "notes": "link=Giỏ hàng; badge elements=0",
+      "evidence": "evidence/gui/safari/G42.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:51.178332+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G43",
+      "aspect": "IA-04",
+      "screen": "Cart",
+      "criterion": "Xóa sản phẩm yêu cầu xác nhận trước khi mất dữ liệu",
+      "reference": "FR-07; GUI §8",
+      "status": "Failed",
+      "notes": "confirmation=False; dialog elements=0; remaining cart rows=0",
+      "evidence": "evidence/gui/safari/G43.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:51.620481+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G44",
+      "aspect": "IA-04",
+      "screen": "Cart",
+      "criterion": "Giỏ trống có hình/icon và thông báo",
+      "reference": "FR-07; GUI §8",
+      "status": "Failed",
+      "notes": "illustrations=0; Giỏ hàng của bạn đang trốngTiếp tục mua sắm",
+      "evidence": "evidence/gui/safari/G44.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:52.151463+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G45",
+      "aspect": "IA-04",
+      "screen": "Cart",
+      "criterion": "Tổng tiền mang nhãn Tổng cộng",
+      "reference": "FR-07",
+      "status": "Failed",
+      "notes": "Giỏ HàngSản phẩmGiáSố lượngThành tiềnThao táciPhone 15 Pro Max30,000,000 ₫130,000,000 ₫XóaTổng tạm tính: 30,000,000 ₫← Mua tiếpTiến hành thanh toán",
+      "evidence": "evidence/gui/safari/G45.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:52.553146+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G46",
+      "aspect": "IA-04",
+      "screen": "Detail",
+      "criterion": "ID sản phẩm không tồn tại kết thúc chờ và báo lỗi rõ ràng",
+      "reference": "Heuristic: error recovery",
+      "status": "Passed",
+      "notes": "Sản phẩm không tồn tại (Lỗi trắng trang do data rỗng)",
+      "evidence": "",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:53.251417+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G47",
+      "aspect": "IA-04",
+      "screen": "Home",
+      "criterion": "Lỗi API danh sách có thông báo và khả năng thử lại",
+      "reference": "Heuristic: error recovery",
+      "status": "Failed",
+      "notes": "Controlled HTTP 503 via localhost XHR fixture: Danh sách sản phẩmTìm",
+      "evidence": "evidence/gui/safari/G47.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:55.055625+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G48",
+      "aspect": "IA-04",
+      "screen": "Detail",
+      "criterion": "Lỗi API chi tiết không kẹt ở Đang tải",
+      "reference": "Heuristic: error recovery",
+      "status": "Failed",
+      "notes": "Controlled HTTP 503 via localhost XHR fixture: Đang tải...",
+      "evidence": "evidence/gui/safari/G48.png",
+      "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
+      "timestamp": "2026-11-11T15:51:56.239739+00:00",
+      "consoleErrors": []
+    }
+  ]
+}

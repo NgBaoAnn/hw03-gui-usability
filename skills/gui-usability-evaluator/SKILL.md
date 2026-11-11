@@ -13,6 +13,8 @@ Execute on the actual SUT. Capture browser/version, OS, URL, timestamp, raw obse
 
 In this submission repository, `scripts/run_gui.cjs` runs the G2 checklist with an installed Playwright dependency: `node scripts/run_gui.cjs chrome` or `firefox`. Use an available runtime/module path, not a hardcoded path from another computer. Source and network overrides remain recorded in raw JSON.
 
+For real Safari, use `uv run --with selenium python scripts/run_safari.py` with Apple safaridriver listening on port 4444 and the user's authorized remote-automation setting. The same-origin evidence frame supplies exact CSS viewports. Network-error cases explicitly redirect XHR to a localhost fixture; Option-Tab is Safari's all-item navigation when default Tab skips links. Inspect `click_delivery` when SafariDriver only blurs a focused input: repeat a driver command only if zero DOM clicks were delivered, preserving first-click product defects.
+
 Group reproducible failures by root cause into Markdown bugs with steps, expected/actual, severity, references and original screenshots. Create GitHub Issues only in the user's authorized repository. Keep local evidence in the archive so links are supplementary. Never alter screenshots to fabricate browser runs or participants.
 
 Prepare one goal-oriented task scenario, pilot protocol, SUS or justified scale, neutral think-aloud moderation and open questions on clarity, recovery, speed and trust. For HW03 collect one pilot and seven independent sessions with people outside the class. Do not create names, contact details, answers, quotes, timing or outcomes. Keep contact originals private; submission contacts are masked. If no genuine data exists, report that limitation and provide blank instruments.

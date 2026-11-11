@@ -14,7 +14,7 @@ def check_files():
     assert len(items)>40 and len({r[0] for r in items})==len(items)
     assert {r[1] for r in items}=={'IA-01','IA-02','IA-03','IA-04'}
     expected={r[0] for r in items};failed=set()
-    for engine in ['chrome','firefox']:
+    for engine in ['chrome','firefox','safari']:
         run=json.loads((ROOT/f'evidence/runs/{engine}.json').read_text())
         assert {r['id'] for r in run['results']}==expected
         assert len(run['results'])==len(expected)
@@ -54,6 +54,10 @@ def missing_requirements():
     third=state['third_platform_full_run']
     if not third or not (ROOT/third).is_file():
         missing.append('Chưa có lượt chạy đủ checklist trên nền tảng thứ ba hợp lệ.')
+    else:
+        third_run=json.loads((ROOT/third).read_text())
+        if third_run.get('engine')!='safari' or not third_run.get('fullChecklist') or len(third_run.get('results',[]))!=48:
+            missing.append('Lượt Safari chưa thực thi đủ 48 mục với kết quả hợp lệ.')
     if not re.match(r'https://(?:www\.)?(youtube\.com/|youtu\.be/)',state['demo_youtube_url']):
         missing.append('Chưa có YouTube demo skill end-to-end.')
     if not state['earlier_ai_audit_complete']:

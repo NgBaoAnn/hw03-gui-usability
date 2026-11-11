@@ -98,3 +98,57 @@ Bộ biểu mẫu usability và trình tính SUS đã sẵn sàng; chương trì
 
 Mình đang kiểm tra chéo số liệu và chuẩn bị zip nháp để bạn xem. Chưa thể gọi đây là bài nộp cuối cùng vì còn thiếu dữ liệu usability thật, phần phản biện của bạn và demo skill.
 
+
+## 17. assistant - 2026-11-11T22:33:04+07:00
+
+Đã tạo [bộ hồ sơ nháp ZIP](/Users/nguyenbaoan/codeLab/kcpm/hw3/output/23120207_HW03_AI_GUIUsability_DRAFT.zip) **5,3 MB**, gồm:
+
+- Checklist 48 mục, đã chạy đầy đủ trên Chrome và Firefox.
+- Ảnh bằng chứng thật; [23 GitHub Issues](https://github.com/NgBaoAnn/hw03-gui-usability/issues).
+- Báo cáo Markdown/PDF, Excel, AI Audit, Critique, Git log và agent skill.
+- Kịch bản, phiếu SUS và biểu mẫu cho pilot cùng 7 phiên usability.
+
+**Chưa thể chốt bài nộp cuối cùng.** Còn thiếu dữ liệu người tham gia thật, phần bạn tự phản biện/bổ sung, lượt Safari đầy đủ, video demo, lịch sử AI cũ và điểm tự chấm. Mình đang chờ bạn xác nhận quyền dùng Safari WebDriver.
+
+Xem tình trạng chi tiết trong [README](/Users/nguyenbaoan/codeLab/kcpm/hw3/README.md). SUT đang chạy tại [localhost:5173](http://localhost:5173).
+
+Chưa nộp Moodle; ZIP hiện tại là bản nháp. Repo GitHub đang private nên người chấm cần quyền truy cập.
+
+## 18. user - 2026-11-11T22:45:09+07:00
+
+<send_user_message_question_reply>
+[{"questionItemId":"[\"request_user_input_async\",\"call_834686d392834b109857efd03cf31d01\",0]","question":"Mình đã có bộ kiểm thử 48 mục và ảnh kiểm tra nhanh trên Safari thật. Bạn có đồng ý cho mình dùng Safari WebDriver để chạy trọn bộ, và bật “Allow Remote Automation” trong Safari nếu đang tắt không? Đây là quyền cho phép phần mềm điều khiển Safari; mình cần xác nhận riêng trước khi bật.","answer":"Đồng ý dùng Safari WebDriver"}]
+</send_user_message_question_reply>
+
+
+## 19. assistant - 2026-11-11T22:45:14+07:00
+
+Mình sẽ chạy đủ 48 mục trên Safari thật, rồi cập nhật kết quả, ảnh bằng chứng, báo cáo và ZIP. Các phần cần dữ liệu người tham gia thật vẫn sẽ được giữ đúng trạng thái chưa hoàn tất.
+
+
+## 20. assistant - 2026-11-11T22:48:11+07:00
+
+Safari đang yêu cầu **Touch ID hoặc mật khẩu máy** để bật quyền WebDriver. Mình chưa thể vượt qua bước xác thực này. Trong lúc chờ bạn xác thực trên máy, mình sẽ chuẩn bị bộ chạy Safari.
+
+
+## 21. user - 2026-11-11T22:48:35+07:00
+
+<send_user_message_question_reply>
+[{"questionItemId":"[\"request_user_input_async\",\"call_0188dad7e23b4ef08b3ac2063289efe0\",0]","question":"Safari đang hiện hộp thoại yêu cầu Touch ID hoặc mật khẩu máy để bật “Allow remote automation”. Bạn xác thực trực tiếp trên máy giúp mình rồi báo “Đã bật”; không gửi mật khẩu vào chat.","answer":"Đã xác thực và bật quyền"}]
+</send_user_message_question_reply>
+
+
+## 22. assistant - 2026-11-11T22:51:23+07:00
+
+Quyền WebDriver đã bật thành công. Bộ chạy đang kiểm tra Safari với từng mục checklist; các ca chờ lâu hoặc lỗi mạng dùng mô phỏng localhost có ghi rõ trong kết quả. Mình cũng giữ nguyên thiết lập bàn phím Safari và ghi nhận cách điều hướng Option-Tab của trình duyệt này.
+
+
+## 23. assistant - 2026-11-11T22:56:17+07:00
+
+Safari đã kiểm tra được gần hết checklist. Mình đang xử lý riêng ca Browser Back: kết quả hiện bị đánh dấu **Blocked** do bộ chạy chưa đọc được trang sau khi quay lại. Mình sẽ kiểm tra lại ca này trước khi chốt đủ 48 mục, để không nhầm lỗi công cụ với lỗi SUT.
+
+
+## 24. assistant - 2026-11-11T22:59:58+07:00
+
+Safari đã hoàn tất **48/48 mục: 19 Passed, 29 Failed, không còn Blocked**. Mình kiểm tra Browser Back trực tiếp trên trang SUT và xác nhận từ khóa bị mất khi quay lại. Kết quả hiện đủ ba trình duyệt thật; mình đang cập nhật Excel, báo cáo, GitHub Issues và ZIP.
+
