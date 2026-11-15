@@ -249,6 +249,9 @@ def main():
                 elif id_ in ['G47','G48']:
                     network('error',detail_page=id_=='G48');time.sleep(0.7);t=text();actual='Controlled HTTP 503 via localhost XHR fixture: '+t
                     passed=bool(re.search('lỗi|thử lại|không thể|error',t,re.I)) and (id_!='G48' or 'Đang tải' not in t)
+                elif id_=='G52':
+                    detail(390);r=js('return [...document.querySelectorAll("main input[type=number],main button")].map(e=>{const b=e.getBoundingClientRect();return {target:e.matches("input")?"Số lượng":"Thêm vào giỏ",width:+b.width.toFixed(1),height:+b.height.toFixed(1)}})')
+                    passed=len(r)==2 and all(x['width']>=24 and x['height']>=24 for x in r);actual=json.dumps({'viewport':'390x844','minimumCssPx':24,'targets':r},ensure_ascii=False)
                 else:raise AssertionError('Unimplemented criterion '+id_)
             except Exception as error:
                 status='Blocked';actual=f'Harness/environment error at {stage} (not a product failure): '+repr(error)

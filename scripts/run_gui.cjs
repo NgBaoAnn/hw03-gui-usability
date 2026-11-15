@@ -9,8 +9,10 @@ const base = 'http://localhost:5173';
 const productsUrl = 'http://localhost:3000/api/products';
 const [engine = 'chrome'] = process.argv.slice(2);
 assert(['chrome', 'firefox', 'webkit'].includes(engine), 'Unknown browser');
+const only = process.env.IDS ? new Set(process.env.IDS.split(',')) : null;
 assert(items.length > 40 && new Set(items.map(x => x[0])).size === items.length);
 assert(new Set(items.map(x => x[1])).size === 4);
+if (only) assert([...only].every(id => items.some(x => x[0] === id)), 'Unknown ID in IDS');
 
 async function main() {
   const browser = engine === 'chrome'
@@ -24,6 +26,7 @@ async function main() {
   await fs.mkdir(dir, { recursive: true });
   const results = [];
   for (const [id, aspect, screen, criterion, reference] of items) {
+    if (only && !only.has(id)) continue;
     const context = await browser.newContext({ viewport: { width: 1280, height: 900 }, locale: 'vi-VN' });
     const page = await context.newPage();
     page.setDefaultTimeout(6000);
@@ -101,10 +104,11 @@ async function main() {
         case 'G46': await page.goto(base+'/product/999999');await page.waitForTimeout(1200);{const t=await text();check(/không tồn tại|không tìm thấy|not found/i.test(t)&&!/Đang tải/.test(t),t);}break;
         case 'G47': await page.route('**/api/products?*',r=>r.fulfill({status:503,contentType:'application/json',body:JSON.stringify({error:'HW03 controlled network failure'})}));await page.goto(base);await page.waitForTimeout(500);{const t=await text();check(/lỗi|thử lại|không thể|error/i.test(t),`Controlled HTTP 503; ${t}`);}break;
         case 'G48': await page.route('**/api/products/1',r=>r.fulfill({status:503,contentType:'application/json',body:JSON.stringify({error:'HW03 controlled network failure'})}));await page.goto(base+'/product/1');await page.waitForTimeout(700);{const t=await text();check(/lỗi|thử lại|không thể|error/i.test(t)&&!/Đang tải/.test(t),`Controlled HTTP 503; ${t}`);}break;
+        case 'G52': await page.setViewportSize({width:390,height:844});await detail();{const r=await page.evaluate(()=>[...document.querySelectorAll('main input[type=number],main button')].map(el=>{const b=el.getBoundingClientRect();return {target:el.matches('input')?'Số lượng':'Thêm vào giỏ',width:+b.width.toFixed(1),height:+b.height.toFixed(1)};}));check(r.length===2&&r.every(x=>x.width>=24&&x.height>=24),JSON.stringify({viewport:'390x844',minimumCssPx:24,targets:r}));}break;
       }
     } catch(e) {state='Blocked';actual=`Harness error (not a product failure): ${e.message}`;}
     // Annotation is added AFTER measurement and outside the application main region.
-    if (!passed || id==='G02') {
+    if (!passed || ['G02','G52'].includes(id)) {
       await page.evaluate(({id,env,criterion,actual})=>{
         const panel=document.createElement('form');panel.id='hw03-evidence-annotation';panel.setAttribute('aria-label','Test evidence annotation, not SUT');
         panel.style.cssText='position:fixed;bottom:0;left:0;right:0;z-index:2147483647;background:#111827;color:white;padding:10px 14px;font:12px/1.4 Arial;pointer-events:none;border-top:3px solid #f59e0b';
@@ -119,8 +123,12 @@ async function main() {
   }
   await browser.close();
   const commit=execFileSync('git',['-C','.work/sut','rev-parse','HEAD'],{encoding:'utf8'}).trim();
-  await fs.writeFile(`evidence/runs/${engine}.json`,JSON.stringify({environment:env,engine,sutCommit:commit,startedAt:results[0].timestamp,results},null,2)+'\n');
-  const counts=Object.fromEntries(['Passed','Failed','Blocked'].map(s=>[s,results.filter(r=>r.status===s).length]));
+  const output=`evidence/runs/${engine}.json`;
+  const prior=only&&await fs.readFile(output,'utf8').then(JSON.parse).catch(()=>null);
+  const merged=prior?[...prior.results.filter(r=>!only.has(r.id)),...results]:results;
+  merged.sort((a,b)=>a.id.localeCompare(b.id));
+  await fs.writeFile(output,JSON.stringify({environment:env,engine,sutCommit:commit,startedAt:(prior?.startedAt??results[0].timestamp),results:merged},null,2)+'\n');
+  const counts=Object.fromEntries(['Passed','Failed','Blocked'].map(s=>[s,merged.filter(r=>r.status===s).length]));
   console.log(JSON.stringify(counts));
   if(counts.Blocked)process.exitCode=2;
 }

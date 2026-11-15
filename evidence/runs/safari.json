@@ -3,7 +3,7 @@
   "engine": "safari",
   "sutCommit": "85af3ba875c88283615e22cb108f13e2fccaf0e9",
   "startedAt": "2026-11-11T15:51:18.417734+00:00",
-  "method": "Apple Safari WebDriver; same-origin iframe with exact CSS viewport except G29, which uses the top-level SUT and native WebDriver Back to avoid iframe history semantics. Full navigation resets React state per case. G37/G47/G48 use explicitly redirected XHR to a localhost delay/503 fixture; default Safari all-item keyboard navigation is Option-Tab.",
+  "method": "Apple Safari WebDriver; same-origin iframe with exact CSS viewport except G29, which uses the top-level SUT and native WebDriver Back to avoid iframe history semantics. Full navigation resets React state per case. G37/G47/G48 use explicitly redirected XHR to a localhost delay/503 fixture; default Safari all-item keyboard navigation is Option-Tab. G52 chạy trên Safari thật qua trang đo cùng origin vì Safari Remote Automation đang tắt; trang chỉ đọc DOM/CSS và gửi kết quả về collector localhost.",
   "fullChecklist": true,
   "results": [
     {
@@ -720,6 +720,19 @@
       "evidence": "evidence/gui/safari/G48.png",
       "environment": "Safari 26.2 (Apple safaridriver) / macOS 26.2",
       "timestamp": "2026-11-11T15:51:56.239739+00:00",
+      "consoleErrors": []
+    },
+    {
+      "id": "G52",
+      "aspect": "IA-02",
+      "screen": "Detail",
+      "criterion": "Ở 390×844, ô Số lượng và nút Thêm vào giỏ có vùng chạm tối thiểu 24×24 CSS px",
+      "reference": "Heuristic: WCAG 2.2 SC 2.5.8",
+      "status": "Passed",
+      "notes": "{\"url\": \"http://localhost:5173/product/1\", \"viewport\": {\"width\": 390, \"height\": 844}, \"minimumCssPx\": 24, \"targets\": [{\"selector\": \"main input[type=number]\", \"text\": \"1\", \"width\": 80, \"height\": 42}, {\"selector\": \"main button\", \"text\": \"Thêm vào giỏ hàng\", \"width\": 185.9, \"height\": 48}]}",
+      "evidence": "evidence/accessibility/safari/G52.png",
+      "environment": "Safari 26.2 / macOS 26.2; native CUA, same-origin iframe 390x844; DOM/CSS read-only",
+      "timestamp": "2026-11-15T19:05:26.091Z",
       "consoleErrors": []
     }
   ]

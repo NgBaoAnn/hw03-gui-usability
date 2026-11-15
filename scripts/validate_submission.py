@@ -58,6 +58,11 @@ def check_files():
     assert set(demo_issues)=={b['id'] for b in demo_bugs}
     for b in demo_bugs:
         assert (ROOT/b['file']).is_file() and all((ROOT/p).is_file() for p in b['screenshots'])
+    safari_extra=json.loads((ROOT/'evidence/accessibility/safari/G52.json').read_text())
+    assert safari_extra['observation']['viewport']=={'width':390,'height':844}, 'G52 Safari viewport must match the criterion'
+    safari_g52=next(r for r in json.loads((ROOT/'evidence/runs/safari.json').read_text())['results'] if r['id']=='G52')
+    assert json.loads(safari_g52['notes'])==safari_extra['observation'] and safari_g52['timestamp']==safari_extra['timestamp']
+    assert (ROOT/safari_g52['evidence']).is_file()
     self_check()
     words=len((ROOT/'reports/AI_CRITIQUE.md').read_text().split('\n\n',2)[2].split())
     assert 200<=words<=300,words
@@ -66,8 +71,11 @@ def check_files():
 
 def missing_requirements():
     state=json.loads((ROOT/'submission_state.json').read_text());missing=[]
-    if not state['human_review_complete'] or not state['human_added_check_ids']:
-        missing.append('Sinh viên chưa rà soát và tự bổ sung checklist kèm lý do AI bỏ sót.')
+    if not state['human_review_complete']:
+        missing.append('Chưa có bản khai sinh viên đã tự rà soát checklist.')
+    if not state['human_added_check_ids']:
+        missing.append('Chưa có tiêu chí do sinh viên tự phát hiện/bổ sung; G52 do AI đề xuất.')
+    assert not set(state['human_added_check_ids']) & set(state['ai_added_check_ids']), 'A criterion cannot be both AI- and student-originated'
     if not state['pilot_evidence'] or not (ROOT/state['pilot_evidence']).is_file():
         missing.append('Chưa có bằng chứng pilot thực tế.')
     try:
@@ -86,8 +94,9 @@ def missing_requirements():
         missing.append('Chưa có lượt chạy đủ checklist trên nền tảng thứ ba hợp lệ.')
     else:
         third_run=json.loads((ROOT/third).read_text())
-        if third_run.get('engine')!='safari' or not third_run.get('fullChecklist') or len(third_run.get('results',[]))!=48:
-            missing.append('Lượt Safari chưa thực thi đủ 48 mục với kết quả hợp lệ.')
+        expected=len(json.loads((ROOT/'checklists/items.json').read_text()))
+        if third_run.get('engine')!='safari' or not third_run.get('fullChecklist') or len(third_run.get('results',[]))!=expected:
+            missing.append('Lượt Safari chưa thực thi đủ số mục trong items.json với kết quả hợp lệ.')
     if not re.match(r'https://(?:www\.)?(youtube\.com/|youtu\.be/)',state['demo_youtube_url']):
         missing.append('Chưa có video sinh viên tự quay dùng skill end-to-end kèm URL YouTube.')
     if not state['earlier_ai_audit_complete']:

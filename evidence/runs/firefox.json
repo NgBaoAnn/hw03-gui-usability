@@ -632,6 +632,19 @@
         "Error",
         "Error"
       ]
+    },
+    {
+      "id": "G52",
+      "aspect": "IA-02",
+      "screen": "Detail",
+      "criterion": "Ở 390×844, ô Số lượng và nút Thêm vào giỏ có vùng chạm tối thiểu 24×24 CSS px",
+      "reference": "Heuristic: WCAG 2.2 SC 2.5.8",
+      "status": "Passed",
+      "notes": "{\"viewport\":\"390x844\",\"minimumCssPx\":24,\"targets\":[{\"target\":\"Số lượng\",\"width\":80,\"height\":42},{\"target\":\"Thêm vào giỏ\",\"width\":186.8,\"height\":48}]}",
+      "evidence": "evidence/gui/firefox/G52.png",
+      "environment": "Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0)",
+      "timestamp": "2026-11-15T18:46:14.724Z",
+      "consoleErrors": []
     }
   ]
 }

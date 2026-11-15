@@ -46,5 +46,6 @@
   ["G45","IA-04","Cart","Tổng tiền mang nhãn Tổng cộng","FR-07"],
   ["G46","IA-04","Detail","ID sản phẩm không tồn tại kết thúc chờ và báo lỗi rõ ràng","Heuristic: error recovery"],
   ["G47","IA-04","Home","Lỗi API danh sách có thông báo và khả năng thử lại","Heuristic: error recovery"],
-  ["G48","IA-04","Detail","Lỗi API chi tiết không kẹt ở Đang tải","Heuristic: error recovery"]
+  ["G48","IA-04","Detail","Lỗi API chi tiết không kẹt ở Đang tải","Heuristic: error recovery"],
+  ["G52","IA-02","Detail","Ở 390×844, ô Số lượng và nút Thêm vào giỏ có vùng chạm tối thiểu 24×24 CSS px","Heuristic: WCAG 2.2 SC 2.5.8"]
 ]

@@ -25,7 +25,7 @@ class Collector(BaseHTTPRequestHandler):
             row=json.loads(self.rfile.read(size));engine=row['engine'];ua=row['userAgent']
             assert engine in ['chrome','firefox','safari']
             assert ('Firefox/' in ua) if engine=='firefox' else ('Chrome/' in ua) if engine=='chrome' else ('Safari/' in ua and 'Chrome/' not in ua)
-            assert row['id'] in ['G49','G50','G51'] and row['status'] in ['Passed','Failed']
+            assert row['id'] in ['G49','G50','G51','G52'] and row['status'] in ['Passed','Failed']
             assert row['observation']['url'].startswith('http://localhost:5173/')
             folder=ROOT/'evidence/accessibility'/engine;folder.mkdir(parents=True,exist_ok=True)
             row['os']='macOS '+subprocess.check_output(['sw_vers','-productVersion'],text=True).strip()
