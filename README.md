@@ -9,6 +9,7 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 ## Tài liệu
 
 - `reports/MAIN_REPORT.md` và PDF: phương pháp, kết quả và giới hạn.
+- `reports/PERSONAL_CONTRIBUTION.md`: đóng góp của sinh viên, nguồn xác nhận, phần AI hỗ trợ và trạng thái chưa hoàn tất; cũng nằm trong báo cáo chính.
 - `checklists/gui_checklist_g2.xlsx`, `.md`, `.csv`: 51 mục trên Chrome, Firefox và Safari thật; bộ gốc 48 và ba mục bổ sung tại ADDITIONS.md.
 - `checklists/AI_REVIEW.md`: lượt AI rà soát bổ sung; phiếu sinh viên ở `checklists/HUMAN_REVIEW.md` vẫn chờ đóng góp thực tế.
 - `bug-reports/BUG_REPORTS.md`: 23 nhóm bug, ảnh gốc và Issue links.
@@ -35,7 +36,7 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 
 # Test summary G2
 
-Cập nhật: 2026-11-16T00:32:30+07:00.
+Cập nhật: 2026-11-16T00:41:27+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|

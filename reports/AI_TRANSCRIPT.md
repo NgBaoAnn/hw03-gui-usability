@@ -407,3 +407,28 @@ Mình chọn ba tiêu chí còn thiếu: ngôn ngữ khai báo của trang, tư�
 
 Cả ba browser cho cùng kết quả: trang tiếng Việt khai báo `lang="en"`; chữ giá đạt tương phản **3,76:1**, chữ nút thêm giỏ đạt **3,30:1**, đều dưới mức 4,5:1 áp dụng cho cỡ chữ đã đo. Mình đã lưu đủ chín kết quả và ảnh thật. Mình sẽ gom thành hai nhóm lỗi mới, cập nhật checklist lên 51 mục và viết phần phản biện giải thích vì sao bộ ban đầu bỏ sót chúng.
 
+
+## 61. assistant - 2026-11-16T00:35:17+07:00
+
+Phần phản biện đã được viết lại thành **278 từ**. Checklist hiện có **51 mục**, với 153 kết quả trên ba browser; hai lỗi mới đã có GitHub Issues **#29 và #30**. Mình đang kiểm tra bản PDF/Excel và đóng gói lại. Nguồn đóng góp vẫn ghi rõ AI hỗ trợ, nên bạn cần đọc lại nội dung trước khi nộp.
+
+
+## 62. assistant - 2026-11-16T00:39:16+07:00
+
+Đã viết phản biện **278 từ**, bổ sung **G49–G51** và kiểm thử trên Chrome, Firefox, Safari thật. Hồ sơ hiện có **51 mục checklist, 153 kết quả và 30 GitHub Issues**; PDF/Excel đã cập nhật.
+
+[Tải ZIP mới nhất — 15,1 MB](/Users/nguyenbaoan/codeLab/kcpm/hw3/output/23120207_HW03_AI_GUIUsability_DRAFT.zip)
+
+Bạn tự quay demo rồi gửi link YouTube. Trước khi nộp, hãy đọc lại phần phản biện đã soạn; hồ sơ ghi rõ AI hỗ trợ, chưa xác nhận bạn đã tự rà soát.
+
+**Chưa nộp Moodle; ZIP vẫn là DRAFT.**
+
+## 63. user - 2026-11-16T00:39:20+07:00
+
+hãy ghi nhận đóng góp cá nhân cho tôi đầy đủ
+
+
+## 64. assistant - 2026-11-16T00:39:26+07:00
+
+Mình sẽ lập mục đóng góp cá nhân dựa trên những việc bạn đã thực hiện hoặc xác nhận trong cuộc trò chuyện, đồng thời ghi rõ phần AI hỗ trợ. Những việc chưa có xác nhận thực tế, như tự rà soát checklist hoặc hoàn thành video, sẽ giữ đúng trạng thái.
+

@@ -236,6 +236,7 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Hồ sơ tám 
 
 '''+summary.replace('# Test summary G2','## 8. Test summary')
     report+='\n\n## 9. Phản biện và bổ sung tiếp cận\n\n'+(ROOT/'checklists/ADDITIONS.md').read_text().replace('# Bổ sung checklist sau phản biện AI','### Bổ sung đã thực thi')+'\n\n'+(ROOT/'reports/AI_CRITIQUE.md').read_text().replace('# AI Critique','### Phản biện AI (bản AI soạn)')
+    report+='\n\n## 10. Đóng góp cá nhân\n\n'+(ROOT/'reports/PERSONAL_CONTRIBUTION.md').read_text().replace('# Đóng góp cá nhân của Nguyễn Bảo An','### Nguyễn Bảo An – 23120207')
     write('reports/MAIN_REPORT.md',report)
     write('README.md','''# HW03 - GUI & Usability (G2)
 
@@ -248,6 +249,7 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 ## Tài liệu
 
 - `reports/MAIN_REPORT.md` và PDF: phương pháp, kết quả và giới hạn.
+- `reports/PERSONAL_CONTRIBUTION.md`: đóng góp của sinh viên, nguồn xác nhận, phần AI hỗ trợ và trạng thái chưa hoàn tất; cũng nằm trong báo cáo chính.
 - `checklists/gui_checklist_g2.xlsx`, `.md`, `.csv`: 51 mục trên Chrome, Firefox và Safari thật; bộ gốc 48 và ba mục bổ sung tại ADDITIONS.md.
 - `checklists/AI_REVIEW.md`: lượt AI rà soát bổ sung; phiếu sinh viên ở `checklists/HUMAN_REVIEW.md` vẫn chờ đóng góp thực tế.
 - `bug-reports/BUG_REPORTS.md`: 23 nhóm bug, ảnh gốc và Issue links.

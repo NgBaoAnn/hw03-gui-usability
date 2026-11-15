@@ -52,9 +52,9 @@ Không dùng danh sách lớp Moodle làm người tham gia. Không tạo điể
 
 Đầu ra tool viết file trong session cũ được đối chiếu với ba file và Git commits thực. Chỉ xuất phần văn bản hiển thị; không đưa suy luận nội bộ hoặc thông tin xác thực vào bài. Bản PDF audit có phụ lục hội thoại cũ và mới. Sinh viên cần kiểm tra và bổ sung nếu đã dùng AI ở những nơi khác không nằm trong hai nguồn đã khôi phục. Các tin nhắn sau thời điểm xuất transcript sẽ được xuất lại trước lần nộp cuối.
 
-## Sinh viên xác nhận
+## Trạng thái sinh viên rà soát
 
-Chưa xác nhận. Sinh viên cần đọc kết quả, chỉnh sửa AI Critique bằng trải nghiệm thật, bổ sung checklist tự phát hiện, kiểm tra ảnh/lỗi và tự chấm điểm. Không tự ký thay sinh viên.
+Chưa xác nhận đã hoàn tất human review/tự bổ sung checklist hoặc duyệt AI Critique. Sinh viên đã xác nhận phạm vi, nguồn Task 2, lựa chọn công khai repo và điểm tự chấm 100/100; các xác nhận đó không thay việc xem xét kết quả thực tế. Không tự ký thay sinh viên.
 
 
 ## Tích hợp dữ liệu Task 2 ngày 15/11/2026
@@ -79,3 +79,8 @@ Theo yêu cầu sinh viên tiếp tục làm phần phản biện/bổ sung, Cod
 G49 ghi lang=en trên nội dung tiếng Việt. G50 đạt tương phản 3,763127680148142; G51 đạt 3,2957336053312796. Với cỡ chữ 16px đã đo, ngưỡng áp dụng 4,5:1. Công thức JS tự kiểm đen/trắng và cùng màu; Python đối chiếu độc lập sáu phép đo tương phản và ngoại lệ chữ lớn. Nguồn WCAG chính thức nằm trong ADDITIONS.md; đây là heuristic tiếp cận ngoài cam kết FR. Không suy ra kết quả thử screen reader hoặc tần suất khó khăn của người dùng.
 
 Bộ gốc 48 mục được giữ riêng; tổng mới 51 mục, 153 kết quả, 56 Passed/97 Failed, 25 nhóm bug GUI. Hai bug B24/B25 bổ sung Issue #29/#30, cùng năm finding usability thành 30 Issues. Rà soát/bổ sung vẫn ghi do AI theo yêu cầu sinh viên; không tạo lời xác nhận hoặc mục tự phát hiện mang tên sinh viên.
+
+
+## Ghi nhận đóng góp cá nhân
+
+Theo yêu cầu sinh viên, đã lập reports/PERSONAL_CONTRIBUTION.md và đưa vào báo cáo chính. Mục này đối chiếu các lựa chọn, xác nhận, dữ liệu cung cấp, hỗ trợ xác thực Safari, yêu cầu phản biện/bổ sung, quyết định công bố và tự chấm của Nguyễn Bảo An. Phần tổ chức nghiên cứu ghi theo xác nhận sinh viên; phần kỹ thuật do AI thực hiện được tách rõ. Không thêm tỷ lệ đóng góp tùy ý, chữ ký, mục tự phát hiện hoặc lời xác nhận đã human review. Video demo giữ trạng thái sinh viên nhận thực hiện, chưa được ghi là hoàn tất.
