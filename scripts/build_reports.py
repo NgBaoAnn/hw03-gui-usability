@@ -27,6 +27,7 @@ def main():
         for gid,aspect,screen,criterion,reference in additions:
             r=next(r for r in supplemental[engine] if r['id']==gid)
             run['results'].append(dict(r,aspect=aspect,screen=screen,criterion=criterion,reference=reference,notes=json.dumps(r['observation'],ensure_ascii=False),environment=engine+' / '+r['os']+' / '+r['userAgent']))
+    for run in runs.values(): run['results'].sort(key=lambda r:r['id'])
     assert runs['safari']['fullChecklist'], 'Safari must finish all criteria before publishing a full-platform report'
     chrome = runs['chrome']['results']
     firefox = runs['firefox']['results']
@@ -51,7 +52,7 @@ def main():
         writer = csv.writer(stream)
         writer.writerow(['ID', 'IA', 'Screen', 'Expected', 'Reference', 'Chrome', 'Firefox', 'Safari', 'Chrome notes', 'Firefox notes', 'Safari notes', 'Chrome screenshot', 'Firefox screenshot', 'Safari screenshot'])
         writer.writerows(rows)
-    md = ['# Checklist GUI G2 đã thực thi', '', '51 mục do Codex thiết kế/thực hiện: 48 gốc và G49–G51 tiếp cận bổ sung theo yêu cầu sinh viên. Chưa gán phần AI bổ sung thành mục sinh viên tự phát hiện. Xem ADDITIONS.md và evidence/accessibility/.', '', 'Bước thao tác: `scripts/run_gui.cjs` (Chrome/Firefox), `scripts/run_safari.py` (Apple WebDriver). Kết quả đầy đủ trong `evidence/runs/`. Notes được rút gọn; ảnh gốc có chú thích sau phép đo.', '', '| ID | IA | Màn hình | Tiêu chí | Nguồn | Chrome | Firefox | Safari | Notes Failed (rút gọn) | Ảnh Failed |', '|---|---|---|---|---|---|---|---|---|---|']
+    md = ['# Checklist GUI G2 đã thực thi', '', '52 mục: 48 gốc do Codex thiết kế/thực hiện, G49–G51 AI bổ sung theo yêu cầu sinh viên, và G52 do AI đề xuất/thực thi theo yêu cầu sinh viên (checklists/HUMAN_REVIEW.md). Xem ADDITIONS.md, HUMAN_REVIEW.md và evidence/accessibility/.', '', 'Bước thao tác: `scripts/run_gui.cjs` (Chrome/Firefox), `scripts/run_safari.py` (Apple WebDriver); G52 trên Safari dùng trang đo cùng origin vì Remote Automation đang tắt. Kết quả đầy đủ trong `evidence/runs/`. Notes được rút gọn; ảnh gốc có chú thích sau phép đo.', '', '| ID | IA | Màn hình | Tiêu chí | Nguồn | Chrome | Firefox | Safari | Notes Failed (rút gọn) | Ảnh Failed |', '|---|---|---|---|---|---|---|---|---|---|']
     for a,b,c in zip(chrome,firefox,safari_results):
         platform_rows=[('Chrome',a),('Firefox',b),('Safari',c)]
         pics='; '.join(f'[{e}](../{r["evidence"]})' for e,r in platform_rows if r['status']=='Failed')
@@ -123,7 +124,7 @@ GitHub Issue: {issue_url}
         bug_data.append({'id':bid,'title':title,'severity':severity,'checks':ids,'file':f'bug-reports/{bid}.md','screenshots':[r['evidence'] for _,r in affected]})
     write('bug-reports/BUG_REPORTS.md','\n\n'.join(catalog))
     write('bug-reports/catalog.json',json.dumps(bug_data,ensure_ascii=False,indent=2))
-    matrix=['# Ma trận cross-browser', '', '51 tiêu chí trên ba browser: 48 gốc và G49–G51 qua native CUA. Dữ liệu hai lượt được giữ riêng trong evidence/runs/ và evidence/accessibility/. Viewport hẹp là kiểm tra responsive, không tính thêm nền tảng.', '', '| Môi trường | Số mục | Passed | Failed | Blocked |', '|---|---:|---:|---:|---:|']
+    matrix=['# Ma trận cross-browser', '', '52 tiêu chí trên ba browser: 48 gốc, G49–G51 qua native CUA và G52 do AI bổ sung (Safari đo qua trang cùng origin). Dữ liệu các lượt được giữ riêng trong evidence/runs/ và evidence/accessibility/. Viewport hẹp là kiểm tra responsive, không tính thêm nền tảng.', '', '| Môi trường | Số mục | Passed | Failed | Blocked |', '|---|---:|---:|---:|---:|']
     for e,run in runs.items():
         matrix.append(f'| {run["environment"]} | {len(run["results"])} | {counts[e]["Passed"]} | {counts[e]["Failed"]} | {counts[e]["Blocked"]} |')
     differences=[]
@@ -149,11 +150,11 @@ Cập nhật: {now}.
 | Màn hình đã bao phủ | 3: Home, Product Detail, Cart |
 | Luồng GUI do agent thực thi | Tìm kiếm → chi tiết → thêm giỏ; giỏ dùng để kiểm tra kết quả |
 | Luồng usability | Quản lý đơn hàng; 1 pilot + 7 phiên do sinh viên cung cấp và xác nhận |
-| Mục checklist thiết kế | 51: 48 gốc + G49–G51 bổ sung; IA-01/02/03/04 = 14/13/12/12 |
-| Chrome | 51 executed; {counts['chrome']['Passed']} Passed; {counts['chrome']['Failed']} Failed; {counts['chrome']['Blocked']} Blocked |
-| Firefox | 51 executed; {counts['firefox']['Passed']} Passed; {counts['firefox']['Failed']} Failed; {counts['firefox']['Blocked']} Blocked |
-| Safari | 51 executed; {counts['safari']['Passed']} Passed; {counts['safari']['Failed']} Failed; {counts['safari']['Blocked']} Blocked |
-| Tổng lượt kiểm tra | 153: 144 gốc + 9 bổ sung; {sum(x['Passed'] for x in counts.values())} Passed; {sum(x['Failed'] for x in counts.values())} Failed |
+| Mục checklist thiết kế | 52: 48 gốc + G49–G51 AI + G52 AI; IA-01/02/03/04 = 14/14/12/12 |
+| Chrome | 52 executed; {counts['chrome']['Passed']} Passed; {counts['chrome']['Failed']} Failed; {counts['chrome']['Blocked']} Blocked |
+| Firefox | 52 executed; {counts['firefox']['Passed']} Passed; {counts['firefox']['Failed']} Failed; {counts['firefox']['Blocked']} Blocked |
+| Safari | 52 executed; {counts['safari']['Passed']} Passed; {counts['safari']['Failed']} Failed; {counts['safari']['Blocked']} Blocked |
+| Tổng lượt kiểm tra | 156: 144 gốc + 9 bổ sung AI + 3 G52; {sum(x['Passed'] for x in counts.values())} Passed; {sum(x['Failed'] for x in counts.values())} Failed |
 | Mục fail ít nhất một môi trường | {len({r['id'] for run in runs.values() for r in run['results'] if r['status']=='Failed'})} |
 | Nhóm bug GUI | 25: 23 gốc + B24/B25; 12 Major, 13 Minor; 0 Blocker theo đánh giá sơ bộ |
 | Nền tảng chạy trọn checklist | 3/3: Chrome, Firefox, Safari thật |
@@ -184,9 +185,9 @@ Màn hình chính Home/Search; bổ trợ Product Detail và Cart. Luồng: tìm
 
 ## 2. Task 1: thiết kế và thực thi GUI checklist
 
-Bộ đầu có 48 mục, mỗi IA 12 mục. Sau phản biện, thêm G49–G51: tổng 51 mục, IA-01/02/03/04 = 14/13/12/12. items.json giữ nguyên bộ đầu; additions.json lưu phần thêm. Tất cả do AI thiết kế/thực hiện theo yêu cầu sinh viên. Bộ gốc dùng browser context mới theo case; phần bổ sung mở từng URL trong cửa sổ browser thật và chỉ đọc DOM/CSS. Chờ route và dữ liệu trước phép đo. Kết quả Passed/Failed và Notes riêng từng môi trường nằm trong `checklists/gui_checklist_g2.xlsx`, `.csv`, `.md`. JSON lưu quan sát, browser, timestamp, revision và lỗi console.
+Bộ đầu có 48 mục, mỗi IA 12 mục. AI thêm G49–G51; AI đề xuất và thực thi G52 theo yêu cầu sinh viên (kích thước vùng chạm tối thiểu 24×24 CSS px ở 390×844): tổng 52 mục, IA-01/02/03/04 = 14/14/12/12. items.json giữ bộ đầu + G52; additions.json lưu G49–G51. Bộ gốc và G52 dùng browser context mới theo case; G49–G51 mở từng URL trong cửa sổ browser thật và chỉ đọc DOM/CSS. Chờ route và dữ liệu trước phép đo. Kết quả Passed/Failed và Notes riêng từng môi trường nằm trong `checklists/gui_checklist_g2.xlsx`, `.csv`, `.md`. JSON lưu quan sát, browser, timestamp, revision và lỗi console.
 
-Tiêu chí hỗ trợ tiếp cận, responsive và khôi phục ngoài FR được ghi là heuristic. RTL/dark mode chưa được xác định là tính năng bắt buộc, nên không báo thiếu chúng là bug. `checklists/HUMAN_REVIEW.md` còn trống: sinh viên cần phản biện và tự bổ sung những mục AI bỏ sót, có giải thích lý do.
+Tiêu chí hỗ trợ tiếp cận, responsive và khôi phục ngoài FR được ghi là heuristic. RTL/dark mode chưa được xác định là tính năng bắt buộc, nên không báo thiếu chúng là bug. `checklists/HUMAN_REVIEW.md` ghi lại bản khai sinh viên cung cấp về việc rà soát G49–G51 và đính chính G52 là đề xuất của AI. Chưa có tiêu chí tự phát hiện riêng của sinh viên; không ký hoặc xác nhận thay. G52 là phép đo khách quan (getBoundingClientRect) nên không phụ thuộc đánh giá cảm tính.
 
 Codex đã thực hiện lượt rà soát bổ sung theo yêu cầu sinh viên, ghi tại `checklists/AI_REVIEW.md`: đối chiếu số liệu, nguồn kỳ vọng, phạm vi kết luận và giới hạn công cụ. Đây là rà soát của AI, chưa được gán thành phần sinh viên tự phản biện/bổ sung.
 
@@ -208,7 +209,7 @@ Hồ sơ nguồn ghi tất cả người tham gia từ chối ghi hình; không 
 
 ## 4. Task 3: cross-browser
 
-Đã chạy bộ gốc 48 mục trên Chrome/Firefox Playwright build và Safari 26.2 qua Apple WebDriver ở macOS 26.2; thêm G49–G51 trên cả ba browser qua native CUA, tổng 51 mục/môi trường. Ba trình duyệt có JSON và ảnh gốc riêng. Safari dùng iframe cùng origin có viewport CSS chính xác, không đổi logic SUT. Viewport hẹp chỉ là kiểm tra responsive. Các ca trễ/lỗi API được mô phỏng có kiểm soát và ghi rõ phương pháp. Xem `cross-platform/MATRIX.md`.
+Đã chạy bộ gốc 48 mục trên Chrome/Firefox Playwright build và Safari 26.2 qua Apple WebDriver ở macOS 26.2; thêm G49–G51 trên cả ba browser qua native CUA và G52 trên Chrome/Firefox bằng Playwright, trên Safari bằng trang đo cùng origin vì Remote Automation đang tắt; tổng 52 mục/môi trường. Ba trình duyệt có JSON và ảnh gốc riêng. Safari dùng iframe cùng origin có viewport CSS chính xác, không đổi logic SUT. Viewport hẹp chỉ là kiểm tra responsive. Các ca trễ/lỗi API được mô phỏng có kiểm soát và ghi rõ phương pháp. Xem `cross-platform/MATRIX.md`.
 
 Khác biệt giữa các môi trường: {'; '.join(differences)}. G09 Firefox tràn ngang 8 px ở viewport 390 px. Safari dùng Option-Tab để điều hướng tất cả phần tử theo thiết lập mặc định. Mọi ảnh Failed có email sinh viên, MSSV, họ tên, môi trường và localhost URL ở phần chú thích, thêm sau phép đo; ảnh đặc tính DOM phải đọc cùng JSON.
 
@@ -216,7 +217,7 @@ Khác biệt giữa các môi trường: {'; '.join(differences)}. G09 Firefox t
 
 ## 5. Agent skill, AI và Git
 
-Skill trong `skills/gui-usability-evaluator/SKILL.md` hỗ trợ chọn phạm vi, thiết kế, thực thi có chứng cứ, chuẩn bị nghiên cứu và tính SUS thật. Đã kiểm tra frontmatter và self-check của script. Video do sinh viên cung cấp: https://youtu.be/VGVm_V7L_ks (10:38 theo YouTube UI; metadata làm tròn 639 giây). Đã kiểm tra phát khi không đăng nhập. Bản skill thực sự dùng được giữ nguyên tại `skills/gui-usability-evaluator/demo-version/`, kèm checklist và SUS scorer; bản gốc của homework vẫn ở thư mục cha. Demo mở rộng từ tìm AirPods Pro 2 đến checkout và hậu kiểm đơn #9, không cộng lượt demo vào 153 kết quả cross-browser. Bằng chứng gốc tại `evidence/demo/`, transcript riêng tại `reports/AI_DEMO_TRANSCRIPT.md`; mô tả và giới hạn trong `skills/gui-usability-evaluator/DEMO.md`. File MP4 tham khảo cũ do Codex ghi đã được sinh viên loại khỏi hồ sơ; bài nộp dùng link video của sinh viên.
+Skill trong `skills/gui-usability-evaluator/SKILL.md` hỗ trợ chọn phạm vi, thiết kế, thực thi có chứng cứ, chuẩn bị nghiên cứu và tính SUS thật. Đã kiểm tra frontmatter và self-check của script. Video do sinh viên cung cấp: https://youtu.be/VGVm_V7L_ks (10:38 theo YouTube UI; metadata làm tròn 639 giây). Đã kiểm tra phát khi không đăng nhập. Bản skill thực sự dùng được giữ nguyên tại `skills/gui-usability-evaluator/demo-version/`, kèm checklist và SUS scorer; bản gốc của homework vẫn ở thư mục cha. Demo mở rộng từ tìm AirPods Pro 2 đến checkout và hậu kiểm đơn #9, không cộng lượt demo vào 156 kết quả cross-browser. Bằng chứng gốc tại `evidence/demo/`, transcript riêng tại `reports/AI_DEMO_TRANSCRIPT.md`; mô tả và giới hạn trong `skills/gui-usability-evaluator/DEMO.md`. File MP4 tham khảo cũ do Codex ghi đã được sinh viên loại khỏi hồ sơ; bài nộp dùng link video của sinh viên.
 
 `reports/AI_AUDIT_REPORT.md` và bản transcript ghi lại AI dùng trong chat hiện tại. Đã khôi phục 14 lời nhắn lập kế hoạch ngày 03/11 từ session OpenCode đúng thư mục HW03 vào `reports/AI_AUDIT_RECOVERED.md`, kèm ba đầu ra nguyên gốc ở `reports/legacy/`. Timestamp/model được lấy đúng metadata cũ; không tự tạo prompt. Sinh viên cần bổ sung nếu còn tương tác khác ngoài các nguồn này. `AI_CRITIQUE.md` vẫn là bản AI soạn, chờ sinh viên sửa theo trải nghiệm thật và xác nhận.
 
@@ -224,9 +225,9 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Hồ sơ tám 
 
 ## 6. Việc còn thiếu trước khi nộp
 
-- Sinh viên rà soát kết quả và tự bổ sung checklist; duyệt critique/audit, bổ sung nếu còn chat khác ngoài bản đã khôi phục.
+- Sinh viên cung cấp bản khai đã rà soát. G52 do AI đề xuất; chưa có mục tự phát hiện riêng của sinh viên. Xem `checklists/HUMAN_REVIEW.md`; cần giữ rõ giới hạn này khi chốt nộp.
 - Demo đã được sinh viên cung cấp và kiểm tra phát công khai: https://youtu.be/VGVm_V7L_ks .
-- Sinh viên đã chọn tự chấm 30/40/20/10 = 100. Điểm tự chấm không xác nhận phần human review đã hoàn tất. Sau khi đủ các mục còn thiếu, xác nhận bài cuối và Moodle “Em làm một mình”.
+- Sinh viên đã chọn tự chấm 30/40/20/10 = 100. Điểm tự chấm không phải điểm giảng viên; bản khai human review không thay thế tiêu chí sinh viên tự phát hiện; G52 là AI đề xuất.
 
 {assessment_md}
 
@@ -243,7 +244,7 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Hồ sơ tám 
 
 Nguyễn Bảo An - 23120207 - bài cá nhân.
 
-**HỒ SƠ CHUẨN BỊ NỘP.** Đã chạy đủ 3 trình duyệt, tích hợp 1 pilot + 7 phiên được sinh viên xác nhận, tính SUS, khôi phục audit và public repo. Sinh viên chọn tự chấm 100/100. Video sinh viên: https://youtu.be/VGVm_V7L_ks (đã thử phát không đăng nhập). Chưa có bằng chứng sinh viên tự rà soát/tự bổ sung; phần được giao AI đã làm và khai báo. Không có video phiên usability; giới hạn được ghi rõ theo §14.
+**HỒ SƠ CHUẨN BỊ NỘP.** Đã chạy đủ 3 trình duyệt, tích hợp 1 pilot + 7 phiên được sinh viên xác nhận, tính SUS, khôi phục audit và public repo. Sinh viên chọn tự chấm 100/100. Video sinh viên: https://youtu.be/VGVm_V7L_ks (đã thử phát không đăng nhập). Bản khai rà soát và đính chính nguồn G52 (AI đề xuất) nằm tại `checklists/HUMAN_REVIEW.md`; phần AI thực thi được ghi rõ. Không có video phiên usability; giới hạn được ghi rõ theo §14.
 
 Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc cần bạn làm, biểu mẫu tương ứng và dữ liệu gửi lại để Codex chốt hồ sơ.
 
@@ -251,8 +252,8 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 
 - `reports/MAIN_REPORT.md` và PDF: phương pháp, kết quả và giới hạn.
 - `reports/PERSONAL_CONTRIBUTION.md`: đóng góp của sinh viên, nguồn xác nhận, phần AI hỗ trợ và trạng thái chưa hoàn tất; cũng nằm trong báo cáo chính.
-- `checklists/gui_checklist_g2.xlsx`, `.md`, `.csv`: 51 mục trên Chrome, Firefox và Safari thật; bộ gốc 48 và ba mục bổ sung tại ADDITIONS.md.
-- `checklists/AI_REVIEW.md`: lượt AI rà soát bổ sung; phiếu sinh viên ở `checklists/HUMAN_REVIEW.md` vẫn chờ đóng góp thực tế.
+- `checklists/gui_checklist_g2.xlsx`, `.md`, `.csv`: 52 mục trên Chrome, Firefox và Safari thật; bộ gốc 48, G49–G51 tại ADDITIONS.md; G52 do AI đề xuất, được đính chính ở HUMAN_REVIEW.md.
+- `checklists/AI_REVIEW.md`: lượt AI rà soát bổ sung; nguồn lời khai rà soát của sinh viên và đính chính G52 ở `checklists/HUMAN_REVIEW.md`.
 - `bug-reports/BUG_REPORTS.md`: 23 nhóm bug, ảnh gốc và Issue links.
 - `bug-reports/supplement/`: B24/B25 và Issues #29/#30; `checklists/ADDITIONS.md`: ba mục tiếp cận bổ sung.
 - `evidence/runs/`: kết quả máy đọc được; `evidence/gui/`: ảnh gốc.
@@ -261,7 +262,7 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 - `reports/AI_AUDIT_REPORT.md`, `AI_CRITIQUE.md` và PDF.
 - `skills/gui-usability-evaluator/`: skill gốc và bản dùng thực tế trong demo, kèm tài nguyên; link video sinh viên trong DEMO.md.
 - `reports/AI_AUDIT_RECOVERED.md`: prompt/output cũ đã khôi phục, kèm các kế hoạch nguyên gốc.
-- `reports/AI_DEMO_TRANSCRIPT.md`, `DEMO_FINDINGS.md`, `evidence/demo/` và `bug-reports/demo/`: lượt demo, ba phát hiện ngoài G2 và Issues; không cộng vào kết quả 153 lượt.
+- `reports/AI_DEMO_TRANSCRIPT.md`, `DEMO_FINDINGS.md`, `evidence/demo/` và `bug-reports/demo/`: lượt demo, ba phát hiện ngoài G2 và Issues; không cộng vào kết quả 156 lượt.
 - `git_commit_log.txt`: commit thật theo bước đã hoàn tất.
 
 ## Điểm tự đánh giá

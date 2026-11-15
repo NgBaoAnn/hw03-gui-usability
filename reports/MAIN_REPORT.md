@@ -14,13 +14,13 @@ Màn hình chính Home/Search; bổ trợ Product Detail và Cart. Luồng: tìm
 
 ## 2. Task 1: thiết kế và thực thi GUI checklist
 
-Bộ đầu có 48 mục, mỗi IA 12 mục. Sau phản biện, thêm G49–G51: tổng 51 mục, IA-01/02/03/04 = 14/13/12/12. items.json giữ nguyên bộ đầu; additions.json lưu phần thêm. Tất cả do AI thiết kế/thực hiện theo yêu cầu sinh viên. Bộ gốc dùng browser context mới theo case; phần bổ sung mở từng URL trong cửa sổ browser thật và chỉ đọc DOM/CSS. Chờ route và dữ liệu trước phép đo. Kết quả Passed/Failed và Notes riêng từng môi trường nằm trong `checklists/gui_checklist_g2.xlsx`, `.csv`, `.md`. JSON lưu quan sát, browser, timestamp, revision và lỗi console.
+Bộ đầu có 48 mục, mỗi IA 12 mục. AI thêm G49–G51; AI đề xuất và thực thi G52 theo yêu cầu sinh viên (kích thước vùng chạm tối thiểu 24×24 CSS px ở 390×844): tổng 52 mục, IA-01/02/03/04 = 14/14/12/12. items.json giữ bộ đầu + G52; additions.json lưu G49–G51. Bộ gốc và G52 dùng browser context mới theo case; G49–G51 mở từng URL trong cửa sổ browser thật và chỉ đọc DOM/CSS. Chờ route và dữ liệu trước phép đo. Kết quả Passed/Failed và Notes riêng từng môi trường nằm trong `checklists/gui_checklist_g2.xlsx`, `.csv`, `.md`. JSON lưu quan sát, browser, timestamp, revision và lỗi console.
 
-Tiêu chí hỗ trợ tiếp cận, responsive và khôi phục ngoài FR được ghi là heuristic. RTL/dark mode chưa được xác định là tính năng bắt buộc, nên không báo thiếu chúng là bug. `checklists/HUMAN_REVIEW.md` còn trống: sinh viên cần phản biện và tự bổ sung những mục AI bỏ sót, có giải thích lý do.
+Tiêu chí hỗ trợ tiếp cận, responsive và khôi phục ngoài FR được ghi là heuristic. RTL/dark mode chưa được xác định là tính năng bắt buộc, nên không báo thiếu chúng là bug. `checklists/HUMAN_REVIEW.md` ghi lại bản khai sinh viên cung cấp về việc rà soát G49–G51 và đính chính G52 là đề xuất của AI. Chưa có tiêu chí tự phát hiện riêng của sinh viên; không ký hoặc xác nhận thay. G52 là phép đo khách quan (getBoundingClientRect) nên không phụ thuộc đánh giá cảm tính.
 
 Codex đã thực hiện lượt rà soát bổ sung theo yêu cầu sinh viên, ghi tại `checklists/AI_REVIEW.md`: đối chiếu số liệu, nguồn kỳ vọng, phạm vi kết luận và giới hạn công cụ. Đây là rà soát của AI, chưa được gán thành phần sinh viên tự phản biện/bổ sung.
 
-Chrome: 19 Passed, 32 Failed. Firefox: 18 Passed, 33 Failed. Safari: 19 Passed, 32 Failed. Không còn Blocked trong bản JSON cuối. Đã sửa lỗi đồng bộ harness và xác minh click được giao khi SafariDriver chỉ blur input. Những mục bị ảnh hưởng được chạy lại; chỉ kết quả cuối mỗi ID được thống kê. Ảnh Failed là ảnh browser thật, không phải ảnh AI sinh.
+Chrome: 20 Passed, 32 Failed. Firefox: 19 Passed, 33 Failed. Safari: 20 Passed, 32 Failed. Không còn Blocked trong bản JSON cuối. Đã sửa lỗi đồng bộ harness và xác minh click được giao khi SafariDriver chỉ blur input. Những mục bị ảnh hưởng được chạy lại; chỉ kết quả cuối mỗi ID được thống kê. Ảnh Failed là ảnh browser thật, không phải ảnh AI sinh.
 
 23 nhóm bug được liệt kê trong `bug-reports/BUG_REPORTS.md`. Quan trọng nhất: click thêm giỏ lần đầu không thêm; số lượng 0/âm/thập phân/rỗng được nhận; giỏ trùng dòng; từ khóa render HTML; không xác nhận xóa. HTML injection chỉ được chứng minh bằng thẻ b vô hại, không tuyên bố đã khai thác script. Heuristic crop ảnh và mất ngữ cảnh khi Back đang chờ sinh viên xác nhận mức ảnh hưởng.
 
@@ -38,7 +38,7 @@ Hồ sơ nguồn ghi tất cả người tham gia từ chối ghi hình; không 
 
 ## 4. Task 3: cross-browser
 
-Đã chạy bộ gốc 48 mục trên Chrome/Firefox Playwright build và Safari 26.2 qua Apple WebDriver ở macOS 26.2; thêm G49–G51 trên cả ba browser qua native CUA, tổng 51 mục/môi trường. Ba trình duyệt có JSON và ảnh gốc riêng. Safari dùng iframe cùng origin có viewport CSS chính xác, không đổi logic SUT. Viewport hẹp chỉ là kiểm tra responsive. Các ca trễ/lỗi API được mô phỏng có kiểm soát và ghi rõ phương pháp. Xem `cross-platform/MATRIX.md`.
+Đã chạy bộ gốc 48 mục trên Chrome/Firefox Playwright build và Safari 26.2 qua Apple WebDriver ở macOS 26.2; thêm G49–G51 trên cả ba browser qua native CUA và G52 trên Chrome/Firefox bằng Playwright, trên Safari bằng trang đo cùng origin vì Remote Automation đang tắt; tổng 52 mục/môi trường. Ba trình duyệt có JSON và ảnh gốc riêng. Safari dùng iframe cùng origin có viewport CSS chính xác, không đổi logic SUT. Viewport hẹp chỉ là kiểm tra responsive. Các ca trễ/lỗi API được mô phỏng có kiểm soát và ghi rõ phương pháp. Xem `cross-platform/MATRIX.md`.
 
 Khác biệt giữa các môi trường: G09: chrome Passed, firefox Failed, safari Passed. G09 Firefox tràn ngang 8 px ở viewport 390 px. Safari dùng Option-Tab để điều hướng tất cả phần tử theo thiết lập mặc định. Mọi ảnh Failed có email sinh viên, MSSV, họ tên, môi trường và localhost URL ở phần chú thích, thêm sau phép đo; ảnh đặc tính DOM phải đọc cùng JSON.
 
@@ -46,7 +46,7 @@ Khác biệt giữa các môi trường: G09: chrome Passed, firefox Failed, saf
 
 ## 5. Agent skill, AI và Git
 
-Skill trong `skills/gui-usability-evaluator/SKILL.md` hỗ trợ chọn phạm vi, thiết kế, thực thi có chứng cứ, chuẩn bị nghiên cứu và tính SUS thật. Đã kiểm tra frontmatter và self-check của script. Video do sinh viên cung cấp: https://youtu.be/VGVm_V7L_ks (10:38 theo YouTube UI; metadata làm tròn 639 giây). Đã kiểm tra phát khi không đăng nhập. Bản skill thực sự dùng được giữ nguyên tại `skills/gui-usability-evaluator/demo-version/`, kèm checklist và SUS scorer; bản gốc của homework vẫn ở thư mục cha. Demo mở rộng từ tìm AirPods Pro 2 đến checkout và hậu kiểm đơn #9, không cộng lượt demo vào 153 kết quả cross-browser. Bằng chứng gốc tại `evidence/demo/`, transcript riêng tại `reports/AI_DEMO_TRANSCRIPT.md`; mô tả và giới hạn trong `skills/gui-usability-evaluator/DEMO.md`. File MP4 tham khảo cũ do Codex ghi đã được sinh viên loại khỏi hồ sơ; bài nộp dùng link video của sinh viên.
+Skill trong `skills/gui-usability-evaluator/SKILL.md` hỗ trợ chọn phạm vi, thiết kế, thực thi có chứng cứ, chuẩn bị nghiên cứu và tính SUS thật. Đã kiểm tra frontmatter và self-check của script. Video do sinh viên cung cấp: https://youtu.be/VGVm_V7L_ks (10:38 theo YouTube UI; metadata làm tròn 639 giây). Đã kiểm tra phát khi không đăng nhập. Bản skill thực sự dùng được giữ nguyên tại `skills/gui-usability-evaluator/demo-version/`, kèm checklist và SUS scorer; bản gốc của homework vẫn ở thư mục cha. Demo mở rộng từ tìm AirPods Pro 2 đến checkout và hậu kiểm đơn #9, không cộng lượt demo vào 156 kết quả cross-browser. Bằng chứng gốc tại `evidence/demo/`, transcript riêng tại `reports/AI_DEMO_TRANSCRIPT.md`; mô tả và giới hạn trong `skills/gui-usability-evaluator/DEMO.md`. File MP4 tham khảo cũ do Codex ghi đã được sinh viên loại khỏi hồ sơ; bài nộp dùng link video của sinh viên.
 
 `reports/AI_AUDIT_REPORT.md` và bản transcript ghi lại AI dùng trong chat hiện tại. Đã khôi phục 14 lời nhắn lập kế hoạch ngày 03/11 từ session OpenCode đúng thư mục HW03 vào `reports/AI_AUDIT_RECOVERED.md`, kèm ba đầu ra nguyên gốc ở `reports/legacy/`. Timestamp/model được lấy đúng metadata cũ; không tự tạo prompt. Sinh viên cần bổ sung nếu còn tương tác khác ngoài các nguồn này. `AI_CRITIQUE.md` vẫn là bản AI soạn, chờ sinh viên sửa theo trải nghiệm thật và xác nhận.
 
@@ -54,9 +54,9 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Hồ sơ tám 
 
 ## 6. Việc còn thiếu trước khi nộp
 
-- Sinh viên rà soát kết quả và tự bổ sung checklist; duyệt critique/audit, bổ sung nếu còn chat khác ngoài bản đã khôi phục.
+- Sinh viên cung cấp bản khai đã rà soát. G52 do AI đề xuất; chưa có mục tự phát hiện riêng của sinh viên. Xem `checklists/HUMAN_REVIEW.md`; cần giữ rõ giới hạn này khi chốt nộp.
 - Demo đã được sinh viên cung cấp và kiểm tra phát công khai: https://youtu.be/VGVm_V7L_ks .
-- Sinh viên đã chọn tự chấm 30/40/20/10 = 100. Điểm tự chấm không xác nhận phần human review đã hoàn tất. Sau khi đủ các mục còn thiếu, xác nhận bài cuối và Moodle “Em làm một mình”.
+- Sinh viên đã chọn tự chấm 30/40/20/10 = 100. Điểm tự chấm không phải điểm giảng viên; bản khai human review không thay thế tiêu chí sinh viên tự phát hiện; G52 là AI đề xuất.
 
 Điểm tự chấm do sinh viên lựa chọn; không phải điểm giảng viên hoặc xác nhận mọi yêu cầu đã hoàn tất.
 
@@ -74,7 +74,7 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Hồ sơ tám 
 
 ## 8. Test summary
 
-Cập nhật: 2026-11-16T01:28:07+07:00.
+Cập nhật: 2026-11-16T02:08:53+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|
@@ -82,11 +82,11 @@ Cập nhật: 2026-11-16T01:28:07+07:00.
 | Màn hình đã bao phủ | 3: Home, Product Detail, Cart |
 | Luồng GUI do agent thực thi | Tìm kiếm → chi tiết → thêm giỏ; giỏ dùng để kiểm tra kết quả |
 | Luồng usability | Quản lý đơn hàng; 1 pilot + 7 phiên do sinh viên cung cấp và xác nhận |
-| Mục checklist thiết kế | 51: 48 gốc + G49–G51 bổ sung; IA-01/02/03/04 = 14/13/12/12 |
-| Chrome | 51 executed; 19 Passed; 32 Failed; 0 Blocked |
-| Firefox | 51 executed; 18 Passed; 33 Failed; 0 Blocked |
-| Safari | 51 executed; 19 Passed; 32 Failed; 0 Blocked |
-| Tổng lượt kiểm tra | 153: 144 gốc + 9 bổ sung; 56 Passed; 97 Failed |
+| Mục checklist thiết kế | 52: 48 gốc + G49–G51 AI + G52 AI; IA-01/02/03/04 = 14/14/12/12 |
+| Chrome | 52 executed; 20 Passed; 32 Failed; 0 Blocked |
+| Firefox | 52 executed; 19 Passed; 33 Failed; 0 Blocked |
+| Safari | 52 executed; 20 Passed; 32 Failed; 0 Blocked |
+| Tổng lượt kiểm tra | 156: 144 gốc + 9 bổ sung AI + 3 G52; 59 Passed; 97 Failed |
 | Mục fail ít nhất một môi trường | 33 |
 | Nhóm bug GUI | 25: 23 gốc + B24/B25; 12 Major, 13 Minor; 0 Blocker theo đánh giá sơ bộ |
 | Nền tảng chạy trọn checklist | 3/3: Chrome, Firefox, Safari thật |
@@ -105,7 +105,7 @@ Kết quả GUI do Codex thực thi tự động. Kết quả usability lấy t�
 
 ### Bổ sung đã thực thi
 
-Ba tiêu chí G49–G51 do Codex đề xuất/thực thi theo yêu cầu sinh viên. Giữ nguyên 48 tiêu chí đầu tại items.json; phần bổ sung ở additions.json. Tổng 51 tiêu chí, 153 kết quả trên ba browser: bộ gốc 144 kết quả (56 Passed, 88 Failed), bổ sung 9 Failed. Tổng 56 Passed, 97 Failed; 33 tiêu chí fail ít nhất một môi trường, 25 nhóm bug GUI. Năm finding usability tách riêng, tổng 30 GitHub Issues khi đã đăng hai bug mới.
+Ba tiêu chí G49–G51 do Codex đề xuất/thực thi theo yêu cầu sinh viên. Giữ nguyên 48 tiêu chí đầu tại items.json; phần bổ sung AI ở additions.json. Ba mục này đóng góp 9 kết quả Failed. Sau khi AI bổ sung G52 theo yêu cầu sinh viên (kích thước vùng chạm; Passed trên ba browser), hồ sơ có tổng 52 tiêu chí và 156 kết quả: 59 Passed, 97 Failed; 33 tiêu chí fail ít nhất một môi trường, 25 nhóm bug GUI. G52 và đính chính nguồn đóng góp nằm tại HUMAN_REVIEW.md. Năm finding usability tách riêng, tổng 30 GitHub Issues khi đã đăng hai bug mới.
 
 ## Vì sao bổ sung
 
@@ -133,13 +133,13 @@ Nguồn: [WCAG 3.1.1](https://www.w3.org/WAI/WCAG22/Understanding/language-of-pa
 
 ### Phản biện AI (bản AI soạn)
 
-Trạng thái: bản AI soạn theo yêu cầu sinh viên, có bằng chứng đối chiếu; chưa xác nhận là sinh viên tự phản biện.
+Trạng thái: bản AI soạn/đính chính theo yêu cầu sinh viên; phần tự rà soát được ghi nhận theo hồ sơ người dùng cung cấp. Không ký xác nhận thay hoặc gán G52 thành phát hiện của sinh viên.
 
-AI hỗ trợ tổ chức checklist và chạy kiểm thử, nhưng kế hoạch đầu đã dựa quá nhiều vào khuôn mẫu thương mại điện tử. Bộ lọc, sắp xếp và tai nghe dưới 500.000 đồng được đề xuất trước khi đối chiếu SUT. Các giả định ấy không phù hợp giao diện và dữ liệu mẫu. Việc sửa phạm vi cần bắt đầu từ nguồn yêu cầu và quan sát ứng dụng.
+AI giúp tổ chức checklist và chạy kiểm thử, nhưng kế hoạch đầu dựa quá nhiều vào khuôn mẫu thương mại điện tử. Bộ lọc, sắp xếp và tai nghe dưới 500.000 đồng được đề xuất trước khi đối chiếu SUT. Sai sót bắt nguồn từ việc dùng giả định phổ biến thay cho đặc tả và dữ liệu chạy thực tế.
 
-Bộ checklist ban đầu có nhãn truy cập và thao tác bàn phím nhưng thiếu ngôn ngữ tài liệu, phép đo tương phản. Đây là giới hạn của cách chia nhỏ tiêu chí: kiểm tra màu nút theo quy chuẩn không đồng nghĩa chữ trên nút dễ đọc. Ba mục G49–G51 được AI bổ sung theo yêu cầu sinh viên và chạy trên Chrome, Firefox, Safari thật. Trang khai báo tiếng Anh dù nội dung tiếng Việt; chữ giá đạt 3,76:1, chữ nút đạt 3,30:1, thấp hơn ngưỡng 4,5:1 áp dụng cho cỡ chữ đã đo. Kết quả cho thấy quan sát bằng mắt cần được bổ sung bằng phép đo có nguồn.
+Bộ đầu kiểm nhãn truy cập và thao tác bàn phím nhưng bỏ sót ngôn ngữ tài liệu, tương phản và kích thước mục tiêu. G49–G51 bổ sung phép đo định lượng; G52 kiểm hai vùng chạm tối thiểu 24×24 CSS px. Các mục này do AI đề xuất theo yêu cầu sinh viên. Việc duyệt hoặc giao AI làm chưa chứng minh sinh viên tự phát hiện tiêu chí mới. Hồ sơ phải phân biệt nguồn đề xuất với người quyết định sử dụng kết quả.
 
-Công cụ cũng có thể gây kết luận sai. Trước đây, đọc kết quả trước khi React chuyển trang làm một số kiểm tra số lượng bị đánh dấu sai. Điều kiện chờ và kiểm chứng trạng thái giỏ đã được bổ sung. Nguyên tắc hợp tác là giữ dấu vết nguồn, phân biệt heuristic với yêu cầu sản phẩm, và giới hạn kết luận theo bằng chứng. AI không được biến ảnh tái hiện thành phiên người dùng, hoặc gán phần mình viết thành đóng góp tự phát hiện của sinh viên.
+Công cụ cũng tạo rủi ro kết luận sai. Đọc DOM trước khi React chuyển trang từng làm sai kết quả; viewport Safari G52 ban đầu là 390×839 thay vì 390×844. Đã sửa điều kiện chờ, đo lại đúng kích thước và giữ bằng chứng cũ để truy vết. Nguyên tắc hợp tác là đối chiếu nguồn, kiểm chứng trạng thái thực, phân biệt heuristic với yêu cầu và ghi đúng tác giả. Không dùng ảnh agent thay cho phiên người dùng hoặc một bản khai thay cho bằng chứng tự phát hiện.
 
 
 ## 10. Đóng góp cá nhân
@@ -160,20 +160,20 @@ Nguyễn Bảo An lựa chọn và xác nhận phạm vi bài, cung cấp thông
 | Hỗ trợ môi trường Safari | Đồng ý dùng Safari WebDriver và xác nhận đã trực tiếp xác thực/bật quyền trên máy khi hệ thống yêu cầu. | Hai lời nhắn đồng ý và xác nhận đã bật quyền. AI chạy bộ kiểm tra, xử lý lỗi harness và khôi phục thiết lập sau lượt chạy. |
 | Điều phối nghiên cứu usability | Sinh viên xác nhận đã tự điều phối một pilot và bảy phiên thật; cung cấp folder task2_usability chứa biên bản, câu trả lời SUS và dữ liệu tổng hợp. | Câu trả lời: “Có, đây là các phiên thật tôi đã điều phối”. Nguồn và SHA-256 được lưu tại usability/provenance.json. AI đối chiếu CSV/JSON, tính lại điểm và tổng hợp; không xác minh độc lập danh tính hoặc việc diễn ra phiên. |
 | Quyết định phạm vi Task 2 | Yêu cầu giữ nội dung và số liệu hồ sơ đã cung cấp khi sửa thông tin sinh viên; do đó Task 2 giữ luồng quản lý đơn hàng, Task 1 giữ G2. | Lời nhắn yêu cầu “còn lại giống với bài làm tôi gửi vào”. AI làm rõ hai phạm vi trong báo cáo, giữ dữ liệu gốc và liên kết bằng chứng tái hiện riêng. |
-| Yêu cầu cải thiện phản biện | Chủ động yêu cầu AI viết phần rà soát, phản biện và bổ sung checklist trước khi quay demo. | Lời nhắn yêu cầu và các file AI_REVIEW.md, ADDITIONS.md, AI_CRITIQUE.md. G49–G51 do AI đề xuất/thực thi; đây là đóng góp điều phối của sinh viên, chưa phải xác nhận sinh viên tự phát hiện ba tiêu chí đó. |
+| Rà soát và yêu cầu bổ sung | Cung cấp bản khai đã đọc G49–G51 và AI Critique; giao AI hoàn thiện và xử lý mâu thuẫn G52. | HUMAN_REVIEW.md ghi rõ nguồn lời khai. Theo AI_TRANSCRIPT.md, G52 do AI đề xuất/thực thi, chưa có tiêu chí tự phát hiện riêng của sinh viên. |
 | Quyết định công bố | Cho phép công khai repo bài làm để người chấm xem Issues và ảnh. | Lời nhắn “Cho phép công khai repo bài làm”. AI thực hiện công bố và giữ danh sách tên/liên hệ người tham gia ngoài repo public; không gán thao tác che dữ liệu cho sinh viên. |
 | Tự đánh giá | Chọn tự chấm toàn bộ điểm: Task 1 = 30, Task 2 = 40, Task 3 = 20, skill/demo = 10; tổng 100/100. | Lời nhắn “cho full điểm”. AI điền bảng theo lựa chọn này. Đây là điểm tự đánh giá, không phải điểm giảng viên hoặc chứng nhận bài đã hoàn tất. |
 | Video demo | Quyết định tự quay video demo và nhắc lại lựa chọn này khi giao AI hoàn thiện phần còn lại. | Lời nhắn “video tôi tự quay” và “tôi tự làm video demo”. Sinh viên đã cung cấp https://youtu.be/VGVm_V7L_ks ngày 16/11/2026; đã thử phát không đăng nhập. Prompt và kết quả đúng chat demo trong AI_DEMO_TRANSCRIPT.md, skill và bằng chứng thực tế đã kèm hồ sơ. |
 
 ## Sản phẩm do AI hỗ trợ thực hiện
 
-AI thiết kế 48 tiêu chí đầu và bổ sung G49–G51, thực thi kiểm tra trên Chrome/Firefox/Safari, chụp bằng chứng, soạn bug và tạo Issues, đối chiếu SUS, chuẩn hóa hồ sơ, xây skill, soạn phản biện, cập nhật báo cáo/PDF/Excel, commit và đóng ZIP. Kết quả hiện có: 51 tiêu chí, 153 kết quả kiểm tra, 25 nhóm bug GUI và năm finding usability. Video do sinh viên cung cấp có luồng demo thực tế được đối chiếu với chat và ảnh; các thao tác browser trong video do agent thực hiện theo prompt sinh viên.
+AI thiết kế 48 tiêu chí đầu và bổ sung G49–G51, thực thi kiểm tra trên Chrome/Firefox/Safari, chụp bằng chứng, soạn bug và tạo Issues, đối chiếu SUS, chuẩn hóa hồ sơ, xây skill, soạn phản biện, cập nhật báo cáo/PDF/Excel, commit và đóng ZIP. Theo bản khai được cung cấp, sinh viên giữ G49–G51; AI đề xuất, thực thi G52 và cập nhật số liệu theo chỉ đạo. Kết quả hiện có: 52 tiêu chí, 156 kết quả kiểm tra, 25 nhóm bug GUI và năm finding usability. Video do sinh viên cung cấp có luồng demo thực tế được đối chiếu với chat và ảnh; các thao tác browser trong video do agent thực hiện theo prompt sinh viên.
 
 Người nộp là sinh viên; tác giả đề xuất/thực thi từng phần vẫn được khai báo đúng trong audit. Không quy đổi việc giao AI thực hiện thành bằng chứng sinh viên đã tự thao tác các bước kỹ thuật.
 
 ## Trạng thái cần hoàn tất
 
-- Chưa có xác nhận thực tế rằng sinh viên đã tự rà soát kết quả hoặc tự phát hiện/bổ sung một tiêu chí mà AI bỏ sót. Phiếu HUMAN_REVIEW.md giữ nguyên trạng thái chờ; bản ghi đóng góp này không ký thay sinh viên.
+- Đã có bản khai tự rà soát do người dùng cung cấp. G52 được sửa đúng nguồn là AI đề xuất/thực thi; chưa coi yêu cầu sinh viên tự bổ sung là hoàn tất.
 - Video đã cung cấp và phát được: https://youtu.be/VGVm_V7L_ks .
 - Trạng thái Moodle sẽ được kiểm tra riêng sau khi người dùng duyệt preview nộp. Không có video phiên usability trong dữ liệu được cung cấp; giới hạn này đã được nêu trong báo cáo.
 
@@ -183,7 +183,7 @@ Các nguồn tham chiếu cùng hồ sơ: [hội thoại hiện tại](AI_TRANSC
 ## 11. Kiểm thử minh họa và phát hiện ngoài G2
 
 
-Demo https://youtu.be/VGVm_V7L_ks thực hiện một luồng từ tìm kiếm đến tạo đơn #9. Kết quả/bằng chứng gốc tại `evidence/demo/run-2026-11-16-eshop-flow/README.md`, prompt/output tại AI_DEMO_TRANSCRIPT.md. Không cộng lượt này vào 153 kết quả cross-browser; bộ G2 vẫn 51 tiêu chí, 25 nhóm bug.
+Demo https://youtu.be/VGVm_V7L_ks thực hiện một luồng từ tìm kiếm đến tạo đơn #9. Kết quả/bằng chứng gốc tại `evidence/demo/run-2026-11-16-eshop-flow/README.md`, prompt/output tại AI_DEMO_TRANSCRIPT.md. Không cộng lượt này vào 156 kết quả cross-browser; bộ G2 vẫn 52 tiêu chí, 25 nhóm bug.
 
 | Phát hiện mới | Nguồn | Mức độ | Báo cáo |
 |---|---|---|---|

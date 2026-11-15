@@ -18,6 +18,6 @@ Bằng chứng bổ sung xác nhận ba phát hiện ngoài bộ G2: D01 tổng 
 
 ## Giới hạn
 
-Video là demo dùng skill trên luồng đầy đủ, không phải lượt thực thi lại toàn bộ 51 mục/ba browser hay phiên nghiên cứu người dùng. Không cộng vào 153 kết quả của Task 1/3 và không dùng thay pilot/SUS. Engine/version của IAB không được công cụ demo hiển thị nên không gán thành Chrome, Firefox hoặc Safari. Sáu ảnh demo gốc giữ nguyên; định danh ghi ở báo cáo gốc, không phải overlay có sẵn trên các ảnh này. Bộ ảnh Failed dùng cho Task 3 có overlay và bộ định danh riêng.
+Video là demo dùng skill trên luồng đầy đủ, không phải lượt thực thi lại toàn bộ 51 mục/ba browser hay phiên nghiên cứu người dùng. Không cộng vào 156 kết quả của Task 1/3 và không dùng thay pilot/SUS. Engine/version của IAB không được công cụ demo hiển thị nên không gán thành Chrome, Firefox hoặc Safari. Sáu ảnh demo gốc giữ nguyên; định danh ghi ở báo cáo gốc, không phải overlay có sẵn trên các ảnh này. Bộ ảnh Failed dùng cho Task 3 có overlay và bộ định danh riêng.
 
 Đã đối chiếu các khung hình mẫu của bản quay cục bộ có thời lượng 638,538 giây và hồ sơ của đúng chat demo. Không đánh giá độc lập toàn bộ lời thuyết minh âm thanh. MP4 tham khảo cũ do AI ghi đã được người dùng loại khỏi hồ sơ; link trên là video sinh viên chọn để nộp.

@@ -1,12 +1,12 @@
 # Ma trận cross-browser
 
-51 tiêu chí trên ba browser: 48 gốc và G49–G51 qua native CUA. Dữ liệu hai lượt được giữ riêng trong evidence/runs/ và evidence/accessibility/. Viewport hẹp là kiểm tra responsive, không tính thêm nền tảng.
+52 tiêu chí trên ba browser: 48 gốc, G49–G51 qua native CUA và G52 do AI bổ sung (Safari đo qua trang cùng origin). Dữ liệu các lượt được giữ riêng trong evidence/runs/ và evidence/accessibility/. Viewport hẹp là kiểm tra responsive, không tính thêm nền tảng.
 
 | Môi trường | Số mục | Passed | Failed | Blocked |
 |---|---:|---:|---:|---:|
-| Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0) | 51 | 19 | 32 | 0 |
-| Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0) | 51 | 18 | 33 | 0 |
-| Safari 26.2 (Apple safaridriver) / macOS 26.2 | 51 | 19 | 32 | 0 |
+| Google Chrome 157.0.8103.51 / macOS 26.2 (Darwin 25.2.0) | 52 | 20 | 32 | 0 |
+| Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0) | 52 | 19 | 33 | 0 |
+| Safari 26.2 (Apple safaridriver) / macOS 26.2 | 52 | 20 | 32 | 0 |
 
 Khác biệt kết quả: G09: chrome Passed, firefox Failed, safari Passed.
 
@@ -14,7 +14,7 @@ Khác biệt kết quả: G09: chrome Passed, firefox Failed, safari Passed.
 
 ## Phương pháp Safari thật
 
-Apple Safari WebDriver; same-origin iframe with exact CSS viewport except G29, which uses the top-level SUT and native WebDriver Back to avoid iframe history semantics. Full navigation resets React state per case. G37/G47/G48 use explicitly redirected XHR to a localhost delay/503 fixture; default Safari all-item keyboard navigation is Option-Tab.
+Apple Safari WebDriver; same-origin iframe with exact CSS viewport except G29, which uses the top-level SUT and native WebDriver Back to avoid iframe history semantics. Full navigation resets React state per case. G37/G47/G48 use explicitly redirected XHR to a localhost delay/503 fixture; default Safari all-item keyboard navigation is Option-Tab. G52 chạy trên Safari thật qua trang đo cùng origin vì Safari Remote Automation đang tắt; trang chỉ đọc DOM/CSS và gửi kết quả về collector localhost.
 
 Safari dùng iframe cùng origin để đặt đúng viewport CSS 1280px/390px mà không thay đổi layout của SUT. Các mục G37/G47/G48 định tuyến XHR mục tiêu đến fixture localhost cho delay/HTTP 503, không đổi logic SUT. Native Option-Tab được dùng để đi qua mọi phần tử trong thiết lập bàn phím Safari mặc định.
 

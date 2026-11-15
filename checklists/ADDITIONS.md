@@ -1,6 +1,6 @@
 # Bổ sung checklist sau phản biện AI
 
-Ba tiêu chí G49–G51 do Codex đề xuất/thực thi theo yêu cầu sinh viên. Giữ nguyên 48 tiêu chí đầu tại items.json; phần bổ sung ở additions.json. Tổng 51 tiêu chí, 153 kết quả trên ba browser: bộ gốc 144 kết quả (56 Passed, 88 Failed), bổ sung 9 Failed. Tổng 56 Passed, 97 Failed; 33 tiêu chí fail ít nhất một môi trường, 25 nhóm bug GUI. Năm finding usability tách riêng, tổng 30 GitHub Issues khi đã đăng hai bug mới.
+Ba tiêu chí G49–G51 do Codex đề xuất/thực thi theo yêu cầu sinh viên. Giữ nguyên 48 tiêu chí đầu tại items.json; phần bổ sung AI ở additions.json. Ba mục này đóng góp 9 kết quả Failed. Sau khi AI bổ sung G52 theo yêu cầu sinh viên (kích thước vùng chạm; Passed trên ba browser), hồ sơ có tổng 52 tiêu chí và 156 kết quả: 59 Passed, 97 Failed; 33 tiêu chí fail ít nhất một môi trường, 25 nhóm bug GUI. G52 và đính chính nguồn đóng góp nằm tại HUMAN_REVIEW.md. Năm finding usability tách riêng, tổng 30 GitHub Issues khi đã đăng hai bug mới.
 
 ## Vì sao bổ sung
 

@@ -74,6 +74,7 @@ def main():
             source+='\n\n'+(ROOT/'reports/AI_TRANSCRIPT.md').read_text()
             source+='\n\n'+(ROOT/'reports/AI_AUDIT_RECOVERED.md').read_text()
             source+='\n\n'+(ROOT/'reports/AI_DEMO_TRANSCRIPT.md').read_text()
+            source+='\n\n'+(ROOT/'reports/AI_SUPPLIED_ADDENDUM.md').read_text()
         output=ROOT/f'{folder}/{name}.pdf'
         pagesize=landscape(A4) if name=='Task2_Usability_Report' else A4
         doc=SimpleDocTemplate(str(output),pagesize=pagesize,leftMargin=48,rightMargin=48,topMargin=43,bottomMargin=48,title=f'HW03 - {name}',author='Nguyễn Bảo An',allowSplitting=1)

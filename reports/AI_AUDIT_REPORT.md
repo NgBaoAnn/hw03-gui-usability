@@ -93,3 +93,12 @@ Video sinh viên gửi: https://youtu.be/VGVm_V7L_ks . YouTube công khai và ph
 Chat demo “Kiểm thử luồng EShop hoàn chỉnh” có 9 lời nhắn hiển thị, từ 01:03:18 đến 01:09:59 ngày 16/11, được xuất riêng tại AI_DEMO_TRANSCRIPT.md và ghép vào PDF audit. Nội dung tool/suy luận nội bộ không xuất; sáu ảnh và báo cáo gốc lưu trong evidence/demo/. Skill thực dùng trong video được sao chép nguyên trạng cùng tài nguyên, SHA-256 lưu trong video-verification.json. Demo tạo đơn localhost #9, không phải giao dịch thật; không tính như phiên người tham gia hoặc nền tảng thứ tư của Task 3.
 
 Đã ghi D01–D03 cho các phát hiện mới trong demo, có nguồn FR và ảnh gốc; các phát hiện trùng được liên kết báo cáo hiện có. Giữ nguyên số liệu G2 51 mục/153 kết quả và Task 2. Người dùng tiếp tục giao AI tự bổ sung phần còn thiếu; chưa có bằng chứng tự rà soát/tự phát hiện từ sinh viên, nên không đổi human_review_complete hoặc ký thay. Gói theo tên điểm tự chấm 100 giữ đầy đủ giới hạn trong SUBMISSION_STATUS.json.
+
+
+## Đính chính nguồn G52 và đo lại Safari ngày 16/11/2026
+
+Bản bổ sung do người dùng cung cấp ghi G52 là sinh viên tự phát hiện, trong khi phần nhật ký bổ sung ghi AI đề xuất. Đã giữ văn bản bổ sung tại AI_SUPPLIED_ADDENDUM.md, phân biệt với nhật ký được xuất trực tiếp từ session hiện tại; chưa xác minh timestamp/nguyên văn phần bổ sung với session gốc. Đã sửa thống nhất G52 là AI đề xuất và thực thi theo yêu cầu sinh viên, không tạo chữ ký hoặc lời xác nhận điện tử thay. Việc sinh viên đã rà soát G49–G51 được ghi nhận theo bản khai cung cấp; chưa có tiêu chí sinh viên tự phát hiện riêng. human_added_check_ids=[]; trạng thái thiếu trong ZIP phản ánh giới hạn này.
+
+Safari G52 trước chỉ đo 390×839. Đã giữ JSON cũ trong G52-390x839-original.json, sửa trang đo đặt cả width=390px/height=844px và chờ innerWidth/innerHeight đúng kích thước trước phép đo. Đã reload bằng native CUA trên Safari thật, ghi JSON và ảnh mới: 390×844; ô số lượng 80×42; nút 185,9×48; Passed. Không bật Remote Automation, không chỉnh logic SUT, không cộng bản đo cũ vào thống kê. Collector localhost được tắt sau lượt đo.
+
+Tổng hiện tại 52 tiêu chí, 156 kết quả (59 Passed, 97 Failed); 25 nhóm bug G2, 5 finding usability và 3 phát hiện demo, tổng 33 Issues. Bằng chứng, CSV/MD/Excel, PDF, các bộ tạo báo cáo, nhật ký Git và ZIP được đồng bộ theo bước hoàn thành thực tế. Không lùi ngày commit. Điểm tự chấm 100 không chứng nhận đáp ứng yêu cầu tự phát hiện hoặc bảo đảm điểm giảng viên.

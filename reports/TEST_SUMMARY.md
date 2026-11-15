@@ -1,6 +1,6 @@
 # Test summary G2
 
-Cập nhật: 2026-11-16T01:28:07+07:00.
+Cập nhật: 2026-11-16T02:08:53+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|
@@ -8,11 +8,11 @@ Cập nhật: 2026-11-16T01:28:07+07:00.
 | Màn hình đã bao phủ | 3: Home, Product Detail, Cart |
 | Luồng GUI do agent thực thi | Tìm kiếm → chi tiết → thêm giỏ; giỏ dùng để kiểm tra kết quả |
 | Luồng usability | Quản lý đơn hàng; 1 pilot + 7 phiên do sinh viên cung cấp và xác nhận |
-| Mục checklist thiết kế | 51: 48 gốc + G49–G51 bổ sung; IA-01/02/03/04 = 14/13/12/12 |
-| Chrome | 51 executed; 19 Passed; 32 Failed; 0 Blocked |
-| Firefox | 51 executed; 18 Passed; 33 Failed; 0 Blocked |
-| Safari | 51 executed; 19 Passed; 32 Failed; 0 Blocked |
-| Tổng lượt kiểm tra | 153: 144 gốc + 9 bổ sung; 56 Passed; 97 Failed |
+| Mục checklist thiết kế | 52: 48 gốc + G49–G51 AI + G52 AI; IA-01/02/03/04 = 14/14/12/12 |
+| Chrome | 52 executed; 20 Passed; 32 Failed; 0 Blocked |
+| Firefox | 52 executed; 19 Passed; 33 Failed; 0 Blocked |
+| Safari | 52 executed; 20 Passed; 32 Failed; 0 Blocked |
+| Tổng lượt kiểm tra | 156: 144 gốc + 9 bổ sung AI + 3 G52; 59 Passed; 97 Failed |
 | Mục fail ít nhất một môi trường | 33 |
 | Nhóm bug GUI | 25: 23 gốc + B24/B25; 12 Major, 13 Minor; 0 Blocker theo đánh giá sơ bộ |
 | Nền tảng chạy trọn checklist | 3/3: Chrome, Firefox, Safari thật |

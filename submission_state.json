@@ -3,12 +3,14 @@
   "fullname": "Nguyễn Bảo An",
   "email": "23120207@student.hcmus.edu.vn",
   "individual": true,
-  "human_review_complete": false,
+  "human_review_complete": true,
   "human_added_check_ids": [],
+  "human_review_record": "checklists/HUMAN_REVIEW.md",
   "ai_added_check_ids": [
     "G49",
     "G50",
-    "G51"
+    "G51",
+    "G52"
   ],
   "ai_review_draft_complete": true,
   "personal_contribution_record": "reports/PERSONAL_CONTRIBUTION.md",
@@ -38,5 +40,16 @@
   "usability_student_confirmed": true,
   "usability_recordings_complete": false,
   "demo_public_playback_verified": true,
-  "review_delegated_to_ai": true
+  "review_delegated_to_ai": true,
+  "moodle": {
+    "assignment_id": 40418,
+    "checked_at": "2026-11-16T02:20:00+07:00",
+    "submitted": false,
+    "submission_status": "new",
+    "files": 0,
+    "can_submit": false,
+    "individual_choice_recorded": false,
+    "due": "2026-11-16T13:00:00+07:00"
+  },
+  "human_review_basis": "Bản khai do người dùng bổ sung vào workspace; ghi nhận việc tự rà soát theo lời khai, không xác minh độc lập. G52 do AI đề xuất, chưa có tiêu chí tự phát hiện riêng của sinh viên."
 }

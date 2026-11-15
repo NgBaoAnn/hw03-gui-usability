@@ -27,11 +27,13 @@ Sau lượt bổ sung, tương phản đã được đo ở chữ giá Home và 
 
 Các giả định cũ về bộ lọc/sắp xếp, ngân sách 500.000 đồng và coi viewport là nền tảng đã được AI sửa theo SUT. Không ghi những sửa đổi này là việc sinh viên đã tự thực hiện.
 
-Phiếu `HUMAN_REVIEW.md` giữ trạng thái chờ sinh viên. Việc sinh viên giao AI viết phần rà soát chưa chứng minh sinh viên đã tự đọc, phản biện hoặc phát hiện mục mới theo Task 1.
+Tại lượt rà soát ban đầu, phiếu `HUMAN_REVIEW.md` còn chờ sinh viên; trạng thái hiện tại được đính chính cuối tài liệu. Việc sinh viên giao AI viết phần rà soát chưa chứng minh sinh viên đã tự đọc, phản biện hoặc phát hiện mục mới theo Task 1.
 
 
 ## Bổ sung đã thực thi sau yêu cầu tiếp theo
 
 Đã thêm G49–G51 và thực thi cả ba browser bằng native CUA, không bật lại Safari Remote Automation. G49 phát hiện lang=en trên trang tiếng Việt; G50 có tương phản 3,7631:1; G51 có tương phản 3,2957:1, đều chưa đạt ngưỡng cho chữ đã đo. Xem [bảng lý do AI bỏ sót, kết quả và bằng chứng](ADDITIONS.md).
 
-Tổng hiện tại: 51 tiêu chí, 153 kết quả (56 Passed, 97 Failed), 25 nhóm bug GUI và năm finding usability. Phần đối chiếu phía trên mô tả bộ gốc 48 mục; giữ nguyên số liệu lịch sử để truy vết. G49–G51 do AI bổ sung theo yêu cầu sinh viên, không đổi tác giả thành sinh viên. Sinh viên cần đọc và đánh giá các kết luận trước khi nộp.
+Tổng hiện tại sau khi AI bổ sung G52 theo yêu cầu sinh viên: 52 tiêu chí, 156 kết quả (59 Passed, 97 Failed), 25 nhóm bug GUI và năm finding usability. Phần đối chiếu phía trên mô tả bộ gốc 48 mục; giữ nguyên số liệu lịch sử để truy vết. G49–G51 do AI bổ sung, không đổi tác giả thành sinh viên. Nguồn lời khai và đính chính G52 nằm tại HUMAN_REVIEW.md.
+
+Đính chính cuối ngày 16/11/2026: nhật ký ghi AI đề xuất G52. Đã sửa nguồn trong hồ sơ, không tính G52 là sinh viên tự phát hiện. Safari đã đo lại đúng 390×844, Passed; bản 390×839 cũ giữ lịch sử riêng. HUMAN_REVIEW.md ghi nhận việc sinh viên rà soát theo bản khai được cung cấp, chưa có mục tự bổ sung riêng.

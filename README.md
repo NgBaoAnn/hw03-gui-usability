@@ -2,7 +2,7 @@
 
 Nguyễn Bảo An - 23120207 - bài cá nhân.
 
-**HỒ SƠ CHUẨN BỊ NỘP.** Đã chạy đủ 3 trình duyệt, tích hợp 1 pilot + 7 phiên được sinh viên xác nhận, tính SUS, khôi phục audit và public repo. Sinh viên chọn tự chấm 100/100. Video sinh viên: https://youtu.be/VGVm_V7L_ks (đã thử phát không đăng nhập). Chưa có bằng chứng sinh viên tự rà soát/tự bổ sung; phần được giao AI đã làm và khai báo. Không có video phiên usability; giới hạn được ghi rõ theo §14.
+**HỒ SƠ CHUẨN BỊ NỘP.** Đã chạy đủ 3 trình duyệt, tích hợp 1 pilot + 7 phiên được sinh viên xác nhận, tính SUS, khôi phục audit và public repo. Sinh viên chọn tự chấm 100/100. Video sinh viên: https://youtu.be/VGVm_V7L_ks (đã thử phát không đăng nhập). Bản khai rà soát và đính chính nguồn G52 (AI đề xuất) nằm tại `checklists/HUMAN_REVIEW.md`; phần AI thực thi được ghi rõ. Không có video phiên usability; giới hạn được ghi rõ theo §14.
 
 Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc cần bạn làm, biểu mẫu tương ứng và dữ liệu gửi lại để Codex chốt hồ sơ.
 
@@ -10,8 +10,8 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 
 - `reports/MAIN_REPORT.md` và PDF: phương pháp, kết quả và giới hạn.
 - `reports/PERSONAL_CONTRIBUTION.md`: đóng góp của sinh viên, nguồn xác nhận, phần AI hỗ trợ và trạng thái chưa hoàn tất; cũng nằm trong báo cáo chính.
-- `checklists/gui_checklist_g2.xlsx`, `.md`, `.csv`: 51 mục trên Chrome, Firefox và Safari thật; bộ gốc 48 và ba mục bổ sung tại ADDITIONS.md.
-- `checklists/AI_REVIEW.md`: lượt AI rà soát bổ sung; phiếu sinh viên ở `checklists/HUMAN_REVIEW.md` vẫn chờ đóng góp thực tế.
+- `checklists/gui_checklist_g2.xlsx`, `.md`, `.csv`: 52 mục trên Chrome, Firefox và Safari thật; bộ gốc 48, G49–G51 tại ADDITIONS.md; G52 do AI đề xuất, được đính chính ở HUMAN_REVIEW.md.
+- `checklists/AI_REVIEW.md`: lượt AI rà soát bổ sung; nguồn lời khai rà soát của sinh viên và đính chính G52 ở `checklists/HUMAN_REVIEW.md`.
 - `bug-reports/BUG_REPORTS.md`: 23 nhóm bug, ảnh gốc và Issue links.
 - `bug-reports/supplement/`: B24/B25 và Issues #29/#30; `checklists/ADDITIONS.md`: ba mục tiếp cận bổ sung.
 - `evidence/runs/`: kết quả máy đọc được; `evidence/gui/`: ảnh gốc.
@@ -20,7 +20,7 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 - `reports/AI_AUDIT_REPORT.md`, `AI_CRITIQUE.md` và PDF.
 - `skills/gui-usability-evaluator/`: skill gốc và bản dùng thực tế trong demo, kèm tài nguyên; link video sinh viên trong DEMO.md.
 - `reports/AI_AUDIT_RECOVERED.md`: prompt/output cũ đã khôi phục, kèm các kế hoạch nguyên gốc.
-- `reports/AI_DEMO_TRANSCRIPT.md`, `DEMO_FINDINGS.md`, `evidence/demo/` và `bug-reports/demo/`: lượt demo, ba phát hiện ngoài G2 và Issues; không cộng vào kết quả 153 lượt.
+- `reports/AI_DEMO_TRANSCRIPT.md`, `DEMO_FINDINGS.md`, `evidence/demo/` và `bug-reports/demo/`: lượt demo, ba phát hiện ngoài G2 và Issues; không cộng vào kết quả 156 lượt.
 - `git_commit_log.txt`: commit thật theo bước đã hoàn tất.
 
 ## Điểm tự đánh giá
@@ -37,7 +37,7 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 
 # Test summary G2
 
-Cập nhật: 2026-11-16T01:28:07+07:00.
+Cập nhật: 2026-11-16T02:08:53+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|
@@ -45,11 +45,11 @@ Cập nhật: 2026-11-16T01:28:07+07:00.
 | Màn hình đã bao phủ | 3: Home, Product Detail, Cart |
 | Luồng GUI do agent thực thi | Tìm kiếm → chi tiết → thêm giỏ; giỏ dùng để kiểm tra kết quả |
 | Luồng usability | Quản lý đơn hàng; 1 pilot + 7 phiên do sinh viên cung cấp và xác nhận |
-| Mục checklist thiết kế | 51: 48 gốc + G49–G51 bổ sung; IA-01/02/03/04 = 14/13/12/12 |
-| Chrome | 51 executed; 19 Passed; 32 Failed; 0 Blocked |
-| Firefox | 51 executed; 18 Passed; 33 Failed; 0 Blocked |
-| Safari | 51 executed; 19 Passed; 32 Failed; 0 Blocked |
-| Tổng lượt kiểm tra | 153: 144 gốc + 9 bổ sung; 56 Passed; 97 Failed |
+| Mục checklist thiết kế | 52: 48 gốc + G49–G51 AI + G52 AI; IA-01/02/03/04 = 14/14/12/12 |
+| Chrome | 52 executed; 20 Passed; 32 Failed; 0 Blocked |
+| Firefox | 52 executed; 19 Passed; 33 Failed; 0 Blocked |
+| Safari | 52 executed; 20 Passed; 32 Failed; 0 Blocked |
+| Tổng lượt kiểm tra | 156: 144 gốc + 9 bổ sung AI + 3 G52; 59 Passed; 97 Failed |
 | Mục fail ít nhất một môi trường | 33 |
 | Nhóm bug GUI | 25: 23 gốc + B24/B25; 12 Major, 13 Minor; 0 Blocker theo đánh giá sơ bộ |
 | Nền tảng chạy trọn checklist | 3/3: Chrome, Firefox, Safari thật |

@@ -1,6 +1,6 @@
 # Phát hiện bổ sung từ lượt demo
 
-Demo https://youtu.be/VGVm_V7L_ks thực hiện một luồng từ tìm kiếm đến tạo đơn #9. Kết quả/bằng chứng gốc tại `evidence/demo/run-2026-11-16-eshop-flow/README.md`, prompt/output tại AI_DEMO_TRANSCRIPT.md. Không cộng lượt này vào 153 kết quả cross-browser; bộ G2 vẫn 51 tiêu chí, 25 nhóm bug.
+Demo https://youtu.be/VGVm_V7L_ks thực hiện một luồng từ tìm kiếm đến tạo đơn #9. Kết quả/bằng chứng gốc tại `evidence/demo/run-2026-11-16-eshop-flow/README.md`, prompt/output tại AI_DEMO_TRANSCRIPT.md. Không cộng lượt này vào 156 kết quả cross-browser; bộ G2 vẫn 52 tiêu chí, 25 nhóm bug.
 
 | Phát hiện mới | Nguồn | Mức độ | Báo cáo |
 |---|---|---|---|

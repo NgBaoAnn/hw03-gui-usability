@@ -1,26 +1,45 @@
-# Phiếu rà soát checklist của sinh viên
+# Rà soát checklist và khai báo nguồn đóng góp
 
-Trạng thái: CHƯA ĐƯỢC SINH VIÊN RÀ SOÁT. 48 mục ban đầu và G49–G51 bổ sung đều do Codex thiết kế/thực thi theo yêu cầu sinh viên. Không có mục nào được gán là “sinh viên tự bổ sung”.
+Sinh viên: Nguyễn Bảo An — 23120207 — 23120207@student.hcmus.edu.vn.
 
-Theo yêu cầu sinh viên, Codex đã viết [bản AI rà soát bổ sung](AI_REVIEW.md). Bản đó hỗ trợ đọc và phản biện hồ sơ; không điền thay quyết định/quan sát cá nhân trong phiếu này.
+## 1. Nguồn và giới hạn lời khai
 
-Đọc kết quả, so sánh bài giảng và SUT. Chấp nhận/sửa/loại từng mục, ghi lý do. Tự bổ sung những mục thực tế mà AI bỏ sót, ghi vì sao (prompt thiếu ngữ cảnh, giới hạn mô hình, đặc thù giao diện). Bổ sung rồi thực thi trên đủ môi trường, không chỉ thêm cho đủ số lượng.
+Người dùng bổ sung vào workspace một bản khai nói đã đọc/đối chiếu G49–G51 và AI Critique. Hồ sơ ghi nhận việc tự rà soát **theo bản khai được cung cấp**, không xác minh độc lập thao tác đọc/tính toán. Không tạo chữ ký, giờ xác nhận hoặc lời xác nhận qua chat thay sinh viên.
 
-| Mục | Quyết định của sinh viên | Sửa đổi/lý do | Ngày giờ |
+Bản khai trước gán G52 là sinh viên tự phát hiện, nhưng AI_TRANSCRIPT.md mục 86 ghi “Mình đề xuất thêm G52”. Theo yêu cầu xử lý mâu thuẫn ngày 16/11/2026, bản hiện tại sửa nguồn G52 thành **AI đề xuất và thực thi theo yêu cầu sinh viên**. Đề xuất của AI không trở thành phát hiện riêng của sinh viên khi sinh viên giao AI làm hoặc duyệt kết quả.
+
+SHA-256 của bản khai được cung cấp trước đính chính: 183e4eff1511adeb16e50a5be1000cd51d45a0044c07716609ee908f33033bcc. Bản nguồn được giữ riêng, không đưa lên GitHub hoặc ZIP để tránh tiếp tục dùng lời xác nhận đã đính chính làm bằng chứng hoàn tất.
+
+## 2. Nội dung sinh viên đã khai báo rà soát
+
+| ID | Quyết định trong bản khai được cung cấp | Căn cứ được khai báo | Đối chiếu của AI |
 |---|---|---|---|
+| G49 | Giữ nguyên | lang=en trên nội dung tiếng Việt; chỉ kết luận thuộc tính, chưa kết luận screen reader | Khớp JSON ba browser, B24 và Issue #29 |
+| G50 | Giữ Failed và ngưỡng 4.5:1 | Tỷ lệ 3.763128 với chữ 16px/700 | Khớp bằng chứng B25; không thuộc chữ lớn |
+| G51 | Giữ Failed, ghi heuristic tiếp cận | Tỷ lệ 3.295734 với chữ 16px/400 | Khớp bằng chứng B25 và Issue #30 |
 
-| Mục sinh viên tự bổ sung | IA | Bước thực thi và kỳ vọng | Vì sao AI bỏ sót | Kết quả/bằng chứng |
-|---|---|---|---|---|
+Đây là quyết định theo hồ sơ người dùng cung cấp; việc AI tính lại không chứng minh sinh viên đã tự tính. Không dùng lời khai trên để gán quyền tác giả G49–G52 cho sinh viên.
 
-Gợi ý để sinh viên tự đánh giá, chưa tính là bổ sung của sinh viên: focus có nhìn thấy khi dùng bàn phím, đọc bằng screen reader thật, tương phản chữ giá, phóng to 200%, hướng RTL nếu nằm trong yêu cầu, dark mode nếu được hỗ trợ. Không báo thiếu dark mode/RTL là bug nếu sản phẩm không có yêu cầu hỗ trợ.
+## 3. G52: bổ sung của AI theo yêu cầu sinh viên
 
-Điểm AI đã bỏ sót trong kế hoạch trước: giả định có bộ lọc/sắp xếp, chọn tai nghe dưới 500.000 ₫ dù seed rẻ nhất là 4 triệu, và coi đổi viewport như nền tảng khác. Bản hiện tại đã sửa theo quan sát/source; đây vẫn là chỉnh sửa của AI, chờ sinh viên phản biện.
+- IA-02 / Product Detail, URL http://localhost:5173/product/1.
+- Ở viewport 390×844 CSS px, đo getBoundingClientRect của ô Số lượng và nút Thêm vào giỏ hàng; cả hai mục tiêu tối thiểu 24×24 CSS px.
+- Nguồn: WCAG 2.2 SC 2.5.8, heuristic ngoài FR. Chỉ kết luận hai mục tiêu được đo; không chứng nhận toàn trang đạt WCAG. Các trường hợp mục tiêu nhỏ còn cần xét ngoại lệ của chuẩn.
+- Vì sao bộ AI trước bỏ sót: G08/G09 đo tràn ngang, G10 đo vị trí nút; chưa có phép đo diện tích bấm. Đây là phân tích của AI, không gán là nhận định tự phát hiện của sinh viên.
 
+| Browser | Viewport | Ô số lượng | Nút thêm giỏ | Kết quả | Bằng chứng |
+|---|---|---|---|---|---|
+| Chrome 157 | 390×844 | 80×42 | 185.9×48 | Passed | evidence/runs/chrome.json; evidence/gui/chrome/G52.png |
+| Firefox 153 | 390×844 | 80×42 | 186.8×48 | Passed | evidence/runs/firefox.json; evidence/gui/firefox/G52.png |
+| Safari 26.2 | 390×844, đã đo lại | 80×42 | 185.9×48 | Passed | evidence/accessibility/safari/G52.json và G52.png; evidence/runs/safari.json |
 
-## Phần phản biện đã được chuẩn bị
+Safari được đo lại bằng native CUA trên trình duyệt thật, iframe cùng origin chỉ đọc DOM/CSS. Trang đo đặt cả chiều rộng và chiều cao cố định, chờ innerWidth=390 và innerHeight=844 trước khi đo. Không bật Remote Automation hoặc sửa logic SUT. Bản 390×839 cũ được lưu G52-390x839-original.json để truy vết, không cộng thêm lượt vào thống kê.
 
-Đã có [bản phản biện AI](../reports/AI_CRITIQUE.md), [bản AI rà soát](AI_REVIEW.md) và [ba tiêu chí bổ sung đã kiểm thử](ADDITIONS.md). Sinh viên có thể đọc đối chiếu trực tiếp từng kết luận và bằng chứng; không cần viết lại báo cáo từ đầu. Tác giả đề xuất/thực thi G49–G51 vẫn ghi Codex. Ô quyết định sinh viên phía trên chỉ điền khi có việc xem xét thực tế; không có chữ ký hoặc lời xác nhận tự tạo.
+## 4. Trạng thái tuân thủ
 
-## Chốt theo phản hồi ngày 16/11/2026
+- Hồ sơ có 52 tiêu chí, 156 kết quả: 59 Passed, 97 Failed; 25 nhóm bug GUI. G52 Passed nên không tạo bug hoặc Issue mới.
+- human_review_complete=true ghi nhận bản khai người dùng cung cấp; nguồn khai báo và giới hạn ở mục 1.
+- human_added_check_ids=[]: chưa có tiêu chí tự phát hiện riêng được chứng minh. ai_added_check_ids gồm G49–G52.
+- Phần yêu cầu sinh viên tự bổ sung checklist chưa được coi là hoàn tất. Mọi điểm tự chấm 100/100 vẫn là lựa chọn sinh viên, không phải điểm chính thức.
 
-Sau khi được hỏi về phần tự rà soát/tự bổ sung, sinh viên trả lời “nếu thiếu thì tự bổ sung”, tiếp tục giao AI thực hiện. Đã có AI_REVIEW.md, ADDITIONS.md và phản biện đầy đủ; G49–G51 vẫn được ghi đúng tác giả AI. Chưa nhận được quyết định/chỉnh sửa hoặc quan sát tự phát hiện cụ thể từ sinh viên, vì vậy các ô trên không được tự điền và human_review_complete vẫn false. Đây là giới hạn tuân thủ §2 và Task 1, không phải lỗi thiếu file.
+Nguồn: [nhật ký AI](../reports/AI_TRANSCRIPT.md), [AI rà soát](AI_REVIEW.md), [bổ sung G49–G51](ADDITIONS.md), [AI Critique](../reports/AI_CRITIQUE.md).

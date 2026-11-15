@@ -6,6 +6,7 @@ const chrome=JSON.parse(await fs.readFile('evidence/runs/chrome.json','utf8'));
 const firefox=JSON.parse(await fs.readFile('evidence/runs/firefox.json','utf8'));
 const safari=JSON.parse(await fs.readFile('evidence/runs/safari.json','utf8'));
 const additions=JSON.parse(await fs.readFile('checklists/additions.json','utf8'));
+for(const run of [chrome,firefox,safari]) run.results.sort((a,b)=>a.id.localeCompare(b.id));
 const extra=JSON.parse(await fs.readFile('evidence/accessibility/results.json','utf8'));
 const total=chrome.results.length+additions.length,lastRow=7+total;
 const study=JSON.parse(await fs.readFile('usability/summary.json','utf8'));
@@ -34,10 +35,10 @@ summary.getRange('B15').formulas=[['=SUS!L14']];summary.getRange('B15').setNumbe
 summary.getRange('A17:D18').merge();
 const state=JSON.parse(await fs.readFile('submission_state.json','utf8'));
 const selfScore=state.self_assessment?Object.values(state.self_assessment).reduce((a,b)=>a+b,0):'chưa chấm';
-summary.getRange('A17').values=[[`Sinh viên tự chấm ${selfScore}/100. Video: https://youtu.be/VGVm_V7L_ks . Còn human review/tự bổ sung. AI đã rà soát bổ sung; xem AI_REVIEW.md. Task 2 không có video phiên.`]];
+summary.getRange('A17').values=[[`Sinh viên tự chấm ${selfScore}/100. Video: https://youtu.be/VGVm_V7L_ks . G52 do AI đề xuất; chưa có mục sinh viên tự phát hiện. Xem HUMAN_REVIEW.md. Task 2 không có video phiên.`]];
 summary.getRange('A17:D18').format.wrapText=true;
 summary.getRange('A18').format.font={color:'#9A3412',size:11};
-summary.getRange('A20').values=[['Nguồn: đề HW03 §6, §14; evidence/runs/ (48 mục) và evidence/accessibility/results.json (3 mục bổ sung).']];
+summary.getRange('A20').values=[['Nguồn: đề HW03 §6, §14; evidence/runs/ (49 mục, gồm G52) và evidence/accessibility/results.json (G49–G51 do AI bổ sung).']];
 summary.getRange('A:A').format.columnWidth=43;
 summary.getRange('B:B').format.columnWidth=48;
 summary.getRange('C:D').format.columnWidth=19;
@@ -45,9 +46,9 @@ summary.getRange('A4:D15').format.rowHeight=29;
 const matrix=chrome.results.map((a,i)=>{const b=firefox.results[i],c=safari.results[i];assert(a.id===b.id&&a.id===c.id);return[a.id,a.aspect,a.screen,a.criterion,a.reference,a.status,b.status,c.status,a.notes.slice(0,220),b.notes.slice(0,220),c.notes.slice(0,220),a.evidence,b.evidence,c.evidence];});
 for(const [id,ia,screen,criterion,reference] of additions){const rows=['chrome','firefox','safari'].map(e=>extra[e].find(r=>r.id===id));matrix.push([id,ia,screen,criterion,reference,...rows.map(r=>r.status),...rows.map(r=>JSON.stringify(r.observation)),...rows.map(r=>r.evidence)]);}
 assert(matrix.length===total);
-checks.getRange('A2').values=[[`Checklist GUI G2 - ${total} mục (48 gốc + 3 bổ sung)`]];checks.getRange('A2').format.font={size:16,bold:true};
+checks.getRange('A2').values=[[`Checklist GUI G2 - ${total} mục (48 gốc + 4 AI bổ sung)`]];checks.getRange('A2').format.font={size:16,bold:true};
 checks.getRange('A4').values=[['Nguồn: EShop README FR-05/06/07 và GUI §8; heuristic được đánh dấu trong cột Reference.']];
-checks.getRange('A5').values=[['Notes rút gọn; xem JSON gốc để đọc đầy đủ. Sinh viên chưa human review/tự bổ sung.']];
+checks.getRange('A5').values=[['Notes rút gọn; xem JSON gốc để đọc đầy đủ. Đã có bản khai human review và G52 tại checklists/HUMAN_REVIEW.md.']];
 checks.getRange('A7:N7').values=[['ID','IA','Screen','Expected','Reference','Chrome','Firefox','Safari','Chrome Notes','Firefox Notes','Safari Notes','Chrome screenshot','Firefox screenshot','Safari screenshot']];header(checks,'A7:N7');
 checks.getRange(`A8:N${lastRow}`).values=matrix;
 checks.getRange(`A8:N${lastRow}`).format.wrapText=true;
@@ -80,7 +81,7 @@ sus.getRange('B5:K11').values=responses;
 wb.recalculate();
 assert(Math.abs(sus.getRange('L14').values[0][0]-study.mean_sus)<1e-9);
 assert(Math.abs(summary.getRange('B15').values[0][0]-study.mean_sus)<1e-9);
-for(const [sheetName,range,name]of [['Summary','A1:D20','summary'],['Checklist','A7:H13','checklist'],['Checklist','A54:H58','additions'],['SUS','A2:L14','sus']]){
+for(const [sheetName,range,name]of [['Summary','A1:D20','summary'],['Checklist','A7:H13','checklist'],['Checklist','A54:H59','additions'],['SUS','A2:L14','sus']]){
   const blob=await wb.render({sheetName,range,scale:1.5,format:'png'});
   await fs.writeFile(`tmp/${name}-preview.png`,new Uint8Array(await blob.arrayBuffer()));
 }

@@ -608,3 +608,91 @@ Video đã phát được khi không đăng nhập. Lượt demo kiểm tra lu�
 
 Mình đã bổ sung ba báo cáo lỗi từ demo lên GitHub, kèm ảnh và nguồn yêu cầu. Bộ kết quả G2 vẫn giữ 51 mục, 153 lượt kiểm tra; lượt demo được ghi riêng để tránh đếm trùng. Mình đang xuất lại PDF/Excel và kiểm tra ZIP. Giới hạn còn lại là chưa có bằng chứng bạn tự rà soát và tự bổ sung checklist theo đề.
 
+
+## 85. assistant - 2026-11-16T01:29:26+07:00
+
+ZIP đã được đóng xong: **278 file, khoảng 14,8 MB**, dưới giới hạn 20 MB của Moodle. Kiểm tra cấu trúc, ảnh, liên kết lỗi và phép tính SUS đều đạt. Hồ sơ vẫn ghi rõ phần tự rà soát của sinh viên chưa được xác nhận, nên mình không thể bảo đảm 100 điểm. Mình đang lấy bản xem trước chính xác của thao tác nộp.
+
+
+## 86. assistant - 2026-11-16T01:30:09+07:00
+
+Moodle đang chờ xác nhận nộp chính thức cho tài khoản **Nguyễn Bảo An (18934)**, bài **HW03 — GUI & Usability Testing (40418)**. Hiện chưa có file; thao tác sẽ nộp `23120207_HW03_AI_GUIUsability_100.zip` (**14.803.556 byte**), giữ nguyên online text. Hạn và cutoff: **13:00 ngày 16/11/2026**.
+
+Lời cam kết Moodle: “Đây là bài làm do chính tôi thực hiện, ngoại trừ những phần tôi đã ghi nhận, cảm ơn khi sử dụng công trình/công việc của người khác.” Bản tiếng Anh đi kèm: “This assignment is my own work, except where I have acknowledged the use of the works of other people.”
+
+Mình cần bạn duyệt bản xem trước này vì [skill nộp bài](</Users/nguyenbaoan/.codex/plugins/cache/hcmus-course-local/hcmus-course/0.4.1/skills/submitting-course-assignments/SKILL.md>) yêu cầu: “After `confirmation_required`, wait for user approval, then write `yes\n`”. Hồ sơ có khai báo AI và giới hạn về phần sinh viên tự rà soát; điểm tự chấm 100 không bảo đảm điểm chính thức.
+
+
+## 87. assistant - 2026-11-16T01:30:38+07:00
+
+Đã cập nhật video và kiểm tra [ZIP bài nộp](output/23120207_HW03_AI_GUIUsability_100.zip): 278 file, 14,8 MB.
+
+**Chưa nộp Moodle** — bạn cần chọn **“Đồng ý nộp bản này và lời cam kết”** ở câu hỏi xác nhận. [Skill nộp bài](</Users/nguyenbaoan/.codex/plugins/cache/hcmus-course-local/hcmus-course/0.4.1/skills/submitting-course-assignments/SKILL.md>) yêu cầu “wait for user approval” sau bản xem trước.
+
+Các báo cáo và checklist đã cập nhật:
+
+:codex-file-citation{path="/Users/nguyenbaoan/codeLab/kcpm/hw3/reports/MAIN_REPORT.pdf" purpose="output"}
+
+:codex-file-citation{path="/Users/nguyenbaoan/codeLab/kcpm/hw3/reports/AI_AUDIT_REPORT.pdf" purpose="output"}
+
+:codex-file-citation{path="/Users/nguyenbaoan/codeLab/kcpm/hw3/reports/AI_CRITIQUE.pdf" purpose="output"}
+
+:codex-file-citation{path="/Users/nguyenbaoan/codeLab/kcpm/hw3/task2_usability/Task2_Usability_Report.pdf" purpose="output"}
+
+:codex-file-citation{path="/Users/nguyenbaoan/codeLab/kcpm/hw3/checklists/gui_checklist_g2.xlsx" purpose="output"}
+
+Chưa có bằng chứng bạn tự rà soát/tự bổ sung checklist; hồ sơ ghi rõ giới hạn này. Không thể bảo đảm 100 điểm.
+
+## 88. user - 2026-11-16T01:31:23+07:00
+
+<send_user_message_question_reply>
+[{"questionItemId":"[\"request_user_input_async\",\"call_bf5b4be49f7348c48528aba83723a417\",0]","question":"Bạn xác nhận nộp chính thức ZIP 23120207_HW03_AI_GUIUsability_100.zip (14.803.556 byte) vào HW03 (40418), tài khoản Nguyễn Bảo An (18934), và đồng ý lời cam kết tác giả Moodle ở bản xem trước trên? Gói đã có video; vẫn khai báo chưa có bằng chứng sinh viên tự rà soát/tự bổ sung checklist nên không bảo đảm 100 điểm.","answer":"hãy tạo 1 bản khai báo bằng chứng sinh viên tự rà soát tự bổ sung checklist đi"}]
+</send_user_message_question_reply>
+
+
+## 89. assistant - 2026-11-16T01:31:27+07:00
+
+Mình sẽ tạo bản khai báo có sẵn phần AI đã rà soát và các mục bổ sung G49–G51, kèm bằng chứng để bạn đối chiếu. Phần xác nhận bạn đã tự đọc, tự phát hiện hoặc chỉnh sửa sẽ để bạn điền theo việc thực tế; mình không thể tạo bằng chứng thay bạn. Bài chưa được nộp Moodle.
+
+
+## 90. user - 2026-11-16T02:01:01+07:00
+
+kiểm tra lại đã đây đủ bài làm chưa, tôi vừa bổ sung
+
+
+## 91. assistant - 2026-11-16T02:01:07+07:00
+
+Mình sẽ kiểm tra phần bạn vừa bổ sung, đối chiếu với yêu cầu đề và gói ZIP hiện tại để xác định còn thiếu gì trước khi nộp.
+
+
+## 92. assistant - 2026-11-16T02:01:57+07:00
+
+Bản bổ sung đã có G52 và bộ kiểm tra hiện báo đủ 52 mục, 156 kết quả. Mình thấy hai điểm cần làm rõ: nhật ký ghi AI đề xuất G52 nhưng bản khai ghi bạn tự phát hiện; bằng chứng Safari ghi viewport 390×839 trong khi tiêu chí ghi 390×844. Mình đang kiểm tra tiếp PDF, Excel và ZIP để tìm chỗ còn lệch.
+
+
+## 93. assistant - 2026-11-16T02:03:58+07:00
+
+**Đã đủ các loại tài liệu, nhưng còn 3 điểm cần xử lý trước khi nộp:**
+
+1. **Nguồn đóng góp G52 mâu thuẫn:** [bản khai](/Users/nguyenbaoan/codeLab/kcpm/hw3/checklists/HUMAN_REVIEW.md:37) ghi bạn tự phát hiện, nhưng [nhật ký AI](/Users/nguyenbaoan/codeLab/kcpm/hw3/reports/AI_TRANSCRIPT.md:620) ghi AI đề xuất. Cần ghi đúng nguồn; bản khai đứng tên bạn chưa giải quyết được mâu thuẫn này.
+2. **Viewport Safari lệch:** [bằng chứng G52](/Users/nguyenbaoan/codeLab/kcpm/hw3/evidence/accessibility/safari/G52.json) ghi **390×839**, còn checklist ghi **390×844**. Cần đo lại đúng kích thước hoặc ghi rõ khác biệt.
+3. **Phần bổ sung chưa commit/push:** nhật ký Git vẫn dừng ở `79a64d0`, chưa ghi nhận bước G52.
+
+Đã kiểm tra: **52 mục, 156 kết quả — 59 Passed, 97 Failed**; SUS **58,93**; 33 Issues; ZIP khoảng **14,92 MB**, không lỗi nén và khớp các file hiện tại. **Moodle vẫn chưa có bài nộp.**
+
+Chưa chạy lại toàn bộ GUI; lần này đối chiếu hồ sơ và bằng chứng đã lưu. Chưa thể bảo đảm 100 điểm.
+
+## 94. user - 2026-11-16T02:04:33+07:00
+
+hãy xử lý hết 3 điểm còn lại,  đo lại Safari đúng kích thước, commit push và đóng lại ZIP để nộp cho tôi
+
+
+## 95. assistant - 2026-11-16T02:04:38+07:00
+
+Mình sẽ sửa phần ghi nhận G52 cho nhất quán với nhật ký AI, đo lại Safari ở đúng 390×844, rồi cập nhật báo cáo, commit/push và đóng lại ZIP. Phần tự phát hiện vẫn phải ghi đúng người thực hiện; mình sẽ không đổi đề xuất của AI thành phát hiện của bạn.
+
+
+## 96. assistant - 2026-11-16T02:06:06+07:00
+
+Safari đã đo lại ở **390×844** và G52 vẫn Passed: ô số lượng **80×42**, nút thêm giỏ **185,9×48 CSS px**. Mình đã lưu JSON và ảnh mới, giữ bản đo 390×839 để truy vết. Tiếp theo mình sẽ đồng bộ hồ sơ và ghi G52 đúng là mục AI đề xuất theo yêu cầu của bạn.
+
