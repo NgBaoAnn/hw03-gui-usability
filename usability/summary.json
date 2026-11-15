@@ -1,0 +1,73 @@
+{
+  "n": 7,
+  "pilot_count": 1,
+  "mean_sus": 58.92857142857143,
+  "median_sus": 62.5,
+  "sample_sd_sus": 20.909384996990728,
+  "outcome_counts": {
+    "independent": 4,
+    "assisted": 2,
+    "timeout": 1
+  },
+  "completion_rate": 0.8571428571428571,
+  "duration_all_mean": 324,
+  "duration_success_mean": 278,
+  "finding_counts": {
+    "U01": 5,
+    "U02": 3,
+    "U03": 3,
+    "U04": 3,
+    "U05": 4
+  },
+  "participants": [
+    {
+      "participant_id": "P1",
+      "source_id": "P01",
+      "sus": 75.0,
+      "seconds": 205,
+      "outcome": "independent"
+    },
+    {
+      "participant_id": "P2",
+      "source_id": "P02",
+      "sus": 62.5,
+      "seconds": 268,
+      "outcome": "independent"
+    },
+    {
+      "participant_id": "P3",
+      "source_id": "P03",
+      "sus": 37.5,
+      "seconds": 440,
+      "outcome": "assisted"
+    },
+    {
+      "participant_id": "P4",
+      "source_id": "P04",
+      "sus": 87.5,
+      "seconds": 160,
+      "outcome": "independent"
+    },
+    {
+      "participant_id": "P5",
+      "source_id": "P05",
+      "sus": 55.0,
+      "seconds": 365,
+      "outcome": "assisted"
+    },
+    {
+      "participant_id": "P6",
+      "source_id": "P06",
+      "sus": 27.5,
+      "seconds": 600,
+      "outcome": "timeout"
+    },
+    {
+      "participant_id": "P7",
+      "source_id": "P07",
+      "sus": 67.5,
+      "seconds": 230,
+      "outcome": "independent"
+    }
+  ]
+}

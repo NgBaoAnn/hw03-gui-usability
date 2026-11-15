@@ -15,7 +15,7 @@ def main():
     out=ROOT/'output';out.mkdir(exist_ok=True)
     zip_path=out/'23120207_HW03_AI_GUIUsability_DRAFT.zip'
     entries=[]
-    for folder in ['reports','checklists','bug-reports','cross-platform','evidence','usability','skills','scripts']:
+    for folder in ['reports','checklists','bug-reports','cross-platform','evidence','usability','skills','scripts','task2_usability']:
         for p in sorted((ROOT/folder).rglob('*')):
             rel=p.relative_to(ROOT)
             if p.is_file() and not any(x in ['private','__pycache__','node_modules'] for x in rel.parts) and not p.name.endswith('.inspect.ndjson'):

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "U01",
+    "title": "Lối vào lịch sử đơn qua lời chào khó nhận biết",
+    "severity": "Major",
+    "file": "bug-reports/usability/U01.md",
+    "screenshots": [
+      "evidence/usability/U01.png"
+    ]
+  },
+  {
+    "id": "U02",
+    "title": "Tiêu đề Đăng Ký trên form đăng nhập gây nhầm",
+    "severity": "Minor",
+    "file": "bug-reports/usability/U02.md",
+    "screenshots": [
+      "evidence/usability/U02.png"
+    ]
+  },
+  {
+    "id": "U03",
+    "title": "Nút Hủy xuất hiện ở đơn đang giao gây hoang mang kỳ vọng",
+    "severity": "Major",
+    "file": "bug-reports/usability/U03.md",
+    "screenshots": [
+      "evidence/usability/U03.png"
+    ]
+  },
+  {
+    "id": "U04",
+    "title": "Thiếu hộp thoại xác nhận (Confirmation Modal) trước khi hủy đơn",
+    "severity": "Major",
+    "file": "bug-reports/usability/U04.md",
+    "screenshots": [
+      "evidence/usability/U04.png"
+    ]
+  },
+  {
+    "id": "U05",
+    "title": "Nhận diện đơn hàng chỉ dựa trên mã và số tiền gây tốn công nhận thức",
+    "severity": "Minor",
+    "file": "bug-reports/usability/U05.md",
+    "screenshots": [
+      "evidence/usability/U05.png"
+    ]
+  }
+]

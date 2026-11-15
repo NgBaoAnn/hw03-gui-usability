@@ -6,3 +6,5 @@ __pycache__/
 *.inspect.ndjson
 output/
 usability/private/
+/task2_usability/
+/usability/participants.csv

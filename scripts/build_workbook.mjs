@@ -5,6 +5,9 @@ import { Workbook, SpreadsheetFile } from '@oai/artifact-tool';
 const chrome=JSON.parse(await fs.readFile('evidence/runs/chrome.json','utf8'));
 const firefox=JSON.parse(await fs.readFile('evidence/runs/firefox.json','utf8'));
 const safari=JSON.parse(await fs.readFile('evidence/runs/safari.json','utf8'));
+const study=JSON.parse(await fs.readFile('usability/summary.json','utf8'));
+const responses=(await fs.readFile('usability/sus_responses.csv','utf8')).trim().split(/\r?\n/).slice(1).map(line=>line.split(',').slice(1).map(Number));
+assert(responses.length===7 && responses.every(r=>r.length===10 && r.every(v=>Number.isInteger(v)&&v>=1&&v<=5)));
 assert(safari.fullChecklist,'Safari run must be complete');
 const wb=Workbook.create();
 const summary=wb.worksheets.add('Summary');
@@ -23,8 +26,11 @@ summary.getRange('A5:A7').values=[['Chrome'],['Firefox'],['Safari (Apple WebDriv
 for(const [row,col]of [[5,'F'],[6,'G'],[7,'H']]){
   summary.getRange(`B${row}:D${row}`).formulas=[[`=COUNTIFS(Checklist!${col}8:${col}55,"Passed")`,`=COUNTIFS(Checklist!${col}8:${col}55,"Failed")`,`=48-B${row}-C${row}`]];
 }
-summary.getRange('A10:B15').values=[['Phạm vi','Home/Search, Detail, Cart'],['Checklist thiết kế',48],['Số IA',4],['Nhóm bug',23],['Người tham gia thật',0],['SUS trung bình','Chưa có dữ liệu thật']];
-summary.getRange('A18').values=[['CHƯA ĐỦ ĐIỀU KIỆN NỘP: thiếu pilot/7 phiên thật, human review và video sinh viên tự quay. Đã đủ 3 browser.']];
+summary.getRange('A10:B15').values=[['Phạm vi GUI','Home/Search, Detail, Cart'],['Checklist thiết kế',48],['Số IA',4],['Nhóm bug GUI',23],['Phiên usability chính thức',7],['SUS trung bình',null]];
+summary.getRange('B15').formulas=[['=SUS!L14']];summary.getRange('B15').setNumberFormat('0.00');
+summary.getRange('A17:D18').merge();
+summary.getRange('A17').values=[['Chờ human review/tự bổ sung, video demo và điểm tự chấm. Task 2 có ghi chú 1 pilot + 7 phiên do sinh viên xác nhận; thiếu video phiên.']];
+summary.getRange('A17:D18').format.wrapText=true;
 summary.getRange('A18').format.font={color:'#9A3412',size:11};
 summary.getRange('A20').values=[['Nguồn: đề HW03 §6, §14; kết quả gốc evidence/runs/chrome.json, firefox.json và safari.json.']];
 summary.getRange('A:A').format.columnWidth=43;
@@ -43,7 +49,7 @@ for(const [col,width]of [['A',9],['B',10],['C',12],['D',58],['E',28],['F',13],['
 checks.freezePanes.freezeRows(7);checks.freezePanes.freezeColumns(1);
 checks.tables.add('A7:N55',true,'GuiChecklist').style='TableStyleLight9';
 checks.getRange('F8:H55').conditionalFormats.add('containsText',{text:'Failed',format:{fill:'#FEE2E2',font:{color:'#991B1B'}}});
-sus.getRange('A2').values=[['SUS - nhập dữ liệu thật sau mỗi phiên']];sus.getRange('A2').format.font={size:16,bold:true};
+sus.getRange('A2').values=[['SUS - 7 phiên sinh viên cung cấp']];sus.getRange('A2').format.font={size:16,bold:true};
 sus.getRange('A3').values=[['Điểm 1–5, câu lẻ thuận/câu chẵn nghịch; nguồn Brooke: https://hell.meiert.org/core/pdf/sus.pdf']];
 sus.getRange('A4:L4').values=[['ID',...Array.from({length:10},(_,i)=>'Q'+(i+1)),'SUS 0–100']];header(sus,'A4:L4');
 sus.getRange('A5:A11').values=Array.from({length:7},(_,i)=>['P'+(i+1)]);
@@ -63,7 +69,10 @@ assert(sus.getRange('L14').values[0][0]==='Chưa đủ 7 người');
 sus.getRange('B5:K11').values=Array(7).fill(null).map(()=>[5,1,5,1,5,1,5,1,5,1]);assert(sus.getRange('L14').values[0][0]===100);
 sus.getRange('B5:K11').clear({applyTo:'contents'});
 assert(sus.getRange('L5').values[0][0]==='Chưa đủ dữ liệu');
+sus.getRange('B5:K11').values=responses;
 wb.recalculate();
+assert(Math.abs(sus.getRange('L14').values[0][0]-study.mean_sus)<1e-9);
+assert(Math.abs(summary.getRange('B15').values[0][0]-study.mean_sus)<1e-9);
 for(const [sheetName,range,name]of [['Summary','A1:D20','summary'],['Checklist','A7:H13','checklist'],['SUS','A2:L14','sus']]){
   const blob=await wb.render({sheetName,range,scale:1.5,format:'png'});
   await fs.writeFile(`tmp/${name}-preview.png`,new Uint8Array(await blob.arrayBuffer()));

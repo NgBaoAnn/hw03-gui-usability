@@ -5,13 +5,23 @@
   "individual": true,
   "human_review_complete": false,
   "human_added_check_ids": [],
-  "pilot_evidence": "",
-  "session_evidence": [],
+  "pilot_evidence": "usability/sessions/PILOT.md",
+  "session_evidence": [
+    "usability/sessions/P1.md",
+    "usability/sessions/P2.md",
+    "usability/sessions/P3.md",
+    "usability/sessions/P4.md",
+    "usability/sessions/P5.md",
+    "usability/sessions/P6.md",
+    "usability/sessions/P7.md"
+  ],
   "third_platform_full_run": "evidence/runs/safari.json",
   "demo_youtube_url": "",
   "earlier_ai_audit_complete": true,
   "self_assessment": null,
   "github_grader_access_confirmed": true,
   "github_visibility": "public",
-  "demo_author": "student_recording_pending"
+  "demo_author": "student_recording_pending",
+  "usability_student_confirmed": true,
+  "usability_recordings_complete": false
 }

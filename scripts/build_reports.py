@@ -28,6 +28,8 @@ def main():
     assert len(chrome) == len(firefox) == len(safari_results) == len(json.loads((ROOT / 'checklists/items.json').read_text()))
     counts = {e: Counter(r['status'] for r in run['results']) for e, run in runs.items()}
     now = datetime.now(ZoneInfo('Asia/Ho_Chi_Minh')).isoformat(timespec='seconds')
+    study = json.loads((ROOT/'usability/summary.json').read_text())
+    assert study['n'] == 7 and study['pilot_count'] == 1
     rows = []
     for a, b, c in zip(chrome, firefox, safari_results):
         assert a['id'] == b['id'] == c['id']
@@ -70,7 +72,7 @@ def main():
     ]
     index = json.loads((ROOT/'bug-reports/issues.json').read_text()) if (ROOT/'bug-reports/issues.json').exists() else {}
     failed_count=sum(x['Failed'] for x in counts.values())
-    catalog = ['# Báo cáo lỗi GUI G2', '', f'SUT commit: `{runs["chrome"]["sutCommit"]}`. 23 nhóm lỗi từ {failed_count} mục Failed của ba lượt chạy; không phải {failed_count} bug độc lập. Chưa có phát hiện từ người tham gia usability. Severity do AI đề xuất, chờ sinh viên rà soát.', '', 'Các phát hiện heuristic được ghi rõ, không diễn giải thành yêu cầu FR bắt buộc. Ảnh gốc đính kèm từng báo cáo; xem JSON của môi trường để biết quan sát đầy đủ.', '']
+    catalog = ['# Báo cáo lỗi GUI G2', '', f'SUT commit: `{runs["chrome"]["sutCommit"]}`. 23 nhóm lỗi từ {failed_count} mục Failed của ba lượt chạy; không phải {failed_count} bug độc lập. Năm phát hiện usability U01–U05 được lưu riêng trong `usability/FINDINGS.md` và `bug-reports/usability/`. Severity do AI đề xuất, chờ sinh viên rà soát.', '', 'Các phát hiện heuristic được ghi rõ, không diễn giải thành yêu cầu FR bắt buộc. Ảnh gốc đính kèm từng báo cáo; xem JSON của môi trường để biết quan sát đầy đủ.', '']
     bug_data=[]
     for bid,title,severity,ids,steps,expected,actual in groups:
         affected=[(e,r) for e,run in runs.items() for r in run['results'] if r['id'] in ids and r['status']=='Failed']
@@ -133,7 +135,7 @@ Cập nhật: {now}.
 | Màn hình chính | Home / Product List / Search |
 | Màn hình đã bao phủ | 3: Home, Product Detail, Cart |
 | Luồng GUI do agent thực thi | Tìm kiếm → chi tiết → thêm giỏ; giỏ dùng để kiểm tra kết quả |
-| Luồng usability đã thiết kế / chạy với người thật | 1 / 0 |
+| Luồng usability | Quản lý đơn hàng; 1 pilot + 7 phiên do sinh viên cung cấp và xác nhận |
 | Mục checklist thiết kế | 48; mỗi IA 12 mục |
 | Chrome | 48 executed; {counts['chrome']['Passed']} Passed; {counts['chrome']['Failed']} Failed; {counts['chrome']['Blocked']} Blocked |
 | Firefox | 48 executed; {counts['firefox']['Passed']} Passed; {counts['firefox']['Failed']} Failed; {counts['firefox']['Blocked']} Blocked |
@@ -142,12 +144,15 @@ Cập nhật: {now}.
 | Mục fail ít nhất một môi trường | {len({r['id'] for run in runs.values() for r in run['results'] if r['status']=='Failed'})} |
 | Nhóm bug | 23; {sum(b['severity']=='Major' for b in bug_data)} Major; {sum(b['severity']=='Minor' for b in bug_data)} Minor; 0 Blocker theo đánh giá sơ bộ |
 | Nền tảng chạy trọn checklist | 3/3: Chrome, Firefox, Safari thật |
-| Pilot / phiên chính thức có bằng chứng | 0 / 0 |
-| Người tham gia thật | 0/7 |
-| SUS | Chưa có dữ liệu để tính |
+| Pilot / phiên chính thức có ghi chú | 1 / 7; không có video phiên |
+| Người tham gia | 7/7 theo dữ liệu sinh viên cung cấp, ngoài pilot |
+| SUS | {study['mean_sus']:.2f}/100; trung vị {study['median_sus']:.2f}; SD mẫu {study['sample_sd_sus']:.2f} |
+| Hoàn thành tác vụ | 6/7 (85,7%): 4 độc lập, 2 có trợ giúp, 1 timeout |
+| Thời gian tác vụ | 324 giây gồm timeout; 278 giây trong 6 ca hoàn thành |
+| Phát hiện usability | 5 vấn đề U01–U05; tách khỏi 23 bug GUI |
 | Video demo skill | MP4 do Codex ghi được giữ tham khảo; chờ video sinh viên tự quay và URL YouTube |
 
-Kết quả là thực thi tự động bởi Codex, chưa phải xác nhận của sinh viên. Không dùng số bug hay số lượt tự động để suy ra mức hài lòng, tần suất lỗi ở người dùng, hoặc SUS.
+Kết quả GUI do Codex thực thi tự động. Kết quả usability lấy từ hồ sơ sinh viên cung cấp và xác nhận trong chat ngày 15/11/2026; phép tính được đối chiếu độc lập với CSV/JSON. Không suy ra SUS từ kiểm thử tự động. Không có video phiên; §14 yêu cầu kèm bản quay khi có, nên giữ rõ giới hạn này.
 '''
     write('reports/TEST_SUMMARY.md',summary)
     report=f'''# HW03 - GUI & Usability: Báo cáo chính G2
@@ -176,11 +181,15 @@ Chrome: {counts['chrome']['Passed']} Passed, {counts['chrome']['Failed']} Failed
 
 ## 3. Task 2: moderated usability
 
-Đã chuẩn bị mục tiêu, kịch bản hướng mục tiêu, protocol think-aloud, consent, câu hỏi về clarity/recovery/speed/trust, phiếu SUS và mẫu pilot/P1–P7. Xem `usability/PROTOCOL.md` và `SUS_QUESTIONNAIRE.md`.
+Sinh viên bổ sung hồ sơ `task2_usability/` ngày 15/11/2026 và xác nhận trong chat rằng đã tự điều phối một pilot và bảy phiên thật. Theo yêu cầu sinh viên, thông tin người nộp được đồng bộ Nguyễn Bảo An – 23120207. Luồng Task 2 là đăng nhập → tìm lịch sử → nhận diện trạng thái → hủy đơn pending → xác nhận kết quả, khác phạm vi GUI G2 ở Task 1. Đề cho phép chọn riêng màn hình GUI và luồng usability.
 
-Chưa diễn ra phiên nào, chưa có danh sách người tham gia, liên hệ, ghi chú, video hay điểm SUS thật. Các CSV và mẫu phiên là biểu mẫu trống. Không kết luận độ hài lòng, thời gian hoàn thành hay mức độ phổ biến của lỗi từ các test tự động. Tính điểm khi đủ dữ liệu bằng `python3 scripts/calculate_sus.py usability/sus_responses.csv`; chương trình từ chối dữ liệu thiếu/ngoài thang và pilot. Self-check đã kiểm tra điểm 0, 50, 100 và input không hợp lệ.
+Hồ sơ có mục tiêu, kịch bản v0/v1 và điều chỉnh sau pilot, lời dẫn think-aloud, ghi chú bảy phiên, 10 câu SUS và bốn nhóm probe. Pilot không tính vào thống kê. Mã nguồn P01–P07 được ánh xạ P1–P7 trong CSV chuẩn; không thay câu trả lời. SUS = tổng (câu lẻ − 1, 5 − câu chẵn) × 2,5. Chạy `python3 scripts/calculate_sus.py usability/sus_responses.csv` để tái tính. Đã đối chiếu 70 câu trả lời giữa CSV/JSON, điểm từng người, kết quả tác vụ, thời gian và tần suất năm nhóm vấn đề. SUS là điểm thang 0–100, không phải phần trăm.
 
-Sau khi có dữ liệu thật, phân tích từng người, nhóm pain point, tách bug cụ thể khỏi vấn đề thiết kế lặp lại và ghi severity theo ảnh hưởng quan sát. `usability/FINDINGS.md` hiện chưa có finding từ người dùng.
+SUS trung bình **{study['mean_sus']:.2f}**, trung vị **{study['median_sus']:.2f}**, SD mẫu **{study['sample_sd_sus']:.2f}**. Bốn ca hoàn thành độc lập, hai có trợ giúp, một timeout 600 giây: tỷ lệ hoàn thành 6/7 (85,7%). Thời gian trung bình toàn mẫu 324 giây; chỉ sáu ca hoàn thành là 278 giây. Không suy rộng mẫu nhỏ này thành toàn bộ người dùng.
+
+`usability/FINDINGS.md` nhóm năm vấn đề: lối vào lịch sử khó nhận biết (5/7), tiêu đề đăng nhập sai (3/7), affordance hủy đơn đang giao (3/7), thiếu xác nhận trước hủy (3/7), thiếu thông tin sản phẩm trong danh sách đơn (4/7). U02 là lỗi nhãn cụ thể; U01/U04/U05 là vấn đề thiết kế lặp lại. Ảnh `evidence/usability/` là agent tái hiện sau khi nhận dữ liệu, không phải ảnh/video phiên người tham gia. Báo cáo và Issue riêng ghi rõ giới hạn này.
+
+Hồ sơ nguồn ghi tất cả người tham gia từ chối ghi hình; không có video phiên. §6 hướng dẫn quay màn hình; §14 của đề tiếng Anh quy định nộp screen recordings where available (bản quay khi có). Hồ sơ vì vậy kèm ghi chú có cấu trúc, SUS/probe và nêu rõ giới hạn không có bản quay, không gán ảnh tái hiện thành bằng chứng phiên. Tính xác thực dựa trên xác nhận của sinh viên; Codex không xác minh độc lập danh tính hay việc diễn ra các phiên. Danh sách họ tên/liên hệ đã che chỉ nằm trong hồ sơ nộp, không đẩy lên repo public. Xem `usability/provenance.json`.
 
 ## 4. Task 3: cross-browser
 
@@ -196,12 +205,11 @@ Skill trong `skills/gui-usability-evaluator/SKILL.md` hỗ trợ chọn phạm v
 
 `reports/AI_AUDIT_REPORT.md` và bản transcript ghi lại AI dùng trong chat hiện tại. Đã khôi phục 14 lời nhắn lập kế hoạch ngày 03/11 từ session OpenCode đúng thư mục HW03 vào `reports/AI_AUDIT_RECOVERED.md`, kèm ba đầu ra nguyên gốc ở `reports/legacy/`. Timestamp/model được lấy đúng metadata cũ; không tự tạo prompt. Sinh viên cần bổ sung nếu còn tương tác khác ngoài các nguồn này. `AI_CRITIQUE.md` vẫn là bản AI soạn, chờ sinh viên sửa theo trải nghiệm thật và xác nhận.
 
-Commit được tạo theo giai đoạn thực sự hoàn thành. Không tạo commit giả cho phiên usability chưa diễn ra. Nhật ký được xuất bằng `git log --graph --all --stat` vào `git_commit_log.txt`.
+Commit được tạo theo giai đoạn thực sự hoàn thành. Hồ sơ tám phiên được nhập cùng lúc ngày 15/11/2026; không tạo hoặc lùi ngày commit như thể đã ghi từng phiên ngày 10/11. Đây là giới hạn tuân thủ yêu cầu nhật ký theo từng phiên. Nhật ký xuất bằng `git log --graph --all --stat` vào `git_commit_log.txt`.
 
 ## 6. Việc còn thiếu trước khi nộp
 
 - Sinh viên rà soát kết quả và tự bổ sung checklist; duyệt critique/audit, bổ sung nếu còn chat khác ngoài bản đã khôi phục.
-- Một pilot và bảy phiên thật ngoài lớp, danh sách liên hệ đã che, ghi chú/SUS/bằng chứng; tính và tổng hợp kết quả.
 - Sinh viên tự quay demo dùng skill từ đầu đến cuối và cung cấp YouTube URL.
 - Sinh viên tự chấm theo rubric 30/40/20/10, xác nhận bài cuối, rồi đóng gói đúng tên và xác nhận Moodle “Em làm một mình”.
 
@@ -215,7 +223,7 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Không tạo c
 
 Nguyễn Bảo An - 23120207 - bài cá nhân.
 
-**BẢN NHÁP, CHƯA PHẢI BÀI NỘP HOÀN CHỈNH.** Đã chạy đủ 3 trình duyệt, khôi phục audit cũ và public repo theo yêu cầu. Còn thiếu pilot/7 phiên thật, human review/tự bổ sung, video sinh viên tự quay kèm URL YouTube và điểm tự chấm.
+**BẢN CHỜ SINH VIÊN CHỐT.** Đã chạy đủ 3 trình duyệt, tích hợp 1 pilot + 7 phiên được sinh viên xác nhận, tính SUS, khôi phục audit và public repo. Còn human review/tự bổ sung, video demo tự quay kèm URL YouTube và điểm tự chấm. Không có video phiên usability; giới hạn được ghi rõ theo §14.
 
 Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc cần bạn làm, biểu mẫu tương ứng và dữ liệu gửi lại để Codex chốt hồ sơ.
 
@@ -225,7 +233,8 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 - `checklists/gui_checklist_g2.xlsx`, `.md`, `.csv`: 48 mục trên Chrome, Firefox và Safari thật.
 - `bug-reports/BUG_REPORTS.md`: 23 nhóm bug, ảnh gốc và Issue links.
 - `evidence/runs/`: kết quả máy đọc được; `evidence/gui/`: ảnh gốc.
-- `usability/`: protocol, SUS, CSV và mẫu phiên trống để thu dữ liệu thật.
+- `usability/`: protocol, SUS, dữ liệu 7 phiên, phân tích và nguồn dữ liệu; bản public dùng mã người tham gia.
+- `task2_usability/`: bộ Task 2 đầy đủ có danh sách liên hệ đã che, PDF và Excel; chỉ có trong ZIP nộp, không đưa lên repo public.
 - `reports/AI_AUDIT_REPORT.md`, `AI_CRITIQUE.md` và PDF.
 - `skills/gui-usability-evaluator/`: skill, kịch bản và MP4 tham khảo do Codex ghi; chờ video sinh viên tự quay và URL YouTube.
 - `reports/AI_AUDIT_RECOVERED.md`: prompt/output cũ đã khôi phục, kèm các kế hoạch nguyên gốc.

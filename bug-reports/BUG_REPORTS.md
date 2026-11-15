@@ -2,7 +2,7 @@
 
 
 
-SUT commit: `85af3ba875c88283615e22cb108f13e2fccaf0e9`. 23 nhóm lỗi từ 88 mục Failed của ba lượt chạy; không phải 88 bug độc lập. Chưa có phát hiện từ người tham gia usability. Severity do AI đề xuất, chờ sinh viên rà soát.
+SUT commit: `85af3ba875c88283615e22cb108f13e2fccaf0e9`. 23 nhóm lỗi từ 88 mục Failed của ba lượt chạy; không phải 88 bug độc lập. Năm phát hiện usability U01–U05 được lưu riêng trong `usability/FINDINGS.md` và `bug-reports/usability/`. Severity do AI đề xuất, chờ sinh viên rà soát.
 
 
 

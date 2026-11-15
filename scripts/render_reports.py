@@ -5,7 +5,7 @@ from pathlib import Path
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.styles import ParagraphStyle
-from reportlab.lib.pagesizes import A4
+from reportlab.lib.pagesizes import A4, landscape
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
@@ -29,11 +29,12 @@ def inline(text):
     return text
 
 
-def blocks(markdown):
+def blocks(markdown, content_width=499):
     lines=markdown.splitlines();flow=[];i=0
     while i<len(lines):
         line=lines[i].strip()
         if not line:i+=1;continue
+        if line=='---':flow.append(Spacer(1,6));i+=1;continue
         if line.startswith('|'):
             data=[]
             while i<len(lines) and lines[i].strip().startswith('|'):
@@ -42,17 +43,18 @@ def blocks(markdown):
                 i+=1
             if not data:continue
             n=len(data[0]);data=[r+['']*(n-len(r)) for r in data]
-            widths=[155,344] if n==2 else [105,175,219] if n==3 else [499/n]*n
+            widths=[content_width*155/499,content_width*344/499] if n==2 else [content_width*105/499,content_width*175/499,content_width*219/499] if n==3 else [content_width/n]*n
             table=Table([[Paragraph(inline(v),headstyle if ri==0 else cellstyle) for v in row] for ri,row in enumerate(data)],colWidths=widths,repeatRows=1,hAlign='LEFT')
             table.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),colors.HexColor('#24354B')),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),7),('RIGHTPADDING',(0,0),(-1,-1),7),('TOPPADDING',(0,0),(-1,-1),7),('BOTTOMPADDING',(0,0),(-1,-1),7),('LINEBELOW',(0,0),(-1,0),0.7,colors.HexColor('#94A3B8')),('ROWBACKGROUNDS',(0,1),(-1,-1),[colors.white,colors.HexColor('#F3F6FA')])]))
             flow.extend([table,Spacer(1,10)]);continue
         if line.startswith('# '):flow.append(Paragraph(inline(line[2:]),title));i+=1;continue
-        if line.startswith('## '):
-            style=entry_heading if re.match(r'## \d+\. (user|assistant) - ',line) else heading
-            flow.append(Paragraph(inline(line[3:]),style));i+=1;continue
+        if re.match(r'^#{2,6} ',line):
+            style=entry_heading if line.startswith('###') or re.match(r'## \d+\. (user|assistant) - ',line) else heading
+            flow.append(Paragraph(inline(re.sub(r'^#+ ', '',line)),style));i+=1;continue
         if line.startswith('- '):flow.append(Paragraph('• '+inline(line[2:]),body));i+=1;continue
+        if re.match(r'^\d+\. ',line):flow.append(Paragraph(inline(line),body));i+=1;continue
         para=[line];i+=1
-        while i<len(lines) and lines[i].strip() and not lines[i].lstrip().startswith(('#','|','- ')):
+        while i<len(lines) and lines[i].strip() and not lines[i].lstrip().startswith(('#','|','- ')) and not re.match(r'^\d+\. ',lines[i].strip()):
             para.append(lines[i].strip());i+=1
         flow.append(Paragraph(inline(' '.join(para)),body))
     return flow
@@ -61,18 +63,20 @@ def blocks(markdown):
 def page_footer(canvas,doc):
     canvas.saveState();canvas.setFont('ReportArial',8);canvas.setFillColor(colors.HexColor('#64748B'))
     canvas.drawString(48,28,'23120207 - HW03 G2 - Bản nháp, chưa đủ điều kiện nộp')
-    canvas.drawRightString(A4[0]-48,28,f'{doc.page}');canvas.restoreState()
+    canvas.drawRightString(doc.pagesize[0]-48,28,f'{doc.page}');canvas.restoreState()
 
 
 def main():
-    for name in ['MAIN_REPORT','AI_AUDIT_REPORT','AI_CRITIQUE']:
-        source=(ROOT/f'reports/{name}.md').read_text()
+    for name in ['MAIN_REPORT','AI_AUDIT_REPORT','AI_CRITIQUE','Task2_Usability_Report']:
+        folder='task2_usability' if name=='Task2_Usability_Report' else 'reports'
+        source=(ROOT/f'{folder}/{name}.md').read_text()
         if name=='AI_AUDIT_REPORT':
             source+='\n\n'+(ROOT/'reports/AI_TRANSCRIPT.md').read_text()
             source+='\n\n'+(ROOT/'reports/AI_AUDIT_RECOVERED.md').read_text()
-        output=ROOT/f'reports/{name}.pdf'
-        doc=SimpleDocTemplate(str(output),pagesize=A4,leftMargin=48,rightMargin=48,topMargin=43,bottomMargin=48,title=f'HW03 G2 - {name}',author='Nguyễn Bảo An',allowSplitting=1)
-        doc.build(blocks(source),onFirstPage=page_footer,onLaterPages=page_footer)
+        output=ROOT/f'{folder}/{name}.pdf'
+        pagesize=landscape(A4) if name=='Task2_Usability_Report' else A4
+        doc=SimpleDocTemplate(str(output),pagesize=pagesize,leftMargin=48,rightMargin=48,topMargin=43,bottomMargin=48,title=f'HW03 - {name}',author='Nguyễn Bảo An',allowSplitting=1)
+        doc.build(blocks(source,pagesize[0]-96),onFirstPage=page_footer,onLaterPages=page_footer)
         print(output.name,output.stat().st_size)
 
 

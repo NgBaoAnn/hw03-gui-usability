@@ -25,8 +25,8 @@ Công cụ AI: OpenAI Codex desktop, agent dựa trên GPT-6 theo thông tin phi
 | Định danh trong form thật | evidence/identity/; cross-platform/IDENTITY.md | Điền tên/MSSV/email vào form đăng ký SUT trên ba browser, để trống mật khẩu, không gửi form và không tạo tài khoản |
 | Kiểm tra Safari | evidence/runs/safari.json; evidence/gui/safari/ | Safari 26.2 thật: 19 Passed, 29 Failed, 0 Blocked; giữ thêm 9 quan sát CUA cũ để đối chiếu, không cộng lặp |
 | Báo cáo bug | bug-reports/BUG_REPORTS.md và B01–B23.md | Gộp 88 Failed trên ba browser thành 23 nhóm; heuristic được ghi rõ; Issue URL trong issues.json |
-| Chuẩn bị usability | usability/PROTOCOL.md, SUS_QUESTIONNAIRE.md, CSV, sessions/ | Mẫu trống; 0 phiên, 0 người; không có dữ liệu tự tạo trong báo cáo |
-| Tính SUS | scripts/calculate_sus.py; sheet SUS | Self-check 0/50/100, từ chối thiếu/sai thang; dữ liệu thử đã xóa trước export |
+| Tích hợp usability | usability/PROTOCOL.md, SUS_QUESTIONNAIRE.md, CSV, sessions/, provenance.json | Hồ sơ 1 pilot + 7 phiên do sinh viên cung cấp và xác nhận; đối chiếu CSV/JSON, không xác minh độc lập danh tính |
+| Tính SUS | scripts/calculate_sus.py; sheet SUS | Đối chiếu 70 câu trả lời; trung bình 58,93/100; pilot tách riêng; self-check 0/50/100 và từ chối thiếu/sai thang |
 | Xây skill | skills/gui-usability-evaluator/SKILL.md | Kiểm tra cấu trúc skill thành công; MP4 Codex chỉ tham khảo, chờ video sinh viên tự quay và URL |
 | Ghi demo tham khảo theo skill | skills/gui-usability-evaluator/video/gui-g2-demo.mp4; video/recording-log.json | 112,4 giây browser thật do Codex ghi; sinh viên chọn tự quay video nộp riêng, chưa có URL |
 | Khôi phục audit lập kế hoạch | reports/AI_AUDIT_RECOVERED.md; reports/legacy/ | 14 lời nhắn thật ngày 03/11 của OpenCode gắn đúng thư mục; ba đầu ra kế hoạch nguyên gốc kèm hash |
@@ -42,9 +42,9 @@ Sau khi sinh viên cho phép Safari WebDriver, sinh viên tự xác thực Touch
 
 Sau khi hoàn tất, đã tắt lại Allow remote automation và Show features for web developers về trạng thái ban đầu. Không thay đổi thiết lập bàn phím hoặc các quyền JavaScript/cross-origin khác.
 
-SafariDriver đôi khi blur input sau khi nhập mà chưa phát click. Codex ghi số DOM click, chỉ lặp lệnh WebDriver nếu chưa có click được giao, rồi chạy lại các mục bị ảnh hưởng. Lỗi nút bỏ qua click đầu vẫn được giữ vì click thực đã tới ứng dụng. Những mục từng Blocked không được coi là bug; JSON cuối có đủ 48 kết quả Passed/Failed. Kết quả tổng: 144 lượt, 56 Passed, 88 Failed, 23 nhóm bug. Sinh viên vẫn chưa rà soát hoặc thu dữ liệu usability thật.
+SafariDriver đôi khi blur input sau khi nhập mà chưa phát click. Codex ghi số DOM click, chỉ lặp lệnh WebDriver nếu chưa có click được giao, rồi chạy lại các mục bị ảnh hưởng. Lỗi nút bỏ qua click đầu vẫn được giữ vì click thực đã tới ứng dụng. Những mục từng Blocked không được coi là bug; JSON cuối có đủ 48 kết quả Passed/Failed. Kết quả tổng: 144 lượt, 56 Passed, 88 Failed, 23 nhóm bug. Sinh viên chưa hoàn tất human review. Ngày 15/11 sinh viên bổ sung hồ sơ 1 pilot + 7 phiên và xác nhận đã tự điều phối các phiên thật; Codex kiểm tra phép tính và tính nhất quán.
 
-Không dùng danh sách lớp Moodle làm người tham gia. Không tạo điểm SUS, phát ngôn, thời gian, tên/liên hệ hay kết quả phiên để lấp dữ liệu thiếu. Danh sách P1–P7 chỉ là mã trên biểu mẫu trống.
+Không dùng danh sách lớp Moodle làm người tham gia. Không tạo điểm SUS, phát ngôn, thời gian, tên/liên hệ hay kết quả phiên để lấp dữ liệu thiếu. Dữ liệu bổ sung do sinh viên cung cấp; danh tính và việc diễn ra phiên không được Codex xác minh độc lập. Bản public dùng mã P1–P7; danh sách tên/liên hệ đã che chỉ có trong ZIP nộp.
 
 ## Lịch sử lập kế hoạch đã khôi phục
 
@@ -55,3 +55,13 @@ Không dùng danh sách lớp Moodle làm người tham gia. Không tạo điể
 ## Sinh viên xác nhận
 
 Chưa xác nhận. Sinh viên cần đọc kết quả, chỉnh sửa AI Critique bằng trải nghiệm thật, bổ sung checklist tự phát hiện, kiểm tra ảnh/lỗi và tự chấm điểm. Không tự ký thay sinh viên.
+
+
+## Tích hợp dữ liệu Task 2 ngày 15/11/2026
+
+Hồ sơ nhận vào có thông tin sinh viên khác và tên file simulation.json. Codex hỏi nguồn; sinh viên yêu cầu sửa tên/MSSV, rồi xác nhận rõ đây là các phiên thật mình điều phối. Đã sao lưu nguyên gốc riêng, ghi SHA-256, sửa thông tin người nộp, đối chiếu 70 câu trả lời CSV/JSON và tính SUS độc lập (58,93/100). Không tạo thêm câu trả lời hay phát ngôn người tham gia. Phạm vi Task 2 giữ quản lý đơn hàng theo dữ liệu bổ sung, Task 1 giữ G2.
+
+Đã chụp năm ảnh tái hiện trên SUT thật bằng tài khoản và đơn fixture riêng. Đây là bằng chứng trạng thái UI hiện tại, không gán thành ảnh/video nghiên cứu. Đã thay liên kết ảnh thiếu bằng ảnh tái hiện và phân biệt giới hạn bằng chứng. Hồ sơ không có video phiên; không gán việc từ chối ghi hình thành miễn trừ tự động của giảng viên. Dữ liệu nhập cùng lúc được commit theo ngày tích hợp, không lùi ngày hoặc tạo lịch sử cho từng phiên đã qua.
+
+
+Đính chính sau khi đối chiếu §14 đề tiếng Anh: bản quay phiên được nộp khi có (screen recordings where available). Không đặt việc xin chấp nhận của giảng viên thành một điều kiện đóng gói mới. Giữ nguyên ghi chú từ chối ghi hình và giới hạn không có video.

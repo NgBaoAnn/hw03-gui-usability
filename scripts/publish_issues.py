@@ -12,17 +12,19 @@ REPO = 'NgBaoAnn/hw03-gui-usability'
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--update-existing',action='store_true',help='Refresh existing issue bodies from verified local evidence')
+    parser.add_argument('--catalog',default='bug-reports/catalog.json',help='Verified local bug catalog')
     args=parser.parse_args()
-    path=ROOT/'bug-reports/issues.json'
+    path=(ROOT/args.catalog).with_name('issues.json')
     index=json.loads(path.read_text()) if path.exists() else {}
-    for bug in json.loads((ROOT/'bug-reports/catalog.json').read_text()):
+    for bug in json.loads((ROOT/args.catalog).read_text()):
         existing=index.get(bug['id'])
         if existing and not args.update_existing:
             continue
         body=(ROOT/bug['file']).read_text()
         body=re.sub(r'GitHub Issue: .*', 'GitHub Issue: current issue', body)
         for img in bug['screenshots']:
-            body=body.replace('../'+img,f'https://github.com/{REPO}/blob/codex/hw03-deliverables/{img}?raw=true')
+            url=f'https://github.com/{REPO}/blob/codex/hw03-deliverables/{img}?raw=true'
+            body=body.replace('../../'+img,url).replace('../'+img,url)
         # Every image stays available in the repository and in the submission archive.
         body+='\n\n### Original screenshot attachments\n\n'
         for img in bug['screenshots']:

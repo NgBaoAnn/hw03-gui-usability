@@ -29,6 +29,11 @@ def check_files():
     for bug in bugs:
         assert (ROOT/bug['file']).is_file()
         assert all((ROOT/p).is_file() for p in bug['screenshots'])
+    usability=json.loads((ROOT/'bug-reports/usability/catalog.json').read_text())
+    assert {b['id'] for b in usability}=={f'U{i:02}' for i in range(1,6)}
+    for bug in usability:
+        assert (ROOT/bug['file']).is_file() and all((ROOT/p).is_file() for p in bug['screenshots'])
+    assert len(json.loads((ROOT/'bug-reports/usability/issues.json').read_text()))==5
     for p in ['reports/MAIN_REPORT.pdf','reports/AI_AUDIT_REPORT.pdf','reports/AI_CRITIQUE.pdf','reports/AI_AUDIT_RECOVERED.md','checklists/gui_checklist_g2.xlsx','git_commit_log.txt','HUONG_DAN_HOAN_TAT.md','skills/gui-usability-evaluator/video/gui-g2-demo.mp4','skills/gui-usability-evaluator/video/recording-log.json']:
         assert (ROOT/p).is_file(),f'Missing deliverable {p}'
     self_check()
@@ -52,6 +57,8 @@ def missing_requirements():
         missing.append('Chưa có danh sách 7 người thật ngoài lớp và liên hệ đã che.')
     if len(state['session_evidence'])!=7 or any(not (ROOT/p).is_file() for p in state['session_evidence']):
         missing.append('Chưa có đủ ghi chú và bằng chứng 7 phiên thực tế.')
+    if not state.get('usability_student_confirmed'):
+        missing.append('Chưa có xác nhận của sinh viên về nguồn dữ liệu usability.')
     third=state['third_platform_full_run']
     if not third or not (ROOT/third).is_file():
         missing.append('Chưa có lượt chạy đủ checklist trên nền tảng thứ ba hợp lệ.')

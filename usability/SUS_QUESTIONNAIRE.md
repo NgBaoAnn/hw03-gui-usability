@@ -1,22 +1,25 @@
-# Phiếu SUS sau phiên
+# Phiếu khảo sát Chuẩn SUS (System Usability Scale)
 
-Mã người tham gia: ______. Ngày giờ: ______. Điền ngay sau khi dùng EShop.
+## Thang điểm khảo sát SUS (System Usability Scale)
 
-Bản diễn đạt tiếng Việt phục vụ buổi đánh giá, cần kiểm tra mức dễ hiểu trong pilot. Thang 1–5: 1 hoàn toàn không đồng ý; 2 không đồng ý; 3 trung lập; 4 đồng ý; 5 hoàn toàn đồng ý. Chọn một mức cho mỗi câu, không bỏ sót.
+Thang đo SUS tiêu chuẩn gồm 10 câu hỏi đánh giá theo thang điểm Likert 5 mức độ từ 1 (Hoàn toàn không đồng ý) đến 5 (Hoàn toàn đồng ý).
 
-| Câu | Phát biểu | Điểm 1–5 |
+| STT | Nội dung câu hỏi khảo sát SUS | 1 (Rất không đồng ý) → 5 (Rất đồng ý) |
 |---|---|---|
-| 1 | Tôi muốn sử dụng hệ thống này thường xuyên. | |
-| 2 | Tôi thấy hệ thống phức tạp không cần thiết. | |
-| 3 | Tôi thấy hệ thống dễ sử dụng. | |
-| 4 | Tôi cần người có chuyên môn kỹ thuật hỗ trợ để sử dụng hệ thống. | |
-| 5 | Tôi thấy các chức năng được kết hợp tốt. | |
-| 6 | Tôi thấy hệ thống có quá nhiều điểm thiếu nhất quán. | |
-| 7 | Tôi nghĩ đa số mọi người sẽ học cách sử dụng hệ thống rất nhanh. | |
-| 8 | Tôi thấy hệ thống rất bất tiện khi sử dụng. | |
-| 9 | Tôi tự tin khi sử dụng hệ thống. | |
-| 10 | Tôi cần học nhiều thứ trước khi bắt đầu sử dụng hệ thống. | |
+| Q01 | Tôi nghĩ rằng tôi sẽ thích sử dụng hệ thống này thường xuyên. | 1 · 2 · 3 · 4 · 5 |
+| Q02 | Tôi thấy hệ thống này phức tạp một cách không cần thiết. | 1 · 2 · 3 · 4 · 5 |
+| Q03 | Tôi thấy hệ thống dễ sử dụng. | 1 · 2 · 3 · 4 · 5 |
+| Q04 | Tôi nghĩ rằng tôi sẽ cần sự hỗ trợ của một chuyên gia kỹ thuật để có thể sử dụng hệ thống này. | 1 · 2 · 3 · 4 · 5 |
+| Q05 | Tôi thấy các chức năng khác nhau trong hệ thống này được tích hợp rất tốt. | 1 · 2 · 3 · 4 · 5 |
+| Q06 | Tôi nghĩ rằng có quá nhiều điều không nhất quán trong hệ thống này. | 1 · 2 · 3 · 4 · 5 |
+| Q07 | Tôi tưởng tượng rằng hầu hết mọi người sẽ học cách sử dụng hệ thống này rất nhanh chóng. | 1 · 2 · 3 · 4 · 5 |
+| Q08 | Tôi thấy hệ thống này rất cồng kềnh/rắc rối khi sử dụng. | 1 · 2 · 3 · 4 · 5 |
+| Q09 | Tôi cảm thấy rất tự tin khi sử dụng hệ thống. | 1 · 2 · 3 · 4 · 5 |
+| Q10 | Tôi cần phải học rất nhiều điều trước khi có thể bắt đầu sử dụng hệ thống này. | 1 · 2 · 3 · 4 · 5 |
 
-Cách tính: câu lẻ trừ 1, câu chẵn lấy 5 trừ điểm. Cộng rồi nhân 2,5. Chưa đủ 10 câu thì chưa tính điểm. Không đổi chiều câu hỏi.
+## Phương pháp tính điểm SUS (John Brooke, 1996)
 
-Nguồn: John Brooke, SUS, https://hell.meiert.org/core/pdf/sus.pdf. Đây là bản diễn đạt địa phương, không tuyên bố đã được kiểm định như bản dịch chuẩn hóa.
+- Đối với các câu hỏi lẻ (Q1, Q3, Q5, Q7, Q9): Điểm đóng góp = `Giá trị trả lời - 1`.
+- Đối với các câu hỏi chẵn (Q2, Q4, Q6, Q8, Q10): Điểm đóng góp = `5 - Giá trị trả lời`.
+- Điểm SUS tổng hợp = `(Tổng điểm đóng góp của 10 câu) × 2.5`.
+- Điểm SUS nằm trên thang điểm từ **0 đến 100** (chuẩn hóa quốc tế, không phải tỷ lệ phần trăm). Điểm trung bình tiêu chuẩn ngành là 68 điểm.

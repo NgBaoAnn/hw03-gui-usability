@@ -248,3 +248,94 @@ Mình sẽ giữ video hiện có làm tài liệu tham khảo; video bạn tự
 
 Repo đã chuyển sang **public**. Mình đã kiểm tra không cần đăng nhập vẫn truy cập được repo và ảnh bằng chứng. Hướng dẫn cũng đã cập nhật theo lựa chọn của bạn: bạn tự quay video nộp bài, còn MP4 do mình ghi chỉ giữ để tham khảo.
 
+
+## 37. assistant - 2026-11-11T23:53:21+07:00
+
+Đã công khai [repo bài làm](https://github.com/NgBaoAnn/hw03-gui-usability), kiểm tra truy cập không cần đăng nhập và cập nhật [ZIP mới](/Users/nguyenbaoan/codeLab/kcpm/hw3/output/23120207_HW03_AI_GUIUsability_DRAFT.zip).
+
+Đã ghi nhận **bạn tự quay video nộp bài**; MP4 do mình ghi chỉ giữ làm tham khảo. [Hướng dẫn]( /Users/nguyenbaoan/codeLab/kcpm/hw3/HUONG_DAN_HOAN_TAT.md) đã bổ sung kịch bản quay 3–5 phút. Khi quay và đăng xong, bạn gửi link YouTube để mình cập nhật.
+
+Chưa nộp Moodle; hồ sơ vẫn chờ các phiên usability thật và phần bạn rà soát, tự chấm.
+
+## 38. user - 2026-11-15T23:16:12+07:00
+
+đã xong hết chưa
+
+
+## 39. assistant - 2026-11-15T23:16:31+07:00
+
+Mình sẽ kiểm tra hồ sơ hiện tại xem đã có thêm dữ liệu hoặc video bạn bổ sung chưa.
+
+
+## 40. assistant - 2026-11-15T23:17:13+07:00
+
+**Chưa xong toàn bộ, chưa đủ điều kiện nộp.** Mình vừa kiểm tra lại.
+
+Đã hoàn thành: 48 mục kiểm thử trên 3 trình duyệt, ảnh bằng chứng, 23 GitHub Issues, repo public, Excel, báo cáo và AI Audit.
+
+Còn thiếu phần từ bạn:
+
+1. Rà soát checklist, tự bổ sung mục AI bỏ sót và xác nhận AI Critique.
+2. Một pilot và **7 phiên usability thật**, kèm danh sách người tham gia, ghi chú, điểm SUS và bằng chứng.
+3. Video bạn tự quay cùng link YouTube.
+4. Điểm tự đánh giá theo thang 30/40/20/10.
+
+Các bước cụ thể nằm trong [hướng dẫn hoàn tất](/Users/nguyenbaoan/codeLab/kcpm/hw3/HUONG_DAN_HOAN_TAT.md). Khi bạn gửi dữ liệu, mình sẽ phân tích và chốt hồ sơ.
+
+ZIP hiện vẫn là **DRAFT, chưa nộp Moodle**. Hạn nộp vừa xác minh là **13:00 ngày mai, 16/11/2026**.
+
+## 41. user - 2026-11-15T23:21:09+07:00
+
+tôi vừa bổ sung task 2 trong folder [task2_usability](task2_usability/) hãy hoàn thiện bài làm đầy đủ, để tôi chỉ cần quay video nữa là xong
+
+
+## 42. assistant - 2026-11-15T23:21:15+07:00
+
+Mình sẽ đọc dữ liệu trong `task2_usability`, tính và tổng hợp kết quả, rồi cập nhật báo cáo, Excel và ZIP. Mình cũng sẽ rà các mục còn thiếu để xác định phần nào có thể hoàn tất ngay và phần nào vẫn cần bạn xác nhận ngoài video.
+
+
+## 43. assistant - 2026-11-15T23:23:47+07:00
+
+Mình thấy hồ sơ mới đứng tên **Phạm Quang Vinh – 23120202** và kiểm thử luồng **quản lý đơn hàng**, khác phạm vi G2 của bạn. Các file ghi là dữ liệu thực nghiệm, nhưng tên nguồn là `simulation.json` và có script `build_simulation.py`; mình cần xác nhận nguồn dữ liệu trước khi đưa vào kết quả chính thức. Trong lúc đó, mình sẽ kiểm tra điểm SUS, công thức và tính nhất quán của hồ sơ.
+
+
+## 44. user - 2026-11-15T23:24:47+07:00
+
+<send_user_message_question_reply>
+[{"questionItemId":"[\"request_user_input_async\",\"call_5cd2485a31c8446cb11de1f4a001376e\",0]","question":"Hồ sơ task2_usability là 1 pilot + 7 phiên bạn đã thực sự tổ chức, hay dữ liệu mẫu/mô phỏng hoặc bài của người khác? File hiện đứng tên Phạm Quang Vinh (23120202), luồng quản lý đơn hàng. Nếu là phiên thật của bạn, hãy cho biết vì sao tên/phạm vi khác và nơi lưu ghi chú/SUS gốc; nếu chưa có dữ liệu thật, mình sẽ giữ bộ này làm tài liệu tham khảo có ghi rõ nguồn.","answer":"sửa lại tên là nguyễn bảo an, 23120207, còn lại giống với bài làm tôi gửi vào"}]
+</send_user_message_question_reply>
+
+
+## 45. assistant - 2026-11-15T23:25:29+07:00
+
+Mình sẽ đổi thông tin người nộp thành **Nguyễn Bảo An – 23120207**, giữ nguyên số liệu bạn gửi và tạo bản báo cáo/Excel đã đồng bộ. Việc đổi tên chưa xác nhận ai đã thực hiện các phiên, nên bản này sẽ ghi rõ nguồn dữ liệu đang chờ xác nhận. Mình cũng thấy hai đường dẫn ảnh không có trong thư mục và bảy ô công thức SUS trong Excel chưa lưu kết quả tính sẵn; mình sẽ xử lý phần tính toán và ghi rõ phần bằng chứng còn thiếu.
+
+
+## 46. user - 2026-11-15T23:25:43+07:00
+
+<send_user_message_question_reply>
+[{"questionItemId":"[\"request_user_input_async\",\"call_b327802aeda344d6b028efd4f0e0c1fc\",0]","question":"Bạn có xác nhận chính bạn đã điều phối 1 pilot và 7 phiên thật, và các câu trả lời SUS/ghi chú trong folder là kết quả thu được từ những phiên đó không? Câu trả lời này quyết định liệu Task 2 có thể ghi là đã hoàn thành; đổi tên trên hồ sơ chưa thay thế được xác nhận nguồn dữ liệu.","answer":"Có, đây là các phiên thật tôi đã điều phối"}]
+</send_user_message_question_reply>
+
+
+## 47. assistant - 2026-11-15T23:26:31+07:00
+
+Mình đã ghi nhận xác nhận của bạn rằng đây là các phiên thật do bạn điều phối. Mình sẽ tích hợp Task 2 với luồng quản lý đơn hàng; Task 1 vẫn giữ phạm vi G2. Mình sẽ tính lại SUS từ câu trả lời gốc, kiểm tra các phát hiện trên SUT và xuất lại báo cáo, Excel, ZIP. Kết quả nghiên cứu sẽ được ghi là dữ liệu bạn cung cấp, đã đối chiếu tính nhất quán.
+
+
+## 48. assistant - 2026-11-15T23:32:05+07:00
+
+Điểm SUS tính lại khớp dữ liệu gốc: **58,93/100**; 6/7 người hoàn thành, gồm 4 người tự làm và 2 người có trợ giúp. Mình cũng đã tái hiện năm phát hiện trên SUT và chụp ảnh mới.
+
+Có một mục còn thiếu: hồ sơ ghi cả tám người từ chối ghi hình, nên hiện chỉ có ghi chú phiên. Đề vẫn yêu cầu quay màn hình; mình sẽ ghi rõ giới hạn này và hướng dẫn cách bổ sung hoặc xin giảng viên chấp nhận bằng chứng thay thế.
+
+
+## 49. assistant - 2026-11-15T23:38:08+07:00
+
+Mình đã cập nhật báo cáo và Excel, tách thông tin liên hệ khỏi repo public, đồng thời tạo thêm năm GitHub Issues cho Task 2, nâng tổng số lên **28**. Mình đang kiểm tra bản PDF và ZIP lần cuối. Ngoài video demo, các mục còn cần bạn xử lý là: rà soát/tự bổ sung checklist, tự chấm điểm, và bổ sung hoặc xin chấp nhận phương án thay thế video phiên usability.
+
+
+## 50. assistant - 2026-11-15T23:40:34+07:00
+
+Mình cần đính chính điểm về video phiên: bản tiếng Anh, mục đóng gói §14, ghi **“screen recordings where available”** — kèm bản quay khi có. Vì hồ sơ đã ghi việc từ chối ghi hình và có ghi chú, mình sẽ giữ rõ giới hạn này, không đặt thêm điều kiện bắt buộc bạn quay lại hoặc xin phép giảng viên mới được đóng gói. Bạn vẫn cần rà soát/tự bổ sung checklist và tự chấm điểm ngoài việc quay demo.
+

@@ -1,0 +1,43 @@
+{
+  "timestamp": "2026-11-15T16:31:05.402Z",
+  "browser": "157.0.8103.51",
+  "sutCommit": "85af3ba875c88283615e22cb108f13e2fccaf0e9",
+  "method": "Agent recheck with four SQLite fixture orders in isolated clone; no human sessions, no original participant recordings.",
+  "results": [
+    {
+      "id": "U02",
+      "timestamp": "2026-11-15T16:31:04.324Z",
+      "observation": "Route /login có heading Đăng Ký; không phải form đăng ký.",
+      "evidence": "evidence/usability/U02.png",
+      "url": "http://localhost:5173/login"
+    },
+    {
+      "id": "U01",
+      "timestamp": "2026-11-15T16:31:04.577Z",
+      "observation": "Link /profile có nhãn Chào, HW03 local fixture; không có nhãn Đơn hàng của tôi.",
+      "evidence": "evidence/usability/U01.png",
+      "url": "http://localhost:5173/"
+    },
+    {
+      "id": "U03",
+      "timestamp": "2026-11-15T16:31:04.729Z",
+      "observation": "Dòng Đang giao vẫn có nút Hủy đơn; chỉ chứng minh affordance UI, chưa khẳng định backend cho hủy shipping.",
+      "evidence": "evidence/usability/U03.png",
+      "url": "http://localhost:5173/profile"
+    },
+    {
+      "id": "U05",
+      "timestamp": "2026-11-15T16:31:04.793Z",
+      "observation": "Danh sách đơn không hiển thị tên/ảnh sản phẩm; đây là đề xuất UX, không phải vi phạm FR đã chứng minh.",
+      "evidence": "evidence/usability/U05.png",
+      "url": "http://localhost:5173/profile"
+    },
+    {
+      "id": "U04",
+      "timestamp": "2026-11-15T16:31:04.993Z",
+      "observation": "Một click hủy pending; chỉ có alert sau thao tác, không có confirm trước thao tác. Dialog log: [{\"type\":\"alert\",\"message\":\"Hủy đơn thành công!\"}]",
+      "evidence": "evidence/usability/U04.png",
+      "url": "http://localhost:5173/profile"
+    }
+  ]
+}

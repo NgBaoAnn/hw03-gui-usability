@@ -24,11 +24,15 @@ Chrome: 19 Passed, 29 Failed. Firefox: 18 Passed, 30 Failed. Safari: 19 Passed, 
 
 ## 3. Task 2: moderated usability
 
-Đã chuẩn bị mục tiêu, kịch bản hướng mục tiêu, protocol think-aloud, consent, câu hỏi về clarity/recovery/speed/trust, phiếu SUS và mẫu pilot/P1–P7. Xem `usability/PROTOCOL.md` và `SUS_QUESTIONNAIRE.md`.
+Sinh viên bổ sung hồ sơ `task2_usability/` ngày 15/11/2026 và xác nhận trong chat rằng đã tự điều phối một pilot và bảy phiên thật. Theo yêu cầu sinh viên, thông tin người nộp được đồng bộ Nguyễn Bảo An – 23120207. Luồng Task 2 là đăng nhập → tìm lịch sử → nhận diện trạng thái → hủy đơn pending → xác nhận kết quả, khác phạm vi GUI G2 ở Task 1. Đề cho phép chọn riêng màn hình GUI và luồng usability.
 
-Chưa diễn ra phiên nào, chưa có danh sách người tham gia, liên hệ, ghi chú, video hay điểm SUS thật. Các CSV và mẫu phiên là biểu mẫu trống. Không kết luận độ hài lòng, thời gian hoàn thành hay mức độ phổ biến của lỗi từ các test tự động. Tính điểm khi đủ dữ liệu bằng `python3 scripts/calculate_sus.py usability/sus_responses.csv`; chương trình từ chối dữ liệu thiếu/ngoài thang và pilot. Self-check đã kiểm tra điểm 0, 50, 100 và input không hợp lệ.
+Hồ sơ có mục tiêu, kịch bản v0/v1 và điều chỉnh sau pilot, lời dẫn think-aloud, ghi chú bảy phiên, 10 câu SUS và bốn nhóm probe. Pilot không tính vào thống kê. Mã nguồn P01–P07 được ánh xạ P1–P7 trong CSV chuẩn; không thay câu trả lời. SUS = tổng (câu lẻ − 1, 5 − câu chẵn) × 2,5. Chạy `python3 scripts/calculate_sus.py usability/sus_responses.csv` để tái tính. Đã đối chiếu 70 câu trả lời giữa CSV/JSON, điểm từng người, kết quả tác vụ, thời gian và tần suất năm nhóm vấn đề. SUS là điểm thang 0–100, không phải phần trăm.
 
-Sau khi có dữ liệu thật, phân tích từng người, nhóm pain point, tách bug cụ thể khỏi vấn đề thiết kế lặp lại và ghi severity theo ảnh hưởng quan sát. `usability/FINDINGS.md` hiện chưa có finding từ người dùng.
+SUS trung bình **58.93**, trung vị **62.50**, SD mẫu **20.91**. Bốn ca hoàn thành độc lập, hai có trợ giúp, một timeout 600 giây: tỷ lệ hoàn thành 6/7 (85,7%). Thời gian trung bình toàn mẫu 324 giây; chỉ sáu ca hoàn thành là 278 giây. Không suy rộng mẫu nhỏ này thành toàn bộ người dùng.
+
+`usability/FINDINGS.md` nhóm năm vấn đề: lối vào lịch sử khó nhận biết (5/7), tiêu đề đăng nhập sai (3/7), affordance hủy đơn đang giao (3/7), thiếu xác nhận trước hủy (3/7), thiếu thông tin sản phẩm trong danh sách đơn (4/7). U02 là lỗi nhãn cụ thể; U01/U04/U05 là vấn đề thiết kế lặp lại. Ảnh `evidence/usability/` là agent tái hiện sau khi nhận dữ liệu, không phải ảnh/video phiên người tham gia. Báo cáo và Issue riêng ghi rõ giới hạn này.
+
+Hồ sơ nguồn ghi tất cả người tham gia từ chối ghi hình; không có video phiên. §6 hướng dẫn quay màn hình; §14 của đề tiếng Anh quy định nộp screen recordings where available (bản quay khi có). Hồ sơ vì vậy kèm ghi chú có cấu trúc, SUS/probe và nêu rõ giới hạn không có bản quay, không gán ảnh tái hiện thành bằng chứng phiên. Tính xác thực dựa trên xác nhận của sinh viên; Codex không xác minh độc lập danh tính hay việc diễn ra các phiên. Danh sách họ tên/liên hệ đã che chỉ nằm trong hồ sơ nộp, không đẩy lên repo public. Xem `usability/provenance.json`.
 
 ## 4. Task 3: cross-browser
 
@@ -44,12 +48,11 @@ Skill trong `skills/gui-usability-evaluator/SKILL.md` hỗ trợ chọn phạm v
 
 `reports/AI_AUDIT_REPORT.md` và bản transcript ghi lại AI dùng trong chat hiện tại. Đã khôi phục 14 lời nhắn lập kế hoạch ngày 03/11 từ session OpenCode đúng thư mục HW03 vào `reports/AI_AUDIT_RECOVERED.md`, kèm ba đầu ra nguyên gốc ở `reports/legacy/`. Timestamp/model được lấy đúng metadata cũ; không tự tạo prompt. Sinh viên cần bổ sung nếu còn tương tác khác ngoài các nguồn này. `AI_CRITIQUE.md` vẫn là bản AI soạn, chờ sinh viên sửa theo trải nghiệm thật và xác nhận.
 
-Commit được tạo theo giai đoạn thực sự hoàn thành. Không tạo commit giả cho phiên usability chưa diễn ra. Nhật ký được xuất bằng `git log --graph --all --stat` vào `git_commit_log.txt`.
+Commit được tạo theo giai đoạn thực sự hoàn thành. Hồ sơ tám phiên được nhập cùng lúc ngày 15/11/2026; không tạo hoặc lùi ngày commit như thể đã ghi từng phiên ngày 10/11. Đây là giới hạn tuân thủ yêu cầu nhật ký theo từng phiên. Nhật ký xuất bằng `git log --graph --all --stat` vào `git_commit_log.txt`.
 
 ## 6. Việc còn thiếu trước khi nộp
 
 - Sinh viên rà soát kết quả và tự bổ sung checklist; duyệt critique/audit, bổ sung nếu còn chat khác ngoài bản đã khôi phục.
-- Một pilot và bảy phiên thật ngoài lớp, danh sách liên hệ đã che, ghi chú/SUS/bằng chứng; tính và tổng hợp kết quả.
 - Sinh viên tự quay demo dùng skill từ đầu đến cuối và cung cấp YouTube URL.
 - Sinh viên tự chấm theo rubric 30/40/20/10, xác nhận bài cuối, rồi đóng gói đúng tên và xác nhận Moodle “Em làm một mình”.
 
@@ -59,14 +62,14 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Không tạo c
 
 ## 8. Test summary
 
-Cập nhật: 2026-11-11T23:52:10+07:00.
+Cập nhật: 2026-11-15T23:41:55+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|
 | Màn hình chính | Home / Product List / Search |
 | Màn hình đã bao phủ | 3: Home, Product Detail, Cart |
 | Luồng GUI do agent thực thi | Tìm kiếm → chi tiết → thêm giỏ; giỏ dùng để kiểm tra kết quả |
-| Luồng usability đã thiết kế / chạy với người thật | 1 / 0 |
+| Luồng usability | Quản lý đơn hàng; 1 pilot + 7 phiên do sinh viên cung cấp và xác nhận |
 | Mục checklist thiết kế | 48; mỗi IA 12 mục |
 | Chrome | 48 executed; 19 Passed; 29 Failed; 0 Blocked |
 | Firefox | 48 executed; 18 Passed; 30 Failed; 0 Blocked |
@@ -75,9 +78,12 @@ Cập nhật: 2026-11-11T23:52:10+07:00.
 | Mục fail ít nhất một môi trường | 30 |
 | Nhóm bug | 23; 10 Major; 13 Minor; 0 Blocker theo đánh giá sơ bộ |
 | Nền tảng chạy trọn checklist | 3/3: Chrome, Firefox, Safari thật |
-| Pilot / phiên chính thức có bằng chứng | 0 / 0 |
-| Người tham gia thật | 0/7 |
-| SUS | Chưa có dữ liệu để tính |
+| Pilot / phiên chính thức có ghi chú | 1 / 7; không có video phiên |
+| Người tham gia | 7/7 theo dữ liệu sinh viên cung cấp, ngoài pilot |
+| SUS | 58.93/100; trung vị 62.50; SD mẫu 20.91 |
+| Hoàn thành tác vụ | 6/7 (85,7%): 4 độc lập, 2 có trợ giúp, 1 timeout |
+| Thời gian tác vụ | 324 giây gồm timeout; 278 giây trong 6 ca hoàn thành |
+| Phát hiện usability | 5 vấn đề U01–U05; tách khỏi 23 bug GUI |
 | Video demo skill | MP4 do Codex ghi được giữ tham khảo; chờ video sinh viên tự quay và URL YouTube |
 
-Kết quả là thực thi tự động bởi Codex, chưa phải xác nhận của sinh viên. Không dùng số bug hay số lượt tự động để suy ra mức hài lòng, tần suất lỗi ở người dùng, hoặc SUS.
+Kết quả GUI do Codex thực thi tự động. Kết quả usability lấy từ hồ sơ sinh viên cung cấp và xác nhận trong chat ngày 15/11/2026; phép tính được đối chiếu độc lập với CSV/JSON. Không suy ra SUS từ kiểm thử tự động. Không có video phiên; §14 yêu cầu kèm bản quay khi có, nên giữ rõ giới hạn này.
