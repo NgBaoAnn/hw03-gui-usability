@@ -1,0 +1,14 @@
+{
+  "id": "G49",
+  "engine": "safari",
+  "status": "Failed",
+  "timestamp": "2026-11-15T17:23:55.099Z",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15",
+  "observation": {
+    "url": "http://localhost:5173/",
+    "declaredLanguage": "en",
+    "observedContent": "Danh sách sản phẩm, Giỏ hàng, Đăng nhập: nội dung tiếng Việt"
+  },
+  "os": "macOS 26.2",
+  "sutCommit": "85af3ba875c88283615e22cb108f13e2fccaf0e9"
+}

@@ -70,3 +70,12 @@ Hồ sơ nhận vào có thông tin sinh viên khác và tên file simulation.js
 ## Điểm tự chấm và lượt AI rà soát bổ sung
 
 Sinh viên yêu cầu “cho full điểm”; hồ sơ ghi 30/40/20/10 = 100/100 theo lựa chọn đó. Chưa coi mức điểm này là điểm giảng viên hoặc bằng chứng đã hoàn thành các mục còn thiếu. Sinh viên giao AI tự ghi phần rà soát; Codex rà checklist, kết quả, cách gom bug, giới hạn kết luận và viết checklists/AI_REVIEW.md. Lượt này chỉ đối chiếu hồ sơ/bằng chứng đã lưu, không chạy lại GUI. Không gán thành đóng góp tự phát hiện của sinh viên; HUMAN_REVIEW.md và trạng thái human_review_complete vẫn chờ thực tế.
+
+
+## Ba kiểm tra tiếp cận bổ sung
+
+Theo yêu cầu sinh viên tiếp tục làm phần phản biện/bổ sung, Codex soạn lại AI Critique 278 từ và thêm G49–G51 có giải thích nguyên nhân bỏ sót. Đã dùng native CUA mở Chrome Incognito, Firefox Nightly Playwright build và Safari thật. Trang đo cùng origin đọc lang/computed CSS của SUT trong iframe, gửi JSON đến collector localhost; không đổi logic/style SUT, không bật lại Remote Automation. Chín phép đo được ghi thật cùng chín ảnh cửa sổ. Collector ban đầu trùng tên thuộc tính headers của HTTP handler nên lỗi lưu; đã đổi tên hàm respond và chạy lại, chỉ kết quả được lưu thành công mới dùng trong hồ sơ.
+
+G49 ghi lang=en trên nội dung tiếng Việt. G50 đạt tương phản 3,763127680148142; G51 đạt 3,2957336053312796. Với cỡ chữ 16px đã đo, ngưỡng áp dụng 4,5:1. Công thức JS tự kiểm đen/trắng và cùng màu; Python đối chiếu độc lập sáu phép đo tương phản và ngoại lệ chữ lớn. Nguồn WCAG chính thức nằm trong ADDITIONS.md; đây là heuristic tiếp cận ngoài cam kết FR. Không suy ra kết quả thử screen reader hoặc tần suất khó khăn của người dùng.
+
+Bộ gốc 48 mục được giữ riêng; tổng mới 51 mục, 153 kết quả, 56 Passed/97 Failed, 25 nhóm bug GUI. Hai bug B24/B25 bổ sung Issue #29/#30, cùng năm finding usability thành 30 Issues. Rà soát/bổ sung vẫn ghi do AI theo yêu cầu sinh viên; không tạo lời xác nhận hoặc mục tự phát hiện mang tên sinh viên.

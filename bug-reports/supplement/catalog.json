@@ -1,0 +1,34 @@
+[
+  {
+    "id": "B24",
+    "title": "Trang tiếng Việt khai báo ngôn ngữ mặc định en",
+    "severity": "Major",
+    "checks": [
+      "G49"
+    ],
+    "file": "bug-reports/supplement/B24.md",
+    "screenshots": [
+      "evidence/accessibility/chrome/G49.png",
+      "evidence/accessibility/firefox/G49.png",
+      "evidence/accessibility/safari/G49.png"
+    ]
+  },
+  {
+    "id": "B25",
+    "title": "Chữ giá và chữ nút thêm giỏ thiếu tương phản",
+    "severity": "Major",
+    "checks": [
+      "G50",
+      "G51"
+    ],
+    "file": "bug-reports/supplement/B25.md",
+    "screenshots": [
+      "evidence/accessibility/chrome/G50.png",
+      "evidence/accessibility/chrome/G51.png",
+      "evidence/accessibility/firefox/G50.png",
+      "evidence/accessibility/firefox/G51.png",
+      "evidence/accessibility/safari/G50.png",
+      "evidence/accessibility/safari/G51.png"
+    ]
+  }
+]

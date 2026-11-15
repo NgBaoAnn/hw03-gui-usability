@@ -29,6 +29,22 @@ def check_files():
     for bug in bugs:
         assert (ROOT/bug['file']).is_file()
         assert all((ROOT/p).is_file() for p in bug['screenshots'])
+    additions=json.loads((ROOT/'checklists/additions.json').read_text())
+    extra_ids={r[0] for r in additions};assert len(extra_ids)==3 and not extra_ids&expected
+    extra=json.loads((ROOT/'evidence/accessibility/results.json').read_text())
+    extra_failed=set()
+    for engine in ['chrome','firefox','safari']:
+        assert len(extra[engine])==3 and {r['id'] for r in extra[engine]}==extra_ids
+        for row in extra[engine]:
+            assert row['status'] in ['Passed','Failed'] and row['engine']==engine
+            assert row['observation'] and (ROOT/row['evidence']).is_file()
+            assert json.loads((ROOT/f'evidence/accessibility/{engine}/{row["id"]}.json').read_text())['observation']==row['observation']
+            if row['status']=='Failed':extra_failed.add(row['id'])
+    extra_bugs=json.loads((ROOT/'bug-reports/supplement/catalog.json').read_text())
+    assert {gid for bug in extra_bugs for gid in bug['checks']}==extra_failed
+    assert len(json.loads((ROOT/'bug-reports/supplement/issues.json').read_text()))==len(extra_bugs)
+    for bug in extra_bugs:
+        assert (ROOT/bug['file']).is_file() and all((ROOT/p).is_file() for p in bug['screenshots'])
     usability=json.loads((ROOT/'bug-reports/usability/catalog.json').read_text())
     assert {b['id'] for b in usability}=={f'U{i:02}' for i in range(1,6)}
     for bug in usability:
@@ -39,7 +55,7 @@ def check_files():
     self_check()
     words=len((ROOT/'reports/AI_CRITIQUE.md').read_text().split('\n\n',2)[2].split())
     assert 200<=words<=300,words
-    return items,bugs
+    return items+additions,bugs+extra_bugs
 
 
 def missing_requirements():

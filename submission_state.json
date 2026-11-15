@@ -5,6 +5,8 @@
   "individual": true,
   "human_review_complete": false,
   "human_added_check_ids": [],
+  "ai_added_check_ids": ["G49", "G50", "G51"],
+  "ai_review_draft_complete": true,
   "pilot_evidence": "usability/sessions/PILOT.md",
   "session_evidence": [
     "usability/sessions/P1.md",

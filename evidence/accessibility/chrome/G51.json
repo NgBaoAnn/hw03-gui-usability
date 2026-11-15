@@ -1,0 +1,28 @@
+{
+  "id": "G51",
+  "engine": "chrome",
+  "status": "Failed",
+  "timestamp": "2026-11-15T17:26:13.975Z",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+  "observation": {
+    "text": "Thêm vào giỏ hàng",
+    "foreground": [
+      255,
+      255,
+      255
+    ],
+    "background": [
+      22,
+      163,
+      74
+    ],
+    "fontSizePx": 16,
+    "fontWeight": "400",
+    "largeText": false,
+    "minimum": 4.5,
+    "contrast": 3.2957336053312796,
+    "url": "http://localhost:5173/product/1"
+  },
+  "os": "macOS 26.2",
+  "sutCommit": "85af3ba875c88283615e22cb108f13e2fccaf0e9"
+}

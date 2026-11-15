@@ -14,13 +14,13 @@ Màn hình chính Home/Search; bổ trợ Product Detail và Cart. Luồng: tìm
 
 ## 2. Task 1: thiết kế và thực thi GUI checklist
 
-48 mục phân bổ IA-01/02/03/04 mỗi khía cạnh 12 mục, có tiêu chí và nguồn FR/heuristic. Mỗi lần dùng browser context mới; chờ route và dữ liệu trước phép đo. Kết quả Passed/Failed và Notes riêng từng môi trường nằm trong `checklists/gui_checklist_g2.xlsx`, `.csv`, `.md`. JSON lưu quan sát, browser, timestamp, revision và lỗi console.
+Bộ đầu có 48 mục, mỗi IA 12 mục. Sau phản biện, thêm G49–G51: tổng 51 mục, IA-01/02/03/04 = 14/13/12/12. items.json giữ nguyên bộ đầu; additions.json lưu phần thêm. Tất cả do AI thiết kế/thực hiện theo yêu cầu sinh viên. Bộ gốc dùng browser context mới theo case; phần bổ sung mở từng URL trong cửa sổ browser thật và chỉ đọc DOM/CSS. Chờ route và dữ liệu trước phép đo. Kết quả Passed/Failed và Notes riêng từng môi trường nằm trong `checklists/gui_checklist_g2.xlsx`, `.csv`, `.md`. JSON lưu quan sát, browser, timestamp, revision và lỗi console.
 
 Tiêu chí hỗ trợ tiếp cận, responsive và khôi phục ngoài FR được ghi là heuristic. RTL/dark mode chưa được xác định là tính năng bắt buộc, nên không báo thiếu chúng là bug. `checklists/HUMAN_REVIEW.md` còn trống: sinh viên cần phản biện và tự bổ sung những mục AI bỏ sót, có giải thích lý do.
 
 Codex đã thực hiện lượt rà soát bổ sung theo yêu cầu sinh viên, ghi tại `checklists/AI_REVIEW.md`: đối chiếu số liệu, nguồn kỳ vọng, phạm vi kết luận và giới hạn công cụ. Đây là rà soát của AI, chưa được gán thành phần sinh viên tự phản biện/bổ sung.
 
-Chrome: 19 Passed, 29 Failed. Firefox: 18 Passed, 30 Failed. Safari: 19 Passed, 29 Failed. Không còn Blocked trong bản JSON cuối. Đã sửa lỗi đồng bộ harness và xác minh click được giao khi SafariDriver chỉ blur input. Những mục bị ảnh hưởng được chạy lại; chỉ kết quả cuối mỗi ID được thống kê. Ảnh Failed là ảnh browser thật, không phải ảnh AI sinh.
+Chrome: 19 Passed, 32 Failed. Firefox: 18 Passed, 33 Failed. Safari: 19 Passed, 32 Failed. Không còn Blocked trong bản JSON cuối. Đã sửa lỗi đồng bộ harness và xác minh click được giao khi SafariDriver chỉ blur input. Những mục bị ảnh hưởng được chạy lại; chỉ kết quả cuối mỗi ID được thống kê. Ảnh Failed là ảnh browser thật, không phải ảnh AI sinh.
 
 23 nhóm bug được liệt kê trong `bug-reports/BUG_REPORTS.md`. Quan trọng nhất: click thêm giỏ lần đầu không thêm; số lượng 0/âm/thập phân/rỗng được nhận; giỏ trùng dòng; từ khóa render HTML; không xác nhận xóa. HTML injection chỉ được chứng minh bằng thẻ b vô hại, không tuyên bố đã khai thác script. Heuristic crop ảnh và mất ngữ cảnh khi Back đang chờ sinh viên xác nhận mức ảnh hưởng.
 
@@ -38,7 +38,7 @@ Hồ sơ nguồn ghi tất cả người tham gia từ chối ghi hình; không 
 
 ## 4. Task 3: cross-browser
 
-Đã chạy trọn 48 mục trên Chrome và Firefox Playwright build, cùng Safari 26.2 thật qua Apple WebDriver ở macOS 26.2. Ba trình duyệt có JSON và ảnh gốc riêng. Safari dùng iframe cùng origin có viewport CSS chính xác, không đổi logic SUT. Viewport hẹp chỉ là kiểm tra responsive. Các ca trễ/lỗi API được mô phỏng có kiểm soát và ghi rõ phương pháp. Xem `cross-platform/MATRIX.md`.
+Đã chạy bộ gốc 48 mục trên Chrome/Firefox Playwright build và Safari 26.2 qua Apple WebDriver ở macOS 26.2; thêm G49–G51 trên cả ba browser qua native CUA, tổng 51 mục/môi trường. Ba trình duyệt có JSON và ảnh gốc riêng. Safari dùng iframe cùng origin có viewport CSS chính xác, không đổi logic SUT. Viewport hẹp chỉ là kiểm tra responsive. Các ca trễ/lỗi API được mô phỏng có kiểm soát và ghi rõ phương pháp. Xem `cross-platform/MATRIX.md`.
 
 Khác biệt giữa các môi trường: G09: chrome Passed, firefox Failed, safari Passed. G09 Firefox tràn ngang 8 px ở viewport 390 px. Safari dùng Option-Tab để điều hướng tất cả phần tử theo thiết lập mặc định. Mọi ảnh Failed có email sinh viên, MSSV, họ tên, môi trường và localhost URL ở phần chú thích, thêm sau phép đo; ảnh đặc tính DOM phải đọc cùng JSON.
 
@@ -74,7 +74,7 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Hồ sơ tám 
 
 ## 8. Test summary
 
-Cập nhật: 2026-11-15T23:53:03+07:00.
+Cập nhật: 2026-11-16T00:32:30+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|
@@ -82,13 +82,13 @@ Cập nhật: 2026-11-15T23:53:03+07:00.
 | Màn hình đã bao phủ | 3: Home, Product Detail, Cart |
 | Luồng GUI do agent thực thi | Tìm kiếm → chi tiết → thêm giỏ; giỏ dùng để kiểm tra kết quả |
 | Luồng usability | Quản lý đơn hàng; 1 pilot + 7 phiên do sinh viên cung cấp và xác nhận |
-| Mục checklist thiết kế | 48; mỗi IA 12 mục |
-| Chrome | 48 executed; 19 Passed; 29 Failed; 0 Blocked |
-| Firefox | 48 executed; 18 Passed; 30 Failed; 0 Blocked |
-| Safari | 48 executed; 19 Passed; 29 Failed; 0 Blocked |
-| Tổng lượt kiểm tra | 144; 56 Passed; 88 Failed |
-| Mục fail ít nhất một môi trường | 30 |
-| Nhóm bug | 23; 10 Major; 13 Minor; 0 Blocker theo đánh giá sơ bộ |
+| Mục checklist thiết kế | 51: 48 gốc + G49–G51 bổ sung; IA-01/02/03/04 = 14/13/12/12 |
+| Chrome | 51 executed; 19 Passed; 32 Failed; 0 Blocked |
+| Firefox | 51 executed; 18 Passed; 33 Failed; 0 Blocked |
+| Safari | 51 executed; 19 Passed; 32 Failed; 0 Blocked |
+| Tổng lượt kiểm tra | 153: 144 gốc + 9 bổ sung; 56 Passed; 97 Failed |
+| Mục fail ít nhất một môi trường | 33 |
+| Nhóm bug GUI | 25: 23 gốc + B24/B25; 12 Major, 13 Minor; 0 Blocker theo đánh giá sơ bộ |
 | Nền tảng chạy trọn checklist | 3/3: Chrome, Firefox, Safari thật |
 | Pilot / phiên chính thức có ghi chú | 1 / 7; không có video phiên |
 | Người tham gia | 7/7 theo dữ liệu sinh viên cung cấp, ngoài pilot |
@@ -99,3 +99,44 @@ Cập nhật: 2026-11-15T23:53:03+07:00.
 | Video demo skill | MP4 do Codex ghi được giữ tham khảo; chờ video sinh viên tự quay và URL YouTube |
 
 Kết quả GUI do Codex thực thi tự động. Kết quả usability lấy từ hồ sơ sinh viên cung cấp và xác nhận trong chat ngày 15/11/2026; phép tính được đối chiếu độc lập với CSV/JSON. Không suy ra SUS từ kiểm thử tự động. Không có video phiên; §14 yêu cầu kèm bản quay khi có, nên giữ rõ giới hạn này.
+
+
+## 9. Phản biện và bổ sung tiếp cận
+
+### Bổ sung đã thực thi
+
+Ba tiêu chí G49–G51 do Codex đề xuất/thực thi theo yêu cầu sinh viên. Giữ nguyên 48 tiêu chí đầu tại items.json; phần bổ sung ở additions.json. Tổng 51 tiêu chí, 153 kết quả trên ba browser: bộ gốc 144 kết quả (56 Passed, 88 Failed), bổ sung 9 Failed. Tổng 56 Passed, 97 Failed; 33 tiêu chí fail ít nhất một môi trường, 25 nhóm bug GUI. Năm finding usability tách riêng, tổng 30 GitHub Issues khi đã đăng hai bug mới.
+
+## Vì sao bổ sung
+
+- G49: bộ đầu đo alt và liên kết nhãn nhưng bỏ qua ngôn ngữ tài liệu. Prompt tập trung thành phần nhìn thấy; metadata phục vụ công nghệ hỗ trợ không nổi bật trong ảnh.
+- G50: bộ đầu kiểm ký hiệu tiền và bố cục nhưng chưa tính tương phản. Nhận xét màu đẹp/nhìn rõ bằng mắt của AI không thay được phép đo định lượng.
+- G51: G11 kiểm quy chuẩn màu xanh dương, G41 kiểm phản hồi thêm thành công. Cả hai không trả lời chữ nút có đủ tương phản hay không; việc thêm kiểm tra này tránh đánh đồng màu đúng chuẩn với dễ đọc.
+
+## Kết quả thực thi
+
+| ID | IA | Màn hình | Chrome | Firefox | Safari | Quan sát |
+|---|---|---|---|---|---|---|
+| G49 | IA-01 | Home | Failed | Failed | Failed | lang=en; nội dung tiếng Việt |
+| G50 | IA-01 | Home | Failed | Failed | Failed | 3.7631:1 < 4.5:1; 16px, weight 700 |
+| G51 | IA-02 | Detail | Failed | Failed | Failed | 3.2957:1 < 4.5:1; 16px, weight 400 |
+
+## Bằng chứng và giới hạn
+
+Đã mở các case qua native CUA trên ba browser; JSON gửi về collector localhost, ảnh chụp cửa sổ thật. Trang đo tự kiểm tra công thức trước khi gửi; collector chỉ lưu bản ghi thực tế. Không bật lại Safari Remote Automation. Không suy ra ngôn ngữ đọc thực tế của screen reader. Ảnh chụp có email/tên/MSSV và URL localhost; metadata môi trường đầy đủ ở JSON. Các tiêu chí là WCAG heuristic ngoài cam kết FR của SUT.
+
+- [B24: Trang tiếng Việt khai báo ngôn ngữ mặc định en](../bug-reports/supplement/B24.md); Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/29.
+- [B25: Chữ giá và chữ nút thêm giỏ thiếu tương phản](../bug-reports/supplement/B25.md); Issue: https://github.com/NgBaoAnn/hw03-gui-usability/issues/30.
+
+Nguồn: [WCAG 3.1.1](https://www.w3.org/WAI/WCAG22/Understanding/language-of-page.html), [WCAG 1.4.3](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html).
+
+
+### Phản biện AI (bản AI soạn)
+
+Trạng thái: bản AI soạn theo yêu cầu sinh viên, có bằng chứng đối chiếu; chưa xác nhận là sinh viên tự phản biện.
+
+AI hỗ trợ tổ chức checklist và chạy kiểm thử, nhưng kế hoạch đầu đã dựa quá nhiều vào khuôn mẫu thương mại điện tử. Bộ lọc, sắp xếp và tai nghe dưới 500.000 đồng được đề xuất trước khi đối chiếu SUT. Các giả định ấy không phù hợp giao diện và dữ liệu mẫu. Việc sửa phạm vi cần bắt đầu từ nguồn yêu cầu và quan sát ứng dụng.
+
+Bộ checklist ban đầu có nhãn truy cập và thao tác bàn phím nhưng thiếu ngôn ngữ tài liệu, phép đo tương phản. Đây là giới hạn của cách chia nhỏ tiêu chí: kiểm tra màu nút theo quy chuẩn không đồng nghĩa chữ trên nút dễ đọc. Ba mục G49–G51 được AI bổ sung theo yêu cầu sinh viên và chạy trên Chrome, Firefox, Safari thật. Trang khai báo tiếng Anh dù nội dung tiếng Việt; chữ giá đạt 3,76:1, chữ nút đạt 3,30:1, thấp hơn ngưỡng 4,5:1 áp dụng cho cỡ chữ đã đo. Kết quả cho thấy quan sát bằng mắt cần được bổ sung bằng phép đo có nguồn.
+
+Công cụ cũng có thể gây kết luận sai. Trước đây, đọc kết quả trước khi React chuyển trang làm một số kiểm tra số lượng bị đánh dấu sai. Điều kiện chờ và kiểm chứng trạng thái giỏ đã được bổ sung. Nguyên tắc hợp tác là giữ dấu vết nguồn, phân biệt heuristic với yêu cầu sản phẩm, và giới hạn kết luận theo bằng chứng. AI không được biến ảnh tái hiện thành phiên người dùng, hoặc gán phần mình viết thành đóng góp tự phát hiện của sinh viên.

@@ -1,0 +1,5 @@
+[
+  ["G49","IA-01","Home","Ngôn ngữ mặc định khai báo vi hoặc vi-VN khớp nội dung tiếng Việt","Heuristic: WCAG 2.2 SC 3.1.1"],
+  ["G50","IA-01","Home","Chữ giá có tương phản tối thiểu 4.5:1 nếu chữ thường, 3:1 nếu chữ lớn","Heuristic: WCAG 2.2 SC 1.4.3"],
+  ["G51","IA-02","Detail","Chữ nút thêm giỏ ở trạng thái mặc định có tương phản tối thiểu 4.5:1 nếu chữ thường, 3:1 nếu chữ lớn","Heuristic: WCAG 2.2 SC 1.4.3"]
+]

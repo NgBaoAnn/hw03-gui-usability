@@ -1,0 +1,14 @@
+{
+  "id": "G49",
+  "engine": "firefox",
+  "status": "Failed",
+  "timestamp": "2026-11-15T17:25:29.856Z",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:153.0) Gecko/20100101 Firefox/153.0",
+  "observation": {
+    "url": "http://localhost:5173/",
+    "declaredLanguage": "en",
+    "observedContent": "Danh sách sản phẩm, Giỏ hàng, Đăng nhập: nội dung tiếng Việt"
+  },
+  "os": "macOS 26.2",
+  "sutCommit": "85af3ba875c88283615e22cb108f13e2fccaf0e9"
+}

@@ -21,11 +21,17 @@ def main():
     demo=ROOT/'skills/gui-usability-evaluator/video/gui-g2-demo.mp4'
     assert demo.is_file(),'Record and verify the actual demo before building these reports'
     runs = {e: json.loads((ROOT / f'evidence/runs/{e}.json').read_text()) for e in ['chrome', 'firefox', 'safari']}
+    additions=json.loads((ROOT/'checklists/additions.json').read_text())
+    supplemental=json.loads((ROOT/'evidence/accessibility/results.json').read_text())
+    for engine,run in runs.items():
+        for gid,aspect,screen,criterion,reference in additions:
+            r=next(r for r in supplemental[engine] if r['id']==gid)
+            run['results'].append(dict(r,aspect=aspect,screen=screen,criterion=criterion,reference=reference,notes=json.dumps(r['observation'],ensure_ascii=False),environment=engine+' / '+r['os']+' / '+r['userAgent']))
     assert runs['safari']['fullChecklist'], 'Safari must finish all criteria before publishing a full-platform report'
     chrome = runs['chrome']['results']
     firefox = runs['firefox']['results']
     safari_results = runs['safari']['results']
-    assert len(chrome) == len(firefox) == len(safari_results) == len(json.loads((ROOT / 'checklists/items.json').read_text()))
+    assert len(chrome) == len(firefox) == len(safari_results) == len(json.loads((ROOT / 'checklists/items.json').read_text()))+len(additions)
     counts = {e: Counter(r['status'] for r in run['results']) for e, run in runs.items()}
     now = datetime.now(ZoneInfo('Asia/Ho_Chi_Minh')).isoformat(timespec='seconds')
     study = json.loads((ROOT/'usability/summary.json').read_text())
@@ -45,7 +51,7 @@ def main():
         writer = csv.writer(stream)
         writer.writerow(['ID', 'IA', 'Screen', 'Expected', 'Reference', 'Chrome', 'Firefox', 'Safari', 'Chrome notes', 'Firefox notes', 'Safari notes', 'Chrome screenshot', 'Firefox screenshot', 'Safari screenshot'])
         writer.writerows(rows)
-    md = ['# Checklist GUI G2 đã thực thi', '', '48 mục do Codex thiết kế và thực thi tự động trên Chrome, Firefox và Safari thật. Sinh viên chưa hoàn tất human review/tự bổ sung.', '', 'Bước thao tác: `scripts/run_gui.cjs` (Chrome/Firefox), `scripts/run_safari.py` (Apple WebDriver). Kết quả đầy đủ trong `evidence/runs/`. Notes được rút gọn; ảnh gốc có chú thích sau phép đo.', '', '| ID | IA | Màn hình | Tiêu chí | Nguồn | Chrome | Firefox | Safari | Notes Failed (rút gọn) | Ảnh Failed |', '|---|---|---|---|---|---|---|---|---|---|']
+    md = ['# Checklist GUI G2 đã thực thi', '', '51 mục do Codex thiết kế/thực hiện: 48 gốc và G49–G51 tiếp cận bổ sung theo yêu cầu sinh viên. Chưa gán phần AI bổ sung thành mục sinh viên tự phát hiện. Xem ADDITIONS.md và evidence/accessibility/.', '', 'Bước thao tác: `scripts/run_gui.cjs` (Chrome/Firefox), `scripts/run_safari.py` (Apple WebDriver). Kết quả đầy đủ trong `evidence/runs/`. Notes được rút gọn; ảnh gốc có chú thích sau phép đo.', '', '| ID | IA | Màn hình | Tiêu chí | Nguồn | Chrome | Firefox | Safari | Notes Failed (rút gọn) | Ảnh Failed |', '|---|---|---|---|---|---|---|---|---|---|']
     for a,b,c in zip(chrome,firefox,safari_results):
         platform_rows=[('Chrome',a),('Firefox',b),('Safari',c)]
         pics='; '.join(f'[{e}](../{r["evidence"]})' for e,r in platform_rows if r['status']=='Failed')
@@ -78,7 +84,7 @@ def main():
         ('B23','Firefox tràn ngang 8px ở viewport 390px','Minor',['G09'],'Dùng Firefox Playwright build, viewport 390×844, mở Home.','documentElement.scrollWidth <= innerWidth.','Firefox scrollWidth=398 khi innerWidth=390. Chrome cùng kích thước là 390. Đây là viewport mobile giả lập trên desktop, không phải điện thoại thật.')
     ]
     index = json.loads((ROOT/'bug-reports/issues.json').read_text()) if (ROOT/'bug-reports/issues.json').exists() else {}
-    failed_count=sum(x['Failed'] for x in counts.values())
+    failed_count=sum(r['status']=='Failed' for run in runs.values() for r in run['results'] if r['id'] not in {a[0] for a in additions})
     catalog = ['# Báo cáo lỗi GUI G2', '', f'SUT commit: `{runs["chrome"]["sutCommit"]}`. 23 nhóm lỗi từ {failed_count} mục Failed của ba lượt chạy; không phải {failed_count} bug độc lập. Năm phát hiện usability U01–U05 được lưu riêng trong `usability/FINDINGS.md` và `bug-reports/usability/`. Severity do AI đề xuất, chờ sinh viên rà soát.', '', 'Các phát hiện heuristic được ghi rõ, không diễn giải thành yêu cầu FR bắt buộc. Ảnh gốc đính kèm từng báo cáo; xem JSON của môi trường để biết quan sát đầy đủ.', '']
     bug_data=[]
     for bid,title,severity,ids,steps,expected,actual in groups:
@@ -117,7 +123,7 @@ GitHub Issue: {issue_url}
         bug_data.append({'id':bid,'title':title,'severity':severity,'checks':ids,'file':f'bug-reports/{bid}.md','screenshots':[r['evidence'] for _,r in affected]})
     write('bug-reports/BUG_REPORTS.md','\n\n'.join(catalog))
     write('bug-reports/catalog.json',json.dumps(bug_data,ensure_ascii=False,indent=2))
-    matrix=['# Ma trận cross-browser', '', 'Đã thực thi đầy đủ 48 mục trên 3 trình duyệt thật: Chrome, Firefox và Safari. Viewport hẹp là kiểm tra responsive, không tính thêm nền tảng.', '', '| Môi trường | Số mục | Passed | Failed | Blocked |', '|---|---:|---:|---:|---:|']
+    matrix=['# Ma trận cross-browser', '', '51 tiêu chí trên ba browser: 48 gốc và G49–G51 qua native CUA. Dữ liệu hai lượt được giữ riêng trong evidence/runs/ và evidence/accessibility/. Viewport hẹp là kiểm tra responsive, không tính thêm nền tảng.', '', '| Môi trường | Số mục | Passed | Failed | Blocked |', '|---|---:|---:|---:|---:|']
     for e,run in runs.items():
         matrix.append(f'| {run["environment"]} | {len(run["results"])} | {counts[e]["Passed"]} | {counts[e]["Failed"]} | {counts[e]["Blocked"]} |')
     differences=[]
@@ -143,13 +149,13 @@ Cập nhật: {now}.
 | Màn hình đã bao phủ | 3: Home, Product Detail, Cart |
 | Luồng GUI do agent thực thi | Tìm kiếm → chi tiết → thêm giỏ; giỏ dùng để kiểm tra kết quả |
 | Luồng usability | Quản lý đơn hàng; 1 pilot + 7 phiên do sinh viên cung cấp và xác nhận |
-| Mục checklist thiết kế | 48; mỗi IA 12 mục |
-| Chrome | 48 executed; {counts['chrome']['Passed']} Passed; {counts['chrome']['Failed']} Failed; {counts['chrome']['Blocked']} Blocked |
-| Firefox | 48 executed; {counts['firefox']['Passed']} Passed; {counts['firefox']['Failed']} Failed; {counts['firefox']['Blocked']} Blocked |
-| Safari | 48 executed; {counts['safari']['Passed']} Passed; {counts['safari']['Failed']} Failed; {counts['safari']['Blocked']} Blocked |
-| Tổng lượt kiểm tra | 144; {sum(x['Passed'] for x in counts.values())} Passed; {sum(x['Failed'] for x in counts.values())} Failed |
+| Mục checklist thiết kế | 51: 48 gốc + G49–G51 bổ sung; IA-01/02/03/04 = 14/13/12/12 |
+| Chrome | 51 executed; {counts['chrome']['Passed']} Passed; {counts['chrome']['Failed']} Failed; {counts['chrome']['Blocked']} Blocked |
+| Firefox | 51 executed; {counts['firefox']['Passed']} Passed; {counts['firefox']['Failed']} Failed; {counts['firefox']['Blocked']} Blocked |
+| Safari | 51 executed; {counts['safari']['Passed']} Passed; {counts['safari']['Failed']} Failed; {counts['safari']['Blocked']} Blocked |
+| Tổng lượt kiểm tra | 153: 144 gốc + 9 bổ sung; {sum(x['Passed'] for x in counts.values())} Passed; {sum(x['Failed'] for x in counts.values())} Failed |
 | Mục fail ít nhất một môi trường | {len({r['id'] for run in runs.values() for r in run['results'] if r['status']=='Failed'})} |
-| Nhóm bug | 23; {sum(b['severity']=='Major' for b in bug_data)} Major; {sum(b['severity']=='Minor' for b in bug_data)} Minor; 0 Blocker theo đánh giá sơ bộ |
+| Nhóm bug GUI | 25: 23 gốc + B24/B25; 12 Major, 13 Minor; 0 Blocker theo đánh giá sơ bộ |
 | Nền tảng chạy trọn checklist | 3/3: Chrome, Firefox, Safari thật |
 | Pilot / phiên chính thức có ghi chú | 1 / 7; không có video phiên |
 | Người tham gia | 7/7 theo dữ liệu sinh viên cung cấp, ngoài pilot |
@@ -178,7 +184,7 @@ Màn hình chính Home/Search; bổ trợ Product Detail và Cart. Luồng: tìm
 
 ## 2. Task 1: thiết kế và thực thi GUI checklist
 
-48 mục phân bổ IA-01/02/03/04 mỗi khía cạnh 12 mục, có tiêu chí và nguồn FR/heuristic. Mỗi lần dùng browser context mới; chờ route và dữ liệu trước phép đo. Kết quả Passed/Failed và Notes riêng từng môi trường nằm trong `checklists/gui_checklist_g2.xlsx`, `.csv`, `.md`. JSON lưu quan sát, browser, timestamp, revision và lỗi console.
+Bộ đầu có 48 mục, mỗi IA 12 mục. Sau phản biện, thêm G49–G51: tổng 51 mục, IA-01/02/03/04 = 14/13/12/12. items.json giữ nguyên bộ đầu; additions.json lưu phần thêm. Tất cả do AI thiết kế/thực hiện theo yêu cầu sinh viên. Bộ gốc dùng browser context mới theo case; phần bổ sung mở từng URL trong cửa sổ browser thật và chỉ đọc DOM/CSS. Chờ route và dữ liệu trước phép đo. Kết quả Passed/Failed và Notes riêng từng môi trường nằm trong `checklists/gui_checklist_g2.xlsx`, `.csv`, `.md`. JSON lưu quan sát, browser, timestamp, revision và lỗi console.
 
 Tiêu chí hỗ trợ tiếp cận, responsive và khôi phục ngoài FR được ghi là heuristic. RTL/dark mode chưa được xác định là tính năng bắt buộc, nên không báo thiếu chúng là bug. `checklists/HUMAN_REVIEW.md` còn trống: sinh viên cần phản biện và tự bổ sung những mục AI bỏ sót, có giải thích lý do.
 
@@ -202,7 +208,7 @@ Hồ sơ nguồn ghi tất cả người tham gia từ chối ghi hình; không 
 
 ## 4. Task 3: cross-browser
 
-Đã chạy trọn 48 mục trên Chrome và Firefox Playwright build, cùng Safari 26.2 thật qua Apple WebDriver ở macOS 26.2. Ba trình duyệt có JSON và ảnh gốc riêng. Safari dùng iframe cùng origin có viewport CSS chính xác, không đổi logic SUT. Viewport hẹp chỉ là kiểm tra responsive. Các ca trễ/lỗi API được mô phỏng có kiểm soát và ghi rõ phương pháp. Xem `cross-platform/MATRIX.md`.
+Đã chạy bộ gốc 48 mục trên Chrome/Firefox Playwright build và Safari 26.2 qua Apple WebDriver ở macOS 26.2; thêm G49–G51 trên cả ba browser qua native CUA, tổng 51 mục/môi trường. Ba trình duyệt có JSON và ảnh gốc riêng. Safari dùng iframe cùng origin có viewport CSS chính xác, không đổi logic SUT. Viewport hẹp chỉ là kiểm tra responsive. Các ca trễ/lỗi API được mô phỏng có kiểm soát và ghi rõ phương pháp. Xem `cross-platform/MATRIX.md`.
 
 Khác biệt giữa các môi trường: {'; '.join(differences)}. G09 Firefox tràn ngang 8 px ở viewport 390 px. Safari dùng Option-Tab để điều hướng tất cả phần tử theo thiết lập mặc định. Mọi ảnh Failed có email sinh viên, MSSV, họ tên, môi trường và localhost URL ở phần chú thích, thêm sau phép đo; ảnh đặc tính DOM phải đọc cùng JSON.
 
@@ -229,6 +235,7 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Hồ sơ tám 
 Đề và chính sách đi kèm trong thư mục `requirements/` của archive. Nguồn SUS: https://hell.meiert.org/core/pdf/sus.pdf. Tài liệu phân biệt browser/engine: https://playwright.dev/docs/browsers. GitHub homework: https://github.com/NgBaoAnn/hw03-gui-usability (đã public theo xác nhận của sinh viên, người chấm truy cập được các Issues và ảnh).
 
 '''+summary.replace('# Test summary G2','## 8. Test summary')
+    report+='\n\n## 9. Phản biện và bổ sung tiếp cận\n\n'+(ROOT/'checklists/ADDITIONS.md').read_text().replace('# Bổ sung checklist sau phản biện AI','### Bổ sung đã thực thi')+'\n\n'+(ROOT/'reports/AI_CRITIQUE.md').read_text().replace('# AI Critique','### Phản biện AI (bản AI soạn)')
     write('reports/MAIN_REPORT.md',report)
     write('README.md','''# HW03 - GUI & Usability (G2)
 
@@ -241,9 +248,10 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 ## Tài liệu
 
 - `reports/MAIN_REPORT.md` và PDF: phương pháp, kết quả và giới hạn.
-- `checklists/gui_checklist_g2.xlsx`, `.md`, `.csv`: 48 mục trên Chrome, Firefox và Safari thật.
+- `checklists/gui_checklist_g2.xlsx`, `.md`, `.csv`: 51 mục trên Chrome, Firefox và Safari thật; bộ gốc 48 và ba mục bổ sung tại ADDITIONS.md.
 - `checklists/AI_REVIEW.md`: lượt AI rà soát bổ sung; phiếu sinh viên ở `checklists/HUMAN_REVIEW.md` vẫn chờ đóng góp thực tế.
 - `bug-reports/BUG_REPORTS.md`: 23 nhóm bug, ảnh gốc và Issue links.
+- `bug-reports/supplement/`: B24/B25 và Issues #29/#30; `checklists/ADDITIONS.md`: ba mục tiếp cận bổ sung.
 - `evidence/runs/`: kết quả máy đọc được; `evidence/gui/`: ảnh gốc.
 - `usability/`: protocol, SUS, dữ liệu 7 phiên, phân tích và nguồn dữ liệu; bản public dùng mã người tham gia.
 - `task2_usability/`: bộ Task 2 đầy đủ có danh sách liên hệ đã che, PDF và Excel; chỉ có trong ZIP nộp, không đưa lên repo public.

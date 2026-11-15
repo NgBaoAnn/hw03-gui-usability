@@ -9,9 +9,10 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 ## Tài liệu
 
 - `reports/MAIN_REPORT.md` và PDF: phương pháp, kết quả và giới hạn.
-- `checklists/gui_checklist_g2.xlsx`, `.md`, `.csv`: 48 mục trên Chrome, Firefox và Safari thật.
+- `checklists/gui_checklist_g2.xlsx`, `.md`, `.csv`: 51 mục trên Chrome, Firefox và Safari thật; bộ gốc 48 và ba mục bổ sung tại ADDITIONS.md.
 - `checklists/AI_REVIEW.md`: lượt AI rà soát bổ sung; phiếu sinh viên ở `checklists/HUMAN_REVIEW.md` vẫn chờ đóng góp thực tế.
 - `bug-reports/BUG_REPORTS.md`: 23 nhóm bug, ảnh gốc và Issue links.
+- `bug-reports/supplement/`: B24/B25 và Issues #29/#30; `checklists/ADDITIONS.md`: ba mục tiếp cận bổ sung.
 - `evidence/runs/`: kết quả máy đọc được; `evidence/gui/`: ảnh gốc.
 - `usability/`: protocol, SUS, dữ liệu 7 phiên, phân tích và nguồn dữ liệu; bản public dùng mã người tham gia.
 - `task2_usability/`: bộ Task 2 đầy đủ có danh sách liên hệ đã che, PDF và Excel; chỉ có trong ZIP nộp, không đưa lên repo public.
@@ -34,7 +35,7 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 
 # Test summary G2
 
-Cập nhật: 2026-11-15T23:53:03+07:00.
+Cập nhật: 2026-11-16T00:32:30+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|
@@ -42,13 +43,13 @@ Cập nhật: 2026-11-15T23:53:03+07:00.
 | Màn hình đã bao phủ | 3: Home, Product Detail, Cart |
 | Luồng GUI do agent thực thi | Tìm kiếm → chi tiết → thêm giỏ; giỏ dùng để kiểm tra kết quả |
 | Luồng usability | Quản lý đơn hàng; 1 pilot + 7 phiên do sinh viên cung cấp và xác nhận |
-| Mục checklist thiết kế | 48; mỗi IA 12 mục |
-| Chrome | 48 executed; 19 Passed; 29 Failed; 0 Blocked |
-| Firefox | 48 executed; 18 Passed; 30 Failed; 0 Blocked |
-| Safari | 48 executed; 19 Passed; 29 Failed; 0 Blocked |
-| Tổng lượt kiểm tra | 144; 56 Passed; 88 Failed |
-| Mục fail ít nhất một môi trường | 30 |
-| Nhóm bug | 23; 10 Major; 13 Minor; 0 Blocker theo đánh giá sơ bộ |
+| Mục checklist thiết kế | 51: 48 gốc + G49–G51 bổ sung; IA-01/02/03/04 = 14/13/12/12 |
+| Chrome | 51 executed; 19 Passed; 32 Failed; 0 Blocked |
+| Firefox | 51 executed; 18 Passed; 33 Failed; 0 Blocked |
+| Safari | 51 executed; 19 Passed; 32 Failed; 0 Blocked |
+| Tổng lượt kiểm tra | 153: 144 gốc + 9 bổ sung; 56 Passed; 97 Failed |
+| Mục fail ít nhất một môi trường | 33 |
+| Nhóm bug GUI | 25: 23 gốc + B24/B25; 12 Major, 13 Minor; 0 Blocker theo đánh giá sơ bộ |
 | Nền tảng chạy trọn checklist | 3/3: Chrome, Firefox, Safari thật |
 | Pilot / phiên chính thức có ghi chú | 1 / 7; không có video phiên |
 | Người tham gia | 7/7 theo dữ liệu sinh viên cung cấp, ngoài pilot |

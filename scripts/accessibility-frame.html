@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="vi"><meta charset="utf-8"><title>HW03 - Bổ sung kiểm tra tiếp cận</title>
+<style>body{margin:0;color:#172033;font:16px/1.5 Arial;background:#f1f5f9}header{background:#172033;color:white;padding:10px 20px}h1{font-size:21px;margin:0}main{display:grid;grid-template-columns:minmax(0,2fr) minmax(330px,1fr);gap:12px;padding:12px}iframe{width:100%;height:calc(100vh - 120px);border:1px solid #94a3b8;background:white}aside{padding:16px;background:white;overflow-wrap:anywhere}h2{font-size:20px}pre{font:14px/1.5 Arial;white-space:pre-wrap}.failed{color:#991b1b}.passed{color:#166534}</style>
+<header><h1>Nguyễn Bảo An • MSSV 23120207 • 23120207@student.hcmus.edu.vn</h1><span>Kiểm tra bổ sung do AI thực hiện; iframe SUT chỉ được đọc DOM/CSS, không đổi logic.</span></header>
+<main><iframe id="sut" title="EShop thật"></iframe><aside><h2 id="title">Đang kiểm tra…</h2><div id="status"></div><pre id="observation"></pre><p id="saved"></p><small id="environment"></small></aside></main>
+<script type="module">
+const params=new URLSearchParams(location.search),id=params.get('case'),engine=params.get('engine');
+if(!['G49','G50','G51'].includes(id)||!['chrome','firefox','safari'].includes(engine))throw new Error('Unknown case or browser');
+const frame=document.querySelector('#sut'),path=id==='G51'?'/product/1':'/';
+const canvas=document.createElement('canvas');canvas.width=canvas.height=1;const ctx=canvas.getContext('2d',{willReadFrequently:true});
+function rgba(color){ctx.clearRect(0,0,1,1);ctx.fillStyle=color;ctx.fillRect(0,0,1,1);return [...ctx.getImageData(0,0,1,1).data];}
+function luminance(rgb){return rgb.slice(0,3).map(v=>v/255).map(v=>v<=0.04045?v/12.92:((v+0.055)/1.055)**2.4).reduce((s,v,i)=>s+v*[0.2126,0.7152,0.0722][i],0);}
+function contrast(a,b){const x=luminance(a),y=luminance(b);return (Math.max(x,y)+0.05)/(Math.min(x,y)+0.05);}
+if(contrast([0,0,0],[255,255,255])!==21||contrast([24,24,24],[24,24,24])!==1)throw new Error('Contrast self-check failed');
+function measure(el,view){
+ const css=view.getComputedStyle(el),fg=rgba(css.color);if(fg[3]!==255)throw new Error('Unsupported translucent text');
+ const layers=[];for(let p=el;p;p=p.parentElement){const s=view.getComputedStyle(p);if(Number(s.opacity)!==1||s.backgroundImage!=='none')throw new Error('Unsupported opacity/background image');layers.push(rgba(s.backgroundColor));}
+ let bg=[255,255,255];for(const layer of layers.reverse()){const alpha=layer[3]/255;bg=bg.map((v,i)=>layer[i]*alpha+v*(1-alpha));}
+ const size=parseFloat(css.fontSize),bold=Number(css.fontWeight)>=700,large=size>=24||(bold&&size>=56/3),minimum=large?3:4.5;
+ return {text:el.textContent.trim(),foreground:fg.slice(0,3),background:bg,fontSizePx:size,fontWeight:css.fontWeight,largeText:large,minimum,contrast:contrast(fg,bg),url:view.location.href};
+}
+async function run(){
+ await new Promise((resolve,reject)=>{frame.onload=resolve;frame.onerror=reject;frame.src=path;});
+ const view=frame.contentWindow,doc=view.document,selector=id==='G51'?'main button':'main .text-red-500';
+ const start=Date.now();while(!doc.querySelector(selector)){if(Date.now()-start>12000)throw new Error('SUT target unavailable');await new Promise(r=>setTimeout(r,100));}
+ let observation,passed;
+ if(id==='G49'){observation={url:view.location.href,declaredLanguage:doc.documentElement.lang,observedContent:'Danh sách sản phẩm, Giỏ hàng, Đăng nhập: nội dung tiếng Việt'};passed=/^vi(?:-|$)/i.test(observation.declaredLanguage);}
+ else{observation=measure(doc.querySelector(selector),view);passed=observation.contrast>=observation.minimum;}
+ const record={id,engine,status:passed?'Passed':'Failed',timestamp:new Date().toISOString(),userAgent:navigator.userAgent,observation};
+ document.querySelector('#title').textContent=id+' — '+({'G49':'Ngôn ngữ trang','G50':'Tương phản chữ giá','G51':'Tương phản chữ nút'}[id]);
+ document.querySelector('#status').textContent=record.status;document.querySelector('#status').className=passed?'passed':'failed';
+ document.querySelector('#observation').textContent=JSON.stringify(observation,null,2);document.querySelector('#environment').textContent=navigator.userAgent;
+ const response=await fetch('http://localhost:8767/results',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(record)});
+ if(!response.ok)throw new Error('Collector rejected result');document.querySelector('#saved').textContent='ĐÃ LƯU KẾT QUẢ THẬT '+id;
+}
+run().catch(e=>{document.querySelector('#status').textContent='Blocked: '+e.message;console.error(e);});
+</script></html>

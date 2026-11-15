@@ -377,3 +377,33 @@ Mình sẽ điền điểm tự chấm **30/40/20/10 = 100** theo lựa chọn c
 
 Bảng tự chấm đã được cập nhật thành **100/100**. Mình đã viết bản AI rà soát bổ sung, nêu rõ các giới hạn như kiểm tra DOM chưa thay thế screen reader, viewport nhỏ chưa phải điện thoại thật, và ảnh tái hiện không phải bản ghi phiên người dùng. Mình đang xuất lại PDF, Excel và ZIP; hồ sơ còn chờ video demo cùng phần sinh viên tự phản biện.
 
+
+## 56. assistant - 2026-11-15T23:55:16+07:00
+
+Đã ghi **100/100**, viết [bản AI rà soát bổ sung](/Users/nguyenbaoan/codeLab/kcpm/hw3/checklists/AI_REVIEW.md), cập nhật PDF/Excel và đẩy lên GitHub.
+
+[Tải ZIP mới nhất — 12,3 MB](/Users/nguyenbaoan/codeLab/kcpm/hw3/output/23120207_HW03_AI_GUIUsability_DRAFT.zip)
+
+Còn hai mục: **video demo** và **phần bạn tự phản biện/bổ sung checklist**. Bản AI rà soát đã ghi đúng người thực hiện, chưa được tính là đóng góp cá nhân của bạn.
+
+Chưa nộp Moodle; ZIP vẫn là DRAFT.
+
+## 57. user - 2026-11-16T00:18:46+07:00
+
+hãy làm luôn phần này **phần bạn tự phản biện/bổ sung checklist, tôi tự làm video demo**
+
+
+## 58. assistant - 2026-11-16T00:19:11+07:00
+
+Mình sẽ viết bản phản biện dựa trên bằng chứng hiện có, bổ sung các tiêu chí còn thiếu và kiểm thử chúng trước khi cập nhật hồ sơ. Phần này sẽ ghi đúng là AI hỗ trợ soạn và thực hiện; bạn cần đọc lại trước khi nộp, vì đề yêu cầu sinh viên tự xem xét kết quả. Video demo vẫn do bạn tự quay.
+
+
+## 59. assistant - 2026-11-16T00:22:27+07:00
+
+Mình chọn ba tiêu chí còn thiếu: ngôn ngữ khai báo của trang, tương phản chữ giá ở danh sách và tương phản chữ trên nút thêm giỏ. Chúng bổ sung phần tiếp cận mà các mục về nhãn và bàn phím chưa đo, dựa trên [WCAG về ngôn ngữ trang](https://www.w3.org/WAI/WCAG22/Understanding/language-of-page.html) và [tương phản chữ](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). Mình sẽ chạy riêng trên ba browser và giữ nguyên bộ 48 mục ban đầu để truy vết.
+
+
+## 60. assistant - 2026-11-16T00:27:30+07:00
+
+Cả ba browser cho cùng kết quả: trang tiếng Việt khai báo `lang="en"`; chữ giá đạt tương phản **3,76:1**, chữ nút thêm giỏ đạt **3,30:1**, đều dưới mức 4,5:1 áp dụng cho cỡ chữ đã đo. Mình đã lưu đủ chín kết quả và ảnh thật. Mình sẽ gom thành hai nhóm lỗi mới, cập nhật checklist lên 51 mục và viết phần phản biện giải thích vì sao bộ ban đầu bỏ sót chúng.
+

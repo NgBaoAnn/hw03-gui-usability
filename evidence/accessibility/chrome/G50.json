@@ -1,0 +1,28 @@
+{
+  "id": "G50",
+  "engine": "chrome",
+  "status": "Failed",
+  "timestamp": "2026-11-15T17:25:26.879Z",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+  "observation": {
+    "text": "30,000,000 VND",
+    "foreground": [
+      239,
+      68,
+      68
+    ],
+    "background": [
+      255,
+      255,
+      255
+    ],
+    "fontSizePx": 16,
+    "fontWeight": "700",
+    "largeText": false,
+    "minimum": 4.5,
+    "contrast": 3.763127680148142,
+    "url": "http://localhost:5173/"
+  },
+  "os": "macOS 26.2",
+  "sutCommit": "85af3ba875c88283615e22cb108f13e2fccaf0e9"
+}

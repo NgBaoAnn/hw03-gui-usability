@@ -4,7 +4,7 @@ Bộ hồ sơ đã tích hợp Task 2 bạn cung cấp và xác nhận là các 
 
 ## Phần đã hoàn thành
 
-- 48 mục GUI × Chrome/Firefox/Safari: 144 kết quả, 56 Passed, 88 Failed; 23 nhóm bug có ảnh và Issues.
+- 51 mục GUI × Chrome/Firefox/Safari: 153 kết quả, 56 Passed, 97 Failed; 25 nhóm bug GUI có ảnh và Issues (48 mục gốc + 3 bổ sung).
 - Task 2: một pilot và bảy biên bản, SUS từng người/trung bình, thời gian, tỷ lệ hoàn thành, bốn chủ đề probe và năm phát hiện. SUS 58,93/100; hoàn thành 6/7.
 - Năm ảnh agent tái hiện U01–U05 trên SUT, báo cáo và Issues riêng. Đây là ảnh tái hiện, không phải ảnh/video phiên người tham gia.
 - Tên/MSSV/email đã đồng bộ; PDF, Excel, audit AI, skill, nhật ký Git và ZIP được cập nhật.
@@ -29,9 +29,9 @@ Video demo skill ở bước 1 là phần riêng và vẫn cần link YouTube. C
 
 ## 3. Rà soát và tự bổ sung checklist
 
-Codex đã viết lượt AI rà soát tại `checklists/AI_REVIEW.md` theo yêu cầu của bạn. Đọc bản này cùng `reports/MAIN_REPORT.pdf`, `checklists/gui_checklist_g2.xlsx`, ảnh và các bug. Dùng `checklists/HUMAN_REVIEW.md` ghi mục chấp nhận/sửa/loại và lý do. Đề yêu cầu bạn tự phát hiện và bổ sung mục AI bỏ sót; Codex không thể tự viết rồi gán là đóng góp của bạn.
+Codex đã viết phản biện 278 từ, lượt AI rà soát và bổ sung G49–G51, có chín phép kiểm thật/ảnh trên ba browser. Đọc `checklists/ADDITIONS.md`, `checklists/AI_REVIEW.md` và `reports/AI_CRITIQUE.md` theo yêu cầu của bạn. Đọc bản này cùng `reports/MAIN_REPORT.pdf`, `checklists/gui_checklist_g2.xlsx`, ảnh và các bug. Dùng `checklists/HUMAN_REVIEW.md` ghi mục chấp nhận/sửa/loại và lý do. Đề yêu cầu bạn tự phát hiện và bổ sung mục AI bỏ sót; Codex không thể tự viết rồi gán là đóng góp của bạn.
 
-Khi bạn có mục mới, gửi nội dung, lý do AI bỏ sót và quan sát của bạn. Codex sẽ kiểm tra trùng lặp, bổ sung ID, chạy trên ba môi trường và đồng bộ bằng chứng/báo cáo. Chỉ xác nhận đã đọc khi bạn thực sự đọc. Đọc và sửa `reports/AI_CRITIQUE.md` theo trải nghiệm thật; bản hiện tại là AI soạn.
+Phần soạn phản biện và tiêu chí bổ sung đã được AI chuẩn bị, không cần viết lại từ đầu. Nếu bạn tự phát hiện thêm mục mới, gửi nội dung, lý do AI bỏ sót và quan sát của bạn. Codex sẽ kiểm tra trùng lặp, bổ sung ID, chạy trên ba môi trường và đồng bộ bằng chứng/báo cáo. Chỉ xác nhận đã đọc khi bạn thực sự đọc. Đọc và sửa `reports/AI_CRITIQUE.md` theo trải nghiệm thật; bản hiện tại là AI soạn.
 
 ## 4. Điểm tự đánh giá đã chọn và chốt nộp
 

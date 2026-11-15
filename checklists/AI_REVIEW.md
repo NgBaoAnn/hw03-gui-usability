@@ -1,6 +1,6 @@
 # Rà soát bổ sung do AI thực hiện
 
-Người thực hiện: Codex. Theo yêu cầu sinh viên “bạn hãy tự ghi phần rà soát đi”. Nguồn: checklist 48 mục, ba JSON chạy cuối, danh mục bug, SUS và báo cáo hiện có. Lượt này rà hồ sơ/bằng chứng đã lưu; không phải lượt chạy browser mới hoặc đóng góp tự phát hiện của sinh viên.
+Người thực hiện: Codex. Theo yêu cầu sinh viên “bạn hãy tự ghi phần rà soát đi”. Lượt đầu đối chiếu bộ 48 mục và hồ sơ đã lưu; sau đó bổ sung G49–G51 và thực thi mới trên ba browser như mục cuối ghi rõ. Các phần đều là AI hỗ trợ theo yêu cầu, chưa gán thành đóng góp tự phát hiện của sinh viên.
 
 ## Kết quả đối chiếu
 
@@ -23,8 +23,15 @@ Người thực hiện: Codex. Theo yêu cầu sinh viên “bạn hãy tự ghi
 
 ## Phần chưa kiểm tra và gợi ý cho sinh viên
 
-Focus nhìn thấy, screen reader, tương phản và zoom 200% chưa được kiểm tra đầy đủ trong bộ hiện tại. Đây là gợi ý của AI, chưa phải mục sinh viên tự bổ sung, chưa có kết quả Passed/Failed. Sinh viên cần quan sát thực tế, chọn tiêu chí có ý nghĩa và giải thích vì sao AI bỏ sót; sau đó mới đưa vào checklist và chạy trên các môi trường thích hợp.
+Sau lượt bổ sung, tương phản đã được đo ở chữ giá Home và nút Detail. Focus nhìn thấy, screen reader và zoom 200% vẫn chưa được kiểm tra đầy đủ. Đây là gợi ý của AI, chưa phải mục sinh viên tự bổ sung, chưa có kết quả Passed/Failed. Sinh viên cần quan sát thực tế, chọn tiêu chí có ý nghĩa và giải thích vì sao AI bỏ sót; sau đó mới đưa vào checklist và chạy trên các môi trường thích hợp.
 
 Các giả định cũ về bộ lọc/sắp xếp, ngân sách 500.000 đồng và coi viewport là nền tảng đã được AI sửa theo SUT. Không ghi những sửa đổi này là việc sinh viên đã tự thực hiện.
 
 Phiếu `HUMAN_REVIEW.md` giữ trạng thái chờ sinh viên. Việc sinh viên giao AI viết phần rà soát chưa chứng minh sinh viên đã tự đọc, phản biện hoặc phát hiện mục mới theo Task 1.
+
+
+## Bổ sung đã thực thi sau yêu cầu tiếp theo
+
+Đã thêm G49–G51 và thực thi cả ba browser bằng native CUA, không bật lại Safari Remote Automation. G49 phát hiện lang=en trên trang tiếng Việt; G50 có tương phản 3,7631:1; G51 có tương phản 3,2957:1, đều chưa đạt ngưỡng cho chữ đã đo. Xem [bảng lý do AI bỏ sót, kết quả và bằng chứng](ADDITIONS.md).
+
+Tổng hiện tại: 51 tiêu chí, 153 kết quả (56 Passed, 97 Failed), 25 nhóm bug GUI và năm finding usability. Phần đối chiếu phía trên mô tả bộ gốc 48 mục; giữ nguyên số liệu lịch sử để truy vết. G49–G51 do AI bổ sung theo yêu cầu sinh viên, không đổi tác giả thành sinh viên. Sinh viên cần đọc và đánh giá các kết luận trước khi nộp.

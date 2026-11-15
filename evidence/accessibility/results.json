@@ -1,0 +1,227 @@
+{
+  "chrome": [
+    {
+      "id": "G49",
+      "engine": "chrome",
+      "status": "Failed",
+      "timestamp": "2026-11-15T17:25:10.218Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+      "observation": {
+        "url": "http://localhost:5173/",
+        "declaredLanguage": "en",
+        "observedContent": "Danh sách sản phẩm, Giỏ hàng, Đăng nhập: nội dung tiếng Việt"
+      },
+      "os": "macOS 26.2",
+      "sutCommit": "85af3ba875c88283615e22cb108f13e2fccaf0e9",
+      "evidence": "evidence/accessibility/chrome/G49.png"
+    },
+    {
+      "id": "G50",
+      "engine": "chrome",
+      "status": "Failed",
+      "timestamp": "2026-11-15T17:25:26.879Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+      "observation": {
+        "text": "30,000,000 VND",
+        "foreground": [
+          239,
+          68,
+          68
+        ],
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "fontSizePx": 16,
+        "fontWeight": "700",
+        "largeText": false,
+        "minimum": 4.5,
+        "contrast": 3.763127680148142,
+        "url": "http://localhost:5173/"
+      },
+      "os": "macOS 26.2",
+      "sutCommit": "85af3ba875c88283615e22cb108f13e2fccaf0e9",
+      "evidence": "evidence/accessibility/chrome/G50.png"
+    },
+    {
+      "id": "G51",
+      "engine": "chrome",
+      "status": "Failed",
+      "timestamp": "2026-11-15T17:26:13.975Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+      "observation": {
+        "text": "Thêm vào giỏ hàng",
+        "foreground": [
+          255,
+          255,
+          255
+        ],
+        "background": [
+          22,
+          163,
+          74
+        ],
+        "fontSizePx": 16,
+        "fontWeight": "400",
+        "largeText": false,
+        "minimum": 4.5,
+        "contrast": 3.2957336053312796,
+        "url": "http://localhost:5173/product/1"
+      },
+      "os": "macOS 26.2",
+      "sutCommit": "85af3ba875c88283615e22cb108f13e2fccaf0e9",
+      "evidence": "evidence/accessibility/chrome/G51.png"
+    }
+  ],
+  "firefox": [
+    {
+      "id": "G49",
+      "engine": "firefox",
+      "status": "Failed",
+      "timestamp": "2026-11-15T17:25:29.856Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:153.0) Gecko/20100101 Firefox/153.0",
+      "observation": {
+        "url": "http://localhost:5173/",
+        "declaredLanguage": "en",
+        "observedContent": "Danh sách sản phẩm, Giỏ hàng, Đăng nhập: nội dung tiếng Việt"
+      },
+      "os": "macOS 26.2",
+      "sutCommit": "85af3ba875c88283615e22cb108f13e2fccaf0e9",
+      "evidence": "evidence/accessibility/firefox/G49.png"
+    },
+    {
+      "id": "G50",
+      "engine": "firefox",
+      "status": "Failed",
+      "timestamp": "2026-11-15T17:25:53.631Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:153.0) Gecko/20100101 Firefox/153.0",
+      "observation": {
+        "text": "30,000,000 VND",
+        "foreground": [
+          239,
+          68,
+          68
+        ],
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "fontSizePx": 16,
+        "fontWeight": "700",
+        "largeText": false,
+        "minimum": 4.5,
+        "contrast": 3.763127680148142,
+        "url": "http://localhost:5173/"
+      },
+      "os": "macOS 26.2",
+      "sutCommit": "85af3ba875c88283615e22cb108f13e2fccaf0e9",
+      "evidence": "evidence/accessibility/firefox/G50.png"
+    },
+    {
+      "id": "G51",
+      "engine": "firefox",
+      "status": "Failed",
+      "timestamp": "2026-11-15T17:26:04.771Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:153.0) Gecko/20100101 Firefox/153.0",
+      "observation": {
+        "text": "Thêm vào giỏ hàng",
+        "foreground": [
+          255,
+          255,
+          255
+        ],
+        "background": [
+          22,
+          163,
+          74
+        ],
+        "fontSizePx": 16,
+        "fontWeight": "400",
+        "largeText": false,
+        "minimum": 4.5,
+        "contrast": 3.2957336053312796,
+        "url": "http://localhost:5173/product/1"
+      },
+      "os": "macOS 26.2",
+      "sutCommit": "85af3ba875c88283615e22cb108f13e2fccaf0e9",
+      "evidence": "evidence/accessibility/firefox/G51.png"
+    }
+  ],
+  "safari": [
+    {
+      "id": "G49",
+      "engine": "safari",
+      "status": "Failed",
+      "timestamp": "2026-11-15T17:23:55.099Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15",
+      "observation": {
+        "url": "http://localhost:5173/",
+        "declaredLanguage": "en",
+        "observedContent": "Danh sách sản phẩm, Giỏ hàng, Đăng nhập: nội dung tiếng Việt"
+      },
+      "os": "macOS 26.2",
+      "sutCommit": "85af3ba875c88283615e22cb108f13e2fccaf0e9",
+      "evidence": "evidence/accessibility/safari/G49.png"
+    },
+    {
+      "id": "G50",
+      "engine": "safari",
+      "status": "Failed",
+      "timestamp": "2026-11-15T17:24:06.829Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15",
+      "observation": {
+        "text": "30,000,000 VND",
+        "foreground": [
+          239,
+          68,
+          68
+        ],
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "fontSizePx": 16,
+        "fontWeight": "700",
+        "largeText": false,
+        "minimum": 4.5,
+        "contrast": 3.763127680148142,
+        "url": "http://localhost:5173/"
+      },
+      "os": "macOS 26.2",
+      "sutCommit": "85af3ba875c88283615e22cb108f13e2fccaf0e9",
+      "evidence": "evidence/accessibility/safari/G50.png"
+    },
+    {
+      "id": "G51",
+      "engine": "safari",
+      "status": "Failed",
+      "timestamp": "2026-11-15T17:24:18.967Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15",
+      "observation": {
+        "text": "Thêm vào giỏ hàng",
+        "foreground": [
+          255,
+          255,
+          255
+        ],
+        "background": [
+          22,
+          163,
+          74
+        ],
+        "fontSizePx": 16,
+        "fontWeight": "400",
+        "largeText": false,
+        "minimum": 4.5,
+        "contrast": 3.2957336053312796,
+        "url": "http://localhost:5173/product/1"
+      },
+      "os": "macOS 26.2",
+      "sutCommit": "85af3ba875c88283615e22cb108f13e2fccaf0e9",
+      "evidence": "evidence/accessibility/safari/G51.png"
+    }
+  ]
+}

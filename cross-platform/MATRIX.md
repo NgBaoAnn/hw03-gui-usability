@@ -1,12 +1,12 @@
 # Ma trận cross-browser
 
-Đã thực thi đầy đủ 48 mục trên 3 trình duyệt thật: Chrome, Firefox và Safari. Viewport hẹp là kiểm tra responsive, không tính thêm nền tảng.
+51 tiêu chí trên ba browser: 48 gốc và G49–G51 qua native CUA. Dữ liệu hai lượt được giữ riêng trong evidence/runs/ và evidence/accessibility/. Viewport hẹp là kiểm tra responsive, không tính thêm nền tảng.
 
 | Môi trường | Số mục | Passed | Failed | Blocked |
 |---|---:|---:|---:|---:|
-| Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0) | 48 | 19 | 29 | 0 |
-| Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0) | 48 | 18 | 30 | 0 |
-| Safari 26.2 (Apple safaridriver) / macOS 26.2 | 48 | 19 | 29 | 0 |
+| Google Chrome 157.0.8103.50 / macOS 26.2 (Darwin 25.2.0) | 51 | 19 | 32 | 0 |
+| Firefox (Playwright build) 153.0 / macOS 26.2 (Darwin 25.2.0) | 51 | 18 | 33 | 0 |
+| Safari 26.2 (Apple safaridriver) / macOS 26.2 | 51 | 19 | 32 | 0 |
 
 Khác biệt kết quả: G09: chrome Passed, firefox Failed, safari Passed.
 
