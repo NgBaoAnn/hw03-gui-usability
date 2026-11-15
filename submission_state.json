@@ -5,7 +5,11 @@
   "individual": true,
   "human_review_complete": false,
   "human_added_check_ids": [],
-  "ai_added_check_ids": ["G49", "G50", "G51"],
+  "ai_added_check_ids": [
+    "G49",
+    "G50",
+    "G51"
+  ],
   "ai_review_draft_complete": true,
   "personal_contribution_record": "reports/PERSONAL_CONTRIBUTION.md",
   "pilot_evidence": "usability/sessions/PILOT.md",
@@ -19,13 +23,20 @@
     "usability/sessions/P7.md"
   ],
   "third_platform_full_run": "evidence/runs/safari.json",
-  "demo_youtube_url": "",
+  "demo_youtube_url": "https://youtu.be/VGVm_V7L_ks",
   "earlier_ai_audit_complete": true,
-  "self_assessment": {"task1": 30, "task2": 40, "task3": 20, "skill": 10},
+  "self_assessment": {
+    "task1": 30,
+    "task2": 40,
+    "task3": 20,
+    "skill": 10
+  },
   "self_assessment_confirmation": "Sinh viên yêu cầu: cho full điểm. Tổng tự chấm 100/100; không phải điểm giảng viên hoặc xác nhận đã đủ điều kiện nộp.",
   "github_grader_access_confirmed": true,
   "github_visibility": "public",
-  "demo_author": "student_recording_pending",
+  "demo_author": "student_provided_video",
   "usability_student_confirmed": true,
-  "usability_recordings_complete": false
+  "usability_recordings_complete": false,
+  "demo_public_playback_verified": true,
+  "review_delegated_to_ai": true
 }

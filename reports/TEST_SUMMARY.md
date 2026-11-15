@@ -1,6 +1,6 @@
 # Test summary G2
 
-Cập nhật: 2026-11-16T00:41:27+07:00.
+Cập nhật: 2026-11-16T01:28:07+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|
@@ -22,6 +22,6 @@ Cập nhật: 2026-11-16T00:41:27+07:00.
 | Hoàn thành tác vụ | 6/7 (85,7%): 4 độc lập, 2 có trợ giúp, 1 timeout |
 | Thời gian tác vụ | 324 giây gồm timeout; 278 giây trong 6 ca hoàn thành |
 | Phát hiện usability | 5 vấn đề U01–U05; tách khỏi 23 bug GUI |
-| Video demo skill | MP4 do Codex ghi được giữ tham khảo; chờ video sinh viên tự quay và URL YouTube |
+| Video demo skill | Video sinh viên cung cấp: https://youtu.be/VGVm_V7L_ks ; 10:38; đã kiểm tra phát không đăng nhập |
 
 Kết quả GUI do Codex thực thi tự động. Kết quả usability lấy từ hồ sơ sinh viên cung cấp và xác nhận trong chat ngày 15/11/2026; phép tính được đối chiếu độc lập với CSV/JSON. Không suy ra SUS từ kiểm thử tự động. Không có video phiên; §14 yêu cầu kèm bản quay khi có, nên giữ rõ giới hạn này.

@@ -2,7 +2,7 @@
 
 Nguyễn Bảo An - 23120207 - bài cá nhân.
 
-**BẢN CHỜ SINH VIÊN CHỐT.** Đã chạy đủ 3 trình duyệt, tích hợp 1 pilot + 7 phiên được sinh viên xác nhận, tính SUS, khôi phục audit và public repo. Sinh viên chọn tự chấm 100/100. Còn human review/tự bổ sung và video demo tự quay kèm URL YouTube. Không có video phiên usability; giới hạn được ghi rõ theo §14.
+**HỒ SƠ CHUẨN BỊ NỘP.** Đã chạy đủ 3 trình duyệt, tích hợp 1 pilot + 7 phiên được sinh viên xác nhận, tính SUS, khôi phục audit và public repo. Sinh viên chọn tự chấm 100/100. Video sinh viên: https://youtu.be/VGVm_V7L_ks (đã thử phát không đăng nhập). Chưa có bằng chứng sinh viên tự rà soát/tự bổ sung; phần được giao AI đã làm và khai báo. Không có video phiên usability; giới hạn được ghi rõ theo §14.
 
 Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc cần bạn làm, biểu mẫu tương ứng và dữ liệu gửi lại để Codex chốt hồ sơ.
 
@@ -18,8 +18,9 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 - `usability/`: protocol, SUS, dữ liệu 7 phiên, phân tích và nguồn dữ liệu; bản public dùng mã người tham gia.
 - `task2_usability/`: bộ Task 2 đầy đủ có danh sách liên hệ đã che, PDF và Excel; chỉ có trong ZIP nộp, không đưa lên repo public.
 - `reports/AI_AUDIT_REPORT.md`, `AI_CRITIQUE.md` và PDF.
-- `skills/gui-usability-evaluator/`: skill, kịch bản và MP4 tham khảo do Codex ghi; chờ video sinh viên tự quay và URL YouTube.
+- `skills/gui-usability-evaluator/`: skill gốc và bản dùng thực tế trong demo, kèm tài nguyên; link video sinh viên trong DEMO.md.
 - `reports/AI_AUDIT_RECOVERED.md`: prompt/output cũ đã khôi phục, kèm các kế hoạch nguyên gốc.
+- `reports/AI_DEMO_TRANSCRIPT.md`, `DEMO_FINDINGS.md`, `evidence/demo/` và `bug-reports/demo/`: lượt demo, ba phát hiện ngoài G2 và Issues; không cộng vào kết quả 153 lượt.
 - `git_commit_log.txt`: commit thật theo bước đã hoàn tất.
 
 ## Điểm tự đánh giá
@@ -30,13 +31,13 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 |---|---:|---:|
 | Task 1 - GUI Checklist | 30 | 30 |
 | Task 2 - Usability Evaluation | 40 | 40 |
-| Task 3 - Cross-Browser | 20 | 20 |
+| Task 3 - Đa trình duyệt | 20 | 20 |
 | Agent Skills và demo | 10 | 10 |
 | Tổng | 100 | 100 |
 
 # Test summary G2
 
-Cập nhật: 2026-11-16T00:41:27+07:00.
+Cập nhật: 2026-11-16T01:28:07+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|
@@ -58,12 +59,12 @@ Cập nhật: 2026-11-16T00:41:27+07:00.
 | Hoàn thành tác vụ | 6/7 (85,7%): 4 độc lập, 2 có trợ giúp, 1 timeout |
 | Thời gian tác vụ | 324 giây gồm timeout; 278 giây trong 6 ca hoàn thành |
 | Phát hiện usability | 5 vấn đề U01–U05; tách khỏi 23 bug GUI |
-| Video demo skill | MP4 do Codex ghi được giữ tham khảo; chờ video sinh viên tự quay và URL YouTube |
+| Video demo skill | Video sinh viên cung cấp: https://youtu.be/VGVm_V7L_ks ; 10:38; đã kiểm tra phát không đăng nhập |
 
 Kết quả GUI do Codex thực thi tự động. Kết quả usability lấy từ hồ sơ sinh viên cung cấp và xác nhận trong chat ngày 15/11/2026; phép tính được đối chiếu độc lập với CSV/JSON. Không suy ra SUS từ kiểm thử tự động. Không có video phiên; §14 yêu cầu kèm bản quay khi có, nên giữ rõ giới hạn này.
 
 ## Đóng gói và nộp
 
-Chạy `python3 scripts/validate_submission.py` để kiểm tra phần còn thiếu. Trình đóng gói chỉ tạo bản `23120207_HW03_AI_GUIUsability_DRAFT.zip` khi hồ sơ chưa đủ. Bản cuối cần tên `<MSSV>_HW03_AI_GUIUsability_<000-100>.zip`, có điểm do sinh viên xác nhận. Hạn Moodle: 13:00 ngày 16/11/2026 (Việt Nam), cutoff cùng giờ, tối đa 20 MB mỗi tệp.
+Chạy `python3 scripts/validate_submission.py` để kiểm tra phần còn thiếu. Dùng `python3 scripts/package_draft.py --submission` tạo `23120207_HW03_AI_GUIUsability_100.zip` theo điểm tự chấm đã chọn. SUBMISSION_STATUS.json vẫn ghi rõ yêu cầu chưa có bằng chứng; tên tệp không chứng nhận đạt mọi tiêu chí hoặc điểm 100. Hạn Moodle: 13:00 ngày 16/11/2026 (Việt Nam), cutoff cùng giờ, tối đa 20 MB mỗi tệp.
 
 Không đưa `usability/private/`, dữ liệu liên hệ gốc, token, node_modules, .git hoặc bản clone SUT vào zip. GitHub hiện public theo xác nhận của sinh viên; ảnh gốc và báo cáo cũng nằm trong zip để không phụ thuộc link. Giữ dữ liệu người tham gia trong thư mục private cho tới khi có bản đã chuẩn bị phù hợp để đưa vào bài nộp.

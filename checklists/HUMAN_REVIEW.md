@@ -20,3 +20,7 @@ Gợi ý để sinh viên tự đánh giá, chưa tính là bổ sung của sinh
 ## Phần phản biện đã được chuẩn bị
 
 Đã có [bản phản biện AI](../reports/AI_CRITIQUE.md), [bản AI rà soát](AI_REVIEW.md) và [ba tiêu chí bổ sung đã kiểm thử](ADDITIONS.md). Sinh viên có thể đọc đối chiếu trực tiếp từng kết luận và bằng chứng; không cần viết lại báo cáo từ đầu. Tác giả đề xuất/thực thi G49–G51 vẫn ghi Codex. Ô quyết định sinh viên phía trên chỉ điền khi có việc xem xét thực tế; không có chữ ký hoặc lời xác nhận tự tạo.
+
+## Chốt theo phản hồi ngày 16/11/2026
+
+Sau khi được hỏi về phần tự rà soát/tự bổ sung, sinh viên trả lời “nếu thiếu thì tự bổ sung”, tiếp tục giao AI thực hiện. Đã có AI_REVIEW.md, ADDITIONS.md và phản biện đầy đủ; G49–G51 vẫn được ghi đúng tác giả AI. Chưa nhận được quyết định/chỉnh sửa hoặc quan sát tự phát hiện cụ thể từ sinh viên, vì vậy các ô trên không được tự điền và human_review_complete vẫn false. Đây là giới hạn tuân thủ §2 và Task 1, không phải lỗi thiếu file.

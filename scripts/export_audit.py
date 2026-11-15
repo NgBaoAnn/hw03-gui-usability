@@ -9,6 +9,7 @@ from zoneinfo import ZoneInfo
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('transcript',type=Path)
+    parser.add_argument('--output',type=Path,default=Path('reports/AI_TRANSCRIPT.md'))
     args=parser.parse_args()
     out=['# Nhật ký hội thoại AI - HW03', '', 'Bản xuất lời nhắn người dùng và câu trả lời hiển thị của Codex. Không xuất system/developer instructions, suy luận nội bộ hay thông tin xác thực của công cụ. Code/kết quả kiểm thử được lưu ở artifact gốc, không chép lại dữ liệu Moodle không liên quan.', '']
     n=0
@@ -23,7 +24,7 @@ def main():
             continue
         when=datetime.fromisoformat(row['timestamp'].replace('Z','+00:00')).astimezone(ZoneInfo('Asia/Ho_Chi_Minh')).isoformat(timespec='seconds')
         n+=1;out += [f'## {n}. {p["role"]} - {when}', '', text, '']
-    Path('reports/AI_TRANSCRIPT.md').write_text('\n'.join(out),encoding='utf-8')
+    args.output.write_text('\n'.join(out),encoding='utf-8')
     print(f'Exported {n} visible messages')
 
 

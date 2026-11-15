@@ -18,8 +18,8 @@ def cell(value):
 
 
 def main():
-    demo=ROOT/'skills/gui-usability-evaluator/video/gui-g2-demo.mp4'
-    assert demo.is_file(),'Record and verify the actual demo before building these reports'
+    demo=json.loads((ROOT/'evidence/demo/video-verification.json').read_text())
+    assert demo['id']=='VGVm_V7L_ks' and demo['availability']=='public'
     runs = {e: json.loads((ROOT / f'evidence/runs/{e}.json').read_text()) for e in ['chrome', 'firefox', 'safari']}
     additions=json.loads((ROOT/'checklists/additions.json').read_text())
     supplemental=json.loads((ROOT/'evidence/accessibility/results.json').read_text())
@@ -38,7 +38,7 @@ def main():
     assert study['n'] == 7 and study['pilot_count'] == 1
     state=json.loads((ROOT/'submission_state.json').read_text())
     assessment=state.get('self_assessment')
-    rubric=[('task1','Task 1 - GUI Checklist',30),('task2','Task 2 - Usability Evaluation',40),('task3','Task 3 - Cross-Browser',20),('skill','Agent Skills và demo',10)]
+    rubric=[('task1','Task 1 - GUI Checklist',30),('task2','Task 2 - Usability Evaluation',40),('task3','Task 3 - Đa trình duyệt',20),('skill','Agent Skills và demo',10)]
     if assessment:
         assert set(assessment)=={key for key,_,_ in rubric}
         assert all(type(assessment[key]) is int and 0<=assessment[key]<=maximum for key,_,maximum in rubric)
@@ -163,14 +163,14 @@ Cập nhật: {now}.
 | Hoàn thành tác vụ | 6/7 (85,7%): 4 độc lập, 2 có trợ giúp, 1 timeout |
 | Thời gian tác vụ | 324 giây gồm timeout; 278 giây trong 6 ca hoàn thành |
 | Phát hiện usability | 5 vấn đề U01–U05; tách khỏi 23 bug GUI |
-| Video demo skill | MP4 do Codex ghi được giữ tham khảo; chờ video sinh viên tự quay và URL YouTube |
+| Video demo skill | Video sinh viên cung cấp: https://youtu.be/VGVm_V7L_ks ; 10:38; đã kiểm tra phát không đăng nhập |
 
 Kết quả GUI do Codex thực thi tự động. Kết quả usability lấy từ hồ sơ sinh viên cung cấp và xác nhận trong chat ngày 15/11/2026; phép tính được đối chiếu độc lập với CSV/JSON. Không suy ra SUS từ kiểm thử tự động. Không có video phiên; §14 yêu cầu kèm bản quay khi có, nên giữ rõ giới hạn này.
 '''
     write('reports/TEST_SUMMARY.md',summary)
     report=f'''# HW03 - GUI & Usability: Báo cáo chính G2
 
-**BẢN NHÁP - CHƯA ĐỦ ĐIỀU KIỆN NỘP CUỐI CÙNG**
+**HỒ SƠ CHUẨN BỊ NỘP - CÓ GIỚI HẠN HUMAN REVIEW NÊU TẠI §6**
 
 Sinh viên: Nguyễn Bảo An. MSSV: 23120207. Email: 23120207@student.hcmus.edu.vn. Bài cá nhân; phạm vi G2 được sinh viên xác nhận trong chat.
 
@@ -216,7 +216,7 @@ Khác biệt giữa các môi trường: {'; '.join(differences)}. G09 Firefox t
 
 ## 5. Agent skill, AI và Git
 
-Skill trong `skills/gui-usability-evaluator/SKILL.md` hỗ trợ chọn phạm vi, thiết kế, thực thi có chứng cứ, chuẩn bị nghiên cứu và tính SUS thật. Đã kiểm tra frontmatter và self-check của script. Video `skills/gui-usability-evaluator/video/gui-g2-demo.mp4` dài 112,4 giây là tài liệu tham khảo do Codex ghi từ Chrome thật, có phụ đề, không có âm thanh và có log timestamp/hash skill. Sinh viên đã chọn tự quay video dùng cho bài nộp; hiện chưa có video hoặc YouTube URL của sinh viên. Không gán video Codex thành bản quay của sinh viên hoặc tính hoàn tất tiêu chí demo.
+Skill trong `skills/gui-usability-evaluator/SKILL.md` hỗ trợ chọn phạm vi, thiết kế, thực thi có chứng cứ, chuẩn bị nghiên cứu và tính SUS thật. Đã kiểm tra frontmatter và self-check của script. Video do sinh viên cung cấp: https://youtu.be/VGVm_V7L_ks (10:38 theo YouTube UI; metadata làm tròn 639 giây). Đã kiểm tra phát khi không đăng nhập. Bản skill thực sự dùng được giữ nguyên tại `skills/gui-usability-evaluator/demo-version/`, kèm checklist và SUS scorer; bản gốc của homework vẫn ở thư mục cha. Demo mở rộng từ tìm AirPods Pro 2 đến checkout và hậu kiểm đơn #9, không cộng lượt demo vào 153 kết quả cross-browser. Bằng chứng gốc tại `evidence/demo/`, transcript riêng tại `reports/AI_DEMO_TRANSCRIPT.md`; mô tả và giới hạn trong `skills/gui-usability-evaluator/DEMO.md`. File MP4 tham khảo cũ do Codex ghi đã được sinh viên loại khỏi hồ sơ; bài nộp dùng link video của sinh viên.
 
 `reports/AI_AUDIT_REPORT.md` và bản transcript ghi lại AI dùng trong chat hiện tại. Đã khôi phục 14 lời nhắn lập kế hoạch ngày 03/11 từ session OpenCode đúng thư mục HW03 vào `reports/AI_AUDIT_RECOVERED.md`, kèm ba đầu ra nguyên gốc ở `reports/legacy/`. Timestamp/model được lấy đúng metadata cũ; không tự tạo prompt. Sinh viên cần bổ sung nếu còn tương tác khác ngoài các nguồn này. `AI_CRITIQUE.md` vẫn là bản AI soạn, chờ sinh viên sửa theo trải nghiệm thật và xác nhận.
 
@@ -225,8 +225,8 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Hồ sơ tám 
 ## 6. Việc còn thiếu trước khi nộp
 
 - Sinh viên rà soát kết quả và tự bổ sung checklist; duyệt critique/audit, bổ sung nếu còn chat khác ngoài bản đã khôi phục.
-- Sinh viên tự quay demo dùng skill từ đầu đến cuối và cung cấp YouTube URL.
-- Sinh viên đã chọn tự chấm 30/40/20/10 = 100. Điểm tự chấm không xác nhận checklist đã được sinh viên rà soát hoặc demo đã hoàn tất. Sau khi đủ các mục còn thiếu, xác nhận bài cuối và Moodle “Em làm một mình”.
+- Demo đã được sinh viên cung cấp và kiểm tra phát công khai: https://youtu.be/VGVm_V7L_ks .
+- Sinh viên đã chọn tự chấm 30/40/20/10 = 100. Điểm tự chấm không xác nhận phần human review đã hoàn tất. Sau khi đủ các mục còn thiếu, xác nhận bài cuối và Moodle “Em làm một mình”.
 
 {assessment_md}
 
@@ -237,12 +237,13 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Hồ sơ tám 
 '''+summary.replace('# Test summary G2','## 8. Test summary')
     report+='\n\n## 9. Phản biện và bổ sung tiếp cận\n\n'+(ROOT/'checklists/ADDITIONS.md').read_text().replace('# Bổ sung checklist sau phản biện AI','### Bổ sung đã thực thi')+'\n\n'+(ROOT/'reports/AI_CRITIQUE.md').read_text().replace('# AI Critique','### Phản biện AI (bản AI soạn)')
     report+='\n\n## 10. Đóng góp cá nhân\n\n'+(ROOT/'reports/PERSONAL_CONTRIBUTION.md').read_text().replace('# Đóng góp cá nhân của Nguyễn Bảo An','### Nguyễn Bảo An – 23120207')
+    report+='\n\n## 11. Kiểm thử minh họa và phát hiện ngoài G2\n\n'+(ROOT/'reports/DEMO_FINDINGS.md').read_text().replace('# Phát hiện bổ sung từ lượt demo\n','')
     write('reports/MAIN_REPORT.md',report)
     write('README.md','''# HW03 - GUI & Usability (G2)
 
 Nguyễn Bảo An - 23120207 - bài cá nhân.
 
-**BẢN CHỜ SINH VIÊN CHỐT.** Đã chạy đủ 3 trình duyệt, tích hợp 1 pilot + 7 phiên được sinh viên xác nhận, tính SUS, khôi phục audit và public repo. Sinh viên chọn tự chấm 100/100. Còn human review/tự bổ sung và video demo tự quay kèm URL YouTube. Không có video phiên usability; giới hạn được ghi rõ theo §14.
+**HỒ SƠ CHUẨN BỊ NỘP.** Đã chạy đủ 3 trình duyệt, tích hợp 1 pilot + 7 phiên được sinh viên xác nhận, tính SUS, khôi phục audit và public repo. Sinh viên chọn tự chấm 100/100. Video sinh viên: https://youtu.be/VGVm_V7L_ks (đã thử phát không đăng nhập). Chưa có bằng chứng sinh viên tự rà soát/tự bổ sung; phần được giao AI đã làm và khai báo. Không có video phiên usability; giới hạn được ghi rõ theo §14.
 
 Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc cần bạn làm, biểu mẫu tương ứng và dữ liệu gửi lại để Codex chốt hồ sơ.
 
@@ -258,8 +259,9 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 - `usability/`: protocol, SUS, dữ liệu 7 phiên, phân tích và nguồn dữ liệu; bản public dùng mã người tham gia.
 - `task2_usability/`: bộ Task 2 đầy đủ có danh sách liên hệ đã che, PDF và Excel; chỉ có trong ZIP nộp, không đưa lên repo public.
 - `reports/AI_AUDIT_REPORT.md`, `AI_CRITIQUE.md` và PDF.
-- `skills/gui-usability-evaluator/`: skill, kịch bản và MP4 tham khảo do Codex ghi; chờ video sinh viên tự quay và URL YouTube.
+- `skills/gui-usability-evaluator/`: skill gốc và bản dùng thực tế trong demo, kèm tài nguyên; link video sinh viên trong DEMO.md.
 - `reports/AI_AUDIT_RECOVERED.md`: prompt/output cũ đã khôi phục, kèm các kế hoạch nguyên gốc.
+- `reports/AI_DEMO_TRANSCRIPT.md`, `DEMO_FINDINGS.md`, `evidence/demo/` và `bug-reports/demo/`: lượt demo, ba phát hiện ngoài G2 và Issues; không cộng vào kết quả 153 lượt.
 - `git_commit_log.txt`: commit thật theo bước đã hoàn tất.
 
 ## Điểm tự đánh giá
@@ -267,7 +269,7 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 '''+assessment_md+'\n\n'+summary+'''
 ## Đóng gói và nộp
 
-Chạy `python3 scripts/validate_submission.py` để kiểm tra phần còn thiếu. Trình đóng gói chỉ tạo bản `23120207_HW03_AI_GUIUsability_DRAFT.zip` khi hồ sơ chưa đủ. Bản cuối cần tên `<MSSV>_HW03_AI_GUIUsability_<000-100>.zip`, có điểm do sinh viên xác nhận. Hạn Moodle: 13:00 ngày 16/11/2026 (Việt Nam), cutoff cùng giờ, tối đa 20 MB mỗi tệp.
+Chạy `python3 scripts/validate_submission.py` để kiểm tra phần còn thiếu. Dùng `python3 scripts/package_draft.py --submission` tạo `23120207_HW03_AI_GUIUsability_100.zip` theo điểm tự chấm đã chọn. SUBMISSION_STATUS.json vẫn ghi rõ yêu cầu chưa có bằng chứng; tên tệp không chứng nhận đạt mọi tiêu chí hoặc điểm 100. Hạn Moodle: 13:00 ngày 16/11/2026 (Việt Nam), cutoff cùng giờ, tối đa 20 MB mỗi tệp.
 
 Không đưa `usability/private/`, dữ liệu liên hệ gốc, token, node_modules, .git hoặc bản clone SUT vào zip. GitHub hiện public theo xác nhận của sinh viên; ảnh gốc và báo cáo cũng nằm trong zip để không phụ thuộc link. Giữ dữ liệu người tham gia trong thư mục private cho tới khi có bản đã chuẩn bị phù hợp để đưa vào bài nộp.
 ''')

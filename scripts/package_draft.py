@@ -1,4 +1,5 @@
-"""Package a clearly labelled review draft, including evidence and source requirements."""
+"""Package the submission files while preserving any unmet requirements."""
+import argparse
 import hashlib
 import json
 import subprocess
@@ -10,10 +11,13 @@ ROOT=Path(__file__).resolve().parents[1]
 
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--submission',action='store_true',help='Use required submission filename; keep all unmet requirements disclosed')
+    args=parser.parse_args()
     subprocess.run(['git','log','--graph','--all','--stat'],cwd=ROOT,check=True,stdout=(ROOT/'git_commit_log.txt').open('w'))
     check_files();missing=missing_requirements()
     out=ROOT/'output';out.mkdir(exist_ok=True)
-    zip_path=out/'23120207_HW03_AI_GUIUsability_DRAFT.zip'
+    zip_path=out/('23120207_HW03_AI_GUIUsability_100.zip' if args.submission else '23120207_HW03_AI_GUIUsability_DRAFT.zip')
     entries=[]
     for folder in ['reports','checklists','bug-reports','cross-platform','evidence','usability','skills','scripts','task2_usability']:
         for p in sorted((ROOT/folder).rglob('*')):
@@ -27,13 +31,14 @@ def main():
     manifest={name:hashlib.sha256(p.read_bytes()).hexdigest() for p,name in entries}
     with zipfile.ZipFile(zip_path,'w',zipfile.ZIP_DEFLATED) as archive:
         for p,name in entries:archive.write(p,name)
-        archive.writestr('DRAFT_STATUS.json',json.dumps({'ready_for_final_submission':False,'missing':missing},ensure_ascii=False,indent=2))
+        archive.writestr('SUBMISSION_STATUS.json' if args.submission else 'DRAFT_STATUS.json',json.dumps({'ready_for_final_submission':not missing,'prepared_for_submission':args.submission,'missing':missing,'self_assessment':100,'official_grade':None},ensure_ascii=False,indent=2))
         archive.writestr('SHA256SUMS.json',json.dumps(manifest,ensure_ascii=False,indent=2))
     with zipfile.ZipFile(zip_path) as archive:
         assert archive.testzip() is None
         assert all(hashlib.sha256(archive.read(name)).hexdigest()==digest for name,digest in manifest.items())
-        assert 'DRAFT_STATUS.json' in archive.namelist()
-    assert zip_path.stat().st_size<=20*1024*1024,'Draft exceeds Moodle per-file limit; split explicitly'
+        status=json.loads(archive.read('SUBMISSION_STATUS.json' if args.submission else 'DRAFT_STATUS.json'))
+        assert status['missing']==missing and status['ready_for_final_submission']==(not missing)
+    assert zip_path.stat().st_size<=20*1024*1024,'Archive exceeds Moodle per-file limit; split explicitly'
     print(f'{zip_path}\n{len(entries)} files; {zip_path.stat().st_size:,} bytes; {len(missing)} outstanding prerequisites')
 
 

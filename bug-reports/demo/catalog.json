@@ -1,0 +1,30 @@
+[
+  {
+    "id": "D01",
+    "title": "Tổng checkout cho chỉnh sửa trực tiếp",
+    "severity": "Major",
+    "file": "bug-reports/demo/D01.md",
+    "screenshots": [
+      "evidence/demo/run-2026-11-16-eshop-flow/04-checkout.png"
+    ]
+  },
+  {
+    "id": "D02",
+    "title": "Giỏ còn hàng sau thanh toán thành công",
+    "severity": "Major",
+    "file": "bug-reports/demo/D02.md",
+    "screenshots": [
+      "evidence/demo/run-2026-11-16-eshop-flow/05-success.png",
+      "evidence/demo/run-2026-11-16-eshop-flow/06-cart-retained.png"
+    ]
+  },
+  {
+    "id": "D03",
+    "title": "Form đăng nhập trộn nhãn tiếng Anh",
+    "severity": "Minor",
+    "file": "bug-reports/demo/D03.md",
+    "screenshots": [
+      "evidence/usability/U02.png"
+    ]
+  }
+]

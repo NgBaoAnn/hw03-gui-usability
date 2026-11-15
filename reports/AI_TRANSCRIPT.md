@@ -432,3 +432,179 @@ hãy ghi nhận đóng góp cá nhân cho tôi đầy đủ
 
 Mình sẽ lập mục đóng góp cá nhân dựa trên những việc bạn đã thực hiện hoặc xác nhận trong cuộc trò chuyện, đồng thời ghi rõ phần AI hỗ trợ. Những việc chưa có xác nhận thực tế, như tự rà soát checklist hoặc hoàn thành video, sẽ giữ đúng trạng thái.
 
+
+## 65. assistant - 2026-11-16T00:42:12+07:00
+
+Bản đóng góp cá nhân đã ghi nhận việc bạn chọn phạm vi, điều phối AI, hỗ trợ xác thực Safari, cung cấp và xác nhận dữ liệu Task 2, quyết định công khai repo, yêu cầu bổ sung kiểm thử và tự chấm điểm. Việc tổ chức các phiên được ghi theo xác nhận của bạn; phần AI đề xuất, đo kiểm và soạn tài liệu được khai báo riêng. Mình đang kiểm tra cách trình bày trong PDF và cập nhật ZIP.
+
+
+## 66. assistant - 2026-11-16T00:43:25+07:00
+
+Đã ghi đầy đủ [đóng góp cá nhân của bạn](/Users/nguyenbaoan/codeLab/kcpm/hw3/reports/PERSONAL_CONTRIBUTION.md), kèm nguồn xác nhận và phần AI hỗ trợ. Nội dung đã được đưa vào báo cáo chính, AI Audit và GitHub.
+
+[Tải ZIP cập nhật — 15,1 MB](/Users/nguyenbaoan/codeLab/kcpm/hw3/output/23120207_HW03_AI_GUIUsability_DRAFT.zip)
+
+Chưa ghi việc tự rà soát hoặc video là đã hoàn thành khi chưa có xác nhận thực tế. Chưa nộp Moodle.
+
+## 67. user - 2026-11-16T00:46:30+07:00
+
+chỉ tôi cách quay video demo đi
+
+
+## 68. assistant - 2026-11-16T00:46:34+07:00
+
+Mình sẽ kiểm tra kịch bản demo và cách chạy bộ kiểm thử trong repo, rồi hướng dẫn bạn quay từng bước.
+
+
+## 69. assistant - 2026-11-16T00:49:13+07:00
+
+Bạn quay **khoảng 4–6 phút**, theo trình tự dưới đây. Đây là thời lượng gợi ý.
+
+1. **Chuẩn bị cửa sổ**
+
+   SUT hiện đang chạy tại [localhost:5173](http://localhost:5173). Mở sẵn:
+
+   - [File skill](/Users/nguyenbaoan/codeLab/kcpm/hw3/skills/gui-usability-evaluator/SKILL.md).
+   - [Báo cáo lỗi B18](/Users/nguyenbaoan/codeLab/kcpm/hw3/bug-reports/B18.md).
+   - [GitHub Issue #18](https://github.com/NgBaoAnn/hw03-gui-usability/issues/18).
+
+2. **Bắt đầu quay trên Mac**
+
+   Nhấn **Shift + Command + 5** → chọn **Record Entire Screen** → trong **Options**, chọn microphone để thu lời giải thích → bấm **Record**. [Hướng dẫn Apple](https://support.apple.com/en-us/102618).
+
+3. **Giới thiệu khoảng 20–30 giây**
+
+   Bạn có thể nói:
+
+   > Em là Nguyễn Bảo An, MSSV 23120207. Video này trình bày cách em sử dụng skill GUI Usability Evaluator để kiểm thử luồng tìm sản phẩm, xem chi tiết và thêm vào giỏ trên EShop. Skill hỗ trợ đối chiếu tiêu chí, quan sát kết quả và liên kết bằng chứng với báo cáo lỗi.
+
+   Sau đó mở file skill, chỉ nhanh các phần: đọc đặc tả, thực thi kiểm tra, lưu bằng chứng và báo cáo bug.
+
+4. **Cho thấy agent thực hiện luồng thật**
+
+   Khi đang quay, gửi vào chat này prompt sau:
+
+   ```text
+   Tôi đang quay video demo HW03.
+
+   Đọc skill tại:
+   /Users/nguyenbaoan/codeLab/kcpm/hw3/skills/gui-usability-evaluator/SKILL.md
+
+   Dùng công cụ giao diện để thao tác trực tiếp trên Chrome
+   hiển thị, mở cửa sổ ẩn danh mới tại http://localhost:5173.
+
+   Thực hiện chậm, giải thích ngắn từng chặng:
+   1. Tìm “Tai nghe”.
+   2. Mở chi tiết AirPods Pro 2, kiểm tra số lượng mặc định.
+   3. Bấm Thêm vào giỏ đúng một lần, rồi mở giỏ để kiểm chứng.
+   4. Ghi nhận kết quả thực tế; nếu tái hiện B18, thử lại
+      theo bước tái hiện đã lưu và kiểm chứng giỏ.
+   5. Mở báo cáo B18 và GitHub Issue #18 để đối chiếu.
+
+   Giữ các thao tác nhìn thấy trên màn hình.
+   Không ghi đè bằng chứng hoặc kết quả kiểm thử đã nộp.
+   ```
+
+   Trong lúc agent chạy, bạn giải thích mục tiêu và kết quả đang thấy. Nếu lỗi B18 tái hiện, nói rõ: **một lần bấm chưa thêm sản phẩm; cần kiểm tra giỏ để xác nhận**.
+
+5. **Trình bày kết quả rồi kết thúc**
+
+   Mở B18 và Issue #18, chỉ ra **bước tái hiện → kỳ vọng → thực tế → ảnh bằng chứng**.
+
+   Có thể kết thúc bằng:
+
+   > Bộ hiện tại có 51 tiêu chí. Sau phản biện, AI đã bổ sung các kiểm tra ngôn ngữ trang và tương phản. Các kết luận được phân biệt giữa yêu cầu SUT và heuristic tiếp cận.
+
+   Nhấn **Command + Control + Esc** để dừng quay, rồi xem lại chữ và âm thanh. [Cách dừng quay của Apple](https://support.apple.com/en-us/102618).
+
+6. **Đăng video**
+
+   Vào [YouTube Studio](https://studio.youtube.com/) → **Create → Upload videos** → chọn video → đặt tên, chẳng hạn **“HW03 – 23120207 – Demo GUI Testing Skill”** → chọn **Unlisted / Không công khai**. [Hướng dẫn tải lên](https://support.google.com/youtube/answer/57407?hl=en).
+
+   Thử mở link trong cửa sổ ẩn danh; người có link có thể xem video Unlisted. [Quyền xem Unlisted](https://support.google.com/youtube/answer/157177?hl=en).
+
+Quay xong, gửi mình URL để cập nhật hồ sơ. Hiện chưa có video demo của bạn trong bài.
+
+## 70. user - 2026-11-16T00:53:15+07:00
+
+đưa tôi prompt ngắn thôi
+
+
+## 71. assistant - 2026-11-16T00:53:21+07:00
+
+```text
+Đọc skills/gui-usability-evaluator/SKILL.md và demo trực tiếp trên Chrome tại http://localhost:5173: tìm “Tai nghe” → xem chi tiết → thêm giỏ một lần → kiểm tra giỏ → đối chiếu B18 và GitHub Issue #18. Thao tác chậm, giữ trình duyệt hiển thị và giải thích ngắn từng bước để tôi quay video. Giữ nguyên bằng chứng đã lưu.
+```
+
+## 72. user - 2026-11-16T00:54:51+07:00
+
+nói chung hành động chứ không nói rõ ràng vậy
+
+
+## 73. assistant - 2026-11-16T00:55:02+07:00
+
+```text
+Dùng skill gui-usability-evaluator để kiểm thử một luồng hoàn chỉnh trên EShop tại http://localhost:5173. Thao tác trực tiếp trên trình duyệt hiển thị, giải thích ngắn quá trình kiểm thử và trình bày kết quả cùng bằng chứng để tôi quay demo.
+```
+
+## 74. user - 2026-11-16T00:56:03+07:00
+
+bỏ skill vào sut để tôi thực hiện quay video đi
+
+
+## 75. assistant - 2026-11-16T00:56:08+07:00
+
+Mình sẽ chép skill vào thư mục SUT và kiểm tra các đường dẫn cần dùng khi bạn quay demo.
+
+
+## 76. assistant - 2026-11-16T00:57:12+07:00
+
+Mình dùng `skill-creator` để đặt bản skill trong SUT và chỉnh các tham chiếu đang trỏ về repo bài nộp, để bạn gọi skill khi mở SUT làm workspace.
+
+
+## 77. assistant - 2026-11-16T00:59:03+07:00
+
+Đã đặt [skill trong SUT](/Users/nguyenbaoan/codeLab/kcpm/hw3/.work/sut/.agents/skills/gui-usability-evaluator/SKILL.md), kèm 51 tiêu chí và script tính SUS.
+
+Mở [thư mục SUT](/Users/nguyenbaoan/codeLab/kcpm/hw3/.work/sut) làm workspace để quay video và gọi skill `gui-usability-evaluator`.
+
+Đã kiểm tra skill và đường dẫn; chưa chạy demo.
+
+## 78. user - 2026-11-16T01:14:30+07:00
+
+[https://youtu.be/VGVm_V7L_ks](https://youtu.be/VGVm_V7L_ks) 
+
+đây là link video hãy hoàn thành bài nộp và nộp bài cho tôi, đảm bảo đầy đủ yêu cầu và đạt 100 điểm
+
+
+## 79. assistant - 2026-11-16T01:14:52+07:00
+
+Mình sẽ kiểm tra link video, cập nhật hồ sơ và đối chiếu các yêu cầu còn thiếu trước khi đóng ZIP và nộp Moodle. Điểm tự chấm hiện là 100/100 theo lựa chọn của bạn; điểm chính thức do giảng viên quyết định nên mình không thể bảo đảm mức điểm đó.
+
+
+## 80. assistant - 2026-11-16T01:17:40+07:00
+
+Link video truy cập công khai được, đúng tiêu đề HW03 và dài khoảng **10 phút 39 giây**. Mình đang kiểm tra nội dung demo và thay các chỗ còn ghi “chưa có video” trong hồ sơ. Phần chưa có bằng chứng hiện là việc sinh viên tự rà soát/tự bổ sung checklist; mình đã gửi câu hỏi để ghi nhận đúng thực tế trước khi chốt nộp.
+
+
+## 81. user - 2026-11-16T01:20:53+07:00
+
+<send_user_message_question_reply>
+[{"questionItemId":"[\"request_user_input_async\",\"call_bbfb1a446c3949dca54f858de6975f60\",0]","question":"Trước khi chốt nộp, bạn đã tự đọc/đối chiếu checklist và bản phản biện chưa, và có mục nào do chính bạn phát hiện cần bổ sung không? Nếu có, gửi ID hoặc nội dung cùng nhận xét thực tế. Hồ sơ hiện ghi G49–G51 do AI đề xuất; mình cần câu trả lời để ghi đúng phần sinh viên tự phản biện mà đề yêu cầu.","answer":"nếu thiếu thì tự bổ sung"}]
+</send_user_message_question_reply>
+
+
+## 82. assistant - 2026-11-16T01:20:59+07:00
+
+Mình sẽ bổ sung các phần còn thiếu và cập nhật video vào hồ sơ. Phần rà soát do mình thực hiện sẽ được ghi đúng là có AI hỗ trợ; mình không thể ghi thành quan sát do bạn tự phát hiện. Mình sẽ kiểm tra gói nộp và trạng thái Moodle trước khi hoàn tất.
+
+
+## 83. assistant - 2026-11-16T01:22:12+07:00
+
+Video đã phát được khi không đăng nhập. Lượt demo kiểm tra luồng mua hàng đến khi tạo đơn và phát hiện thêm hai vấn đề ở checkout: tổng tiền có thể sửa và giỏ còn hàng sau khi thanh toán. Mình đang đưa bằng chứng, báo cáo lỗi và nhật ký AI của lượt demo vào gói nộp để hồ sơ khớp với video.
+
+
+## 84. assistant - 2026-11-16T01:26:51+07:00
+
+Mình đã bổ sung ba báo cáo lỗi từ demo lên GitHub, kèm ảnh và nguồn yêu cầu. Bộ kết quả G2 vẫn giữ 51 mục, 153 lượt kiểm tra; lượt demo được ghi riêng để tránh đếm trùng. Mình đang xuất lại PDF/Excel và kiểm tra ZIP. Giới hạn còn lại là chưa có bằng chứng bạn tự rà soát và tự bổ sung checklist theo đề.
+

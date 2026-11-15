@@ -34,7 +34,7 @@ summary.getRange('B15').formulas=[['=SUS!L14']];summary.getRange('B15').setNumbe
 summary.getRange('A17:D18').merge();
 const state=JSON.parse(await fs.readFile('submission_state.json','utf8'));
 const selfScore=state.self_assessment?Object.values(state.self_assessment).reduce((a,b)=>a+b,0):'chưa chấm';
-summary.getRange('A17').values=[[`Sinh viên tự chấm ${selfScore}/100. Còn human review/tự bổ sung và video demo. AI đã rà soát bổ sung; xem AI_REVIEW.md. Task 2 không có video phiên.`]];
+summary.getRange('A17').values=[[`Sinh viên tự chấm ${selfScore}/100. Video: https://youtu.be/VGVm_V7L_ks . Còn human review/tự bổ sung. AI đã rà soát bổ sung; xem AI_REVIEW.md. Task 2 không có video phiên.`]];
 summary.getRange('A17:D18').format.wrapText=true;
 summary.getRange('A18').format.font={color:'#9A3412',size:11};
 summary.getRange('A20').values=[['Nguồn: đề HW03 §6, §14; evidence/runs/ (48 mục) và evidence/accessibility/results.json (3 mục bổ sung).']];

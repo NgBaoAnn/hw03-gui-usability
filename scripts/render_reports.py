@@ -62,7 +62,7 @@ def blocks(markdown, content_width=499):
 
 def page_footer(canvas,doc):
     canvas.saveState();canvas.setFont('ReportArial',8);canvas.setFillColor(colors.HexColor('#64748B'))
-    canvas.drawString(48,28,'23120207 - HW03 G2 - Bản nháp, chưa đủ điều kiện nộp')
+    canvas.drawString(48,28,'23120207 - HW03 G2 - Hồ sơ nộp; xem giới hạn trong báo cáo')
     canvas.drawRightString(doc.pagesize[0]-48,28,f'{doc.page}');canvas.restoreState()
 
 
@@ -73,6 +73,7 @@ def main():
         if name=='AI_AUDIT_REPORT':
             source+='\n\n'+(ROOT/'reports/AI_TRANSCRIPT.md').read_text()
             source+='\n\n'+(ROOT/'reports/AI_AUDIT_RECOVERED.md').read_text()
+            source+='\n\n'+(ROOT/'reports/AI_DEMO_TRANSCRIPT.md').read_text()
         output=ROOT/f'{folder}/{name}.pdf'
         pagesize=landscape(A4) if name=='Task2_Usability_Report' else A4
         doc=SimpleDocTemplate(str(output),pagesize=pagesize,leftMargin=48,rightMargin=48,topMargin=43,bottomMargin=48,title=f'HW03 - {name}',author='Nguyễn Bảo An',allowSplitting=1)

@@ -50,8 +50,14 @@ def check_files():
     for bug in usability:
         assert (ROOT/bug['file']).is_file() and all((ROOT/p).is_file() for p in bug['screenshots'])
     assert len(json.loads((ROOT/'bug-reports/usability/issues.json').read_text()))==5
-    for p in ['reports/MAIN_REPORT.pdf','reports/AI_AUDIT_REPORT.pdf','reports/AI_CRITIQUE.pdf','reports/AI_AUDIT_RECOVERED.md','checklists/gui_checklist_g2.xlsx','git_commit_log.txt','HUONG_DAN_HOAN_TAT.md','skills/gui-usability-evaluator/video/gui-g2-demo.mp4','skills/gui-usability-evaluator/video/recording-log.json']:
+    for p in ['reports/MAIN_REPORT.pdf','reports/AI_AUDIT_REPORT.pdf','reports/AI_CRITIQUE.pdf','reports/AI_AUDIT_RECOVERED.md','checklists/gui_checklist_g2.xlsx','git_commit_log.txt','HUONG_DAN_HOAN_TAT.md','evidence/demo/video-verification.json','skills/gui-usability-evaluator/demo-version/SKILL.md','skills/gui-usability-evaluator/demo-version/references/gui-checklist-g2.json','skills/gui-usability-evaluator/demo-version/scripts/calculate_sus.py','reports/AI_DEMO_TRANSCRIPT.md','reports/DEMO_FINDINGS.md']:
         assert (ROOT/p).is_file(),f'Missing deliverable {p}'
+    demo_bugs=json.loads((ROOT/'bug-reports/demo/catalog.json').read_text())
+    assert len(demo_bugs)==3
+    demo_issues=json.loads((ROOT/'bug-reports/demo/issues.json').read_text())
+    assert set(demo_issues)=={b['id'] for b in demo_bugs}
+    for b in demo_bugs:
+        assert (ROOT/b['file']).is_file() and all((ROOT/p).is_file() for p in b['screenshots'])
     self_check()
     words=len((ROOT/'reports/AI_CRITIQUE.md').read_text().split('\n\n',2)[2].split())
     assert 200<=words<=300,words

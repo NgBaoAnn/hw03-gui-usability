@@ -17,18 +17,18 @@ Nguyễn Bảo An lựa chọn và xác nhận phạm vi bài, cung cấp thông
 | Yêu cầu cải thiện phản biện | Chủ động yêu cầu AI viết phần rà soát, phản biện và bổ sung checklist trước khi quay demo. | Lời nhắn yêu cầu và các file AI_REVIEW.md, ADDITIONS.md, AI_CRITIQUE.md. G49–G51 do AI đề xuất/thực thi; đây là đóng góp điều phối của sinh viên, chưa phải xác nhận sinh viên tự phát hiện ba tiêu chí đó. |
 | Quyết định công bố | Cho phép công khai repo bài làm để người chấm xem Issues và ảnh. | Lời nhắn “Cho phép công khai repo bài làm”. AI thực hiện công bố và giữ danh sách tên/liên hệ người tham gia ngoài repo public; không gán thao tác che dữ liệu cho sinh viên. |
 | Tự đánh giá | Chọn tự chấm toàn bộ điểm: Task 1 = 30, Task 2 = 40, Task 3 = 20, skill/demo = 10; tổng 100/100. | Lời nhắn “cho full điểm”. AI điền bảng theo lựa chọn này. Đây là điểm tự đánh giá, không phải điểm giảng viên hoặc chứng nhận bài đã hoàn tất. |
-| Video demo | Quyết định tự quay video demo và nhắc lại lựa chọn này khi giao AI hoàn thiện phần còn lại. | Lời nhắn “video tôi tự quay” và “tôi tự làm video demo”. Đây là phần sinh viên nhận thực hiện; hiện chưa có video/URL được cung cấp để ghi là đã hoàn thành. |
+| Video demo | Quyết định tự quay video demo và nhắc lại lựa chọn này khi giao AI hoàn thiện phần còn lại. | Lời nhắn “video tôi tự quay” và “tôi tự làm video demo”. Sinh viên đã cung cấp https://youtu.be/VGVm_V7L_ks ngày 16/11/2026; đã thử phát không đăng nhập. Prompt và kết quả đúng chat demo trong AI_DEMO_TRANSCRIPT.md, skill và bằng chứng thực tế đã kèm hồ sơ. |
 
 ## Sản phẩm do AI hỗ trợ thực hiện
 
-AI thiết kế 48 tiêu chí đầu và bổ sung G49–G51, thực thi kiểm tra trên Chrome/Firefox/Safari, chụp bằng chứng, soạn bug và tạo Issues, đối chiếu SUS, chuẩn hóa hồ sơ, xây skill, soạn phản biện, cập nhật báo cáo/PDF/Excel, commit và đóng ZIP. Kết quả hiện có: 51 tiêu chí, 153 kết quả kiểm tra, 25 nhóm bug GUI và năm finding usability. Bản MP4 tham khảo có sẵn do AI ghi; không tính là video sinh viên tự quay.
+AI thiết kế 48 tiêu chí đầu và bổ sung G49–G51, thực thi kiểm tra trên Chrome/Firefox/Safari, chụp bằng chứng, soạn bug và tạo Issues, đối chiếu SUS, chuẩn hóa hồ sơ, xây skill, soạn phản biện, cập nhật báo cáo/PDF/Excel, commit và đóng ZIP. Kết quả hiện có: 51 tiêu chí, 153 kết quả kiểm tra, 25 nhóm bug GUI và năm finding usability. Video do sinh viên cung cấp có luồng demo thực tế được đối chiếu với chat và ảnh; các thao tác browser trong video do agent thực hiện theo prompt sinh viên.
 
 Người nộp là sinh viên; tác giả đề xuất/thực thi từng phần vẫn được khai báo đúng trong audit. Không quy đổi việc giao AI thực hiện thành bằng chứng sinh viên đã tự thao tác các bước kỹ thuật.
 
 ## Trạng thái cần hoàn tất
 
 - Chưa có xác nhận thực tế rằng sinh viên đã tự rà soát kết quả hoặc tự phát hiện/bổ sung một tiêu chí mà AI bỏ sót. Phiếu HUMAN_REVIEW.md giữ nguyên trạng thái chờ; bản ghi đóng góp này không ký thay sinh viên.
-- Chưa có video demo sinh viên tự quay và URL YouTube. Việc đã nhận quay video chưa được ghi là sản phẩm hoàn thành.
-- Chưa nộp Moodle. Không có video phiên usability trong dữ liệu được cung cấp; giới hạn này đã được nêu trong báo cáo.
+- Video đã cung cấp và phát được: https://youtu.be/VGVm_V7L_ks .
+- Trạng thái Moodle sẽ được kiểm tra riêng sau khi người dùng duyệt preview nộp. Không có video phiên usability trong dữ liệu được cung cấp; giới hạn này đã được nêu trong báo cáo.
 
 Các nguồn tham chiếu cùng hồ sơ: [hội thoại hiện tại](AI_TRANSCRIPT.md), [hội thoại lập kế hoạch](AI_AUDIT_RECOVERED.md), [nguồn Task 2](../usability/provenance.json), [AI rà soát](../checklists/AI_REVIEW.md), [checklist bổ sung](../checklists/ADDITIONS.md), [phiếu sinh viên](../checklists/HUMAN_REVIEW.md).

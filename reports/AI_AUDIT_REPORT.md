@@ -2,7 +2,7 @@
 
 Sinh viên: Nguyễn Bảo An - 23120207. Trạng thái: bản ghi việc đã thực hiện, chờ sinh viên rà soát và xác nhận.
 
-Sinh viên đã xác nhận chọn tự quay video dùng cho bài nộp và cho phép public repo `NgBaoAnn/hw03-gui-usability`. Video Codex đã ghi chỉ giữ làm tham khảo, không được đăng thay hoặc gán thành video của sinh viên. Repo đã chuyển public và kiểm tra quyền truy cập không đăng nhập; không có dữ liệu người tham gia thực tế trong repo tại thời điểm chuyển.
+Sinh viên đã xác nhận chọn tự quay video dùng cho bài nộp và cho phép public repo `NgBaoAnn/hw03-gui-usability`. Video cũ Codex ghi đã được sinh viên loại khỏi hồ sơ. Ngày 16/11 sinh viên cung cấp https://youtu.be/VGVm_V7L_ks ; đã kiểm tra phát công khai khi không đăng nhập. Repo đã chuyển public và kiểm tra quyền truy cập không đăng nhập; không có dữ liệu người tham gia thực tế trong repo tại thời điểm chuyển.
 
 ## Khai báo
 
@@ -27,8 +27,8 @@ Công cụ AI: OpenAI Codex desktop, agent dựa trên GPT-6 theo thông tin phi
 | Báo cáo bug | bug-reports/BUG_REPORTS.md và B01–B23.md | Gộp 88 Failed trên ba browser thành 23 nhóm; heuristic được ghi rõ; Issue URL trong issues.json |
 | Tích hợp usability | usability/PROTOCOL.md, SUS_QUESTIONNAIRE.md, CSV, sessions/, provenance.json | Hồ sơ 1 pilot + 7 phiên do sinh viên cung cấp và xác nhận; đối chiếu CSV/JSON, không xác minh độc lập danh tính |
 | Tính SUS | scripts/calculate_sus.py; sheet SUS | Đối chiếu 70 câu trả lời; trung bình 58,93/100; pilot tách riêng; self-check 0/50/100 và từ chối thiếu/sai thang |
-| Xây skill | skills/gui-usability-evaluator/SKILL.md | Kiểm tra cấu trúc skill thành công; MP4 Codex chỉ tham khảo, chờ video sinh viên tự quay và URL |
-| Ghi demo tham khảo theo skill | skills/gui-usability-evaluator/video/gui-g2-demo.mp4; video/recording-log.json | 112,4 giây browser thật do Codex ghi; sinh viên chọn tự quay video nộp riêng, chưa có URL |
+| Xây skill | skills/gui-usability-evaluator/SKILL.md | Kiểm tra cấu trúc skill thành công; Bản gốc và demo-version có đủ tài nguyên; video sinh viên đã cung cấp |
+| Demo sinh viên cung cấp | skills/gui-usability-evaluator/DEMO.md; AI_DEMO_TRANSCRIPT.md; evidence/demo/ | YouTube VGVm_V7L_ks phát được; 10:38; bản skill dùng thực tế được giữ nguyên, sáu ảnh gốc và prompt/output đúng chat |
 | Khôi phục audit lập kế hoạch | reports/AI_AUDIT_RECOVERED.md; reports/legacy/ | 14 lời nhắn thật ngày 03/11 của OpenCode gắn đúng thư mục; ba đầu ra kế hoạch nguyên gốc kèm hash |
 | Đóng gói | scripts/validate_submission.py và package_draft.py | Bản nháp có ghi rõ thiếu sót; chưa nộp Moodle |
 
@@ -83,4 +83,13 @@ Bộ gốc 48 mục được giữ riêng; tổng mới 51 mục, 153 kết qu�
 
 ## Ghi nhận đóng góp cá nhân
 
-Theo yêu cầu sinh viên, đã lập reports/PERSONAL_CONTRIBUTION.md và đưa vào báo cáo chính. Mục này đối chiếu các lựa chọn, xác nhận, dữ liệu cung cấp, hỗ trợ xác thực Safari, yêu cầu phản biện/bổ sung, quyết định công bố và tự chấm của Nguyễn Bảo An. Phần tổ chức nghiên cứu ghi theo xác nhận sinh viên; phần kỹ thuật do AI thực hiện được tách rõ. Không thêm tỷ lệ đóng góp tùy ý, chữ ký, mục tự phát hiện hoặc lời xác nhận đã human review. Video demo giữ trạng thái sinh viên nhận thực hiện, chưa được ghi là hoàn tất.
+Theo yêu cầu sinh viên, đã lập reports/PERSONAL_CONTRIBUTION.md và đưa vào báo cáo chính. Mục này đối chiếu các lựa chọn, xác nhận, dữ liệu cung cấp, hỗ trợ xác thực Safari, yêu cầu phản biện/bổ sung, quyết định công bố và tự chấm của Nguyễn Bảo An. Phần tổ chức nghiên cứu ghi theo xác nhận sinh viên; phần kỹ thuật do AI thực hiện được tách rõ. Không thêm tỷ lệ đóng góp tùy ý, chữ ký, mục tự phát hiện hoặc lời xác nhận đã human review. Video demo đã được sinh viên cung cấp ngày 16/11; prompt/output và bằng chứng được bổ sung đúng nguồn.
+
+
+## Chốt video và hồ sơ nộp ngày 16/11/2026
+
+Video sinh viên gửi: https://youtu.be/VGVm_V7L_ks . YouTube công khai và phát được khi không đăng nhập; UI hiển thị 10:38, metadata làm tròn 639 giây. Không có phụ đề tự động. Đã đối chiếu các khung hình mẫu của bản quay cục bộ dài 638,538 giây và chat demo đúng SUT; không đánh giá độc lập toàn bộ thuyết minh âm thanh. Không đưa file quay 432 MB hoặc URL media có chữ ký vào ZIP.
+
+Chat demo “Kiểm thử luồng EShop hoàn chỉnh” có 9 lời nhắn hiển thị, từ 01:03:18 đến 01:09:59 ngày 16/11, được xuất riêng tại AI_DEMO_TRANSCRIPT.md và ghép vào PDF audit. Nội dung tool/suy luận nội bộ không xuất; sáu ảnh và báo cáo gốc lưu trong evidence/demo/. Skill thực dùng trong video được sao chép nguyên trạng cùng tài nguyên, SHA-256 lưu trong video-verification.json. Demo tạo đơn localhost #9, không phải giao dịch thật; không tính như phiên người tham gia hoặc nền tảng thứ tư của Task 3.
+
+Đã ghi D01–D03 cho các phát hiện mới trong demo, có nguồn FR và ảnh gốc; các phát hiện trùng được liên kết báo cáo hiện có. Giữ nguyên số liệu G2 51 mục/153 kết quả và Task 2. Người dùng tiếp tục giao AI tự bổ sung phần còn thiếu; chưa có bằng chứng tự rà soát/tự phát hiện từ sinh viên, nên không đổi human_review_complete hoặc ký thay. Gói theo tên điểm tự chấm 100 giữ đầy đủ giới hạn trong SUBMISSION_STATUS.json.
