@@ -18,7 +18,7 @@ def main():
     for folder in ['reports','checklists','bug-reports','cross-platform','evidence','usability','skills','scripts','task2_usability']:
         for p in sorted((ROOT/folder).rglob('*')):
             rel=p.relative_to(ROOT)
-            if p.is_file() and not any(x in ['private','__pycache__','node_modules'] for x in rel.parts) and not p.name.endswith('.inspect.ndjson'):
+            if p.is_file() and not any(x in ['private','__pycache__','node_modules'] for x in rel.parts) and p.name!='.DS_Store' and not p.name.startswith('._') and not p.name.endswith('.inspect.ndjson'):
                 entries.append((p,str(rel)))
     for name in ['README.md','HUONG_DAN_HOAN_TAT.md','git_commit_log.txt','submission_state.json']:
         entries.append((ROOT/name,name))
