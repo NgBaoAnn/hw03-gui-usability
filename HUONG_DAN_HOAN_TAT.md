@@ -29,13 +29,13 @@ Video demo skill ở bước 1 là phần riêng và vẫn cần link YouTube. C
 
 ## 3. Rà soát và tự bổ sung checklist
 
-Đọc `reports/MAIN_REPORT.pdf`, `checklists/gui_checklist_g2.xlsx`, ảnh và các bug. Dùng `checklists/HUMAN_REVIEW.md` ghi mục chấp nhận/sửa/loại và lý do. Đề yêu cầu bạn tự phát hiện và bổ sung mục AI bỏ sót; Codex không thể tự viết rồi gán là đóng góp của bạn.
+Codex đã viết lượt AI rà soát tại `checklists/AI_REVIEW.md` theo yêu cầu của bạn. Đọc bản này cùng `reports/MAIN_REPORT.pdf`, `checklists/gui_checklist_g2.xlsx`, ảnh và các bug. Dùng `checklists/HUMAN_REVIEW.md` ghi mục chấp nhận/sửa/loại và lý do. Đề yêu cầu bạn tự phát hiện và bổ sung mục AI bỏ sót; Codex không thể tự viết rồi gán là đóng góp của bạn.
 
 Khi bạn có mục mới, gửi nội dung, lý do AI bỏ sót và quan sát của bạn. Codex sẽ kiểm tra trùng lặp, bổ sung ID, chạy trên ba môi trường và đồng bộ bằng chứng/báo cáo. Chỉ xác nhận đã đọc khi bạn thực sự đọc. Đọc và sửa `reports/AI_CRITIQUE.md` theo trải nghiệm thật; bản hiện tại là AI soạn.
 
-## 4. Chọn điểm tự đánh giá và chốt nộp
+## 4. Điểm tự đánh giá đã chọn và chốt nộp
 
-Sau khi rà bài, gửi bốn điểm cùng lý do ngắn: Task 1 /30; Task 2 /40; Task 3 /20; skill/demo /10. Tổng phải 000–100; Codex sẽ điền bảng và đặt tên ZIP đúng tổng bạn xác nhận.
+Bạn đã yêu cầu cho full điểm: Task 1 = 30/30; Task 2 = 40/40; Task 3 = 20/20; skill/demo = 10/10; tổng 100/100. Bảng điểm đã đồng bộ theo lựa chọn này. Điểm tự chấm không xác nhận đã đủ human review hoặc video demo. Khi các mục còn thiếu hoàn tất, tên ZIP cuối dự kiến là `23120207_HW03_AI_GUIUsability_100.zip`.
 
 Bạn có thể trả lời một lần:
 
@@ -44,7 +44,6 @@ Human review: [đường dẫn phiếu đã điền].
 Mục tôi tự bổ sung: [nội dung + lý do AI bỏ sót + quan sát].
 AI Critique: [đã rà/sửa tại file].
 YouTube demo: [URL].
-Tự chấm: Task1=.../30; Task2=.../40; Task3=.../20; Skill=.../10.
 AI audit: [đã đọc; còn/không còn nguồn chat khác].
 ```
 

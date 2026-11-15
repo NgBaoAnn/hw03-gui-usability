@@ -2,7 +2,7 @@
 
 Nguyễn Bảo An - 23120207 - bài cá nhân.
 
-**BẢN CHỜ SINH VIÊN CHỐT.** Đã chạy đủ 3 trình duyệt, tích hợp 1 pilot + 7 phiên được sinh viên xác nhận, tính SUS, khôi phục audit và public repo. Còn human review/tự bổ sung, video demo tự quay kèm URL YouTube và điểm tự chấm. Không có video phiên usability; giới hạn được ghi rõ theo §14.
+**BẢN CHỜ SINH VIÊN CHỐT.** Đã chạy đủ 3 trình duyệt, tích hợp 1 pilot + 7 phiên được sinh viên xác nhận, tính SUS, khôi phục audit và public repo. Sinh viên chọn tự chấm 100/100. Còn human review/tự bổ sung và video demo tự quay kèm URL YouTube. Không có video phiên usability; giới hạn được ghi rõ theo §14.
 
 Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc cần bạn làm, biểu mẫu tương ứng và dữ liệu gửi lại để Codex chốt hồ sơ.
 
@@ -10,6 +10,7 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 
 - `reports/MAIN_REPORT.md` và PDF: phương pháp, kết quả và giới hạn.
 - `checklists/gui_checklist_g2.xlsx`, `.md`, `.csv`: 48 mục trên Chrome, Firefox và Safari thật.
+- `checklists/AI_REVIEW.md`: lượt AI rà soát bổ sung; phiếu sinh viên ở `checklists/HUMAN_REVIEW.md` vẫn chờ đóng góp thực tế.
 - `bug-reports/BUG_REPORTS.md`: 23 nhóm bug, ảnh gốc và Issue links.
 - `evidence/runs/`: kết quả máy đọc được; `evidence/gui/`: ảnh gốc.
 - `usability/`: protocol, SUS, dữ liệu 7 phiên, phân tích và nguồn dữ liệu; bản public dùng mã người tham gia.
@@ -21,19 +22,19 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 
 ## Điểm tự đánh giá
 
-Sinh viên chưa tự chấm. Không điền 000 thay cho điểm còn thiếu.
+Điểm tự chấm do sinh viên lựa chọn; không phải điểm giảng viên hoặc xác nhận mọi yêu cầu đã hoàn tất.
 
 | Tiêu chí | Tối đa | Điểm sinh viên tự chấm |
-|---|---:|---|
-| Task 1 - GUI Checklist | 30 | Chưa chấm |
-| Task 2 - Usability Evaluation | 40 | Chưa chấm |
-| Task 3 - Cross-Browser | 20 | Chưa chấm |
-| Agent Skills và demo | 10 | Chưa chấm |
-| Tổng | 100 | Chưa chấm |
+|---|---:|---:|
+| Task 1 - GUI Checklist | 30 | 30 |
+| Task 2 - Usability Evaluation | 40 | 40 |
+| Task 3 - Cross-Browser | 20 | 20 |
+| Agent Skills và demo | 10 | 10 |
+| Tổng | 100 | 100 |
 
 # Test summary G2
 
-Cập nhật: 2026-11-15T23:41:55+07:00.
+Cập nhật: 2026-11-15T23:53:03+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|

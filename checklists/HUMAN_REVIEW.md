@@ -2,6 +2,8 @@
 
 Trạng thái: CHƯA ĐƯỢC SINH VIÊN RÀ SOÁT. Tất cả 48 mục hiện có do Codex thiết kế. Không có mục nào được gán là “sinh viên tự bổ sung”.
 
+Theo yêu cầu sinh viên, Codex đã viết [bản AI rà soát bổ sung](AI_REVIEW.md). Bản đó hỗ trợ đọc và phản biện hồ sơ; không điền thay quyết định/quan sát cá nhân trong phiếu này.
+
 Đọc kết quả, so sánh bài giảng và SUT. Chấp nhận/sửa/loại từng mục, ghi lý do. Tự bổ sung những mục thực tế mà AI bỏ sót, ghi vì sao (prompt thiếu ngữ cảnh, giới hạn mô hình, đặc thù giao diện). Bổ sung rồi thực thi trên đủ môi trường, không chỉ thêm cho đủ số lượng.
 
 | Mục | Quyết định của sinh viên | Sửa đổi/lý do | Ngày giờ |

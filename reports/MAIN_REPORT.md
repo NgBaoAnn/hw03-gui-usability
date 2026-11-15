@@ -18,6 +18,8 @@ Màn hình chính Home/Search; bổ trợ Product Detail và Cart. Luồng: tìm
 
 Tiêu chí hỗ trợ tiếp cận, responsive và khôi phục ngoài FR được ghi là heuristic. RTL/dark mode chưa được xác định là tính năng bắt buộc, nên không báo thiếu chúng là bug. `checklists/HUMAN_REVIEW.md` còn trống: sinh viên cần phản biện và tự bổ sung những mục AI bỏ sót, có giải thích lý do.
 
+Codex đã thực hiện lượt rà soát bổ sung theo yêu cầu sinh viên, ghi tại `checklists/AI_REVIEW.md`: đối chiếu số liệu, nguồn kỳ vọng, phạm vi kết luận và giới hạn công cụ. Đây là rà soát của AI, chưa được gán thành phần sinh viên tự phản biện/bổ sung.
+
 Chrome: 19 Passed, 29 Failed. Firefox: 18 Passed, 30 Failed. Safari: 19 Passed, 29 Failed. Không còn Blocked trong bản JSON cuối. Đã sửa lỗi đồng bộ harness và xác minh click được giao khi SafariDriver chỉ blur input. Những mục bị ảnh hưởng được chạy lại; chỉ kết quả cuối mỗi ID được thống kê. Ảnh Failed là ảnh browser thật, không phải ảnh AI sinh.
 
 23 nhóm bug được liệt kê trong `bug-reports/BUG_REPORTS.md`. Quan trọng nhất: click thêm giỏ lần đầu không thêm; số lượng 0/âm/thập phân/rỗng được nhận; giỏ trùng dòng; từ khóa render HTML; không xác nhận xóa. HTML injection chỉ được chứng minh bằng thẻ b vô hại, không tuyên bố đã khai thác script. Heuristic crop ảnh và mất ngữ cảnh khi Back đang chờ sinh viên xác nhận mức ảnh hưởng.
@@ -54,7 +56,17 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Hồ sơ tám 
 
 - Sinh viên rà soát kết quả và tự bổ sung checklist; duyệt critique/audit, bổ sung nếu còn chat khác ngoài bản đã khôi phục.
 - Sinh viên tự quay demo dùng skill từ đầu đến cuối và cung cấp YouTube URL.
-- Sinh viên tự chấm theo rubric 30/40/20/10, xác nhận bài cuối, rồi đóng gói đúng tên và xác nhận Moodle “Em làm một mình”.
+- Sinh viên đã chọn tự chấm 30/40/20/10 = 100. Điểm tự chấm không xác nhận checklist đã được sinh viên rà soát hoặc demo đã hoàn tất. Sau khi đủ các mục còn thiếu, xác nhận bài cuối và Moodle “Em làm một mình”.
+
+Điểm tự chấm do sinh viên lựa chọn; không phải điểm giảng viên hoặc xác nhận mọi yêu cầu đã hoàn tất.
+
+| Tiêu chí | Tối đa | Điểm sinh viên tự chấm |
+|---|---:|---:|
+| Task 1 - GUI Checklist | 30 | 30 |
+| Task 2 - Usability Evaluation | 40 | 40 |
+| Task 3 - Cross-Browser | 20 | 20 |
+| Agent Skills và demo | 10 | 10 |
+| Tổng | 100 | 100 |
 
 ## 7. Tham chiếu
 
@@ -62,7 +74,7 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Hồ sơ tám 
 
 ## 8. Test summary
 
-Cập nhật: 2026-11-15T23:41:55+07:00.
+Cập nhật: 2026-11-15T23:53:03+07:00.
 
 | Chỉ số | Kết quả đã xác minh |
 |---|---|

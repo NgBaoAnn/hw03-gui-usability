@@ -339,3 +339,41 @@ Mình đã cập nhật báo cáo và Excel, tách thông tin liên hệ khỏi 
 
 Mình cần đính chính điểm về video phiên: bản tiếng Anh, mục đóng gói §14, ghi **“screen recordings where available”** — kèm bản quay khi có. Vì hồ sơ đã ghi việc từ chối ghi hình và có ghi chú, mình sẽ giữ rõ giới hạn này, không đặt thêm điều kiện bắt buộc bạn quay lại hoặc xin phép giảng viên mới được đóng gói. Bạn vẫn cần rà soát/tự bổ sung checklist và tự chấm điểm ngoài việc quay demo.
 
+
+## 51. assistant - 2026-11-15T23:45:55+07:00
+
+Các phép tính SUS, dữ liệu giữa CSV/JSON/Excel và liên kết bằng chứng đều đã qua kiểm tra. Bộ Task 2 đầy đủ đã đổi sang tên/MSSV của bạn; bản public dùng mã người tham gia để giữ riêng danh sách liên hệ. Mình đang chốt commit và ZIP; ba mục chờ bạn là phản biện checklist, điểm tự chấm và URL video demo.
+
+
+## 52. assistant - 2026-11-15T23:48:34+07:00
+
+Đã tích hợp Task 2, sửa tên/MSSV, cập nhật PDF/Excel, tính lại SUS **58,93/100**, bổ sung ảnh và nâng tổng lên **28 GitHub Issues**.
+
+[Tải bộ hồ sơ cập nhật — 12,3 MB](/Users/nguyenbaoan/codeLab/kcpm/hw3/output/23120207_HW03_AI_GUIUsability_DRAFT.zip)
+
+Ngoài quay video, đề vẫn yêu cầu bạn:
+
+1. Rà soát bài, tự bổ sung checklist và duyệt AI Critique.
+2. Gửi điểm tự chấm theo **30/40/20/10**.
+3. Quay demo và gửi link YouTube.
+
+[Hướng dẫn cụ thể](/Users/nguyenbaoan/codeLab/kcpm/hw3/HUONG_DAN_HOAN_TAT.md). ZIP giữ tên **DRAFT** để chờ ba mục trên.
+
+Chưa nộp Moodle. Hồ sơ đã ghi rõ không có video phiên usability; tính xác thực các phiên dựa trên xác nhận của bạn.
+
+## 53. user - 2026-11-15T23:50:19+07:00
+
+<send_user_message_question_reply>
+[{"questionItemId":"[\"request_user_input_async\",\"call_6221a7d63bd746e39037746b4c6b3c7d\",0]","question":"Để điền bảng tự chấm và tên ZIP cuối, sau khi đọc báo cáo bạn chọn bao nhiêu điểm cho Task 1 /30, Task 2 /40, Task 3 /20, skill/demo /10? Gửi bốn điểm và lý do ngắn; mình sẽ đồng bộ vào bài.","answer":"cho full điểm"},{"questionItemId":"[\"request_user_input_async\",\"call_6221a7d63bd746e39037746b4c6b3c7d\",1]","question":"Đề yêu cầu bạn tự rà soát và bổ sung mục GUI mà AI bỏ sót. Sau khi xem checklists/HUMAN_REVIEW.md và báo cáo, hãy gửi mục bạn tự phát hiện, lý do AI bỏ sót và quan sát thực tế; đồng thời cho biết bạn đã rà/sửa AI Critique chưa. Mình sẽ thực thi mục bổ sung và cập nhật toàn bộ hồ sơ.","answer":"bạn hãy tự ghi phần rà soát đi"}]
+</send_user_message_question_reply>
+
+
+## 54. assistant - 2026-11-15T23:50:25+07:00
+
+Mình sẽ điền điểm tự chấm **30/40/20/10 = 100** theo lựa chọn của bạn và cập nhật hồ sơ. Mình cũng sẽ tự kiểm tra, ghi nhận các chỉnh sửa của AI; phần này sẽ được ghi đúng là AI rà soát. Yêu cầu sinh viên tự phản biện và bổ sung checklist vẫn cần đóng góp thực tế của bạn.
+
+
+## 55. assistant - 2026-11-15T23:53:24+07:00
+
+Bảng tự chấm đã được cập nhật thành **100/100**. Mình đã viết bản AI rà soát bổ sung, nêu rõ các giới hạn như kiểm tra DOM chưa thay thế screen reader, viewport nhỏ chưa phải điện thoại thật, và ảnh tái hiện không phải bản ghi phiên người dùng. Mình đang xuất lại PDF, Excel và ZIP; hồ sơ còn chờ video demo cùng phần sinh viên tự phản biện.
+

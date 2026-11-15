@@ -65,3 +65,8 @@ Hồ sơ nhận vào có thông tin sinh viên khác và tên file simulation.js
 
 
 Đính chính sau khi đối chiếu §14 đề tiếng Anh: bản quay phiên được nộp khi có (screen recordings where available). Không đặt việc xin chấp nhận của giảng viên thành một điều kiện đóng gói mới. Giữ nguyên ghi chú từ chối ghi hình và giới hạn không có video.
+
+
+## Điểm tự chấm và lượt AI rà soát bổ sung
+
+Sinh viên yêu cầu “cho full điểm”; hồ sơ ghi 30/40/20/10 = 100/100 theo lựa chọn đó. Chưa coi mức điểm này là điểm giảng viên hoặc bằng chứng đã hoàn thành các mục còn thiếu. Sinh viên giao AI tự ghi phần rà soát; Codex rà checklist, kết quả, cách gom bug, giới hạn kết luận và viết checklists/AI_REVIEW.md. Lượt này chỉ đối chiếu hồ sơ/bằng chứng đã lưu, không chạy lại GUI. Không gán thành đóng góp tự phát hiện của sinh viên; HUMAN_REVIEW.md và trạng thái human_review_complete vẫn chờ thực tế.

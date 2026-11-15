@@ -30,6 +30,13 @@ def main():
     now = datetime.now(ZoneInfo('Asia/Ho_Chi_Minh')).isoformat(timespec='seconds')
     study = json.loads((ROOT/'usability/summary.json').read_text())
     assert study['n'] == 7 and study['pilot_count'] == 1
+    state=json.loads((ROOT/'submission_state.json').read_text())
+    assessment=state.get('self_assessment')
+    rubric=[('task1','Task 1 - GUI Checklist',30),('task2','Task 2 - Usability Evaluation',40),('task3','Task 3 - Cross-Browser',20),('skill','Agent Skills và demo',10)]
+    if assessment:
+        assert set(assessment)=={key for key,_,_ in rubric}
+        assert all(type(assessment[key]) is int and 0<=assessment[key]<=maximum for key,_,maximum in rubric)
+    assessment_md='\n'.join(['Điểm tự chấm do sinh viên lựa chọn; không phải điểm giảng viên hoặc xác nhận mọi yêu cầu đã hoàn tất.','', '| Tiêu chí | Tối đa | Điểm sinh viên tự chấm |','|---|---:|---:|']+[f'| {label} | {maximum} | {assessment[key] if assessment else "Chưa chấm"} |' for key,label,maximum in rubric]+[f'| Tổng | 100 | {sum(assessment.values()) if assessment else "Chưa chấm"} |'])
     rows = []
     for a, b, c in zip(chrome, firefox, safari_results):
         assert a['id'] == b['id'] == c['id']
@@ -175,6 +182,8 @@ Màn hình chính Home/Search; bổ trợ Product Detail và Cart. Luồng: tìm
 
 Tiêu chí hỗ trợ tiếp cận, responsive và khôi phục ngoài FR được ghi là heuristic. RTL/dark mode chưa được xác định là tính năng bắt buộc, nên không báo thiếu chúng là bug. `checklists/HUMAN_REVIEW.md` còn trống: sinh viên cần phản biện và tự bổ sung những mục AI bỏ sót, có giải thích lý do.
 
+Codex đã thực hiện lượt rà soát bổ sung theo yêu cầu sinh viên, ghi tại `checklists/AI_REVIEW.md`: đối chiếu số liệu, nguồn kỳ vọng, phạm vi kết luận và giới hạn công cụ. Đây là rà soát của AI, chưa được gán thành phần sinh viên tự phản biện/bổ sung.
+
 Chrome: {counts['chrome']['Passed']} Passed, {counts['chrome']['Failed']} Failed. Firefox: {counts['firefox']['Passed']} Passed, {counts['firefox']['Failed']} Failed. Safari: {counts['safari']['Passed']} Passed, {counts['safari']['Failed']} Failed. Không còn Blocked trong bản JSON cuối. Đã sửa lỗi đồng bộ harness và xác minh click được giao khi SafariDriver chỉ blur input. Những mục bị ảnh hưởng được chạy lại; chỉ kết quả cuối mỗi ID được thống kê. Ảnh Failed là ảnh browser thật, không phải ảnh AI sinh.
 
 23 nhóm bug được liệt kê trong `bug-reports/BUG_REPORTS.md`. Quan trọng nhất: click thêm giỏ lần đầu không thêm; số lượng 0/âm/thập phân/rỗng được nhận; giỏ trùng dòng; từ khóa render HTML; không xác nhận xóa. HTML injection chỉ được chứng minh bằng thẻ b vô hại, không tuyên bố đã khai thác script. Heuristic crop ảnh và mất ngữ cảnh khi Back đang chờ sinh viên xác nhận mức ảnh hưởng.
@@ -211,7 +220,9 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Hồ sơ tám 
 
 - Sinh viên rà soát kết quả và tự bổ sung checklist; duyệt critique/audit, bổ sung nếu còn chat khác ngoài bản đã khôi phục.
 - Sinh viên tự quay demo dùng skill từ đầu đến cuối và cung cấp YouTube URL.
-- Sinh viên tự chấm theo rubric 30/40/20/10, xác nhận bài cuối, rồi đóng gói đúng tên và xác nhận Moodle “Em làm một mình”.
+- Sinh viên đã chọn tự chấm 30/40/20/10 = 100. Điểm tự chấm không xác nhận checklist đã được sinh viên rà soát hoặc demo đã hoàn tất. Sau khi đủ các mục còn thiếu, xác nhận bài cuối và Moodle “Em làm một mình”.
+
+{assessment_md}
 
 ## 7. Tham chiếu
 
@@ -223,7 +234,7 @@ Commit được tạo theo giai đoạn thực sự hoàn thành. Hồ sơ tám 
 
 Nguyễn Bảo An - 23120207 - bài cá nhân.
 
-**BẢN CHỜ SINH VIÊN CHỐT.** Đã chạy đủ 3 trình duyệt, tích hợp 1 pilot + 7 phiên được sinh viên xác nhận, tính SUS, khôi phục audit và public repo. Còn human review/tự bổ sung, video demo tự quay kèm URL YouTube và điểm tự chấm. Không có video phiên usability; giới hạn được ghi rõ theo §14.
+**BẢN CHỜ SINH VIÊN CHỐT.** Đã chạy đủ 3 trình duyệt, tích hợp 1 pilot + 7 phiên được sinh viên xác nhận, tính SUS, khôi phục audit và public repo. Sinh viên chọn tự chấm 100/100. Còn human review/tự bổ sung và video demo tự quay kèm URL YouTube. Không có video phiên usability; giới hạn được ghi rõ theo §14.
 
 Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc cần bạn làm, biểu mẫu tương ứng và dữ liệu gửi lại để Codex chốt hồ sơ.
 
@@ -231,6 +242,7 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 
 - `reports/MAIN_REPORT.md` và PDF: phương pháp, kết quả và giới hạn.
 - `checklists/gui_checklist_g2.xlsx`, `.md`, `.csv`: 48 mục trên Chrome, Firefox và Safari thật.
+- `checklists/AI_REVIEW.md`: lượt AI rà soát bổ sung; phiếu sinh viên ở `checklists/HUMAN_REVIEW.md` vẫn chờ đóng góp thực tế.
 - `bug-reports/BUG_REPORTS.md`: 23 nhóm bug, ảnh gốc và Issue links.
 - `evidence/runs/`: kết quả máy đọc được; `evidence/gui/`: ảnh gốc.
 - `usability/`: protocol, SUS, dữ liệu 7 phiên, phân tích và nguồn dữ liệu; bản public dùng mã người tham gia.
@@ -242,17 +254,7 @@ Bắt đầu từ [hướng dẫn hoàn tất](HUONG_DAN_HOAN_TAT.md): việc c�
 
 ## Điểm tự đánh giá
 
-Sinh viên chưa tự chấm. Không điền 000 thay cho điểm còn thiếu.
-
-| Tiêu chí | Tối đa | Điểm sinh viên tự chấm |
-|---|---:|---|
-| Task 1 - GUI Checklist | 30 | Chưa chấm |
-| Task 2 - Usability Evaluation | 40 | Chưa chấm |
-| Task 3 - Cross-Browser | 20 | Chưa chấm |
-| Agent Skills và demo | 10 | Chưa chấm |
-| Tổng | 100 | Chưa chấm |
-
-'''+summary+'''
+'''+assessment_md+'\n\n'+summary+'''
 ## Đóng gói và nộp
 
 Chạy `python3 scripts/validate_submission.py` để kiểm tra phần còn thiếu. Trình đóng gói chỉ tạo bản `23120207_HW03_AI_GUIUsability_DRAFT.zip` khi hồ sơ chưa đủ. Bản cuối cần tên `<MSSV>_HW03_AI_GUIUsability_<000-100>.zip`, có điểm do sinh viên xác nhận. Hạn Moodle: 13:00 ngày 16/11/2026 (Việt Nam), cutoff cùng giờ, tối đa 20 MB mỗi tệp.

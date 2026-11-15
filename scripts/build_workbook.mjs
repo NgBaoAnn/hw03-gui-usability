@@ -29,7 +29,9 @@ for(const [row,col]of [[5,'F'],[6,'G'],[7,'H']]){
 summary.getRange('A10:B15').values=[['Phạm vi GUI','Home/Search, Detail, Cart'],['Checklist thiết kế',48],['Số IA',4],['Nhóm bug GUI',23],['Phiên usability chính thức',7],['SUS trung bình',null]];
 summary.getRange('B15').formulas=[['=SUS!L14']];summary.getRange('B15').setNumberFormat('0.00');
 summary.getRange('A17:D18').merge();
-summary.getRange('A17').values=[['Chờ human review/tự bổ sung, video demo và điểm tự chấm. Task 2 có ghi chú 1 pilot + 7 phiên do sinh viên xác nhận; thiếu video phiên.']];
+const state=JSON.parse(await fs.readFile('submission_state.json','utf8'));
+const selfScore=state.self_assessment?Object.values(state.self_assessment).reduce((a,b)=>a+b,0):'chưa chấm';
+summary.getRange('A17').values=[[`Sinh viên tự chấm ${selfScore}/100. Còn human review/tự bổ sung và video demo. AI đã rà soát bổ sung; xem AI_REVIEW.md. Task 2 không có video phiên.`]];
 summary.getRange('A17:D18').format.wrapText=true;
 summary.getRange('A18').format.font={color:'#9A3412',size:11};
 summary.getRange('A20').values=[['Nguồn: đề HW03 §6, §14; kết quả gốc evidence/runs/chrome.json, firefox.json và safari.json.']];
